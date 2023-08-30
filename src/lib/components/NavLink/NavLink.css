@@ -1,0 +1,21 @@
+.navLink {
+  @apply text-white basis-4;
+  z-index: 99;
+}
+
+.line {
+  animation: slidein 0.5s linear;
+}
+
+@keyframes slidein {
+  0% {
+    width: 0%;
+  }
+  75% {
+    width: 75%;
+  }
+
+  100% {
+    width: 100%;
+  }
+}

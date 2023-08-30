@@ -1,0 +1,52 @@
+/* Button */
+.button {
+  width: 100%;
+  padding: 0.8rem 2.2rem;
+  font-size: 1.2rem;
+  background-color: transparent;
+  position: relative;
+  border: none;
+  outline: none;
+  color: black;
+  user-select: none;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.4s ease-in-out;
+}
+
+.button span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 3px solid black;
+  z-index: -1;
+}
+
+.button span::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5%;
+  height: 500%;
+  background-color: white;
+  z-index: 100;
+  transform: translate(-50%, -50%) rotate(-60deg);
+  transition: all 0.4s ease-in-out;
+}
+
+/* What After Hovering The Button */
+.button:hover span::after,
+.button:focus span::after {
+  background-color: black;
+  width: 10%;
+  transform: translate(-50%, -50%) rotate(-90deg);
+}
+
+.button:hover,
+.button:focus {
+  color: #fff;
+  background-color: black;
+}

@@ -4,11 +4,9 @@ import type { Listing, RealtyMoleData } from '../../types/models';
 export const getPropertyListingDescription = async ({
   address,
   keyInfo,
-  agentProfile,
 }: {
   address: string;
   keyInfo: string;
-  agentProfile: string;
 }): Promise<{
   choices: { content: string }[];
   realtyMoleData: RealtyMoleData;
@@ -18,7 +16,6 @@ export const getPropertyListingDescription = async ({
   }>('/listings/descriptionfromAddress', {
     address,
     keyInfo,
-    agentProfile,
   });
   return response.data;
 };

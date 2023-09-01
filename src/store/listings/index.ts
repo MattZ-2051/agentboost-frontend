@@ -42,7 +42,12 @@ getListingFx.failData.watch((error) => {
 });
 
 createListingFx.doneData.watch((result) => {
-  console.log('new listing created', result);
+  const toast: ToastSettings = {
+    message: `Listing for ${result.address} created!`,
+    background: 'variant-filled-success',
+  };
+  toastStore.trigger(toast);
+  goto(`/listings/${result.id}`);
 });
 
 createListingFx.failData.watch((error) => {

@@ -40,25 +40,41 @@
 
 {#if $listing}
   <div class="w-full mt-12" id="results2">
-    <h1 class="text-4xl text-center mb-12">10044 W Springdale Ct</h1>
-    <h1 class="text-3xl mt-8">Property Description</h1>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-      commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-      cupidatat
+    <h1 class="text-4xl text-center mb-12">{$listing.address}</h1>
+    <h1 class="text-3xl mt-8 mb-4">Property Description</h1>
+    <p class="text-base">
+      {$listing.propertyDescription}
     </p>
-    <h1 class="text-3xl mt-8">Property Info</h1>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-      commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-      cupidatat
-    </p>
+    <h1 class="text-3xl mt-8 mb-4">Property Info</h1>
+    <ul>
+      <li>
+        <p>Bathrooms - {$listing.bathrooms}</p>
+      </li>
+      <li>
+        <p>Bedrooms - {$listing.bedrooms}</p>
+      </li>
+      <li>
+        <p>City - {$listing.city}</p>
+      </li>
+      <li>
+        <p>State - {$listing.state}</p>
+      </li>
+      <li>
+        <p>Lot Size - {$listing.lotSize}</p>
+      </li>
+      <li>
+        <p>Square Footage - {$listing.squareFootage}</p>
+      </li>
+      <li>
+        <p>Year Built - {$listing.yearBuilt}</p>
+      </li>
+      <li>
+        <p>Property Type - {$listing.propertyType}</p>
+      </li>
+      <li>
+        <p>Features - {JSON.stringify($listing.features)}</p>
+      </li>
+    </ul>
     <h1 class="text-3xl mt-8">CMA - Sold in last 30 days</h1>
     <Slider items={sliderItems} />
     <div class="flex items-center bg-secondary-500 rounded-3xl mt-12">
@@ -73,31 +89,7 @@
     </div>
     <h1 class="text-3xl my-8">Property Insights</h1>
     <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-      commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-      est laborum.
-    </p>
-    <p class="my-4">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-      commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-      est laborum.
-    </p>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-      commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-      est laborum.
+      {$listing.propertyInsight}
     </p>
     <h1 class="text-3xl my-8">Smart Metrics</h1>
     <div class="grid grid-cols-3 gap-x-4">
@@ -112,7 +104,7 @@
       <div class="">
         <Card height="h-[300px]">
           <div class="p-8 flex items-center justify-center flex-col">
-            <h1 class="text-xl text-center mb-4">Safety or Etc....</h1>
+            <h1 class="text-xl text-center mb-4">Nearby Points of Interest</h1>
             <ul class="list-disc text-sm list-inside">
               <li>Lorem Ipsum cillum dolore</li>
               <li>Lorem Ipsum cillum dolore</li>

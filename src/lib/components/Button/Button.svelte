@@ -8,6 +8,8 @@
   export let onClick: (() => void) | undefined = undefined;
 </script>
 
-<button type="button" class={`btn ${variant} ${classes}`} on:click={onClick}
-  >{label}</button
+<button
+  type="button"
+  class={`btn ${variant} ${classes} hover:cursor-pointer`}
+  on:click={onClick}>{label}</button
 >

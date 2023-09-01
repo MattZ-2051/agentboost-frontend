@@ -22,6 +22,7 @@ export const updateUserProfileFx = createEffect<
 
 getUserProfileFx.doneData.watch((result) => {
   updateUser(result);
+  console.log('here', result);
 });
 
 getUserProfileFx.failData.watch((error) => {

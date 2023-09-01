@@ -3,14 +3,12 @@
   import Input from '$lib/components/Input/Input.svelte';
   import ProgressRadial from '$lib/components/ProgressRadial/ProgressRadial.svelte';
   import ArrowLeft from '$lib/icons/Arrow/ArrowLeft.svelte';
-  import { goto } from '$app/navigation';
   import {
     createListingFx,
     getPropertyListingDescriptionFx,
   } from '$store/listings';
   import { $newListing as newListing } from '$store/listings';
   import { $user as user } from '$store/user';
-  import { generateAgentProfilePrompt } from '$lib/prompts';
   import { type ToastSettings, toastStore } from '@skeletonlabs/skeleton';
   import type { Listing } from '$types/models';
 
@@ -29,7 +27,7 @@
       return;
     }
 
-    if ($newListing && propertyDescription) {
+    if ($newListing && propertyDescription && $user) {
       const listingToCreate: Listing = {
         address: $newListing.realtyMoleData.addressLine1,
         propertyDescription,
@@ -51,9 +49,10 @@
         lastSaleDate: $newListing.realtyMoleData.lastSaleDate || '',
         lotSize: $newListing.realtyMoleData.lotSize,
         propertyType: $newListing.realtyMoleData.propertyType,
+        userId: $user.id,
       };
       try {
-        createListingFx(listingToCreate);
+        await createListingFx(listingToCreate);
       } catch {
       } finally {
         loading = false;
@@ -71,24 +70,15 @@
       toastStore.trigger(toast);
       return;
     }
-    if ($user) {
-      const agentProfile = generateAgentProfilePrompt({
-        email: $user.email,
-        brandDescription: $user.brandDescription,
-        areaOfExpertise: $user.areaOfExpertise,
+    try {
+      await getPropertyListingDescriptionFx({
+        address: propertyAddress,
+        keyInfo,
       });
-
-      try {
-        await getPropertyListingDescriptionFx({
-          address: propertyAddress,
-          keyInfo,
-          agentProfile,
-        });
-        pageState = 'step2';
-      } catch {
-      } finally {
-        loading = false;
-      }
+      pageState = 'step2';
+    } catch {
+    } finally {
+      loading = false;
     }
   };
 </script>
@@ -105,66 +95,69 @@
     </div>
   {/if}
 
-  {#if !loading && !$newListing && pageState === 'step1'}
-    <h1 class="text-3xl">Here's How it works</h1>
-    <p class="w-1/2 mt-12 text-center">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-      commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-      est laborum.
-    </p>
-    <div class="mt-12 w-1/2">
-      <div>
-        <Input
-          label="Property Address"
-          placeholder="Property Address"
-          bind:value={propertyAddress}
-          type="text"
+  {#if !loading}
+    {#if !$newListing && pageState === 'step1'}
+      <h1 class="text-3xl">Here's How it works</h1>
+      <p class="w-1/2 mt-12 text-center">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+        mollit anim id est laborum.
+      </p>
+      <div class="mt-12 w-1/2">
+        <div>
+          <Input
+            label="Property Address"
+            placeholder="Property Address"
+            bind:value={propertyAddress}
+            type="text"
+          />
+        </div>
+        <div class="mt-8">
+          <Input
+            label="Key Info"
+            placeholder="Key Info"
+            bind:value={keyInfo}
+            type="textarea"
+          />
+        </div>
+        <Button
+          label="Boost"
+          variant="variant-filled-secondary"
+          onClick={handlePropertyDescription}
+          classes="w-full mt-4"
         />
       </div>
-      <div class="mt-8">
-        <Input
-          label="Key Info"
-          placeholder="Key Info"
-          bind:value={keyInfo}
-          type="textarea"
+    {/if}
+
+    {#if $newListing && pageState === 'step2' && propertyDescription}
+      <div class="w-3/4" id="results">
+        <h1 class="text-3xl">10044 W Springdale Ct</h1>
+        <h1 class="text-3xl mb-8 mt-12">Property Description</h1>
+        <div>
+          <Input
+            label=""
+            placeholder="Property Address"
+            bind:value={propertyDescription}
+            type="textarea"
+            rows={20}
+          />
+        </div>
+        <Button
+          label="Create Listing"
+          variant="variant-filled-secondary"
+          onClick={handleListingCreate}
+          classes="w-full mt-4"
         />
       </div>
-      <Button
-        label="Boost"
-        variant="variant-filled-secondary"
-        onClick={handlePropertyDescription}
-        classes="w-full mt-4"
-      />
-    </div>
+    {/if}
   {/if}
   {#if loading}
     <div class="w-full h-1/5 flex justify-center items-center">
       <ProgressRadial />
-    </div>
-  {/if}
-  {#if $newListing && pageState === 'step2' && propertyDescription}
-    <div class="w-3/4" id="results">
-      <h1 class="text-3xl">10044 W Springdale Ct</h1>
-      <h1 class="text-3xl mb-8 mt-12">Property Description</h1>
-      <div>
-        <Input
-          label=""
-          placeholder="Property Address"
-          bind:value={propertyDescription}
-          type="textarea"
-          rows={20}
-        />
-      </div>
-      <Button
-        label="Create Listing"
-        variant="variant-filled-secondary"
-        onClick={handleListingCreate}
-        classes="w-full mt-4"
-      />
     </div>
   {/if}
 </div>

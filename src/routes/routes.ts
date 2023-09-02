@@ -1,4 +1,4 @@
-import type { TabItems } from '../types/components';
+import type { TabItems } from '$types/components';
 export const routes: TabItems = [
   {
     label: 'Home',

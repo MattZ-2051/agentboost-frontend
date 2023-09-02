@@ -1,4 +1,4 @@
-import type { AuthTokens } from '../api/index';
+import type { AuthTokens } from '$types/api';
 
 export type User = {
   email: string;

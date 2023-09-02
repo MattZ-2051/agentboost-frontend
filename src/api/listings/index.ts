@@ -1,5 +1,5 @@
 import { get, post } from '..';
-import type { Listing, RealtyMoleData } from '../../types/models';
+import type { Listing, RealtyMoleData } from '$types/models';
 
 export const getPropertyListingDescription = async ({
   address,

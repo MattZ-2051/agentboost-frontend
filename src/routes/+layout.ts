@@ -1,5 +1,5 @@
-import { getUserProfileFx, updateUser } from '../store/user/index.js';
-import { checkStorage } from '../utils/index.js';
+import { getUserProfileFx, updateUser } from '$store/user/index.js';
+import { checkStorage } from '$utils';
 /** @type {import('./$types').LayoutLoad} */
 export async function load() {
   const data = checkStorage();

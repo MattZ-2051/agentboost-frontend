@@ -1,5 +1,5 @@
 import { get, patch } from '..';
-import type { User } from '../../types/models';
+import type { User } from '$types/models';
 import type { UpdateUserData } from './types';
 
 export const getUserProfile = async () => {

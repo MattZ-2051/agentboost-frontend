@@ -1,5 +1,5 @@
 import { post } from '..';
-import type { AuthTokens } from '../../types/api';
+import type { AuthTokens } from '$types/api';
 import type { AuthData } from './types';
 
 export const login = async ({ email, password }: AuthData) => {

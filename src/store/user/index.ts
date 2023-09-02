@@ -1,9 +1,9 @@
-import { login, logout, signup } from '../../api/auth';
-import { getUserProfile, updateUserProfile } from '../../api/user';
+import { login, logout, signup } from '$api/auth';
+import { getUserProfile, updateUserProfile } from '$api/user';
 import { createEffect, createEvent, createStore } from 'effector';
-import { decodeJwtToken, handleUserTokenData } from '../../utils';
-import type { User } from '../../types/models';
-import type { ApiError } from '../../types/api';
+import { decodeJwtToken, handleUserTokenData } from '$utils';
+import type { User } from '$types/models';
+import type { ApiError } from '$types/api';
 import { toastStore } from '@skeletonlabs/skeleton';
 import type { ToastSettings } from '@skeletonlabs/skeleton';
 import { goto } from '$app/navigation';

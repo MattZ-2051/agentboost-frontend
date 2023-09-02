@@ -3,11 +3,11 @@ import {
   getPropertyListingDescription,
   createListing,
   getListing,
-} from '../../api/listings';
-import type { ApiError } from '../../types/api';
+} from '$api/listings';
+import type { ApiError } from '$types/api';
 import { toastStore } from '@skeletonlabs/skeleton';
 import type { ToastSettings } from '@skeletonlabs/skeleton';
-import type { Listing, NewListing } from '../../types/models';
+import type { Listing, NewListing } from '$types/models';
 import { goto } from '$app/navigation';
 
 const updateNewListingData = createEvent<NewListing>();

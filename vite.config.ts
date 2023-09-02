@@ -9,4 +9,13 @@ export default defineConfig({
   server: {
     port: 3000,
   },
+  resolve: {
+    alias: {
+      $api: './src/api/*',
+      $store: './src/store/*',
+      $types: './src/types/*',
+      $utils: './src/utils/index.ts',
+      $mockData: './src/mockData/*',
+    },
+  },
 });

@@ -52,6 +52,7 @@ export type Listing = {
   features: JSON;
   propertyTaxes?: JSON;
   owner?: JSON;
+  cma?: JSON[];
   userId: string;
 };
 

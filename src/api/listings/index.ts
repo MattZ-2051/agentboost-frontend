@@ -9,10 +9,10 @@ export const getPropertyListingDescription = async ({
   keyInfo: string;
 }): Promise<{
   choices: { content: string }[];
-  realtyMoleData: RealtyMoleData;
+  realtyMoleData: RealtyMoleData[];
 }> => {
   const response = await post<{
-    data: { choices: { content: string }[]; realtyMoleData: RealtyMoleData };
+    data: { choices: { content: string }[]; realtyMoleData: RealtyMoleData[] };
   }>('/listings/descriptionfromAddress', {
     address,
     keyInfo,
@@ -26,6 +26,24 @@ export const createListing = async (
   const response = await post<{ data: Listing }>('/listings/create', {
     ...newListingData,
   });
+  return response.data;
+};
+
+export const createListingCma = async ({
+  listingId,
+  address,
+  radius,
+  status,
+}: {
+  listingId: string;
+  address: string;
+  radius: number;
+  status?: 'Active' | 'Inactive';
+}) => {
+  const response = await post<{ data: Listing }>(
+    `/listings/generate-cma/${listingId}`,
+    { address, radius, status },
+  );
   return response.data;
 };
 

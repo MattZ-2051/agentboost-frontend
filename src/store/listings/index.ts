@@ -3,6 +3,7 @@ import {
   getPropertyListingDescription,
   createListing,
   getListing,
+  createListingCma,
 } from '$api/listings';
 import type { ApiError } from '$types/api';
 import { toastStore } from '@skeletonlabs/skeleton';
@@ -26,6 +27,19 @@ export const getPropertyListingDescriptionFx = createEffect<
 export const createListingFx = createEffect<typeof createListing, ApiError>(
   createListing,
 );
+
+export const createListingCmaFx = createEffect<
+  typeof createListingCma,
+  ApiError
+>(createListingCma);
+
+createListingCmaFx.doneData.watch((result) => {
+  console.log('listing cma res', result);
+});
+
+createListingCmaFx.failData.watch((error) => {
+  console.log('listing cma fail', error);
+});
 
 getListingFx.doneData.watch((result) => {
   updateListingData(result);

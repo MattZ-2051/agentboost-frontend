@@ -12,7 +12,11 @@
   } from '@skeletonlabs/skeleton';
   import CalenderAdd from '$lib/components/Modals/CalenderAdd/CalenderAdd.svelte';
   import { onMount } from 'svelte';
-  import { getListingFx, $listing as listing } from '$store/listings';
+  import {
+    createListingCmaFx,
+    getListingFx,
+    $listing as listing,
+  } from '$store/listings';
 
   const modalComponent: ModalComponent = {
     // Pass a reference to your custom component
@@ -31,6 +35,19 @@
   const handleAddToCalender = () => {
     modalStore.trigger(modal);
   };
+
+  const handleListingCma = () => {
+    if ($listing?.cma?.length === 0 && $listing && $listing.id) {
+      createListingCmaFx({
+        listingId: $listing.id.toString(),
+        address: $listing.formattedAddress,
+        radius: 10,
+        status: 'Active',
+      });
+    }
+  };
+
+  $: $listing?.id && handleListingCma();
 
   onMount(() => {
     const id = window.location.pathname.split('/')[2];

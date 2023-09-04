@@ -1,4 +1,4 @@
-import { getUserProfileFx, updateUser } from '$store/user/index.js';
+import { restoreUserSessionFx, updateUser } from '$store/user/index.js';
 import { checkStorage } from '$utils';
 /** @type {import('./$types').LayoutLoad} */
 export async function load() {
@@ -6,10 +6,11 @@ export async function load() {
   if (data) {
     updateUser({
       email: data.tokenData.email,
-      id: data.tokenData.id,
+      id: data.tokenData.sub,
       authTokens: data.authTokens,
     });
-    getUserProfileFx();
+
+    restoreUserSessionFx(data.authTokens.access);
   }
   // } else {
   //   const redirect =

@@ -1,13 +1,13 @@
 <script lang="ts">
   import Input from '$lib/components/Input/Input.svelte';
   import Button from '$lib/components/Button/Button.svelte';
-  import { loginFx } from '$store/user';
+  import { getUserProfileFx, loginFx } from '$store/user';
   import { toastStore } from '@skeletonlabs/skeleton';
   import type { ToastSettings } from '@skeletonlabs/skeleton';
 
   let email = '';
   let password = '';
-  const handleLogin = () => {
+  const handleLogin = async () => {
     let message;
 
     const mailformat = /^\S+@\S+\.\S+$/;
@@ -29,7 +29,8 @@
       return;
     }
 
-    loginFx({ email, password });
+    await loginFx({ email, password });
+    await getUserProfileFx();
   };
 </script>
 

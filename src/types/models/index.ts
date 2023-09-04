@@ -6,7 +6,7 @@ export type User = {
   id: string;
   brandDescription?: string;
   areaOfExpertise?: string;
-  listings: Listing[] | null;
+  listings?: Listing[] | null;
 };
 
 export type RealtyMoleData = {

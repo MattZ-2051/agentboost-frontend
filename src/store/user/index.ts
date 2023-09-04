@@ -1,14 +1,22 @@
 import { login, logout, signup } from '$api/auth';
-import { getUserProfile, updateUserProfile } from '$api/user';
+import {
+  getUserProfile,
+  restoreUserSession,
+  updateUserProfile,
+} from '$api/user';
 import { createEffect, createEvent, createStore } from 'effector';
 import { decodeJwtToken, handleUserTokenData } from '$utils';
 import type { User } from '$types/models';
-import type { ApiError } from '$types/api';
+import type { ApiError, AuthTokens } from '$types/api';
 import { toastStore } from '@skeletonlabs/skeleton';
 import type { ToastSettings } from '@skeletonlabs/skeleton';
 import { goto } from '$app/navigation';
 
-export const updateUser = createEvent<User | null>();
+export const updateUser = createEvent<{
+  email: string;
+  id: string;
+  authTokens: AuthTokens;
+} | null>();
 export const loginFx = createEffect<typeof login, ApiError>(login);
 export const signUpFx = createEffect<typeof signup, ApiError>(signup);
 export const logoutFx = createEffect<typeof logout, ApiError>(logout);
@@ -19,7 +27,26 @@ export const updateUserProfileFx = createEffect<
   typeof updateUserProfile,
   ApiError
 >(updateUserProfile);
+export const restoreUserSessionFx = createEffect<
+  typeof restoreUserSession,
+  ApiError
+>(restoreUserSession);
 
+restoreUserSessionFx.doneData.watch((result) => {
+  updateUser(result);
+});
+
+restoreUserSessionFx.failData.watch((error) => {
+  const statusCode = error?.response?.status;
+  if (statusCode === 401) {
+    // refreshTokens({
+    //   refreshToken: user.getState()?.authTokens?.refresh || '',
+    // });
+    localStorage.removeItem('authTokens');
+  } else {
+    localStorage.removeItem('authTokens');
+  }
+});
 getUserProfileFx.doneData.watch((result) => {
   updateUser(result);
 });
@@ -117,6 +144,6 @@ updateUserProfileFx.failData.watch((error) => {
 export const $user = createStore<User | null>(null).on(
   updateUser,
   (prevState, payload) => {
-    if (payload) return { ...prevState, ...payload };
+    return payload ? { ...prevState, ...payload } : null;
   },
 );

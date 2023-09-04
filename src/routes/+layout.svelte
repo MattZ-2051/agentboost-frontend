@@ -23,6 +23,7 @@
   } from '@floating-ui/dom';
   import { storePopup } from '@skeletonlabs/skeleton';
   import { routes } from './routes';
+  import { getUserProfileFx, $user as user } from '$store/user';
 
   storePopup.set({ computePosition, autoUpdate, offset, shift, flip, arrow });
 

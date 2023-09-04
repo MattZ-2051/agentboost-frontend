@@ -36,7 +36,8 @@
     </div>
   </svelte:fragment>
   <svelte:fragment slot="trail">
-    {#if $user}
+    {#if $user?.id}
+      {$user.email}
       <NavLink
         label="Signout"
         classes=""

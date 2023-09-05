@@ -4,6 +4,8 @@
   const handleDropdown = () => {
     isVisible = !isVisible;
   };
+
+  export let items: string[];
 </script>
 
 <div class="relative">
@@ -12,7 +14,7 @@
     type="button"
     on:click={handleDropdown}
   >
-    Property Address 1
+    {items[0]}
     <span class="ml-2 w-2">
       <svg
         xmlns="http://www.w3.org/2000/svg"

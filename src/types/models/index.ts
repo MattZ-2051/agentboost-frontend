@@ -30,6 +30,31 @@ export type RealtyMoleData = {
   owner?: JSON;
 };
 
+type CMA = {
+  addressLine1: string;
+  bathrooms: number;
+  bedrooms: number;
+  city: string;
+  county: string;
+  createdDate: string;
+  daysOnMarket: number;
+  formattedAddress: string;
+  id: string;
+  lastSeen: string;
+  latitude: number;
+  listedDate: string;
+  longitude: number;
+  lotSize: number;
+  price: number;
+  propertyType: string;
+  removedDate: string | null;
+  squareFootage: number;
+  state: string;
+  status: string;
+  yearBuilt: number;
+  zipCode: string;
+};
+
 export type Listing = {
   id?: number;
   address: string;
@@ -52,7 +77,7 @@ export type Listing = {
   features: JSON;
   propertyTaxes?: JSON;
   owner?: JSON;
-  cma?: JSON[];
+  cma?: CMA[];
   userId: string;
 };
 

@@ -17,6 +17,8 @@
     getListingFx,
     $listing as listing,
   } from '$store/listings';
+  import CmaSlider from '$lib/components/CardSlider/CmaSlider.svelte';
+  import Dropdown from '$lib/components/Dropdown/Dropdown.svelte';
 
   const modalComponent: ModalComponent = {
     // Pass a reference to your custom component
@@ -53,6 +55,13 @@
     const id = window.location.pathname.split('/')[2];
     getListingFx(id);
   });
+
+  $: priceRange = 0;
+
+  $: $listing?.cma &&
+    $listing.cma.map(
+      (item) => (priceRange += item.price / $listing.cma.length),
+    );
 </script>
 
 {#if $listing}
@@ -62,6 +71,7 @@
     <p class="text-base">
       {$listing.propertyDescription}
     </p>
+
     <h1 class="text-3xl mt-8 mb-4">Property Info</h1>
     <ul>
       <li>
@@ -92,16 +102,22 @@
         <p>Features - {JSON.stringify($listing.features)}</p>
       </li>
     </ul>
-    <h1 class="text-3xl mt-8">CMA - Sold in last 30 days</h1>
-    <Slider items={sliderItems} />
+    <div class="flex items-center justify-between mt-12">
+      <h1 class="text-3xl">CMA - Active</h1>
+      <Dropdown items={['Active']} />
+    </div>
+
+    {#if $listing.cma}
+      <CmaSlider items={$listing.cma} />
+    {/if}
     <div class="flex items-center bg-secondary-500 rounded-3xl mt-12">
       <div
         class="bg-secondary-800 h-full rounded-tl-3xl rounded-bl-3xl px-4 py-6 w-1/6 text-xl whitespace-nowrap"
       >
         <p>Price Range</p>
       </div>
-      <div class="pl-8">
-        <p>$150,000 - $500,000</p>
+      <div class="pl-8 text-xl">
+        <p>$ {priceRange.toFixed(2)}</p>
       </div>
     </div>
     <h1 class="text-3xl my-8">Property Insights</h1>

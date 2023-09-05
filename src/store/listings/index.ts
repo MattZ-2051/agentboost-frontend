@@ -4,8 +4,8 @@ import {
   createListing,
   getListing,
   createListingCma,
-  createListingGmc,
 } from '$api/listings';
+import { createListingGmc } from '$api/gmc';
 import type { ApiError } from '$types/api';
 import { toastStore } from '@skeletonlabs/skeleton';
 import type { ToastSettings } from '@skeletonlabs/skeleton';
@@ -43,7 +43,7 @@ createListingGmcFx.doneData.watch((result) => {
   console.log('gmc res', result);
 });
 
-createListingGmcFx.doneData.watch((error) => {
+createListingGmcFx.failData.watch((error) => {
   console.log('lising gmc error', error);
 });
 

@@ -1,10 +1,7 @@
 <script lang="ts">
   import Button from '$lib/components/Button/Button.svelte';
-  import Slider from '$lib/components/CardSlider/Slider.svelte';
   import Card from '$lib/components/Card/Card.svelte';
-  import UpTrending from '$lib/icons/ArrowTrending/UpTrending.svelte';
   import ProgressRadial from '$lib/components/ProgressRadial/ProgressRadial.svelte';
-  import { sliderItems } from '$mockData/listings';
   import {
     modalStore,
     type ModalSettings,
@@ -20,6 +17,7 @@
   } from '$store/listings';
   import CmaSlider from '$lib/components/CardSlider/CmaSlider.svelte';
   import Dropdown from '$lib/components/Dropdown/Dropdown.svelte';
+  import GmcSlider from '$lib/components/CardSlider/GmcSlider.svelte';
 
   const modalComponent: ModalComponent = {
     // Pass a reference to your custom component
@@ -49,15 +47,17 @@
       });
     }
 
-    createListingGmcFx({
-      listingId: $listing.id.toString(),
-      address: $listing.formattedAddress,
-      bed: $listing.bedrooms,
-      bath: $listing.bathrooms,
-      squareFt: $listing.squareFootage,
-      propertyDescription: $listing.propertyDescription,
-      location: 'location',
-    });
+    if ($listing?.gmcs?.length === 0 && $listing && $listing.id) {
+      createListingGmcFx({
+        listingId: $listing.id.toString(),
+        address: $listing.formattedAddress,
+        bed: $listing.bedrooms,
+        bath: $listing.bathrooms,
+        squareFt: $listing.squareFootage,
+        propertyDescription: $listing.propertyDescription,
+        location: 'location',
+      });
+    }
   };
 
   $: $listing?.id && handleListingCma();
@@ -68,9 +68,11 @@
   });
 
   $: priceRange = 0;
-
-  $: $listing?.cma &&
+  // @ts-ignore
+  $: $listing?.cma?.length > 0 &&
+    // @ts-ignore
     $listing.cma.map(
+      // @ts-ignore
       (item) => (priceRange += item.price / $listing.cma.length),
     );
 </script>
@@ -160,7 +162,7 @@
       </div>
     </div>
     <h1 class="text-3xl mt-8">Generated Marketing Content</h1>
-    <Slider items={sliderItems} />
+    <GmcSlider items={$listing.gmcs} />
     <div class="mt-12">
       <Button
         label="Add to Calender"

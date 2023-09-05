@@ -55,6 +55,13 @@ type CMA = {
   zipCode: string;
 };
 
+export type GMC = {
+  id: number;
+  caption: string;
+  img?: string;
+  listing: Listing;
+};
+
 export type Listing = {
   id?: number;
   address: string;
@@ -78,6 +85,7 @@ export type Listing = {
   propertyTaxes?: JSON;
   owner?: JSON;
   cma?: CMA[];
+  gmcs?: GMC[];
   userId: string;
 };
 

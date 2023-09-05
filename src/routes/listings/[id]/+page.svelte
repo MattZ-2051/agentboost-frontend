@@ -14,6 +14,7 @@
   import { onMount } from 'svelte';
   import {
     createListingCmaFx,
+    createListingGmcFx,
     getListingFx,
     $listing as listing,
   } from '$store/listings';
@@ -43,10 +44,20 @@
       createListingCmaFx({
         listingId: $listing.id.toString(),
         address: $listing.formattedAddress,
-        radius: 10,
+        radius: 2,
         status: 'Active',
       });
     }
+
+    createListingGmcFx({
+      listingId: $listing.id.toString(),
+      address: $listing.formattedAddress,
+      bed: $listing.bedrooms,
+      bath: $listing.bathrooms,
+      squareFt: $listing.squareFootage,
+      propertyDescription: $listing.propertyDescription,
+      location: 'location',
+    });
   };
 
   $: $listing?.id && handleListingCma();
@@ -125,8 +136,8 @@
       {$listing.propertyInsight}
     </p>
     <h1 class="text-3xl my-8">Smart Metrics</h1>
-    <div class="grid grid-cols-3 gap-x-4">
-      <div class="">
+    <div class="grid grid-cols-2 gap-x-4">
+      <div>
         <Card height="h-[300px]">
           <div class="p-8 flex items-center justify-center flex-col">
             <h1 class="text-xl text-center mb-4">Traffic Noise</h1>
@@ -134,7 +145,7 @@
           </div>
         </Card>
       </div>
-      <div class="">
+      <div>
         <Card height="h-[300px]">
           <div class="p-8 flex items-center justify-center flex-col">
             <h1 class="text-xl text-center mb-4">Nearby Points of Interest</h1>
@@ -144,16 +155,6 @@
               <li>Lorem Ipsum cillum dolore</li>
               <li>Lorem Ipsum cillum dolore</li>
             </ul>
-          </div></Card
-        >
-      </div>
-      <div class="">
-        <Card height="h-[300px]">
-          <div class="p-8 flex items-center justify-center flex-col">
-            <h1 class="text-xl text-center mb-4">Property Tax</h1>
-            <UpTrending width="w-20" height="w-20" />
-            <p>$5,000 year</p>
-            <p>Above Average</p>
           </div>
         </Card>
       </div>

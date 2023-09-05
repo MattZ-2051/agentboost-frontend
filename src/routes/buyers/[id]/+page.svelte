@@ -13,7 +13,7 @@
   <div class="mt-12">
     <div class="flex justify-between">
       <h1 class="text-3xl mb-8">Property Address 1</h1>
-      <Dropdown />
+      <!-- <Dropdown /> -->
     </div>
     <div>
       <Input

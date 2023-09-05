@@ -7,11 +7,11 @@
 </script>
 
 <div
-  class="snap-x scroll-px-4 snap-mandatory scroll-smooth flex gap-4 overflow-x-auto py-10"
+  class="snap-x scroll-px-4 snap-mandatory scroll-smooth flex gap-4 overflow-hidden py-10"
 >
   {#each items as item, i}
     <div
-      class="snap-start shrink-0 card w-40 md:w-80 h-[400px] overflow-y-auto overflow-x-hidden text-center"
+      class="snap-start shrink-0 card w-40 md:w-80 h-[400px] overflow-y-hidden overflow-x-hidden text-center"
     >
       <Card height="h-full">
         <header class="">

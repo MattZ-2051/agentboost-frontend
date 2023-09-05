@@ -51,3 +51,34 @@ export const getListing = async (id: string): Promise<Listing> => {
   const response = await get<{ data: Listing }>(`/listings/${id}`);
   return response.data;
 };
+
+export const createListingGmc = async ({
+  address,
+  bed,
+  bath,
+  squareFt,
+  propertyDescription,
+  location,
+  listingId,
+}: {
+  address: string;
+  bed: number;
+  bath: number;
+  squareFt: number;
+  propertyDescription: string;
+  location: string;
+  listingId: string;
+}) => {
+  const response = await post<{ data: Listing }>(
+    `/listings/generate-gmc/${listingId}`,
+    {
+      address,
+      bed,
+      bath,
+      squareFt,
+      propertyDescription,
+      location,
+    },
+  );
+  return response.data;
+};

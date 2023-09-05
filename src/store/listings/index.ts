@@ -4,6 +4,7 @@ import {
   createListing,
   getListing,
   createListingCma,
+  createListingGmc,
 } from '$api/listings';
 import type { ApiError } from '$types/api';
 import { toastStore } from '@skeletonlabs/skeleton';
@@ -28,10 +29,23 @@ export const createListingFx = createEffect<typeof createListing, ApiError>(
   createListing,
 );
 
+export const createListingGmcFx = createEffect<
+  typeof createListingGmc,
+  ApiError
+>(createListingGmc);
+
 export const createListingCmaFx = createEffect<
   typeof createListingCma,
   ApiError
 >(createListingCma);
+
+createListingGmcFx.doneData.watch((result) => {
+  console.log('gmc res', result);
+});
+
+createListingGmcFx.doneData.watch((error) => {
+  console.log('lising gmc error', error);
+});
 
 createListingCmaFx.doneData.watch((result) => {
   console.log('listing cma res', result);

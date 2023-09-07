@@ -84,7 +84,6 @@
     <p class="text-base">
       {$listing.propertyDescription}
     </p>
-
     <h1 class="text-3xl mt-8 mb-4">Property Info</h1>
     <ul>
       <li>
@@ -116,7 +115,7 @@
       </li>
     </ul>
     <div class="flex items-center justify-between mt-12">
-      <h1 class="text-3xl">CMA - Active</h1>
+      <h1 class="text-3xl">CMA</h1>
       <Dropdown items={['Active']} />
     </div>
 

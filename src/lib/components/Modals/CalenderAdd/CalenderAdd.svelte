@@ -4,14 +4,23 @@
   import { modalStore } from '@skeletonlabs/skeleton';
 </script>
 
-<div class="card p-8 flex flex-col justify-between">
-  <p class="text-2xl mt-4 font-semibold">Add a new listing to your calender</p>
+<div class="card p-8 flex flex-col justify-between w-[500px]">
+  <div class="flex flex-col justify-center items-center">
+    <p class="text-2xl mt-4 font-semibold">
+      Add a new listing to your calender
+    </p>
+    <p class="px-4 mt-4">
+      Choose the date and price you want to start your content at, after that
+      each item will be posted every week, you can adjust your settings in the
+      marketing page
+    </p>
+  </div>
   <div class="my-8">
     <div class="mb-4">
       <Input label="Price" placeholder="Price" type="text" value="$100,000" />
     </div>
     <div>
-      <Input label="Date" placeholder="Price" type="text" value="$100,000" />
+      <Input label="Date" placeholder="Price" type="date" value="$100,000" />
     </div>
   </div>
   <div>

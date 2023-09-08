@@ -17,14 +17,14 @@
 
 <AppRail height="h-full" width="w-full" background="bg-opacity-50 bg-black">
   <div class="p-4">
-    <div class="py-4 flex justify-between w-full items-center">
+    <div class="pt-4 flex justify-between w-full items-center">
       <Avatar />
       <h1>{$user?.email}</h1>
     </div>
     <hr />
     {#if pathName.includes('listings') && $user}
-      <div class="h-64 flex flex-col justify-between items-stretch">
-        <div class="mt-8">
+      <div class="h-64 flex flex-col justify-start items-stretch">
+        <div class="">
           <p class="text-xl mt-4">My Listings</p>
           {#if $user.listings}
             {#each $user.listings as listing (listing.id)}

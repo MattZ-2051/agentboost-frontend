@@ -9,11 +9,10 @@
   let files: FileList;
 
   let image: any;
-  $: showImage = false;
+  let showImage = false;
 
   function onChangeHandler(e: Event): void {
     if (files) {
-      console.log('files', files[0]);
       const file = files[0];
 
       if (file) {
@@ -73,8 +72,7 @@
             </FileDropzone>
           {/if}
           <div class="flex justify-between pt-4">
-            <p>Caption</p>
-            <p>{item.caption}</p>
+            <p>{item.caption.split(/([0-9]+)./)[2]}</p>
           </div>
         </Card>
       </div>

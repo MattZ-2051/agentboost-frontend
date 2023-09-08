@@ -67,6 +67,8 @@
     getListingFx(id);
   });
 
+  $: cmaLoading = $listing?.cma?.length > 0 ? false : true;
+  $: gmcLoading = $listing?.gmcs?.length > 0 ? false : true;
   $: priceRange = 0;
   // @ts-ignore
   $: $listing?.cma?.length > 0 &&
@@ -75,6 +77,8 @@
       // @ts-ignore
       (item) => (priceRange += item.price / $listing.cma.length),
     );
+
+  console.log('listing', $listing?.gmcs);
 </script>
 
 {#if $listing}
@@ -85,41 +89,61 @@
       {$listing.propertyDescription}
     </p>
     <h1 class="text-3xl mt-8 mb-4">Property Info</h1>
-    <ul>
-      <li>
-        <p>Bathrooms - {$listing.bathrooms}</p>
-      </li>
-      <li>
-        <p>Bedrooms - {$listing.bedrooms}</p>
-      </li>
-      <li>
-        <p>City - {$listing.city}</p>
-      </li>
-      <li>
-        <p>State - {$listing.state}</p>
-      </li>
-      <li>
-        <p>Lot Size - {$listing.lotSize}</p>
-      </li>
-      <li>
-        <p>Square Footage - {$listing.squareFootage}</p>
-      </li>
-      <li>
-        <p>Year Built - {$listing.yearBuilt}</p>
-      </li>
-      <li>
-        <p>Property Type - {$listing.propertyType}</p>
-      </li>
-      <li>
-        <p>Features - {JSON.stringify($listing.features)}</p>
-      </li>
-    </ul>
+    <Card height="h-full" classes="disabled:card-hover">
+      <div class="p-4">
+        <ul class="list grid grid-cols-2">
+          <li>
+            <span class="font-bold">Bathrooms - </span><span>
+              {$listing.bathrooms}</span
+            >
+          </li>
+          <li>
+            <span class="font-bold">Bedrooms - </span><span
+              >{$listing.bedrooms}</span
+            >
+          </li>
+          <li>
+            <span class="font-bold">City - </span><span>{$listing.city}</span>
+          </li>
+          <li>
+            <span class="font-bold">State - </span><span>{$listing.state}</span>
+          </li>
+          <li>
+            <span class="font-bold">Lot Size - </span><span
+              >{$listing.lotSize}</span
+            >
+          </li>
+          <li>
+            <span class="font-bold">Square Footage - </span><span
+              >{$listing.squareFootage}</span
+            >
+          </li>
+          <li>
+            <span class="font-bold">Year Built - </span><span
+              >{$listing.yearBuilt}</span
+            >
+          </li>
+          <li>
+            <span class="font-bold">Property Type - </span><span
+              >{$listing.propertyType}</span
+            >
+          </li>
+          <!-- <li>
+            <p>Features - {JSON.stringify($listing.features)}</p>
+          </li> -->
+        </ul>
+      </div>
+    </Card>
     <div class="flex items-center justify-between mt-12">
-      <h1 class="text-3xl">CMA</h1>
+      <h1 class="text-3xl">Comparable Properties</h1>
       <Dropdown items={['Active']} />
     </div>
-
-    {#if $listing.cma}
+    {#if cmaLoading}
+      <div class="w-full h-1/5 flex flex-col justify-center items-center">
+        <ProgressRadial />
+        <p>creating comparable properties please dont refresh</p>
+      </div>
+    {:else if $listing.cma}
       <CmaSlider items={$listing.cma} />
     {/if}
     <div class="flex items-center bg-secondary-500 rounded-3xl mt-12">
@@ -161,7 +185,14 @@
       </div>
     </div>
     <h1 class="text-3xl mt-8">Generated Marketing Content</h1>
-    <GmcSlider items={$listing.gmcs} />
+    {#if gmcLoading}
+      <div class="w-full h-1/5 flex flex-col justify-center items-center">
+        <ProgressRadial />
+        <p>creating GMC please dont refresh</p>
+      </div>
+    {:else}
+      <GmcSlider items={$listing.gmcs?.slice(1, -1)} />
+    {/if}
     <div class="mt-12">
       <Button
         label="Add to Calender"
@@ -172,3 +203,9 @@
     </div>
   </div>
 {/if}
+
+<style lang="postcss">
+  ul * span {
+    @apply text-xl;
+  }
+</style>

@@ -40,7 +40,7 @@ export const createListingCmaFx = createEffect<
 >(createListingCma);
 
 createListingGmcFx.doneData.watch((result) => {
-  console.log('gmc res', result);
+  updateListingData(result);
 });
 
 createListingGmcFx.failData.watch((error) => {
@@ -48,7 +48,7 @@ createListingGmcFx.failData.watch((error) => {
 });
 
 createListingCmaFx.doneData.watch((result) => {
-  console.log('listing cma res', result);
+  updateListingData(result);
 });
 
 createListingCmaFx.failData.watch((error) => {
@@ -75,6 +75,7 @@ createListingFx.doneData.watch((result) => {
     background: 'variant-filled-success',
   };
   toastStore.trigger(toast);
+  updateListingData(result);
   goto(`/listings/${result.id}`);
 });
 

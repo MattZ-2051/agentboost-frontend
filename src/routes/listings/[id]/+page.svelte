@@ -66,8 +66,9 @@
     const id = window.location.pathname.split('/')[2];
     getListingFx(id);
   });
-
+  // @ts-ignore
   $: cmaLoading = $listing?.cma?.length > 0 ? false : true;
+  // @ts-ignore
   $: gmcLoading = $listing?.gmcs?.length > 0 ? false : true;
   $: priceRange = 0;
   // @ts-ignore
@@ -77,8 +78,6 @@
       // @ts-ignore
       (item) => (priceRange += item.price / $listing.cma.length),
     );
-
-  console.log('listing', $listing?.gmcs);
 </script>
 
 {#if $listing}

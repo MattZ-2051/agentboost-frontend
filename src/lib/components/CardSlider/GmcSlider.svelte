@@ -72,7 +72,9 @@
             </FileDropzone>
           {/if}
           <div class="flex justify-between pt-4">
-            <p>{item.caption.split(/([0-9]+)./)[2]}</p>
+            <p>
+              {item.caption.substring(item.caption.indexOf(`${i + 1}.`) + 2)}
+            </p>
           </div>
         </Card>
       </div>

@@ -1,23 +1,21 @@
 <script lang="ts">
   import type { Listing } from '$types/models';
   import { FileDropzone } from '@skeletonlabs/skeleton';
-
   import Card from '../Card/Card.svelte';
 
   export let items: Listing['gmcs'];
 
-  let files: FileList;
+  let files: FileList[] = new Array(items?.length);
 
   let image: any;
-  let showImage = false;
+  let showImage: boolean[] = new Array(items?.length).fill(false);
 
-  function onChangeHandler(e: Event): void {
-    console.log('fiels', files);
+  function onChangeHandler(e: Event, index: number): void {
     if (files) {
-      const file = files[0];
+      const file = files[index][0];
 
       if (file) {
-        showImage = true;
+        showImage[index] = true;
 
         const reader = new FileReader();
         reader.addEventListener('load', function () {
@@ -27,7 +25,7 @@
 
         return;
       }
-      showImage = false;
+      showImage[index] = false;
     }
   }
 </script>
@@ -41,14 +39,14 @@
         class="snap-start shrink-0 w-40 md:w-80 h-[400px] overflow-y-auto overflow-x-hidden text-center"
       >
         <Card height="h-full p-4">
-          {#if showImage}
+          {#if showImage[i]}
             <img bind:this={image} src="" alt="Preview" />
           {:else}
             <FileDropzone
               name="files"
               slotLead="flex justify-center w-full"
-              bind:files
-              on:change={onChangeHandler}
+              bind:files={files[i]}
+              on:change={(e) => onChangeHandler(e, i)}
             >
               <svelte:fragment slot="lead"
                 ><svg

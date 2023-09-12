@@ -12,7 +12,7 @@
   >
     {#each items as item, i}
       <div
-        class="snap-start shrink-0 card w-40 md:w-80 h-[400px] overflow-y-auto overflow-x-hidden text-center"
+        class="snap-start shrink-0 w-40 md:w-80 h-[400px] overflow-y-auto overflow-x-hidden text-center"
       >
         <Card height="h-full p-4">
           <div class="flex whitespace-nowrap justify-between pt-4">

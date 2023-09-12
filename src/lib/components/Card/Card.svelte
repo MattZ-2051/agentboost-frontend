@@ -4,7 +4,7 @@
 </script>
 
 <div
-  class={`card card-hover overflow-y-auto overflow-hidden ${height} !${classes}`}
+  class={`card border-none overflow-y-auto overflow-hidden ${classes} ${height}`}
 >
   <slot />
 </div>

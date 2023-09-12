@@ -1,10 +1,10 @@
 <script lang="ts">
-  import './ArrowDown.css';
+  import './arrowAnimate.css';
 
   export let _class = 'w-6 h-6';
 </script>
 
-<div class="arrow bounce">
+<div class="arrow">
   <svg
     xmlns="http://www.w3.org/2000/svg"
     fill="none"

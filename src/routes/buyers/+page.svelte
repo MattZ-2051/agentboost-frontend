@@ -1,22 +1,24 @@
 <script lang="ts">
   import Input from '$lib/components/Input/Input.svelte';
   import Plus from '$lib/icons/Plus/Plus.svelte';
-  import UpTrending from '$lib/icons/ArrowTrending/UpTrending.svelte';
-  import Card from '$lib/components/Card/Card.svelte';
-  import Slider from '$lib/components/CardSlider/Slider.svelte';
   import ProgressRadial from '$lib/components/ProgressRadial/ProgressRadial.svelte';
   import Button from '$lib/components/Button/Button.svelte';
-  import { sliderItems } from '$mockData/listings';
-  import { goto } from '$app/navigation';
 
   let loading = false;
+  let showAddress2 = false;
+  let showAddress3 = false;
+  let propertyAddress1 = '';
+  let propertyAddress2 = '';
+  let propertyAddress3 = '';
 
   const handleBoost = () => {
-    loading = true;
-    setTimeout(() => {
-      loading = false;
-      goto(`/buyers/${1}`);
-    }, 5000);
+    // loading = true;
+
+    if (!showAddress2) {
+      showAddress2 = true;
+    } else {
+      showAddress3 = true;
+    }
   };
 </script>
 
@@ -37,26 +39,41 @@
         label="Property Address 1"
         placeholder="Property Address 1"
         type="text"
-        value=""
+        bind:value={propertyAddress1}
       />
     </div>
-    <div class="w-2/3 mt-12">
-      <Input
-        label="Property Address 2"
-        placeholder="Property Address 2"
-        type="text"
-        value=""
-      />
-    </div>
+    {#if showAddress2}
+      <div class="w-2/3 mt-12">
+        <Input
+          label="Property Address 2"
+          placeholder="Property Address 2"
+          type="text"
+          bind:value={propertyAddress2}
+        />
+      </div>
+    {/if}
+    {#if showAddress3}
+      <div class="w-2/3 mt-12">
+        <Input
+          label="Property Address 3"
+          placeholder="Property Address 3"
+          type="text"
+          bind:value={propertyAddress3}
+        />
+      </div>
+    {/if}
     <div class="mt-12 flex flex-col items-center justify-center">
       <p>Add more property addresses to compare</p>
 
       <div
         class="mt-4 bg-secondary-400 hover:cursor-pointer hover:scale-105 rounded-xl w-20 flex justify-center"
+        on:click={handleBoost}
+        on:keydown={handleBoost}
       >
         <Plus />
       </div>
     </div>
+
     <div class="w-1/2 mt-12">
       <Button
         label="Boost"

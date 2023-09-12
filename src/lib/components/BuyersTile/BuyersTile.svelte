@@ -9,6 +9,10 @@
   import { sliderItems } from '$mockData/listings';
 
   let expanded = false;
+
+  const handleExpand = () => {
+    expanded = !expanded;
+  };
 </script>
 
 <div class="card border-none p-4">
@@ -97,7 +101,8 @@
   <div class="w-full flex justify-center">
     <div
       class="mt-8 bg-secondary-400 hover:cursor-pointer hover:scale-105 rounded-xl w-20 flex justify-center py-[2px]"
-      on:click={() => (expanded = !expanded)}
+      on:click={handleExpand}
+      on:keydown={handleExpand}
     >
       {#if !expanded}
         <ArrowDown />

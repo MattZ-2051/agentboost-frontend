@@ -20,14 +20,11 @@
   import GmcSlider from '$lib/components/CardSlider/GmcSlider.svelte';
 
   const modalComponent: ModalComponent = {
-    // Pass a reference to your custom component
     ref: CalenderAdd,
-    // Add the component properties as key/value pairs
     props: {},
-    // Provide a template literal for the default component slot
     slot: '<p>Skeleton</p>',
   };
-  // Provide the modal settings
+
   const modal: ModalSettings = {
     type: 'component',
     component: modalComponent,
@@ -66,15 +63,12 @@
     const id = window.location.pathname.split('/')[2];
     getListingFx(id);
   });
-  // @ts-ignore
-  $: cmaLoading = $listing?.cma?.length > 0 ? false : true;
-  // @ts-ignore
-  $: gmcLoading = $listing?.gmcs?.length > 0 ? false : true;
+
+  $: cmaLoading = $listing?.cma?.length !== 0 ? false : true;
+  $: gmcLoading = $listing?.gmcs?.length !== 0 ? false : true;
   $: priceRange = 0;
-  // @ts-ignore
-  $: $listing?.cma?.length > 0 &&
-    // @ts-ignore
-    $listing.cma.map(
+  $: $listing?.cma?.length !== 0 &&
+    $listing?.cma?.map(
       // @ts-ignore
       (item) => (priceRange += item.price / $listing.cma.length),
     );

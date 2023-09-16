@@ -4,13 +4,13 @@ import { checkStorage } from '$utils';
 export async function load() {
   const data = checkStorage();
   if (data) {
-    updateUser({
+    await updateUser({
       email: data.tokenData.email,
       id: data.tokenData.sub,
       authTokens: data.authTokens,
     });
 
-    restoreUserSessionFx(data.authTokens.access);
+    await restoreUserSessionFx(data.authTokens.access);
   }
   // } else {
   //   const redirect =

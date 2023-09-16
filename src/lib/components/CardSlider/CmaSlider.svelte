@@ -15,6 +15,9 @@
         class="snap-start shrink-0 w-40 md:w-80 h-[400px] overflow-y-auto overflow-x-hidden text-center"
       >
         <Card height="h-full p-4">
+          {#if item.zillowImages?.[0]}
+            <img src={item.zillowImages[0]} alt="" />
+          {/if}
           <div class="flex whitespace-nowrap justify-between pt-4">
             <p>Property Address:</p>
             <p>{item.addressLine1}</p>

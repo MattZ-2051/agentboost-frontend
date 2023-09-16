@@ -11,11 +11,13 @@ import { toastStore } from '@skeletonlabs/skeleton';
 import type { ToastSettings } from '@skeletonlabs/skeleton';
 import type { Listing, NewListing } from '$types/models';
 import { goto } from '$app/navigation';
+import { getUserProfileFx } from '$store/user';
 
 const updateNewListingData = createEvent<NewListing>();
+const updateListingGmcs = createEvent<Listing['gmcs']>();
+const updateListingCmas = createEvent<Listing>();
 
 const updateListingData = createEvent<Listing>();
-
 export const getListingFx = createEffect<typeof getListing, ApiError>(
   getListing,
 );
@@ -40,7 +42,7 @@ export const createListingCmaFx = createEffect<
 >(createListingCma);
 
 createListingGmcFx.doneData.watch((result) => {
-  updateListingData(result);
+  updateListingGmcs(result.gmcs);
 });
 
 createListingGmcFx.failData.watch((error) => {
@@ -48,7 +50,7 @@ createListingGmcFx.failData.watch((error) => {
 });
 
 createListingCmaFx.doneData.watch((result) => {
-  updateListingData(result);
+  updateListingCmas(result);
 });
 
 createListingCmaFx.failData.watch((error) => {
@@ -56,6 +58,27 @@ createListingCmaFx.failData.watch((error) => {
 });
 
 getListingFx.doneData.watch((result) => {
+  if (result.cma?.length === 0) {
+    createListingCmaFx({
+      listingId: result.id?.toString() || '0',
+      address: result.address,
+      radius: 2,
+      status: 'Active',
+    });
+  }
+
+  if (result.gmcs?.length === 0) {
+    createListingGmcFx({
+      listingId: result.id?.toString() || '0',
+      address: result.formattedAddress,
+      bed: result.bedrooms,
+      bath: result.bathrooms,
+      squareFt: result.squareFootage,
+      propertyDescription: result.propertyDescription,
+      location: 'location',
+    });
+  }
+
   updateListingData(result);
 });
 
@@ -76,6 +99,7 @@ createListingFx.doneData.watch((result) => {
   };
   toastStore.trigger(toast);
   updateListingData(result);
+  getUserProfileFx();
   goto(`/listings/${result.id}`);
 });
 
@@ -109,7 +133,11 @@ export const $newListing = createStore<NewListing | null>(null).on(
   (prevState, payload) => payload,
 );
 
-export const $listing = createStore<Listing | null>(null).on(
-  updateListingData,
-  (prevState, payload) => payload,
-);
+export const $listing = createStore<Listing | null>(null)
+  .on(updateListingData, (prevState, payload) => payload)
+  .on(updateListingGmcs, (prevState, payload) => {
+    return prevState && payload && { ...prevState, gmcs: payload };
+  })
+  .on(updateListingCmas, (prevState, payload) => {
+    return prevState && payload && { ...prevState, cma: payload.cma };
+  });

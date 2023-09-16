@@ -72,7 +72,7 @@
           {/if}
           <div class="flex justify-between pt-4">
             <p>
-              {item.caption.substring(item.caption.indexOf(`${i + 1}.`) + 2)}
+              {item.caption}
             </p>
           </div>
         </Card>

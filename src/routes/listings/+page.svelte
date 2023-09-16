@@ -11,6 +11,7 @@
   import { $user as user } from '$store/user';
   import { type ToastSettings, toastStore } from '@skeletonlabs/skeleton';
   import type { Listing } from '$types/models';
+  import { onDestroy, onMount } from 'svelte';
 
   let propertyAddress = '';
   let keyInfo = '';
@@ -81,6 +82,10 @@
       loading = false;
     }
   };
+
+  onDestroy(() => (pageState = 'step1'));
+
+  onMount(() => (pageState = 'step1'));
 </script>
 
 <svelte:window bind:scrollX={scroll} />

@@ -53,6 +53,7 @@ type CMA = {
   status: string;
   yearBuilt: number;
   zipCode: string;
+  zillowImages: string[];
 };
 
 export type GMC = {

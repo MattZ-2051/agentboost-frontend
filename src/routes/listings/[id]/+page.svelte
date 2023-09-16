@@ -9,12 +9,7 @@
   } from '@skeletonlabs/skeleton';
   import CalenderAdd from '$lib/components/Modals/CalenderAdd/CalenderAdd.svelte';
   import { onMount } from 'svelte';
-  import {
-    createListingCmaFx,
-    createListingGmcFx,
-    getListingFx,
-    $listing as listing,
-  } from '$store/listings';
+  import { getListingFx, $listing as listing } from '$store/listings';
   import CmaSlider from '$lib/components/CardSlider/CmaSlider.svelte';
   import Dropdown from '$lib/components/Dropdown/Dropdown.svelte';
   import GmcSlider from '$lib/components/CardSlider/GmcSlider.svelte';
@@ -33,31 +28,6 @@
   const handleAddToCalender = () => {
     modalStore.trigger(modal);
   };
-
-  const handleListingCma = () => {
-    if ($listing?.cma?.length === 0 && $listing && $listing.id) {
-      createListingCmaFx({
-        listingId: $listing.id.toString(),
-        address: $listing.formattedAddress,
-        radius: 2,
-        status: 'Active',
-      });
-    }
-
-    if ($listing?.gmcs?.length === 0 && $listing && $listing.id) {
-      createListingGmcFx({
-        listingId: $listing.id.toString(),
-        address: $listing.formattedAddress,
-        bed: $listing.bedrooms,
-        bath: $listing.bathrooms,
-        squareFt: $listing.squareFootage,
-        propertyDescription: $listing.propertyDescription,
-        location: 'location',
-      });
-    }
-  };
-
-  $: $listing?.id && handleListingCma();
 
   onMount(() => {
     const id = window.location.pathname.split('/')[2];

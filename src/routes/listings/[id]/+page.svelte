@@ -108,17 +108,18 @@
       </div>
     {:else if $listing.cma}
       <CmaSlider items={$listing.cma} />
+      <div class="flex items-center bg-secondary-500 rounded-3xl mt-12">
+        <div
+          class="bg-secondary-800 h-full rounded-tl-3xl rounded-bl-3xl px-4 py-6 w-1/6 text-xl whitespace-nowrap"
+        >
+          <p>Price Range</p>
+        </div>
+        <div class="pl-8 text-xl">
+          <p>$ {priceRange.toFixed(2)}</p>
+        </div>
+      </div>
     {/if}
-    <div class="flex items-center bg-secondary-500 rounded-3xl mt-12">
-      <div
-        class="bg-secondary-800 h-full rounded-tl-3xl rounded-bl-3xl px-4 py-6 w-1/6 text-xl whitespace-nowrap"
-      >
-        <p>Price Range</p>
-      </div>
-      <div class="pl-8 text-xl">
-        <p>$ {priceRange.toFixed(2)}</p>
-      </div>
-    </div>
+
     <h1 class="text-3xl my-8">Property Insights</h1>
     <p>
       {$listing.propertyInsight}
@@ -129,7 +130,7 @@
         <Card height="h-[300px]">
           <div class="p-8 flex items-center justify-center flex-col">
             <h1 class="text-xl text-center mb-4">Traffic Noise</h1>
-            <ProgressRadial value={69} />
+            <ProgressRadial value={54} />
           </div>
         </Card>
       </div>

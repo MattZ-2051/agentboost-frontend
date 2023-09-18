@@ -13,6 +13,7 @@
   import CmaSlider from '$lib/components/CardSlider/CmaSlider.svelte';
   import Dropdown from '$lib/components/Dropdown/Dropdown.svelte';
   import GmcSlider from '$lib/components/CardSlider/GmcSlider.svelte';
+  import GmcSlider2 from '$lib/components/CardSlider/GmcSlider2.svelte';
 
   const modalComponent: ModalComponent = {
     ref: CalenderAdd,
@@ -104,7 +105,7 @@
     {#if cmaLoading}
       <div class="w-full h-1/5 flex flex-col justify-center items-center">
         <ProgressRadial />
-        <p>creating comparable properties please dont refresh</p>
+        <p class="mt-4">creating comparable properties please dont refresh</p>
       </div>
     {:else if $listing.cma}
       <CmaSlider items={$listing.cma} />
@@ -152,10 +153,11 @@
     {#if gmcLoading}
       <div class="w-full h-1/5 flex flex-col justify-center items-center">
         <ProgressRadial />
-        <p>creating GMC please dont refresh</p>
+        <p class="mt-4">creating GMC please dont refresh</p>
       </div>
     {:else}
       <GmcSlider items={$listing.gmcs?.slice(1, -1)} />
+      <GmcSlider2 items={new Array(3)} />
     {/if}
     <div class="mt-12">
       <Button

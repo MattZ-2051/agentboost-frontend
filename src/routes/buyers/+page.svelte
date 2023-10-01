@@ -3,6 +3,7 @@
   import Plus from '$lib/icons/Plus/Plus.svelte';
   import ProgressRadial from '$lib/components/ProgressRadial/ProgressRadial.svelte';
   import Button from '$lib/components/Button/Button.svelte';
+  import { getPropertyData } from '$api/realty';
 
   let loading = false;
   let showAddress2 = false;
@@ -11,13 +12,30 @@
   let propertyAddress2 = '';
   let propertyAddress3 = '';
 
-  const handleBoost = () => {
+  const addAddress = () => {
     // loading = true;
 
     if (!showAddress2) {
       showAddress2 = true;
     } else {
       showAddress3 = true;
+    }
+  };
+
+  const handleBoost = async () => {
+    try {
+      if (propertyAddress1.length > 0) {
+        await getPropertyData({ address: propertyAddress1 });
+      }
+
+      if (propertyAddress2.length > 0) {
+        await getPropertyData({ address: propertyAddress2 });
+      }
+      if (propertyAddress3.length > 0) {
+        await getPropertyData({ address: propertyAddress3 });
+      }
+    } catch (error) {
+      console.log('api error', error);
     }
   };
 </script>
@@ -67,8 +85,8 @@
 
       <div
         class="mt-4 bg-secondary-400 hover:cursor-pointer hover:scale-105 rounded-xl w-20 flex justify-center"
-        on:click={handleBoost}
-        on:keydown={handleBoost}
+        on:click={addAddress}
+        on:keydown={addAddress}
       >
         <Plus />
       </div>

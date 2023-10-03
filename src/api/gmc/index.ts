@@ -1,4 +1,4 @@
-import { post } from '..';
+import { patch, post } from '..';
 import type { Listing } from '$types/models';
 
 export const createListingGmc = async ({
@@ -27,5 +27,20 @@ export const createListingGmc = async ({
     location,
     listingId,
   });
+  return response.data;
+};
+
+export const addGmcToCalender = async ({
+  startDate,
+  listingId,
+}: {
+  startDate: string;
+  listingId: string;
+}) => {
+  const response = await patch<{ data: Listing }>('/gmc/addToCalender', {
+    startDate,
+    listingId,
+  });
+
   return response.data;
 };

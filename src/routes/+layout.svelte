@@ -23,7 +23,6 @@
   } from '@floating-ui/dom';
   import { storePopup } from '@skeletonlabs/skeleton';
   import { routes } from './routes';
-  import { getUserProfileFx, $user as user } from '$store/user';
 
   storePopup.set({ computePosition, autoUpdate, offset, shift, flip, arrow });
 
@@ -31,6 +30,21 @@
     $page.url.pathname.includes('signup') ||
     $page.url.pathname.includes('login') ||
     $page.url.pathname.length === 1;
+
+  const fbId = import.meta.env?.VITE_FB_APP_ID;
+  window.fbAsyncInit = function () {
+    FB.init({
+      appId: fbId,
+      xfbml: true,
+      version: 'v18.0',
+    });
+  };
+  (function () {
+    var e = document.createElement('script');
+    e.src = document.location.protocol + '//connect.facebook.net/en_US/sdk.js';
+    e.async = true;
+    document.getElementById('fb-root').appendChild(e);
+  })();
 </script>
 
 <div class="dark" data-theme="skeleton">

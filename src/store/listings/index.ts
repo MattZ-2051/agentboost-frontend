@@ -68,7 +68,6 @@ getListingFx.doneData.watch((result) => {
   }
 
   if (result.gmcs?.length === 0) {
-    console.log('address', result.address);
     createListingGmcFx({
       listingId: result.id?.toString() || '0',
       address: result.formattedAddress,

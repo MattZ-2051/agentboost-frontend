@@ -2,6 +2,15 @@
   import Input from '$lib/components/Input/Input.svelte';
   import Button from '$lib/components/Button/Button.svelte';
   import { modalStore } from '@skeletonlabs/skeleton';
+  import { addGmcToCalender } from '$api/gmc';
+
+  let price: string = '';
+  let startDate: string = '';
+
+  const handleCalenderAdd = async () => {
+    const listingId = window.location.pathname.split('/')[2];
+    await addGmcToCalender({ startDate, listingId });
+  };
 </script>
 
 <div class="card p-8 flex flex-col justify-between w-[500px]">
@@ -17,10 +26,15 @@
   </div>
   <div class="my-8">
     <div class="mb-4">
-      <Input label="Price" placeholder="Price" type="text" value="$100,000" />
+      <Input label="Price" placeholder="Price" type="text" bind:value={price} />
     </div>
     <div>
-      <Input label="Date" placeholder="Price" type="date" value="$100,000" />
+      <Input
+        label="Date"
+        placeholder="Price"
+        type="date"
+        bind:value={startDate}
+      />
     </div>
   </div>
   <div>
@@ -30,7 +44,11 @@
         variant="variant-filled"
         onClick={() => modalStore.close()}
       />
-      <Button label="Create" variant="variant-filled-secondary" />
+      <Button
+        label="Create"
+        variant="variant-filled-secondary"
+        onClick={handleCalenderAdd}
+      />
     </div>
   </div>
 </div>

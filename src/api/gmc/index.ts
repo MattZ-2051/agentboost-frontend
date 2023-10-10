@@ -37,7 +37,7 @@ export const addGmcToCalender = async ({
   startDate: string;
   listingId: string;
 }) => {
-  const response = await patch<{ data: Listing }>('/gmc/addToCalender', {
+  const response = await patch<{ data: Listing }>('/addToCalender', {
     startDate,
     listingId,
   });

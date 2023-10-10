@@ -1,5 +1,9 @@
 import { get, post } from '..';
-import type { Listing, RealtyMoleData } from '$types/models';
+import type {
+  Listing,
+  RealtyMoleData,
+  ZillowPropertyInfo,
+} from '$types/models';
 
 export const getPropertyListingDescription = async ({
   address,
@@ -9,10 +13,10 @@ export const getPropertyListingDescription = async ({
   keyInfo: string;
 }): Promise<{
   choices: { content: string }[];
-  realtyMoleData: RealtyMoleData[];
+  zillowInfo: ZillowPropertyInfo;
 }> => {
   const response = await post<{
-    data: { choices: { content: string }[]; realtyMoleData: RealtyMoleData[] };
+    data: { choices: { content: string }[]; zillowInfo: ZillowPropertyInfo };
   }>('/listings/descriptionfromAddress', {
     address,
     keyInfo,

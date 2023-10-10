@@ -73,7 +73,7 @@ getListingFx.doneData.watch((result) => {
       address: result.formattedAddress,
       bed: result.bedrooms,
       bath: result.bathrooms,
-      squareFt: result.squareFootage,
+      squareFt: result.bathrooms,
       propertyDescription: result.propertyDescription,
       location: 'location',
     });
@@ -113,9 +113,10 @@ createListingFx.failData.watch((error) => {
 });
 
 getPropertyListingDescriptionFx.doneData.watch((result) => {
+  console.log('result', result);
   updateNewListingData({
     propertyDescription: result?.choices[0]?.content,
-    realtyMoleData: result.realtyMoleData[0],
+    zillowInfo: result.zillowInfo,
   });
 });
 

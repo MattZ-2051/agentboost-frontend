@@ -73,24 +73,85 @@ export type Listing = {
   zipCode: string;
   formattedAddress: string;
   bedrooms: number;
-  county?: string;
-  legalDescription?: string;
-  squareFootage: number;
-  subdivision?: string;
-  yearBuilt: number;
+  county: string | null;
+  neighberhood: string | null;
   bathrooms: number;
-  lotSize: number;
-  propertyType: string;
-  lastSaleDate?: string;
-  features: JSON;
-  propertyTaxes?: JSON;
-  owner?: JSON;
+  lotSize: string;
+  livingArea: string;
   cma?: CMA[];
   gmcs?: GMC[];
   userId: string;
 };
 
+// export class Listing {
+//   @PrimaryGeneratedColumn()
+//   id: number;
+
+//   @Column({ nullable: false, type: 'int' })
+//   zpid: number;
+
+//   @Column({ nullable: false, type: 'int' })
+//   price: number;
+
+//   @Column({ nullable: false, type: 'varchar' })
+//   imgSrc: string;
+
+//   @Column({ nullable: false, type: 'varchar' })
+//   city: string;
+
+//   @Column({ nullable: false, type: 'varchar' })
+//   state: string;
+
+//   @Column({ nullable: false, type: 'varchar' })
+//   zipCode: string;
+
+//   @Column({ nullable: false, type: 'varchar' })
+//   streetAddress: string;
+
+//   @Column({ nullable: false, type: 'text' })
+//   description: string;
+
+//   @Column({ nullable: false, type: 'int' })
+//   bedrooms: number;
+
+//   @Column({ nullable: false, type: 'float' })
+//   bathrooms: number;
+
+//   @Column({ nullable: true, type: 'varchar', default: null })
+//   county: string;
+
+//   @Column({ nullable: true, type: 'varchar', default: null })
+//   neighberhood: string;
+
+//   @Column({ nullable: true, default: null, type: 'jsonb' })
+//   cma: JSON;
+
+//   @ManyToOne(() => User, (user) => user.listings, { nullable: false })
+//   user: User;
+
+//   @OneToMany(() => Gmc, (gmc) => gmc.listing, { nullable: true })
+//   gmcs: Gmc[];
+// }
+
+export type ZillowPropertyInfo = {
+  zpid: number;
+  imgSrc: string;
+  zestimate: number;
+  address: {
+    city: string;
+    state: string;
+    neighberhood: string | null;
+    streetAddress: string;
+    zipcode: string;
+  };
+  county: string | null;
+  description: string;
+  price: number;
+  bedrooms: number;
+  bathrooms: number;
+};
+
 export type NewListing = {
   propertyDescription: string;
-  realtyMoleData: RealtyMoleData;
+  zillowInfo: ZillowPropertyInfo;
 };

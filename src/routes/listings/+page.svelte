@@ -38,18 +38,7 @@
         formattedAddress: $newListing.realtyMoleData.formattedAddress,
         bedrooms: $newListing.realtyMoleData.bedrooms,
         county: $newListing.realtyMoleData.county || '',
-        legalDescription: $newListing.realtyMoleData.legalDescription || '',
-        squareFootage: $newListing.realtyMoleData.squareFootage,
-        subdivision: $newListing.realtyMoleData.subdivision || '',
-        yearBuilt: $newListing.realtyMoleData.yearBuilt,
         bathrooms: $newListing.realtyMoleData.bathrooms,
-        features: $newListing.realtyMoleData.features,
-        owner: $newListing.realtyMoleData.owner || JSON.parse('{}'),
-        propertyTaxes:
-          $newListing.realtyMoleData.propertyTaxes || JSON.parse('{}'),
-        lastSaleDate: $newListing.realtyMoleData.lastSaleDate || '',
-        lotSize: $newListing.realtyMoleData.lotSize,
-        propertyType: $newListing.realtyMoleData.propertyType,
         userId: $user.id,
       };
       try {

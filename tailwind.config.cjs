@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+import { agentBoostTheme } from './agentboost-theme';
+import { skeleton } from '@skeletonlabs/tw-plugin';
 
 module.exports = {
   // 1. Apply the dark mode class setting:
@@ -18,5 +20,10 @@ module.exports = {
     // 3. Append the Skeleton plugin to the end of this list
     require('@tailwindcss/forms'),
     ...require('@skeletonlabs/skeleton/tailwind/skeleton.cjs')(),
+    skeleton({
+      themes: {
+        custom: [agentBoostTheme],
+      },
+    }),
   ],
 };

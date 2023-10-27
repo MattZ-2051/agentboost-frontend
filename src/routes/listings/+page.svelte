@@ -29,18 +29,18 @@
     }
 
     if ($newListing && propertyDescription && $user) {
-      const listingToCreate: Listing = {
-        address: $newListing.realtyMoleData.addressLine1,
-        propertyDescription,
-        city: $newListing.realtyMoleData.city,
-        state: $newListing.realtyMoleData.state,
-        zipCode: $newListing.realtyMoleData.zipCode,
-        formattedAddress: $newListing.realtyMoleData.formattedAddress,
-        bedrooms: $newListing.realtyMoleData.bedrooms,
-        county: $newListing.realtyMoleData.county || '',
-        bathrooms: $newListing.realtyMoleData.bathrooms,
-        userId: $user.id,
-      };
+      // const listingToCreate: Listing = {
+      //   address: $newListing.realtyMoleData.addressLine1,
+      //   propertyDescription,
+      //   city: $newListing.realtyMoleData.city,
+      //   state: $newListing.realtyMoleData.state,
+      //   zipCode: $newListing.realtyMoleData.zipCode,
+      //   formattedAddress: $newListing.realtyMoleData.formattedAddress,
+      //   bedrooms: $newListing.realtyMoleData.bedrooms,
+      //   county: $newListing.realtyMoleData.county || '',
+      //   bathrooms: $newListing.realtyMoleData.bathrooms,
+      //   userId: $user.id,
+      // };
       try {
         await createListingFx(listingToCreate);
       } catch {

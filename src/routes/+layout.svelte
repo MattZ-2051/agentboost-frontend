@@ -6,8 +6,8 @@
   import '@skeletonlabs/skeleton/styles/skeleton.css';
 
   import '../app.css';
-  import AppShell from '../layout/AppShell/AppShell.svelte';
-  import Sidebar from '../layout/Sidebar/Sidebar.svelte';
+  import AppShell from '$lib/layout/AppShell/AppShell.svelte';
+  import Sidebar from '$lib/layout/Sidebar/Sidebar.svelte';
   import { Modal } from '@skeletonlabs/skeleton';
   import { Drawer } from '@skeletonlabs/skeleton';
   import { Toast } from '@skeletonlabs/skeleton';
@@ -47,7 +47,7 @@
   })();
 </script>
 
-<div class="dark" data-theme="skeleton">
+<div class="dark" data-theme="agentboost-theme">
   <Toast position="t" />
   <Modal />
   <Drawer>

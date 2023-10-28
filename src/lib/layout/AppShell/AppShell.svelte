@@ -14,6 +14,7 @@
     $page.url.pathname.includes('signup') ||
     $page.url.pathname.includes('login') ||
     $page.url.pathname.length === 1;
+  $: isLanding = $page.url.pathname.length === 1;
 </script>
 
 {#if !hideSidebar}
@@ -36,6 +37,10 @@
       </div>
       <!-- <svelte:fragment slot="footer"><Footer /></svelte:fragment> -->
     </AppShell>
+  </div>
+{:else if isLanding}
+  <div class="h-full">
+    <slot />
   </div>
 {:else}
   <AppShell on:scroll={scrollHandler} slotSidebarLeft="w-0 lg:w-64">

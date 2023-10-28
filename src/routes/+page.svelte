@@ -1,34 +1,30 @@
 <script lang="ts">
   import Button from '$lib/components/Button/Button.svelte';
   import { goto } from '$app/navigation';
-  const handleShare = () => {
-    FB.ui(
-      {
-        method: 'share',
-        href: 'https://developers.facebook.com/docs/',
-      },
-      function (response) {},
-    );
-  };
+  import LandingHeader from '$lib/layout/Header/LandingHeader/LandingHeader.svelte';
+  // const handleShare = () => {
+  //   FB.ui(
+  //     {
+  //       method: 'share',
+  //       href: 'https://developers.facebook.com/docs/',
+  //     },
+  //     function (response) {},
+  //   );
+  // };
 </script>
 
-<div class="h-full flex justify-center flex-col items-center mt-12">
-  <div class="h-screen w-1/4">
-    <h1 class="text-center text-5xl">AgentBoost AI</h1>
-    <butotn on:click={handleShare}>share</butotn>
-    <div class="grid grid-cols-2 gap-x-3 mt-8">
-      <Button
-        label="Start Free Trial"
-        variant="variant-filled-secondary"
-        onClick={async () => await goto('/signup')}
-        classes="w-full p-4"
-      />
-      <Button
-        label="How It Works"
-        variant="variant-filled"
-        onClick={() => {}}
-        classes="w-full"
-      />
-    </div>
-  </div>
+<div class="bg-tertiary-500 h-screen relative">
+  <div class="elipse absolute -top-64" />
+  <LandingHeader />
 </div>
+
+<style lang="postcss">
+  .elipse {
+    width: 100%;
+    height: 25rem;
+    flex-shrink: 0;
+    border-radius: 179.625rem;
+    background: linear-gradient(74deg, #3e80ff 32.14%, #49f9ea 87.5%);
+    filter: blur(137px);
+  }
+</style>

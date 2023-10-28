@@ -4,7 +4,7 @@
 
   export let label: string;
   export let classes: string | undefined = undefined;
-  export let variant: ButtonVariant;
+  export let variant: ButtonVariant | undefined = undefined;
   export let onClick: (() => void) | undefined = undefined;
 </script>
 

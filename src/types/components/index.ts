@@ -17,6 +17,11 @@ export type ChipVariant = 'variant-filled';
 export type ButtonVariant =
   | 'variant-filled'
   | 'variant-filled-primary'
-  | 'variant-filled-secondary';
+  | 'variant-filled-secondary'
+  | 'variant-filled-tertiary'
+  | 'variant-ringed'
+  | 'variant-ringed-primary'
+  | 'variant-ringed-secondary'
+  | 'landing-header';
 
 export type Variants = Record<ButtonVariant, string>;

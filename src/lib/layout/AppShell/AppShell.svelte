@@ -1,9 +1,10 @@
 <script lang="ts">
   import { AppShell } from '@skeletonlabs/skeleton';
   import Sidebar from '../Sidebar/Sidebar.svelte';
-  import Header from '../Header/Header.svelte';
+  import Header from '../Header/Header/Header.svelte';
   import type { ComponentEvents } from 'svelte';
   import { page } from '$app/stores';
+  import LandingHeader from '../Header/LandingHeader/LandingHeader.svelte';
 
   function scrollHandler(event: ComponentEvents<AppShell>['scroll']) {
     // console.log(event.currentTarget.scrollTop);
@@ -39,6 +40,7 @@
     </AppShell>
   </div>
 {:else if isLanding}
+  <LandingHeader />
   <div class="h-full">
     <slot />
   </div>

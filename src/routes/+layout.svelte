@@ -1,6 +1,5 @@
 <script lang="ts">
   // Your selected Skeleton theme:
-  import '@skeletonlabs/skeleton/themes/theme-skeleton.css';
 
   // This contains the bulk of Skeletons required styles:
   import '@skeletonlabs/skeleton/styles/skeleton.css';
@@ -23,6 +22,7 @@
   } from '@floating-ui/dom';
   import { storePopup } from '@skeletonlabs/skeleton';
   import { routes } from './routes';
+  import { onMount } from 'svelte';
 
   storePopup.set({ computePosition, autoUpdate, offset, shift, flip, arrow });
 
@@ -30,6 +30,15 @@
     $page.url.pathname.includes('signup') ||
     $page.url.pathname.includes('login') ||
     $page.url.pathname.length === 1;
+
+  onMount(() => {
+    if (!hideTabs) {
+      const el = document.getElementsByTagName('body');
+      for (let i = 0; i < el.length; i++) {
+        el[i].className += ' overflow-hidden';
+      }
+    }
+  });
 
   const fbId = import.meta.env?.VITE_FB_APP_ID;
   window.fbAsyncInit = function () {

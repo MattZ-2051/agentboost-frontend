@@ -2,3 +2,5 @@ node_modules
 .svelte-kit
 .DS_Store
 .env.local
+/static
+src/lib/assets/

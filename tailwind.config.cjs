@@ -14,7 +14,11 @@ module.exports = {
     ),
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        slate: '#C0C4DA',
+      },
+    },
   },
   plugins: [
     // 3. Append the Skeleton plugin to the end of this list

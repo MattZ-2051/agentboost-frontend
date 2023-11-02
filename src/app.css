@@ -4,6 +4,14 @@ body {
   scroll-behavior: 'smooth';
 }
 
+/* NOTE: set your target theme name (ex: skeleton, wintry, modern, etc) */
+
+:root [data-theme='skeleton'] {
+  --theme-font-family-base: 'Made-Evolve', sans-serif;
+  --theme-font-family-heading: 'Made-Evolve', sans-serif;
+  /* ... */
+}
+
 body {
   font-family: 'Made-Evolve', 'Made-Evolve-Evo';
 }

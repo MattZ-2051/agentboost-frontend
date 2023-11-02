@@ -196,7 +196,7 @@
               class="w-[133px] h-[155px] rounded-[17px]"
               src="https://via.placeholder.com/133x155"
             />
-            <div class="ml-4">
+            <div class="ml-4 whitespace-nowrap">
               <p class="text-white text-[28px] leading-[35px]">Sam Hamilton</p>
               <p class="text-slate-400 text-[17px] font-normal leading-[25px]">
                 Founder & CEO
@@ -215,6 +215,22 @@
           <div
             class="w-[815px] h-[248px] left-[-59px] top-[-100px] absolute bg-black rounded-full blur-[100px]"
           />
+          <div class="absolute m-2 flex items-center w-full">
+            <img
+              class="w-[133px] h-[155px] rounded-[17px]"
+              src="https://via.placeholder.com/133x155"
+            />
+            <div class="ml-4 whitespace-nowrap">
+              <p class="text-white text-[28px] leading-[35px]">Matt Zamora</p>
+              <p class="text-slate-400 text-[17px] font-normal leading-[25px]">
+                Tech Lead
+              </p>
+            </div>
+            <div class="flex justify-end mr-8 w-full gap-x-4">
+              <Instagram />
+              <Twitter />
+            </div>
+          </div>
         </div>
       </div>
     </div>

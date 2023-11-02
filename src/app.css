@@ -1,77 +1,47 @@
 html,
 body {
-  @apply h-full;
+  @apply h-full overflow-x-hidden;
   scroll-behavior: 'smooth';
 }
 
 /* NOTE: set your target theme name (ex: skeleton, wintry, modern, etc) */
 
-:root [data-theme='skeleton'] {
-  --theme-font-family-base: 'Made-Evolve', sans-serif;
-  --theme-font-family-heading: 'Made-Evolve', sans-serif;
+:root [data-theme='agentboost-theme'] {
+  --theme-font-family-base: 'Sequel Sans';
+  --theme-font-family-heading: 'Sequel Sans';
   /* ... */
 }
 
 body {
-  font-family: 'Made-Evolve', 'Made-Evolve-Evo';
+  font-family: 'Sequel Sans';
 }
 
-@font-face {
-  font-family: 'Made-Evolve-Evo';
+/* @font-face {
+  font-family: 'Sequel Sans';
   font-weight: 200;
-  src: url('$lib/assets/fonts/made_evolve/made_evolve_sans_thin_evo-webfont.woff2');
-}
+  src: url('$lib/assets/fonts/sequel_sans/made_evolve_sans_thin_evo-webfont.woff2');
+} */
 
 @font-face {
-  font-family: 'Made-Evolve-Evo';
+  font-family: 'Sequel Sans';
   font-weight: 300;
-  src: url('$lib/assets/fonts/made_evolve/made_evolve_sans_light_evo-webfont.woff2');
+  src: url('/fonts/sequel_sans/otf/sequel_sans_light.otf');
 }
 
 @font-face {
-  font-family: 'Made-Evolve-Evo';
+  font-family: 'Sequel Sans';
   font-weight: 400;
-  src: url('$lib/assets/fonts/made_evolve/made_evolve_sans_regular_evo-webfont.woff2');
+  src: url('/fonts/sequel_sans/otf/sequel_sans_normal.otf');
 }
 
 @font-face {
-  font-family: 'Made-Evolve-Evo';
+  font-family: 'Sequel Sans';
   font-weight: 600;
-  src: url('$lib/assets/fonts/made_evolve/made_evolve_sans_medium_evo-webfont.woff2');
+  src: url('/fonts/sequel_sans/otf/sequel_sans_semibold.otf');
 }
 
 @font-face {
   font-family: 'Made-Evolve-Evo';
   font-weight: 700;
-  src: url('$lib/assets/fonts/made_evolve/made_evolve_sans_bold_evo-webfont.woff2');
-}
-
-@font-face {
-  font-family: 'Made-Evolve';
-  font-weight: 200;
-  src: url('$lib/assets/fonts/made_evolve/made_evolve_sans_thin-webfont.woff2');
-}
-
-@font-face {
-  font-family: 'Made-Evolve';
-  font-weight: 300;
-  src: url('$lib/assets/fonts/made_evolve/made_evolve_sans_light-webfont.woff2');
-}
-
-@font-face {
-  font-family: 'Made-Evolve';
-  font-weight: 400;
-  src: url('$lib/assets/fonts/made_evolve/made_evolve_sans_regular-webfont.woff2');
-}
-
-@font-face {
-  font-family: 'Made-Evolve';
-  font-weight: 600;
-  src: url('$lib/assets/fonts/made_evolve/made_evolve_sans_medium-webfont.woff2');
-}
-
-@font-face {
-  font-family: 'Made-Evolve';
-  font-weight: 700;
-  src: url('$lib/assets/fonts/made_evolve/made_evolve_sans_bold-webfont.woff2');
+  src: url('/fonts/sequel_sans/otf/sequel_sans_bold.otf');
 }

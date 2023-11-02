@@ -56,7 +56,7 @@
   })();
 </script>
 
-<div class="dark" data-theme="agentboost-theme">
+<div class="dark bg-surface-500" data-theme="agentboost-theme">
   <Toast position="t" />
   <Modal />
   <Drawer>

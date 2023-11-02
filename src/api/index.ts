@@ -2,7 +2,7 @@ import axios from 'axios';
 import { $user } from '$store/user';
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
-// @ts-ignore
+//@ts-ignore
 const baseURL = import.meta.env?.VITE_API_URL;
 
 const axiosInstance = axios.create({

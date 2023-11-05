@@ -1,6 +1,6 @@
 html,
 body {
-  @apply h-full overflow-x-hidden;
+  @apply h-full overflow-hidden;
   scroll-behavior: 'smooth';
 }
 
@@ -11,6 +11,20 @@ body {
   --theme-font-family-heading: 'Sequel Sans';
   /* ... */
 }
+
+body::-webkit-scrollbar {
+  width: 14px;
+  height: 14px;
+}
+body::-webkit-scrollbar-thumb {
+  background: blue;
+  border-radius: 16px;
+  box-shadow: inset 2px 2px 2px hsl(0deg 0% 100% / 25%), inset -2px -2px 2px rgb(0 0 0 / 25%);
+}
+body::-webkit-scrollbar-track {
+  background: linear-gradient(90deg, #434343, #434343 1px, #111 0, #111);
+}
+
 
 body {
   font-family: 'Sequel Sans';

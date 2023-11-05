@@ -99,7 +99,7 @@
     </defs>
   </svg>
 </div>
-<div class="absolute h-[30rem] -bottom-[70rem] left-0">
+<div class="absolute h-[25rem] -bottom-[65rem] left-0">
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="943"
@@ -149,7 +149,7 @@
     </defs>
   </svg>
 </div>
-<div class="absolute h-[40rem] right-[0rem] -bottom-[125rem]">
+<div class="absolute h-[18rem] right-[0rem] -bottom-[75rem]">
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="1002"

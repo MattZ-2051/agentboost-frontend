@@ -40,17 +40,17 @@
     </AppShell>
   </div>
 {:else if isLanding}
-  <AppShell on:scroll={scrollHandler} regionPage="h-full">
-    <LandingHeader />
-    <div class="h-full">
-      <slot />
-    </div>
-    <svelte:fragment slot="footer"><LandingFooter /></svelte:fragment>
-  </AppShell>
+  <LandingHeader />
+  <div class="h-full">
+    <slot />
+  </div>
+  <LandingFooter />
 {:else}
-  <AppShell on:scroll={scrollHandler} slotSidebarLeft="w-0 lg:w-64">
+  <AppShell on:scroll={scrollHandler} slotSidebarLeft="w-0">
     <svelte:fragment slot="header">
-      <Header />
+      {#if !isLanding}
+        <Header />
+      {/if}
     </svelte:fragment>
     <div class="p-12 h-full">
       <slot />

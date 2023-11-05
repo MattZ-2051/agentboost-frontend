@@ -37,6 +37,11 @@
       for (let i = 0; i < el.length; i++) {
         el[i].className += ' overflow-hidden';
       }
+    } else {
+      const el = document.getElementsByTagName('body');
+      for (let i = 0; i < el.length; i++) {
+        el[i].className = ' overflow-y-scroll';
+      }
     }
   });
 

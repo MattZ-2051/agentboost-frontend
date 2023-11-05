@@ -5,6 +5,7 @@
   import type { ComponentEvents } from 'svelte';
   import { page } from '$app/stores';
   import LandingHeader from '../Header/LandingHeader/LandingHeader.svelte';
+  import LandingFooter from '../Footer/LandingFooter.svelte';
 
   function scrollHandler(event: ComponentEvents<AppShell>['scroll']) {
     // console.log(event.currentTarget.scrollTop);
@@ -36,14 +37,16 @@
       <div class="p-12 h-full">
         <slot />
       </div>
-      <!-- <svelte:fragment slot="footer"><Footer /></svelte:fragment> -->
     </AppShell>
   </div>
 {:else if isLanding}
-  <LandingHeader />
-  <div class="h-full">
-    <slot />
-  </div>
+  <AppShell on:scroll={scrollHandler} regionPage="h-full">
+    <LandingHeader />
+    <div class="h-full">
+      <slot />
+    </div>
+    <svelte:fragment slot="footer"><LandingFooter /></svelte:fragment>
+  </AppShell>
 {:else}
   <AppShell on:scroll={scrollHandler} slotSidebarLeft="w-0 lg:w-64">
     <svelte:fragment slot="header">

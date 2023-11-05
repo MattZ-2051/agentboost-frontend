@@ -9,6 +9,7 @@
   import LogoIconBlue from '$lib/assets/svg/LogoIconBlue.svelte';
   import Twitter from '$lib/assets/svg/Twitter.svelte';
   import { onMount } from 'svelte';
+  import BackgroundGradient from '$lib/pages/Landing/BackgroundGradient.svelte';
   // const handleShare = () => {
   //   FB.ui(
   //     {
@@ -28,8 +29,8 @@
 
     const texts = ['faster', 'smarter', 'better'];
 
-    const morphTime = 1;
-    const cooldownTime = 0.25;
+    const morphTime = 1.5;
+    const cooldownTime = 0.5;
 
     let textIndex = texts.length - 1;
     let time = new Date();
@@ -53,7 +54,7 @@
       setMorph(fraction);
     }
 
-    function setMorph(fraction) {
+    function setMorph(fraction: any) {
       elts.text2.style.filter = `blur(${Math.min(8 / fraction - 8, 100)}px)`;
       elts.text2.style.opacity = `${Math.pow(fraction, 0.4) * 100}%`;
 
@@ -80,7 +81,7 @@
 
       let newTime = new Date();
       let shouldIncrementIndex = cooldown > 0;
-      let dt = (newTime - time) / 1000;
+      let dt = ((newTime as any) - (time as any)) / 1000;
       time = newTime;
 
       cooldown -= dt;
@@ -103,28 +104,53 @@
     '!w-[8rem] !text-opacity-40 !text-white hover:!text-primary-500 hover:!bg-white hover:!bg-opacity-10';
 </script>
 
-<div class="relative w-full h-full p-12">
-  <div class="elipse absolute z-10" />
-  <section class="w-full flex flex-col h-full items-center justify-center">
-    <div class="mt-40">
-      <p class="text-7xl text-white text-center">We make your real</p>
-      <div class="flex mt-2">
-        <p class="text-7xl text-white text-center">estate business</p>
-        <div class="text-7xl text-white text-center">
-          <span id="text1" class="textGradient" />
-          <span id="text2" class="textGradient" />
+<div class="relative w-full h-full">
+  <div class="elipse absolute" />
+  <section
+    class="w-full flex flex-col h-full items-center justify-center relative"
+  >
+    <div class="flex flex-col items-center justify-center">
+      <div class="w-[278px] h-[39px] relative">
+        <div
+          class="w-[278px] h-[39px] pl-[75px] pr-4 pt-[9px] pb-2.5 left-0 top-0 absolute bg-white bg-opacity-10 rounded-[50px] shadow backdrop-blur-[7.22px] justify-end items-center inline-flex"
+        >
+          <div class="text-white text-base font-['Sequel Sans'] leading-tight">
+            Free beta now available
+          </div>
+        </div>
+        <div
+          class="w-[65px] h-[35px] left-[2px] top-[2px] absolute bg-white bg-opacity-10 rounded-[50px] shadow backdrop-blur-[7.22px]"
+        />
+        <div
+          class="left-[16px] top-[9px] absolute text-white text-base font-['Sequel Sans'] leading-tight"
+        >
+          New
+        </div>
+      </div>
+      <div class="flex flex-col mt-8 items-center w-full">
+        <div class="w-[45rem]">
+          <p class="text-7xl text-center whitespace-nowrap text-white">
+            We make your real
+          </p>
+          <p class="text-7xl text-white mt-1">
+            estate business <span id="text1" class="textGradient" />
+            <span id="text2" class="textGradient" />
+          </p>
         </div>
       </div>
     </div>
-    <div class="mt-6 text-center opacity-40 text-lg font-light">
+    <p
+      class="text-white opacity-70 text-center text-[22px] font-light mt-6 mb-12"
+    >
       The ultimate tech suite for real estate professionals has arrived.
-    </div>
+    </p>
+
     <Button label="Join Free Beta" variant="landing-dark" />
     <div class="relative w-full">
       <div class="flex justify-center">
         <div class="w-[40rem] absolute h-full z-10 mask -rotate-90 -left-20" />
         <div class="w-[40rem] absolute h-full z-10 mask rotate-90 -right-20" />
-        <div class="w-full z-0 absolute h-[24rem] mask rotate-180 bottom-0" />
+        <div class="w-full absolute h-[24rem] mask rotate-180 bottom-0" />
         <img src={cityVector} alt="" class="w-[80rem] h-[30rem]" />
         <p
           class="text-white opacity-40 text-center text-lg font-light w-full bottom-10 absolute"
@@ -134,11 +160,14 @@
       </div>
     </div>
   </section>
-  <section class="w-full flex flex-col items-center justify-center mt-40">
-    <p class="text-5xl text-center text-white">
+  <section
+    class="w-full flex flex-col items-center justify-center mt-40 relative"
+  >
+    <BackgroundGradient />
+    <p class="text-6xl text-center text-white">
       The <span class="textGradient">Power of AI </span> in real estate
     </p>
-    <div class="text-center mt-4 text-lg text-slate font-light mb-12">
+    <div class="text-center mt-6 text-lg text-slate font-light mb-12">
       <p>
         Explore the tools that empower you to work smarter & faster <br /> to achieve
         your goals.
@@ -200,12 +229,12 @@
         </div>
       </div>
       <div
-        class="p-2 bg-zinc-950 bg-opacity-0 rounded-[20px] border border-white border-opacity-5 mt-16"
+        class="p-1 bg-zinc-950 bg-opacity-0 rounded-[20px] border border-white border-opacity-5 mt-16"
       >
         <div
-          class="w-[1188px] h-[490px] border-opacity-20 bg-gradient-to-br from-black to-black rounded-[18px] shadow border border-white backdrop-blur-[14.35px] p-10 flex flex-col items-center"
+          class="w-[1188px] h-[490px] border-opacity-20 bg-black bg-opacity-30 rounded-[18px] shadow border border-white backdrop-blur-[14.35px] flex flex-col items-center p-12"
         >
-          <div class="flex items-center">
+          <div class="flex items-center absolute opacity-100">
             <div class="mr-4">
               <LandingBezier />
             </div>
@@ -225,10 +254,10 @@
     <div class="w-full flex justify-center mt-6">
       <div class="flex justify-between w-[1188px]">
         <div
-          class="p-2 bg-zinc-950 bg-opacity-0 rounded-[20px] border border-white border-opacity-5"
+          class="p-1 bg-zinc-950 bg-opacity-0 rounded-[20px] border border-white border-opacity-5"
         >
           <div
-            class="w-[576px] h-[598px] border-opacity-20 bg-gradient-to-br from-black to-black rounded-[18px] shadow border border-white backdrop-blur-[14.35px] p-10"
+            class="w-[576px] h-[598px] border-opacity-20 bg-black bg-opacity-30 rounded-[18px] shadow border border-white backdrop-blur-[14.35px] p-12"
           >
             <div class="flex items-center">
               <div class="mr-4">
@@ -250,10 +279,10 @@
           </div>
         </div>
         <div
-          class="p-2 bg-zinc-950 bg-opacity-0 rounded-[20px] border border-white border-opacity-5"
+          class="p-1 bg-zinc-950 bg-opacity-0 rounded-[20px] border border-white border-opacity-5"
         >
           <div
-            class="w-[576px] h-[598px] border-opacity-20 bg-gradient-to-br from-black to-black rounded-[18px] shadow border border-white backdrop-blur-[14.35px] p-10"
+            class="w-[576px] h-[598px] border-opacity-20 bg-black bg-opacity-30 rounded-[18px] shadow border border-white backdrop-blur-[14.35px] p-12"
           >
             <div class="flex items-center">
               <div class="mr-4">
@@ -277,18 +306,34 @@
       </div>
     </div>
   </section>
-  <section class="mt-40 text-white z-30 relative">
-    <div class="w-full flex justify-center flex-col items-center z-50">
+  <section class="mt-40 text-white relative">
+    <div class="w-full flex justify-center flex-col items-center">
       <p class="text-neutral-100 text-center text-6xl leading-[75px]">
         Message from <span class="textGradient">the founders </span>
       </p>
       <div
-        class="w-[1188px] h-[302px] border-opacity-30 bg-gradient-to-br from-black to-black rounded-[18px] shadow border border-white backdrop-blur-[14.35px] p-8 mt-12"
+        class="p-1 bg-zinc-950 bg-opacity-0 rounded-[20px] border border-white border-opacity-5 mt-12"
       >
-        <p class="text-5xl text-center text-slate font-light">FBGM</p>
+        <div
+          class="w-[1188px] h-[302px] flex p-12 items-center border-opacity-20 bg-opacity-30 bg-black rounded-[18px] shadow border border-white backdrop-blur-[14.35px]"
+        >
+          <div class="relative z-50">
+            <p class="text-2xl text-slate font-light">
+              At Agent Boost, our mission is to craft cutting-edge tools
+              specifically tailored for realtors like you. We recognize that
+              optimizing your efficiency is pivotal to your business success.
+            </p>
+            <p class="text-2xl mt-4 text-slate font-light">
+              Our platform will remain in a state of constant evolution,
+              perpetually harnessing the latest and most thrilling advancements
+              in technology and AI to propel you towards greater speed and
+              effectiveness as an agent. Our journey is just beginning.
+            </p>
+          </div>
+        </div>
       </div>
-      <div class="mt-12 z-0 flex justify-between w-[1188px]">
-        <div class="w-[576px] h-[179px] relative">
+      <div class="mt-12 flex justify-between w-[1188px]">
+        <div class="w-[576px] h-[179px] relative z-10">
           <div
             class="w-[576px] h-[179px] left-0 top-0 absolute bg-gradient-to-br from-blue-500 to-teal-300 rounded-[18px]"
           />
@@ -312,7 +357,7 @@
             </div>
           </div>
         </div>
-        <div class="w-[576px] h-[179px] relative">
+        <div class="w-[576px] h-[179px] relative z-10">
           <div
             class="w-[576px] h-[179px] left-0 top-0 absolute bg-gradient-to-br from-blue-500 to-teal-300 rounded-[18px]"
           />
@@ -339,35 +384,39 @@
       </div>
     </div>
   </section>
-  <section class="mt-20 flex justify-center w-full">
+  <section class="mt-20 flex justify-center mx-32">
     <div
-      class="p-2 bg-opacity-0 rounded-[20px] border border-white border-opacity-10"
+      class="p-1 w-full bg-zinc-950 bg-opacity-0 rounded-[20px] border border-white border-opacity-10"
     >
-      <div
-        class="w-[74.25rem] cta h-[539px] bg-gradient-to-br from-black to-black rounded-[18px] shadow backdrop-blur-[14.35px] p-24 relative"
-      >
+      <div class="w-full h-[500px] relative">
         <div
-          class="w-[140rem] rounded-full h-[55rem] bg-black blur-[200px] absolute z-10 -top-[22rem] -left-[25%]"
-        />
-        <div class="absolute z-50 flex items-center">
-          <div class="mr-32">
-            <p class="text-[3.6rem] font-normal leading-normal text-white">
-              Ready to boost your <br />
-              <span class="textGradient">real estate business?</span>
-            </p>
-            <p class="mt-4 text-slate text-base font-light">
-              Seize the opportunity to elevate your real estate business and <br
-              />
-              embrace a future of efficiency and expertise. Join Agent Boost AI
-              <br /> now and experience a revolution in realtor tools!
-            </p>
-            <Button
-              variant="landing"
-              label="Get started"
-              classes="text-white mt-12"
-            />
+          class="absolute top-0 w-full h-full rounded-bl-[40px] rounded-[20px] cta"
+        >
+          <div
+            class="w-full h-[539px] relative flex justify-center items-center"
+          >
+            <div class="absolute z-50 flex items-center">
+              <div class="mr-32">
+                <p class="text-[3.6rem] font-normal leading-normal text-white">
+                  Ready to boost your <br />
+                  <span class="textGradient">real estate business?</span>
+                </p>
+                <p class="mt-4 text-slate text-base font-light">
+                  Seize the opportunity to elevate your real estate business and <br
+                  />
+                  embrace a future of efficiency and expertise. Join Agent Boost
+                  AI
+                  <br /> now and experience a revolution in realtor tools!
+                </p>
+                <Button
+                  variant="landing"
+                  label="Get started"
+                  classes="text-white mt-12"
+                />
+              </div>
+              <LogoIconBlue />
+            </div>
           </div>
-          <LogoIconBlue />
         </div>
       </div>
     </div>
@@ -376,24 +425,16 @@
 
 <style lang="postcss">
   .elipse {
-    width: 100%;
-    height: 20rem;
+    width: 179.625rem;
+    height: 77.1875rem;
     flex-shrink: 0;
-    border-radius: 2874px;
+    border-radius: 179.625rem;
     background: linear-gradient(74deg, #3e80ff 32.14%, #49f9ea 87.5%);
     filter: blur(137px);
-    top: -15rem;
+    top: -78rem;
+    left: -65rem;
   }
 
-  #container {
-    margin: auto;
-    height: 400px;
-    top: 0;
-    bottom: 0;
-    background-color: white;
-
-    filter: url(#threshold) blur(0.6px);
-  }
   .textGradient {
     background: linear-gradient(89deg, #42aef8 24.63%, #48efed 60.38%);
     background-clip: text;
@@ -427,8 +468,13 @@
     background-blend-mode: color-dodge;
   }
 
+  .cta-mask {
+    border-radius: 1.125rem;
+    background: linear-gradient(113deg, #010101 3.51%, #010101 111.71%);
+  }
   .cta {
-    background: linear-gradient(115deg, #3d7fff 34.33%, #49f9ea 97.28%);
+    /* background: linear-gradient(113deg, #010101 3.51%, #010101 111.71%); */
+    background: linear-gradient(140deg, black 50%, #3d7fff 140%, #49f9ea 110%);
   }
 
   #text1,

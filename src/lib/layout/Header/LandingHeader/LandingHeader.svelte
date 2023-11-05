@@ -3,11 +3,11 @@
   import Button from '$lib/components/Button/Button.svelte';
 </script>
 
-<div class="w-full p-6 px-20 flex items-center z-30 sticky text-white">
+<div class="w-full py-12 px-20 flex items-center z-30 sticky text-white">
   <div class="grid grid-cols-3 w-full">
     <div class="flex items-center"><LogoWhite /></div>
     <div
-      class="flex gap-x-14 font-extralight textLink hover:text-white hover:cursor-pointer items-center justify-center"
+      class="flex gap-x-20 font-extralight textLink hover:text-white hover:cursor-pointer items-center justify-center"
     >
       <p>Features</p>
       <p>Platform</p>

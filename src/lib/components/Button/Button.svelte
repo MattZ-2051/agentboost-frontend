@@ -116,7 +116,6 @@
     gap: 0.5rem;
     flex-shrink: 0;
     display: inline-flex;
-    z-index: 1;
     background: linear-gradient(93deg, #3f8bfd 39.11%, #49f9ea 92.48%);
     background-clip: text;
     -webkit-background-clip: text;

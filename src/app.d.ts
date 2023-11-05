@@ -1,4 +1,6 @@
 // See https://kit.svelte.dev/docs/types#app
+/// <reference types="@sveltejs/kit" />
+
 // for information about these interfaces
 declare global {
   namespace App {
@@ -10,6 +12,7 @@ declare global {
 }
 
 declare module '*.png';
+declare module '*.jpg';
 declare type Item = import('svelte-dnd-action').Item;
 declare type DndEvent<ItemType = Item> =
   import('svelte-dnd-action').DndEvent<ItemType>;

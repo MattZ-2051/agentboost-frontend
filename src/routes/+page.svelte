@@ -389,11 +389,11 @@
       </div>
     </div>
   </section>
-  <section class="mt-36 mb-12 flex justify-center mx-28">
+  <section class="mt-36 mb-12 flex justify-center">
     <div
-      class="p-1 w-full bg-zinc-950 bg-opacity-0 rounded-[20px] border border-white border-opacity-10"
+      class="p-1 bg-zinc-950 bg-opacity-0 rounded-[20px] border border-white border-opacity-10"
     >
-      <div class="w-full h-[500px] relative">
+      <div class="h-[500px] relative w-[1188px]">
         <div class="absolute top-0 w-full h-full rounded-[20px] cta">
           <div
             class="w-full h-[539px] relative flex justify-center items-center"

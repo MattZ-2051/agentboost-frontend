@@ -277,6 +277,7 @@
               <img
                 class="w-[487px] h-[335px] mix-blend-lighten rounded-[18px]"
                 src={landingPlaceholder}
+                alt=""
               />
             </div>
           </div>
@@ -302,6 +303,7 @@
               <img
                 class="w-[487px] h-[335px] mix-blend-lighten rounded-[18px]"
                 src={landingPlaceholder}
+                alt=""
               />
             </div>
           </div>
@@ -344,6 +346,7 @@
               <img
                 class="w-[133px] h-[155px] rounded-[17px]"
                 src="https://via.placeholder.com/133x155"
+                alt=""
               />
               <div class="ml-4 whitespace-nowrap">
                 <p class="text-white text-[28px] leading-[35px]">
@@ -370,6 +373,7 @@
               <img
                 class="w-[133px] h-[155px] object-cover rounded-[17px]"
                 src={matt}
+                alt=""
               />
               <div class="ml-4 whitespace-nowrap">
                 <p class="text-white text-[28px] leading-[35px]">Matt Zamora</p>

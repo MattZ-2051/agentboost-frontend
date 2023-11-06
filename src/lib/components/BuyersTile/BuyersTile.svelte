@@ -2,7 +2,7 @@
   import { slide } from 'svelte/transition';
   import ArrowDown from '$lib/icons/Arrow/ArrowDown.svelte';
   import ArrowUp from '$lib/icons/Arrow/ArrowUp.svelte';
-  import agentBoostLogo from '../../assets/images/agentBoostLogo.png';
+  import agentBoostLogo from '$lib/assets/images/agentBoostLogo.png';
   import ProgressRadial from '../ProgressRadial/ProgressRadial.svelte';
   import Card from '../Card/Card.svelte';
   import Slider from '../CardSlider/Slider.svelte';

@@ -1,6 +1,6 @@
 <script lang="ts">
   import Card from '../Card/Card.svelte';
-  import agentBoostLogo from '../../assets/images/agentBoostLogo.png';
+  import agentBoostLogo from '$lib/assets/images/agentBoostLogo.png';
 
   export let items: any[];
 </script>

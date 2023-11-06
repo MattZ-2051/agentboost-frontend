@@ -10,6 +10,7 @@
   import Twitter from '$lib/assets/svg/Twitter.svelte';
   import { onMount } from 'svelte';
   import BackgroundGradient from '$lib/pages/Landing/BackgroundGradient.svelte';
+  import LandingSeperator from '$lib/assets/svg/LandingSeperator.svelte';
   // const handleShare = () => {
   //   FB.ui(
   //     {
@@ -186,11 +187,18 @@
         class="flex items-center leading-9 text-[2rem] text-white font-normal"
       >
         <p class="whitespace-nowrap">140 million+ <br /> property records</p>
-        <div class="divider" />
+        <div class="mx-10">
+          <LandingSeperator />
+        </div>
+
         <p class="whitespace-nowrap">AI driven <br /> Property insights</p>
-        <div class="divider" />
+        <div class="mx-10">
+          <LandingSeperator />
+        </div>
         <p class="whitespace-nowrap">Automated <br /> Social Media</p>
-        <div class="divider" />
+        <div class="mx-10">
+          <LandingSeperator />
+        </div>
         <p class="">Marketing <br />Analytics</p>
       </div>
     </div>
@@ -451,28 +459,6 @@
 
   .mask {
     background: linear-gradient(180deg, #010101 0%, rgba(1, 1, 1, 0) 77.08%);
-  }
-
-  .divider {
-    width: 1rem;
-    height: 11rem;
-    border-radius: 1.25rem;
-    background: radial-gradient(
-      50% 50% at 49.99% 50%,
-      #e6e6e6 0%,
-      #c6c6c6 3%,
-      #9c9c9c 7%,
-      #777 12%,
-      #565656 18%,
-      #3b3b3b 24%,
-      #252525 31%,
-      #141414 38%,
-      #080808 48%,
-      #010101 62%,
-      #000 100%
-    );
-    margin: 0 2rem;
-    background-blend-mode: color-dodge;
   }
 
   .cta {

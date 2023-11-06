@@ -2,7 +2,6 @@
   import { slide } from 'svelte/transition';
   import ArrowDown from '$lib/icons/Arrow/ArrowDown.svelte';
   import ArrowUp from '$lib/icons/Arrow/ArrowUp.svelte';
-  import agentBoostLogo from '$lib/assets/images/agentBoostLogo.png';
   import ProgressRadial from '../ProgressRadial/ProgressRadial.svelte';
   import Card from '../Card/Card.svelte';
   import Slider from '../CardSlider/Slider.svelte';
@@ -17,9 +16,7 @@
 
 <div class="card border-none p-4">
   <div class="grid grid-cols-3 gap-x-12 py-4">
-    <div class="mr-8">
-      <img src={agentBoostLogo} alt="" class="w-72" />
-    </div>
+    <div class="mr-8" />
     <div class="text-xl">
       <div class="h-20">
         <p class="mb-2">Address - 10044 W Springdale Ct</p>

@@ -2,7 +2,6 @@
   import NavLink from '$lib/components/NavLink/NavLink.svelte';
   import { AppBar } from '@skeletonlabs/skeleton';
   import { drawerStore } from '@skeletonlabs/skeleton';
-  import agentBoostLogo from '$lib/assets/images/agentBoostLogoEmptyWhite.png';
   import { logoutFx, $user as user } from '$store/user';
   function drawerOpen(): void {
     drawerStore.open({});
@@ -16,13 +15,7 @@
   padding="px-20 py-4"
 >
   <svelte:fragment slot="lead">
-    <a href="/home">
-      <img
-        src={agentBoostLogo}
-        class="w-[70px] h-[40px] hidden lg:block"
-        alt="agentboost logo"
-      />
-    </a>
+    <a href="/home" />
     <div class="flex items-center">
       <button class="lg:hidden btn btn-sm mr-4" on:click={drawerOpen}>
         <span>

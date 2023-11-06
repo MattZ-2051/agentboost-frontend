@@ -1,6 +1,5 @@
 <script lang="ts">
   import Card from '../Card/Card.svelte';
-  import agentBoostLogo from '$lib/assets/images/agentBoostLogo.png';
   import type { SliderItems } from '$types/components';
 
   export let items: SliderItems;
@@ -14,13 +13,7 @@
       class="snap-start shrink-0 w-40 md:w-80 h-[400px] overflow-y-hidden overflow-x-hidden text-center"
     >
       <Card height="h-full">
-        <header class="">
-          <img
-            src={agentBoostLogo}
-            class="w-full h-1/4 object-cover"
-            alt="Post"
-          />
-        </header>
+        <header class="" />
         <div class="p-4 space-y-4">
           {#each item as text}
             <div class="flex text-sm">

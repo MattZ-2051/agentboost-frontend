@@ -1,17 +1,10 @@
 <script lang="ts">
   import Card from '../../Card/Card.svelte';
-  import agentBoostLogo from '$lib/assets/images/agentBoostLogo.png';
 </script>
 
 <Card height="h-[400px]">
   <div class="w-[400px] h-full">
-    <header class="">
-      <img
-        src={agentBoostLogo}
-        class="w-full h-[250px] object-cover"
-        alt="Post"
-      />
-    </header>
+    <header class="" />
     <div class="p-4 space-y-4">
       <p>
         Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis

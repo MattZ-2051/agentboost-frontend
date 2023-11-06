@@ -1,6 +1,5 @@
 <script lang="ts">
   import Card from '../Card/Card.svelte';
-  import agentBoostLogo from '$lib/assets/images/agentBoostLogo.png';
 
   export let items: any[];
 </script>
@@ -27,7 +26,6 @@
               <h1>Mailer</h1>
             {/if}
           </div>
-          <img src={agentBoostLogo} alt="" />
 
           <div class="flex text-base pt-4 text-left">
             {#if i === 0}

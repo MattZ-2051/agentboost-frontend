@@ -203,7 +203,7 @@
       </div>
     </div>
   </section>
-  <section class="mt-40 text-white">
+  <section class="mt-40 text-white relative z-50 bg-transparent">
     <p class="text-6xl text-center">
       Effortless <span class="textGradient"> expertise & exposure</span>
     </p>
@@ -442,12 +442,12 @@
   .elipse {
     width: 179.625rem;
     height: 77.1875rem;
-    flex-shrink: 0;
-    border-radius: 179.625rem;
+    border-radius: 100%;
     background: linear-gradient(74deg, #3e80ff 32.14%, #49f9ea 87.5%);
     filter: blur(137px);
-    top: -78rem;
-    left: -65rem;
+    top: -74rem;
+    left: -45rem;
+    z-index: 30;
   }
 
   .textGradient {

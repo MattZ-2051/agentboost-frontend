@@ -1,76 +1,70 @@
 <script lang="ts">
-  // Your selected Skeleton theme:
+	// Your selected Skeleton theme:
 
-  // This contains the bulk of Skeletons required styles:
-  import '@skeletonlabs/skeleton/styles/skeleton.css';
+	import '../app.postcss';
+	import AppShell from '$lib/layout/AppShell/AppShell.svelte';
+	import Sidebar from '$lib/layout/Sidebar/Sidebar.svelte';
+	import { Modal } from '@skeletonlabs/skeleton';
+	import { Drawer } from '@skeletonlabs/skeleton';
+	import { Toast } from '@skeletonlabs/skeleton';
+	import Tabs from '$lib/components/Tabs/Tabs.svelte';
+	import { page } from '$app/stores';
+	import { computePosition, autoUpdate, offset, shift, flip, arrow } from '@floating-ui/dom';
+	import { storePopup } from '@skeletonlabs/skeleton';
+	import { routes } from './routes';
+	import { onMount } from 'svelte';
 
-  import '../app.css';
-  import AppShell from '$lib/layout/AppShell/AppShell.svelte';
-  import Sidebar from '$lib/layout/Sidebar/Sidebar.svelte';
-  import { Modal } from '@skeletonlabs/skeleton';
-  import { Drawer } from '@skeletonlabs/skeleton';
-  import { Toast } from '@skeletonlabs/skeleton';
-  import Tabs from '$lib/components/Tabs/Tabs.svelte';
-  import { page } from '$app/stores';
-  import {
-    computePosition,
-    autoUpdate,
-    offset,
-    shift,
-    flip,
-    arrow,
-  } from '@floating-ui/dom';
-  import { storePopup } from '@skeletonlabs/skeleton';
-  import { routes } from './routes';
-  import { onMount } from 'svelte';
+	storePopup.set({ computePosition, autoUpdate, offset, shift, flip, arrow });
 
-  storePopup.set({ computePosition, autoUpdate, offset, shift, flip, arrow });
+	import { initializeStores } from '@skeletonlabs/skeleton';
 
-  $: hideTabs =
-    $page.url.pathname.includes('signup') ||
-    $page.url.pathname.includes('login') ||
-    $page.url.pathname.length === 1;
+	$: hideTabs =
+		$page.url.pathname.includes('signup') ||
+		$page.url.pathname.includes('login') ||
+		$page.url.pathname.length === 1;
 
-  onMount(() => {
-    if (!hideTabs) {
-      const el = document.getElementsByTagName('body');
-      for (let i = 0; i < el.length; i++) {
-        el[i].className += ' overflow-hidden';
-      }
-    } else {
-      const el = document.getElementsByTagName('body');
-      for (let i = 0; i < el.length; i++) {
-        el[i].className = ' overflow-y-scroll';
-      }
-    }
-  });
+	initializeStores();
 
-  const fbId = import.meta.env?.VITE_FB_APP_ID;
-  window.fbAsyncInit = function () {
-    FB.init({
-      appId: fbId,
-      xfbml: true,
-      version: 'v18.0',
-    });
-  };
-  (function () {
-    var e = document.createElement('script');
-    e.src = document.location.protocol + '//connect.facebook.net/en_US/sdk.js';
-    e.async = true;
-    document.getElementById('fb-root').appendChild(e);
-  })();
+	onMount(() => {
+		if (!hideTabs) {
+			const el = document.getElementsByTagName('body');
+			for (let i = 0; i < el.length; i++) {
+				el[i].className += ' overflow-hidden';
+			}
+		} else {
+			const el = document.getElementsByTagName('body');
+			for (let i = 0; i < el.length; i++) {
+				el[i].className = ' overflow-y-scroll';
+			}
+		}
+	});
+
+	const fbId = import.meta.env?.VITE_FB_APP_ID;
+	window.fbAsyncInit = function () {
+		FB.init({
+			appId: fbId,
+			xfbml: true,
+			version: 'v18.0'
+		});
+	};
+	(function () {
+		var e = document.createElement('script');
+		e.src = document.location.protocol + '//connect.facebook.net/en_US/sdk.js';
+		e.async = true;
+		// document.getElementById('fb-root').appendChild(e);
+	})();
 </script>
 
 <div class="dark bg-surface-500" data-theme="agentboost-theme">
-  <Toast position="t" />
-  <Modal />
-  <Drawer>
-    <Sidebar />
-  </Drawer>
-  <AppShell>
-    {#if !hideTabs}
-      <Tabs items={routes} />
-    {/if}
-    <slot />
-  </AppShell>
+	<Toast position="t" />
+	<Modal />
+	<Drawer>
+		<Sidebar />
+	</Drawer>
+	<AppShell>
+		{#if !hideTabs}
+			<Tabs items={routes} />
+		{/if}
+		<slot />
+	</AppShell>
 </div>

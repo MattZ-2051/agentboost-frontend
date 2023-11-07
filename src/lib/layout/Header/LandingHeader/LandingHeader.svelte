@@ -3,7 +3,7 @@
   import Button from '$lib/components/Button/Button.svelte';
 </script>
 
-<div class="w-full py-12 px-20 flex items-center z-30 sticky text-white">
+<div class="w-full py-12 px-20 flex items-center z-50 sticky text-white">
   <div class="grid grid-cols-3 w-full">
     <div class="flex items-center"><LogoWhite /></div>
     <div

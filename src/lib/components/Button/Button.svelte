@@ -19,7 +19,7 @@
 
 <button
   type="button"
-  class={`${styles} ${variant} ${classes} hover:cursor-pointer`}
+  class={`${styles} ${variant} ${classes} hover:cursor-pointer relative`}
   on:click={onClick}
 >
   {#if variant === 'landing' || variant === 'landing-dark'}

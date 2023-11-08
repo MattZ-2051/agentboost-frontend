@@ -16,7 +16,6 @@
 	padding="px-20 py-4"
 >
 	<svelte:fragment slot="lead">
-		<a href="/home" />
 		<div class="flex items-center">
 			<button class="lg:hidden btn btn-sm mr-4" on:click={drawerOpen}>
 				<span>

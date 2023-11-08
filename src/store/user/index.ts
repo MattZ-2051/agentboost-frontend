@@ -4,7 +4,6 @@ import { createEffect, createEvent, createStore } from 'effector';
 import { decodeJwtToken, handleUserTokenData } from '$utils';
 import type { User } from '$types/models';
 import type { ApiError, AuthTokens } from '$types/api';
-import type { ToastSettings } from '@skeletonlabs/skeleton';
 import { goto } from '$app/navigation';
 
 export const updateUser = createEvent<{
@@ -70,8 +69,8 @@ signUpFx.doneData.watch(async (result) => {
 	await goto('/home');
 });
 
-signUpFx.failData.watch((error) => {
-	const message = error.response?.data?.message;
+signUpFx.failData.watch(() => {
+	// const message = error.response?.data?.message;
 	// const toast: ToastSettings = {
 	// 	message: message ? message : 'Signup failed',
 	// 	background: 'variant-filled-error'
@@ -88,19 +87,19 @@ loginFx.doneData.watch(async (result) => {
 		authTokens: result
 	});
 	await goto('/home');
-	const toast: ToastSettings = {
-		message: `Successfully Logged In! Welcome back ${jwtData.email}`,
-		background: 'variant-filled-success'
-	};
+	// const toast: ToastSettings = {
+	// 	message: `Successfully Logged In! Welcome back ${jwtData.email}`,
+	// 	background: 'variant-filled-success'
+	// };
 	// toastStore.trigger(toast);
 });
 
-loginFx.failData.watch((error) => {
-	const message = error.response?.data?.message;
-	const toast: ToastSettings = {
-		message: message ? message : 'Login failed',
-		background: 'variant-filled-error'
-	};
+loginFx.failData.watch(() => {
+	// const message = error.response?.data?.message;
+	// const toast: ToastSettings = {
+	// 	message: message ? message : 'Login failed',
+	// 	background: 'variant-filled-error'
+	// };
 	// toastStore.trigger(toast);
 });
 
@@ -115,8 +114,8 @@ logoutFx.doneData.watch(async () => {
 	// // toastStore.trigger(toast);
 });
 
-logoutFx.failData.watch((error) => {
-	const message = error.response?.data?.message;
+logoutFx.failData.watch(() => {
+	// const message = error.response?.data?.message;
 	// const toast: ToastSettings = {
 	// 	message: message ? message : 'Logout failed',
 	// 	background: 'variant-filled-error'

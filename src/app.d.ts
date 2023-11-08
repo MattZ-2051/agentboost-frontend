@@ -8,8 +8,6 @@ declare namespace App {
 	// interface Platform {}
 }
 
-
 declare module '*.png';
 declare module '*.jpg';
-declare type DndEvent<ItemType = Item> =
-  import('svelte-dnd-action').DndEvent<ItemType>;
+declare type DndEvent<ItemType = Item> = import('svelte-dnd-action').DndEvent<ItemType>;

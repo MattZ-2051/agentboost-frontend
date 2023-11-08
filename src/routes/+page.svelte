@@ -167,7 +167,9 @@
 			<div
 				class="w-[1188px] h-[643px] bg-white bg-opacity-0 rounded-[19px] shadow border border-white border-opacity-40"
 			>
-				<video controls width="100%" class="rounded-[19px]" />
+				<video controls width="100%" class="rounded-[19px]">
+					<track kind="captions" />
+				</video>
 			</div>
 		</div>
 

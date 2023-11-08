@@ -1,5 +1,5 @@
 export type UpdateUserData = {
-  email: string;
-  brandDescription?: string;
-  areaOfExpertise?: string;
+	email: string;
+	brandDescription?: string;
+	areaOfExpertise?: string;
 };

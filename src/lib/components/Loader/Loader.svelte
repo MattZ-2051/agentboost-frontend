@@ -1,5 +1,5 @@
 <script lang="ts">
-  import './Loader.css';
+	import './Loader.css';
 </script>
 
 <div class="loader" />

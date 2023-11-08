@@ -1,59 +1,55 @@
 <script lang="ts">
-  import { AppShell } from '@skeletonlabs/skeleton';
-  import Sidebar from '../Sidebar/Sidebar.svelte';
-  import Header from '../Header/Header/Header.svelte';
-  import type { ComponentEvents } from 'svelte';
-  import { page } from '$app/stores';
-  import LandingHeader from '../Header/LandingHeader/LandingHeader.svelte';
-  import LandingFooter from '../Footer/LandingFooter.svelte';
+	import { AppShell } from '@skeletonlabs/skeleton';
+	import Sidebar from '../Sidebar/Sidebar.svelte';
+	import Header from '../Header/Header/Header.svelte';
+	import type { ComponentEvents } from 'svelte';
+	import { page } from '$app/stores';
+	import LandingHeader from '../Header/LandingHeader/LandingHeader.svelte';
+	import LandingFooter from '../Footer/LandingFooter.svelte';
 
-  function scrollHandler(event: ComponentEvents<AppShell>['scroll']) {
-    // console.log(event.currentTarget.scrollTop);
-  }
+	function scrollHandler(event: ComponentEvents<AppShell>['scroll']) {
+		// console.log(event.currentTarget.scrollTop);
+	}
 
-  $: hideSidebar =
-    $page.url.pathname.includes('home') ||
-    $page.url.pathname.includes('signup') ||
-    $page.url.pathname.includes('login') ||
-    $page.url.pathname.length === 1;
-  $: isLanding = $page.url.pathname.length === 1;
+	$: hideSidebar =
+		$page.url.pathname.includes('home') ||
+		$page.url.pathname.includes('signup') ||
+		$page.url.pathname.includes('login') ||
+		$page.url.pathname.length === 1;
+	$: isLanding = $page.url.pathname.length === 1;
 </script>
 
 {#if !hideSidebar}
-  <div class="h-screen">
-    <AppShell
-      on:scroll={scrollHandler}
-      slotSidebarLeft="w-0 lg:w-64"
-      regionPage="h-full"
-    >
-      <svelte:fragment slot="header">
-        <Header />
-      </svelte:fragment>
-      <svelte:fragment slot="sidebarLeft">
-        <div id="sidebar-left" class="h-full">
-          <Sidebar />
-        </div>
-      </svelte:fragment>
-      <div class="p-12 h-full">
-        <slot />
-      </div>
-    </AppShell>
-  </div>
+	<div class="h-screen">
+		<AppShell on:scroll={scrollHandler} slotSidebarLeft="w-0 lg:w-64" regionPage="h-full">
+			<svelte:fragment slot="header">
+				<Header />
+			</svelte:fragment>
+			<svelte:fragment slot="sidebarLeft">
+				<div id="sidebar-left" class="h-full">
+					<Sidebar />
+				</div>
+			</svelte:fragment>
+			<div class="p-12 h-full">
+				<slot />
+			</div>
+		</AppShell>
+	</div>
 {:else if isLanding}
-  <LandingHeader />
-  <div class="h-full">
-    <slot />
-  </div>
-  <LandingFooter />
+	<LandingHeader />
+	<div class="h-full">
+		<slot />
+	</div>
+	<LandingFooter />
 {:else}
-  <AppShell on:scroll={scrollHandler} slotSidebarLeft="w-0">
-    <svelte:fragment slot="header">
-      {#if !isLanding}
-        <Header />
-      {/if}
-    </svelte:fragment>
-    <div class="p-12 h-full">
-      <slot />
-    </div>
-  </AppShell>
+	<AppShell on:scroll={scrollHandler} slotSidebarLeft="w-0">
+		<svelte:fragment slot="header">
+			{#if !isLanding}
+				<Header />
+			{/if}
+		</svelte:fragment>
+		<div class="p-12 h-full">
+			<slot />
+		</div>
+	</AppShell>
 {/if}

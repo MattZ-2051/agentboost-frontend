@@ -1,33 +1,32 @@
 html,
 body {
-  @apply h-full overflow-hidden;
-  scroll-behavior: 'smooth';
+	@apply h-full overflow-hidden;
+	scroll-behavior: 'smooth';
 }
 
 /* NOTE: set your target theme name (ex: skeleton, wintry, modern, etc) */
 
 :root [data-theme='agentboost-theme'] {
-  --theme-font-family-base: 'Sequel Sans';
-  --theme-font-family-heading: 'Sequel Sans';
-  /* ... */
+	--theme-font-family-base: 'Sequel Sans';
+	--theme-font-family-heading: 'Sequel Sans';
+	/* ... */
 }
 
 body::-webkit-scrollbar {
-  width: 14px;
-  height: 14px;
+	width: 14px;
+	height: 14px;
 }
 body::-webkit-scrollbar-thumb {
-  background: blue;
-  border-radius: 16px;
-  box-shadow: inset 2px 2px 2px hsl(0deg 0% 100% / 25%), inset -2px -2px 2px rgb(0 0 0 / 25%);
+	background: blue;
+	border-radius: 16px;
+	box-shadow: inset 2px 2px 2px hsl(0deg 0% 100% / 25%), inset -2px -2px 2px rgb(0 0 0 / 25%);
 }
 body::-webkit-scrollbar-track {
-  background: linear-gradient(90deg, #434343, #434343 1px, #111 0, #111);
+	background: linear-gradient(90deg, #434343, #434343 1px, #111 0, #111);
 }
 
-
 body {
-  font-family: 'Sequel Sans';
+	font-family: 'Sequel Sans';
 }
 
 /* @font-face {
@@ -37,25 +36,25 @@ body {
 } */
 
 @font-face {
-  font-family: 'Sequel Sans';
-  font-weight: 300;
-  src: url('/fonts/sequel_sans/otf/sequel_sans_light.otf');
+	font-family: 'Sequel Sans';
+	font-weight: 300;
+	src: url('/fonts/sequel_sans/otf/sequel_sans_light.otf');
 }
 
 @font-face {
-  font-family: 'Sequel Sans';
-  font-weight: 400;
-  src: url('/fonts/sequel_sans/otf/sequel_sans_normal.otf');
+	font-family: 'Sequel Sans';
+	font-weight: 400;
+	src: url('/fonts/sequel_sans/otf/sequel_sans_normal.otf');
 }
 
 @font-face {
-  font-family: 'Sequel Sans';
-  font-weight: 600;
-  src: url('/fonts/sequel_sans/otf/sequel_sans_semibold.otf');
+	font-family: 'Sequel Sans';
+	font-weight: 600;
+	src: url('/fonts/sequel_sans/otf/sequel_sans_semibold.otf');
 }
 
 @font-face {
-  font-family: 'Made-Evolve-Evo';
-  font-weight: 700;
-  src: url('/fonts/sequel_sans/otf/sequel_sans_bold.otf');
+	font-family: 'Made-Evolve-Evo';
+	font-weight: 700;
+	src: url('/fonts/sequel_sans/otf/sequel_sans_bold.otf');
 }

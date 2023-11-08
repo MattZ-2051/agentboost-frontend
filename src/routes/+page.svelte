@@ -106,9 +106,7 @@
 </script>
 
 <div class="w-full h-full relative">
-	<div class="overflow-hidden">
-		<div class="elipse absolute" />
-	</div>
+	<div class="elipse absolute" />
 	<section class="w-full flex flex-col h-full items-center justify-center">
 		<div class="flex flex-col items-center justify-center">
 			<div class="w-[278px] h-[39px] relative z-50">
@@ -399,6 +397,35 @@
 		left: -45rem;
 		z-index: 30;
 		transform: translate3d(15px, 15px, -1px);
+	}
+
+	@media (min-width: 1800px) {
+		.elipse {
+			left: -28%;
+		}
+	}
+
+	@media (min-width: 2000px) {
+		.elipse {
+			left: -20%;
+		}
+	}
+
+	@media (min-width: 2300px) {
+		.elipse {
+			left: -10%;
+		}
+	}
+	@media (min-width: 2500px) {
+		.elipse {
+			left: -4%;
+		}
+	}
+
+	@media (min-width: 3000px) {
+		.elipse {
+			left: 7%;
+		}
 	}
 
 	.textGradient {

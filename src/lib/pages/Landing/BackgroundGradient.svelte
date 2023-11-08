@@ -1,5 +1,5 @@
 <!-- BG_GRADIENT -->
-<div class="absolute z-50 w-[40rem] h-[17rem] top-10 -left-28 gradients">
+<div class="absolute z-50 w-[40rem] h-[17rem] top-10 -left-28">
 	<svg
 		xmlns="http://www.w3.org/2000/svg"
 		width="943"
@@ -132,6 +132,7 @@
 		height="1917"
 		viewBox="0 0 1002 1917"
 		fill="none"
+		class="gradients"
 	>
 		<g opacity="0.25" filter="url(#filter0_f_366_9670)">
 			<path

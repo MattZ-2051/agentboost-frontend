@@ -1,31 +1,33 @@
 <script lang="ts">
-  import LogoWhite from '$lib/assets/svg/LogoWhite.svelte';
-  import Button from '$lib/components/Button/Button.svelte';
+	import LogoWhite from '$lib/assets/svg/LogoWhite.svelte';
+	import Button from '$lib/components/Button/Button.svelte';
 </script>
 
-<div class="w-full py-12 px-20 flex items-center z-50 sticky text-white">
-  <div class="grid grid-cols-3 w-full">
-    <div class="flex items-center"><LogoWhite /></div>
-    <div
-      class="flex gap-x-20 font-extralight textLink hover:text-white hover:cursor-pointer items-center justify-center"
-    >
-      <p>Features</p>
-      <p>Platform</p>
-      <p>About</p>
-    </div>
-    <div class="flex items-center justify-end gap-x-6">
-      <a class="textLink !font-semibold" href="/login">Login</a>
-      <Button label="Join Free Beta" variant="landing" />
-      <!-- <button class="landingButton">Get Started</button> -->
-    </div>
-  </div>
+<div class="w-full py-12 px-20 flex items-center z-50 sticky text-white justify-center">
+	<div class="max-w-7xl">
+		<div class="grid grid-cols-3 w-full">
+			<div class="flex items-center"><LogoWhite /></div>
+			<div
+				class="flex gap-x-20 font-extralight textLink hover:text-white hover:cursor-pointer items-center justify-center"
+			>
+				<p>Features</p>
+				<p>Platform</p>
+				<p>About</p>
+			</div>
+			<div class="flex items-center justify-end gap-x-6">
+				<a class="textLink !font-semibold" href="/login">Login</a>
+				<Button label="Join Free Beta" variant="landing" />
+				<!-- <button class="landingButton">Get Started</button> -->
+			</div>
+		</div>
+	</div>
 </div>
 
 <style>
-  .textLink {
-    color: #fff;
-    font-size: 1.125rem;
-    font-weight: 300;
-    line-height: normal;
-  }
+	.textLink {
+		color: #fff;
+		font-size: 1.125rem;
+		font-weight: 300;
+		line-height: normal;
+	}
 </style>

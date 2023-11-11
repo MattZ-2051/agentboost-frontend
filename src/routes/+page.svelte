@@ -5,7 +5,8 @@
 	import LandingBezier from '$lib/assets/svg/LandingBezier.svelte';
 	import landingScreenshot1 from '$lib/assets/images/landingAppScreenshot1.png';
 	import Instagram from '$lib/assets/svg/Instagram.svelte';
-	import matt from '$lib/assets/images/matt.jpg';
+	import matt from '$lib/assets/images/matt-landing.jpeg';
+	import sam from '$lib/assets/images/sam-landing.jpeg';
 	import LogoIconBlue from '$lib/assets/svg/LogoIconBlue.svelte';
 	import Twitter from '$lib/assets/svg/Twitter.svelte';
 	import { onMount } from 'svelte';
@@ -105,7 +106,7 @@
 		'!w-[8rem] !text-opacity-40 !text-white hover:!text-primary-500 hover:!bg-white hover:!bg-opacity-10';
 </script>
 
-<div class="w-full h-full relative">
+<div class="w-full h-full relative p-12">
 	<div class="elipse absolute" />
 	<section class="w-full flex flex-col h-full items-center justify-center">
 		<div class="flex flex-col items-center justify-center">
@@ -127,7 +128,7 @@
 				</div>
 			</div>
 			<div class="flex flex-col mt-8 items-center w-full z-50">
-				<div class="w-[45rem]">
+				<div class="w-[47rem]">
 					<p class="text-7xl text-center whitespace-nowrap text-white">We make your real</p>
 					<p class="text-7xl text-white mt-1">
 						estate business <span id="text1" class="textGradient" />
@@ -321,11 +322,7 @@
 				>
 					<div class="w-[576px] h-[179px] relative z-10 cta rounded-[18px]">
 						<div class="absolute m-2 flex items-center w-full">
-							<img
-								class="w-[133px] h-[155px] rounded-[17px]"
-								src="https://via.placeholder.com/133x155"
-								alt=""
-							/>
+							<img class="w-[133px] h-[155px] rounded-[17px] object-cover" src={sam} alt="" />
 							<div class="ml-4 whitespace-nowrap">
 								<p class="text-white text-[28px] leading-[35px]">Sam Hamilton</p>
 								<p class="text-slate-400 text-[17px] font-normal leading-[25px]">Founder & CEO</p>
@@ -388,17 +385,30 @@
 	.elipse {
 		width: 179.625rem;
 		height: 77.1875rem;
-		border-radius: 100%;
+		border-radius: 2874px;
 		background: linear-gradient(74deg, #3e80ff 32.14%, #49f9ea 87.5%);
 		filter: blur(137px);
 		-webkit-filter: blur(137px);
 		-moz-filter: blur(137px);
 		-o-filter: blur(137px);
 		-ms-filter: blur(137px);
-		top: -77rem;
-		left: -45rem;
+		top: -75rem;
+		left: -50rem;
 		z-index: 30;
 		transform: translate3d(15px, 15px, -1px);
+	}
+
+	@media (max-width: 1500px) {
+		.elipse {
+			border-radius: 100%;
+		}
+	}
+
+	@media (min-width: 1500px) {
+		.elipse {
+			top: -74rem;
+			border-radius: 2874px;
+		}
 	}
 
 	@media (min-width: 1800px) {
@@ -431,7 +441,7 @@
 	}
 
 	.textGradient {
-		background: linear-gradient(89deg, #42aef8 24.63%, #48efed 60.38%);
+		background: linear-gradient(88deg, #3f8bfd -50.22%, #49f9ea 89.43%);
 		background-clip: text;
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;

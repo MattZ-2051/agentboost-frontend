@@ -44,12 +44,12 @@
 		box-shadow: 0px 1.20417px 14.45px 0px rgba(195, 216, 231, 0.08);
 		backdrop-filter: blur(3.612499952316284px);
 		display: inline-flex;
-		height: 3.25rem;
-		font-size: 18px;
-		width: 14rem;
-		padding: 14px 24px;
+		height: 3rem;
+		font-size: 16px;
+		padding: 12px 20px;
+		width: 12rem;
 		justify-content: center;
-		align-items: flex-start;
+		align-items: center;
 		gap: 0.5rem;
 		flex-shrink: 0;
 		display: inline-flex;
@@ -67,7 +67,7 @@
 		position: absolute;
 		z-index: -1;
 		padding: 2px;
-		@apply bg-primary-500;
+		@apply bg-white;
 		transform: scaleX(0);
 		/* transform-origin: left; */
 		transition: transform 200ms ease-in-out;
@@ -101,10 +101,10 @@
 		box-shadow: 0px 1.20417px 14.45px 0px rgba(195, 216, 231, 0.08);
 		backdrop-filter: blur(3.612499952316284px);
 		display: inline-flex;
-		height: 3.25rem;
-		font-size: 18px;
-		width: 14rem;
-		padding: 14px 24px;
+		height: 3rem;
+		font-size: 16px;
+		width: 12rem;
+		padding: 12px 20px;
 		justify-content: center;
 		align-items: flex-start;
 		gap: 0.5rem;

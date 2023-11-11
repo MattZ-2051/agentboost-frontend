@@ -3,21 +3,23 @@
 	import Button from '$lib/components/Button/Button.svelte';
 </script>
 
-<div class="w-full py-12 px-20 flex items-center z-50 sticky text-white justify-center">
-	<div class="max-w-7xl">
-		<div class="grid grid-cols-3 w-full">
-			<div class="flex items-center"><LogoWhite /></div>
-			<div
-				class="flex gap-x-20 font-extralight textLink hover:text-white hover:cursor-pointer items-center justify-center"
-			>
-				<p>Features</p>
-				<p>Platform</p>
-				<p>About</p>
-			</div>
-			<div class="flex items-center justify-end gap-x-6">
-				<a class="textLink !font-semibold" href="/login">Login</a>
-				<Button label="Join Free Beta" variant="landing" />
-				<!-- <button class="landingButton">Get Started</button> -->
+<div class="w-full flex justify-center text-lg font-light items-start z-50 sticky">
+	<div class="w-[1188px] py-12 flex items-center text-white justify-center">
+		<div class="w-full">
+			<div class="grid grid-cols-3 w-full">
+				<div class="flex items-center"><LogoWhite /></div>
+				<div
+					class="flex gap-x-14 font-extralight textLink hover:text-white hover:cursor-pointer items-center justify-center"
+				>
+					<p>Features</p>
+					<p>Platform</p>
+					<p>About</p>
+				</div>
+				<div class="flex items-center justify-end gap-x-6">
+					<a class="textLink !font-semibold" href="/login">Login</a>
+					<Button label="Join Free Beta" variant="landing" />
+					<!-- <button class="landingButton">Get Started</button> -->
+				</div>
 			</div>
 		</div>
 	</div>

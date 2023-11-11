@@ -5,41 +5,43 @@
 	import Linkedin from '$lib/assets/svg/Linkedin.svelte';
 </script>
 
-<div
-	class="w-full text-lg font-light py-12 px-20 items-start z-30 sticky flex justify-between text-[#9EA4C6] gap-x-10"
->
-	<div class="flex flex-col">
-		<LogoGradient />
-		<p class="leading-[18px] whitespace-nowrap mt-4">Redefining real estate success.</p>
-	</div>
-	<div class="text-left leading-normal flex flex-col">
-		<p class="mb-4">Support</p>
-		<p>Contact</p>
-	</div>
-	<div class="text-left leading-normal flex flex-col">
-		<p class="mb-4">Partners</p>
-		<p>Partners Program</p>
-	</div>
-	<div class="text-left leading-normal flex flex-col gap-y-4">
-		<p>Legal</p>
-		<p>Terms</p>
-		<p>Privacy Policy</p>
-		<p>Refund Policy</p>
-	</div>
-	<div class="text-left leading-normal flex flex-col">
-		<p class="mb-4">Social</p>
-		<div class="flex gap-x-4">
-			<Facebook />
-			<Linkedin />
-			<InstagramFooter />
+<div class="w-full flex flex-col items-center">
+	<div
+		class="w-[1188px] text-lg font-light items-start z-30 sticky flex justify-between text-[#9EA4C6] gap-x-10"
+	>
+		<div class="flex flex-col">
+			<LogoGradient />
+			<p class="leading-[18px] whitespace-nowrap mt-4">Redefining real estate success.</p>
+		</div>
+		<div class="text-left leading-normal flex flex-col">
+			<p class="mb-4">Support</p>
+			<p>Contact</p>
+		</div>
+		<div class="text-left leading-normal flex flex-col">
+			<p class="mb-4">Partners</p>
+			<p>Partners Program</p>
+		</div>
+		<div class="text-left leading-normal flex flex-col gap-y-4">
+			<p>Legal</p>
+			<p>Terms</p>
+			<p>Privacy Policy</p>
+			<p>Refund Policy</p>
+		</div>
+		<div class="text-left leading-normal flex flex-col">
+			<p class="mb-4">Social</p>
+			<div class="flex gap-x-4">
+				<Facebook />
+				<Linkedin />
+				<InstagramFooter />
+			</div>
 		</div>
 	</div>
-</div>
-<div class="flex flex-col items-center justify-center w-full">
-	<div class="post-title-line" />
-	<p class="opacity-80 p-5 text-[#9EA4C6] text-lg font-light leading-normal">
-		© 2023 Agent Boost AI. All rights reserved.
-	</p>
+	<div class="flex flex-col items-center justify-center w-full">
+		<div class="post-title-line" />
+		<p class="opacity-80 p-5 text-[#9EA4C6] text-lg font-light leading-normal">
+			© 2023 Agent Boost AI. All rights reserved.
+		</p>
+	</div>
 </div>
 
 <style lang="postcss">

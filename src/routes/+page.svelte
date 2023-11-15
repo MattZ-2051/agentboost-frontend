@@ -106,49 +106,62 @@
 		'!w-[8rem] !text-opacity-40 !text-white hover:!text-primary-500 hover:!bg-white hover:!bg-opacity-10';
 </script>
 
-<div class="w-full h-full relative p-12">
+<div class="w-full h-full relative xl:p-12">
 	<div class="elipse absolute" />
 	<section class="w-full flex flex-col h-full items-center justify-center">
 		<div class="flex flex-col items-center justify-center">
-			<div class="w-[278px] h-[39px] relative z-50">
+			<div class="w-[278px] h-[39px] relative z-30 mt-8">
 				<div
-					class="w-[278px] h-[39px] pl-[75px] pr-4 pt-[9px] pb-2.5 left-0 top-0 absolute bg-white bg-opacity-10 rounded-[50px] shadow backdrop-blur-[7.22px] justify-end items-center inline-flex"
+					class="text-base w-[278px] h-[39px] pl-[75px] pr-4 pt-[9px] pb-2.5 left-0 top-0 absolute bg-white bg-opacity-10 rounded-[50px] shadow backdrop-blur-[7.22px] justify-end items-center inline-flex"
 				>
-					<div class="text-white text-base font-['Sequel Sans'] leading-tight">
-						Free beta now available
-					</div>
+					<div class="text-white text-base leading-tight">Free beta now available</div>
 				</div>
 				<div
 					class="w-[65px] h-[35px] left-[2px] top-[2px] absolute bg-white bg-opacity-10 rounded-[50px] shadow backdrop-blur-[7.22px]"
 				/>
-				<div
-					class="left-[16px] top-[9px] absolute text-white text-base font-['Sequel Sans'] leading-tight"
-				>
-					New
-				</div>
+				<div class="left-[16px] top-[9px] absolute text-white text-base leading-tight">New</div>
 			</div>
-			<div class="flex flex-col mt-8 items-center w-full z-50">
-				<div class="w-[47rem]">
-					<p class="text-7xl text-center whitespace-nowrap text-white">We make your real</p>
-					<p class="text-7xl text-white mt-1">
-						estate business <span id="text1" class="textGradient" />
-						<span id="text2" class="textGradient" />
-					</p>
-				</div>
+			<div
+				class="mt-8 flex flex-col items-center xl:text-[90px] text-[40px] w-full leading-tight xl:leading-[6rem] z-30 text-white"
+			>
+				<p class="whitespace-nowrap hidden xl:inline-block">We make your real</p>
+				<p class="-ml-[17rem] hidden xl:inline-block">
+					estate business <span id="text1" class="textGradient" />
+					<span id="text2" class="textGradient" />
+				</p>
+				<!-- mobile styles  -->
+				<p class="xl:hidden inline-block whitespace-nowrap">We make your</p>
+				<p class="xl:hidden inline-block text-center">real estate</p>
+				<p class="xl:hidden inline-block whitespace-nowrap">
+					business <span class="textGradient">faster </span>
+					<!-- <span id="text1" class="textGradient" /> -->
+					<!-- <span id="text2" class="textGradient" /> -->
+				</p>
+				<!--------------------------------->
+				<!--------------------------------->
 			</div>
 		</div>
-		<p class="text-white opacity-70 text-center text-[22px] font-light mt-6 mb-12">
-			The ultimate tech suite for real estate professionals has arrived.
+		<p
+			class="text-white opacity-70 text-center z-20 text-[18px] xl:text-[22px] font-light mt-6 mb-12 whitespace-nowrap leading-normal"
+		>
+			The ultimate tech suite for real estate <br class="inline-block md:hidden" /> professionals has
+			arrived.
 		</p>
 
-		<Button label="Join Free Beta" variant="landing-dark" />
+		<Button label="Join Free Beta" variant="landing-dark" classes="!z-50" />
 		<div class="relative w-full">
 			<div class="flex justify-center">
-				<div class="w-[40rem] absolute h-full z-10 mask -rotate-90 -left-20" />
-				<div class="w-[40rem] absolute h-full z-10 mask rotate-90 -right-20" />
-				<div class="w-full absolute h-[24rem] mask rotate-180 bottom-0" />
-				<img src={cityVector} alt="" class="w-[80rem] h-[30rem]" />
-				<p class="text-white opacity-40 text-center text-lg font-light w-full bottom-10 absolute">
+				<div class="w-[40rem] absolute h-full z-10 mask -rotate-90 -left-[12rem]" />
+				<div class="w-[40rem] h-full z-10 mask rotate-90 -right-[12rem] absolute" />
+				<div class="w-full absolute h-[35rem] xl:h-[40rem] mask rotate-180 z-30 bottom-0" />
+				<img
+					src={cityVector}
+					alt=""
+					class="xl:w-[80rem] xl:h-[42rem] h-[40rem] -mt-32 xl:mt-0 z-20 xl:z-0 w-full xl:inline-block object-cover"
+				/>
+				<p
+					class="text-white opacity-40 text-center text-lg font-light w-full bottom-[10rem] xl:bottom-[13rem] z-50 absolute"
+				>
 					BACKED BY THE BEST
 				</p>
 			</div>
@@ -448,7 +461,7 @@
 	}
 
 	.mask {
-		background: linear-gradient(180deg, #010101 0%, rgba(1, 1, 1, 0) 77.08%);
+		background: linear-gradient(180deg, #010101 0%, rgba(1, 1, 1, 0) 87.08%);
 	}
 
 	.cta {

@@ -62,9 +62,6 @@
 		<Sidebar />
 	</Drawer>
 	<AppShell>
-		{#if !hideTabs}
-			<Tabs items={routes} />
-		{/if}
 		<slot />
 	</AppShell>
 </div>

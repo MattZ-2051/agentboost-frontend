@@ -50,7 +50,7 @@
 		height: 916.937px;
 		flex-shrink: 0;
 		position: absolute;
-		@apply -bottom-[140rem] -left-[75rem];
+		@apply -bottom-[125rem] -left-[70rem];
 	}
 
 	.gradient4 {

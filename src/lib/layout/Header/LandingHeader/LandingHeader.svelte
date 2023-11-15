@@ -1,15 +1,23 @@
 <script lang="ts">
 	import LogoWhite from '$lib/assets/svg/LogoWhite.svelte';
 	import Button from '$lib/components/Button/Button.svelte';
-	import { AppBar } from '@skeletonlabs/skeleton';
+	import { AppBar, getDrawerStore } from '@skeletonlabs/skeleton';
+
+	const drawerStore = getDrawerStore();
+	function drawerOpen(): void {
+		drawerStore.update((store) => {
+			store.open = !store.open;
+			return store;
+		});
+	}
 </script>
 
 <AppBar
-	gridColumns="grid-cols-3 lg:w-[1188px]"
-	padding="lg:p-12 p-8"
+	gridColumns="grid-cols-3 xl:w-[1188px]"
+	padding="lg:px-12 lg:py-12 px-4 py-8"
 	slotDefault="place-self-center"
 	slotTrail="place-content-end"
-	background="bg-transparent z-50 relative justify-center items-center"
+	background="bg-transparent z-40 relative justify-center items-center"
 >
 	<svelte:fragment slot="lead">
 		<div>
@@ -25,7 +33,7 @@
 	</div>
 	<svelte:fragment slot="trail">
 		<div class="flex items-center">
-			<button class="lg:hidden btn btn-sm mr-4">
+			<button class="lg:hidden btn btn-sm" on:click={drawerOpen}>
 				<span>
 					<svg
 						xmlns="http://www.w3.org/2000/svg"

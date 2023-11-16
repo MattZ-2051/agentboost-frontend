@@ -191,11 +191,9 @@
 			</div>
 		</div>
 		<!-- Mobile styles for under video feature section  -->
-		<div
-			class="xl:hidden inline-block xl:w-[1188px] xl:h-[643px] h-[225px] w-full md:w-[600px] lg:w-[800px] sm:px-0 sm:w-full pt-8 md:h-[400px]"
-		>
+		<div class="xl:hidden w-full flex justify-center just sm:px-0 pt-8">
 			<div
-				class="p-8 grid grid-cols-2 items-center text-[14px] gap-y-8 gap-x-8 md:text-[18px] w-full text-center justify-center border-opacity-30 bg-black bg-opacity-0 rounded-[20px] shadow border border-white backdrop-blur-[14.35px] h-full"
+				class="p-8 grid grid-cols-2 lg:w-[800px] h-[225px] md:w-[600px] items-center md:h-[400px] text-[14px] gap-y-8 gap-x-8 md:text-[18px] w-full text-center justify-center border-opacity-30 bg-black bg-opacity-0 rounded-[20px] shadow border border-white backdrop-blur-[14.35px]"
 			>
 				<p class="whitespace-nowrap">140 million+ <br /> property records</p>
 				<p class="whitespace-nowrap">AI driven <br /> Property insights</p>
@@ -204,7 +202,7 @@
 			</div>
 		</div>
 		<!-- Desktop styles for under video feature section -->
-		<div class="mt-12 hidden xl:flex justify-center w-full">
+		<div class="mt-12 hidden xl:flex xl:w-[1188px] justify-center w-full">
 			<div class="flex items-center leading-9 text-[2rem] text-white font-normal">
 				<p class="whitespace-nowrap">140 million+ <br /> property records</p>
 				<div class="mx-10 hidden xl:inline-block">
@@ -224,7 +222,7 @@
 		</div>
 	</section>
 	<section class="mt-40 text-white relative z-50 bg-transparent">
-		<p class="text-[30px] xl:text-6xl text-center leading-normal">
+		<p class="text-[30px] xl:text-6xl text-center leading-normal whitespace-nowrap">
 			Effortless <span class="textGradient">
 				<br class="inline-block xl:hidden" /> Expertise & Exposure</span
 			>
@@ -233,7 +231,7 @@
 			<p>Get your competitive advantage. <br class="inline-block xl:hidden" /> Get Boosted.</p>
 		</div>
 		<div class="w-full flex flex-col items-center justify-center">
-			<div class=" bg-zinc-950 bg-opacity-0 rounded-[40px] border border-white border-opacity-10">
+			<div class="bg-zinc-950 bg-opacity-0 rounded-[40px] border border-white border-opacity-10">
 				<div
 					class="bg-zinc-950 m-[.25rem] bg-opacity-0 rounded-[40px] border border-white border-opacity-10 flex"
 				>
@@ -248,55 +246,66 @@
 				</div>
 			</div>
 			<div
-				class="p-1 bg-zinc-950 bg-opacity-0 rounded-[20px] border border-white border-opacity-5 mt-16"
+				class="p-1 xl:w-[1188px] bg-zinc-950 bg-opacity-0 rounded-[20px] w-full md:w-[600px] lg:w-[800px] border border-white border-opacity-5 mt-16"
 			>
 				<div
-					class="xl:w-[1188px] w-full h-full xl:h-[490px] border-opacity-20 bg-black bg-opacity-30 rounded-[18px] shadow border border-white backdrop-blur-[14.35px] flex flex-col items-center p-8 sm:p-12"
+					class="w-full h-full xl:h-[490px] border-opacity-20 bg-black bg-opacity-30 rounded-[18px] shadow border border-white backdrop-blur-[14.35px] flex flex-col items-center p-8 sm:p-12"
 				>
 					<div
-						class="flex flex-col xl:flex-row items-start justify-start w-full xl:items-center opacity-100"
+						class="flex flex-col w-full xl:flex-row items-start xl:justify-center justify-start xl:items-center opacity-100"
 					>
 						<div class="mr-4">
 							<LandingBezier />
 						</div>
 						<p
-							class="text-white text-lg xl:text-[32px] tracking-tight whitespace-nowrap mt-4 xl:mt-0"
+							class="text-white text-xl xl:text-[32px] tracking-tight whitespace-nowrap mt-4 xl:mt-0"
 						>
 							Fully automated social media
 						</p>
 					</div>
 					<p
-						class="text-left xl:text-center whitespace-nowrap mt-8 text-slate font-light text-base w-full"
+						class="text-left xl:text-center whitespace-nowrap mt-4 text-slate font-light text-base w-full"
 					>
 						See our feature packed app that’s <br class="inline-block xl:hidden" /> going to be your
 						best friend.
 					</p>
-					<div class="mt-6">
-						<img src={landingScreenshot1} alt="" />
+					<div class="mt-8 w-full">
+						<img
+							src={landingScreenshot1}
+							alt=""
+							class="object-cover xl:w-full xl:h-full h-[300px] md:h-[400px] rounded-[18px]"
+						/>
 					</div>
 				</div>
 			</div>
 		</div>
-		<div class="w-full flex justify-center mt-6">
-			<div class="flex justify-between w-[1188px]">
+		<div class="flex justify-center mt-6">
+			<div
+				class="flex justify-between xl:w-[1188px] w-full md:w-[600px] lg:w-[800px] xl:flex-row flex-col items-center"
+			>
 				<div
 					class="p-1 bg-zinc-950 bg-opacity-0 rounded-[20px] border border-white border-opacity-5"
 				>
 					<div
-						class="w-[576px] h-[598px] border-opacity-20 bg-black bg-opacity-30 rounded-[18px] shadow border border-white backdrop-blur-[14.35px] p-12"
+						class="h-full xl:w-[576px] xl:h-[598px] border-opacity-20 bg-black bg-opacity-30 rounded-[18px] shadow border border-white backdrop-blur-[14.35px] p-8 sm:p-12"
 					>
-						<div class="flex items-center">
+						<div class="flex xl:items-center xl:flex-row flex-col">
 							<div class="mr-4">
 								<LandingBezier />
 							</div>
-							<p class="text-white text-[32px] tracking-tight">Automated Campaigns</p>
+							<p class="text-white text-xl xl:text-[32px] tracking-tight mt-4 xl:mt-0">
+								Automated Campaigns
+							</p>
 						</div>
-						<p class="text-left mt-4 text-slate font-light text-lg">
-							See our feature packed app that’s <br /> going to be your best friend.
+						<p
+							class="text-left xl:text-center whitespace-nowrap mt-4 xl:mt-8 text-slate font-light text-base w-full"
+						>
+							See our feature packed app that’s <br class="inline-block xl:hidden" /> going to be your
+							best friend.
 						</p>
 						<div class="mt-16">
 							<img
-								class="w-[487px] h-[335px] mix-blend-lighten rounded-[18px]"
+								class="xl:w-[487px] xl:h-[335px] h-[300px] md:h-[400px] w-full mix-blend-lighten rounded-[18px] object-cover"
 								src={landingPlaceholder}
 								alt=""
 							/>
@@ -304,25 +313,28 @@
 					</div>
 				</div>
 				<div
-					class="p-1 bg-zinc-950 bg-opacity-0 rounded-[20px] border border-white border-opacity-5"
+					class="p-1 bg-zinc-950 bg-opacity-0 rounded-[20px] border border-white border-opacity-5 mt-6 xl:mt-0"
 				>
 					<div
-						class="w-[576px] h-[598px] border-opacity-20 bg-black bg-opacity-30 rounded-[18px] shadow border border-white backdrop-blur-[14.35px] p-12"
+						class="h-full xl:w-[576px] xl:h-[598px] border-opacity-20 bg-black bg-opacity-30 rounded-[18px] shadow border border-white backdrop-blur-[14.35px] p-8 sm:p-12"
 					>
-						<div class="flex items-center">
+						<div class="flex xl:items-center xl:flex-row flex-col items-start justify-start">
 							<div class="mr-4">
 								<LandingBezier />
 							</div>
-							<p class="text-white text-[32px] tracking-tight">
+							<p class="text-white text-xl xl:text-[32px] tracking-tight mt-4 xl:mt-0">
 								Advanced analytics and ai generated suggestions
 							</p>
 						</div>
-						<p class="text-left mt-4 text-slate font-light text-lg">
-							See our feature packed app that’s <br /> going to be your best friend.
+						<p
+							class="text-left xl:text-center whitespace-nowrap mt-4 xl:mt-8 text-slate font-light text-base w-full"
+						>
+							See our feature packed app that’s <br class="inline-block xl:hidden" /> going to be your
+							best friend.
 						</p>
 						<div class="mt-12">
 							<img
-								class="w-[487px] h-[335px] mix-blend-lighten rounded-[18px]"
+								class="xl:w-[487px] xl:h-[335px] mix-blend-lighten rounded-[18px] h-[300px] md:h-[400px] w-full"
 								src={landingPlaceholder}
 								alt=""
 							/>

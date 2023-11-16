@@ -103,10 +103,10 @@
 	});
 
 	const section2ButtonStyle =
-		'!w-[8rem] !text-opacity-40 !text-white hover:!text-primary-500 hover:!bg-white hover:!bg-opacity-10';
+		'xl:!w-[8rem] w-[82px] !text-sm xl:!text-lg !text-opacity-40 !text-white hover:!text-primary-500 hover:!bg-white hover:!bg-opacity-10';
 </script>
 
-<div class="w-full h-full relative xl:p-12">
+<div class="w-full h-full relative xl:p-12 p-4">
 	<div class="elipse absolute" />
 	<section class="w-full flex flex-col h-full items-center justify-center">
 		<div class="flex flex-col items-center justify-center">
@@ -169,37 +169,54 @@
 	</section>
 	<section class="w-full flex flex-col items-center justify-center mt-40 relative">
 		<BackgroundGradient />
-		<p class="text-6xl text-center text-white">
-			The <span class="textGradient">Power of AI </span> in real estate
+		<p class="text-[30px] xl:text-6xl text-center text-white leading-tight">
+			The <span class="textGradient">Power of AI </span> in <br class="xl:hidden inline-block" /> real
+			estate
 		</p>
-		<div class="text-center mt-6 text-lg text-slate font-light mb-12">
-			<p>
-				Explore the tools that empower you to work smarter & faster <br /> to achieve your goals.
+		<div class="text-center mt-6 text-base sm:text-lg text-slate font-light mb-12">
+			<p class="whitespace-nowrap">
+				Explore the tools that empower <br class="inline-block xl:hidden" /> you to work smarter &
+				faster
+				<br class="hidden xl:inline-block" />
+				to <br class="inline-block xl:hidden" /> achieve your goals.
 			</p>
 		</div>
 		<div class="p-1 bg-zinc-950 bg-opacity-0 rounded-[20px] border border-white border-opacity-5">
 			<div
-				class="w-[1188px] h-[643px] bg-white bg-opacity-0 rounded-[19px] shadow border border-white border-opacity-40"
+				class="xl:w-[1188px] xl:h-[643px] h-[225px] md:h-[400px] w-full md:w-[600px] lg:w-[800px] sm:w-full bg-white bg-opacity-0 rounded-[19px] shadow border border-white border-opacity-40"
 			>
-				<video controls width="100%" class="rounded-[19px]">
+				<video controls width="100%" class="rounded-[19px] h-full w-full">
 					<track kind="captions" />
 				</video>
 			</div>
 		</div>
-
-		<div class="mt-12 flex justify-center w-full">
+		<!-- Mobile styles for under video feature section  -->
+		<div
+			class="xl:hidden inline-block xl:w-[1188px] xl:h-[643px] h-[225px] w-full md:w-[600px] lg:w-[800px] sm:px-0 sm:w-full pt-8 md:h-[400px]"
+		>
+			<div
+				class="p-8 grid grid-cols-2 items-center text-[14px] gap-y-8 gap-x-8 md:text-[18px] w-full text-center justify-center border-opacity-30 bg-black bg-opacity-0 rounded-[20px] shadow border border-white backdrop-blur-[14.35px] h-full"
+			>
+				<p class="whitespace-nowrap">140 million+ <br /> property records</p>
+				<p class="whitespace-nowrap">AI driven <br /> Property insights</p>
+				<p class="whitespace-nowrap">Automated <br /> Social Media</p>
+				<p class="">Marketing <br />Analytics</p>
+			</div>
+		</div>
+		<!-- Desktop styles for under video feature section -->
+		<div class="mt-12 hidden xl:flex justify-center w-full">
 			<div class="flex items-center leading-9 text-[2rem] text-white font-normal">
 				<p class="whitespace-nowrap">140 million+ <br /> property records</p>
-				<div class="mx-10">
+				<div class="mx-10 hidden xl:inline-block">
 					<LandingSeperator />
 				</div>
 
 				<p class="whitespace-nowrap">AI driven <br /> Property insights</p>
-				<div class="mx-10">
+				<div class="mx-10 hidden xl:inline-block">
 					<LandingSeperator />
 				</div>
 				<p class="whitespace-nowrap">Automated <br /> Social Media</p>
-				<div class="mx-10">
+				<div class="mx-10 hidden xl:inline-block">
 					<LandingSeperator />
 				</div>
 				<p class="">Marketing <br />Analytics</p>
@@ -207,17 +224,19 @@
 		</div>
 	</section>
 	<section class="mt-40 text-white relative z-50 bg-transparent">
-		<p class="text-6xl text-center">
-			Effortless <span class="textGradient"> expertise & exposure</span>
+		<p class="text-[30px] xl:text-6xl text-center leading-normal">
+			Effortless <span class="textGradient">
+				<br class="inline-block xl:hidden" /> Expertise & Exposure</span
+			>
 		</p>
 		<div class="text-center my-6 text-lg text-slate font-light">
-			<p>Get your competitive advantage. Get Boosted.</p>
+			<p>Get your competitive advantage. <br class="inline-block xl:hidden" /> Get Boosted.</p>
 		</div>
 		<div class="w-full flex flex-col items-center justify-center">
-			<div
-				class="p-[.25rem] bg-zinc-950 bg-opacity-0 rounded-[40px] border border-white border-opacity-10"
-			>
-				<div class="bg-zinc-950 bg-opacity-0 rounded-[40px] border border-white border-opacity-10">
+			<div class=" bg-zinc-950 bg-opacity-0 rounded-[40px] border border-white border-opacity-10">
+				<div
+					class="bg-zinc-950 m-[.25rem] bg-opacity-0 rounded-[40px] border border-white border-opacity-10 flex"
+				>
 					<Button
 						variant="variant-filled-surface"
 						label="Marketing"
@@ -232,16 +251,25 @@
 				class="p-1 bg-zinc-950 bg-opacity-0 rounded-[20px] border border-white border-opacity-5 mt-16"
 			>
 				<div
-					class="w-[1188px] h-[490px] border-opacity-20 bg-black bg-opacity-30 rounded-[18px] shadow border border-white backdrop-blur-[14.35px] flex flex-col items-center p-12"
+					class="xl:w-[1188px] w-full h-full xl:h-[490px] border-opacity-20 bg-black bg-opacity-30 rounded-[18px] shadow border border-white backdrop-blur-[14.35px] flex flex-col items-center p-8 sm:p-12"
 				>
-					<div class="flex items-center opacity-100">
+					<div
+						class="flex flex-col xl:flex-row items-start justify-start w-full xl:items-center opacity-100"
+					>
 						<div class="mr-4">
 							<LandingBezier />
 						</div>
-						<p class="text-white text-[32px] tracking-tight">Fully automated social media</p>
+						<p
+							class="text-white text-lg xl:text-[32px] tracking-tight whitespace-nowrap mt-4 xl:mt-0"
+						>
+							Fully automated social media
+						</p>
 					</div>
-					<p class="text-center mt-8 text-slate font-light text-lg">
-						See our feature packed app that’s going to be your best friend.
+					<p
+						class="text-left xl:text-center whitespace-nowrap mt-8 text-slate font-light text-base w-full"
+					>
+						See our feature packed app that’s <br class="inline-block xl:hidden" /> going to be your
+						best friend.
 					</p>
 					<div class="mt-6">
 						<img src={landingScreenshot1} alt="" />
@@ -461,7 +489,7 @@
 	}
 
 	.mask {
-		background: linear-gradient(180deg, #010101 0%, rgba(1, 1, 1, 0) 87.08%);
+		background: linear-gradient(180deg, #010101 0%, rgba(1, 1, 1, 0) 77.08%);
 	}
 
 	.cta {

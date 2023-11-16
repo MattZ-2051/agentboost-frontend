@@ -14,7 +14,7 @@
 
 <AppBar
 	gridColumns="grid-cols-3 xl:w-[1188px]"
-	padding="lg:px-12 lg:py-12 px-4 py-8"
+	padding="xl:px-12 xl:py-12 px-4 py-8"
 	slotDefault="place-self-center"
 	slotTrail="place-content-end"
 	background="bg-transparent z-40 relative justify-center items-center"

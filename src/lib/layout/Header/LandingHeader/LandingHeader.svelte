@@ -17,7 +17,7 @@
 	padding="xl:px-12 xl:py-12 px-4 py-8"
 	slotDefault="place-self-center"
 	slotTrail="place-content-end"
-	background="bg-transparent z-40 relative justify-center items-center"
+	background="bg-transparent z-[38] relative justify-center items-center"
 >
 	<svelte:fragment slot="lead">
 		<div>

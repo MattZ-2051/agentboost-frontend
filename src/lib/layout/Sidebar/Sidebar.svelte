@@ -1,4 +1,4 @@
-<nav class="list-nav h-full z-50 bg-blue-500">
+<nav class="list-nav h-full relative bg-blue-500">
 	<ul>
 		<li><a href="/">Homepage</a></li>
 		<li><a href="/about">About</a></li>

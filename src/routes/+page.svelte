@@ -334,7 +334,7 @@
 						</p>
 						<div class="mt-12">
 							<img
-								class="xl:w-[487px] xl:h-[335px] mix-blend-lighten rounded-[18px] h-[300px] md:h-[400px] w-full"
+								class="xl:w-[487px] xl:h-[335px] mix-blend-lighten rounded-[18px] h-[300px] md:h-[400px] w-full object-cover"
 								src={landingPlaceholder}
 								alt=""
 							/>
@@ -344,24 +344,26 @@
 			</div>
 		</div>
 	</section>
-	<section class="mt-40 text-white relative">
+	<section class="xl:mt-40 mt-20 text-white relative">
 		<div class="w-full flex justify-center flex-col items-center">
-			<p class="text-neutral-100 text-center text-6xl leading-[75px]">
-				Message from <span class="textGradient">the founders </span>
+			<p
+				class="text-neutral-100 text-center text-[30px] xl:text-6xl leading-normal xl:leading-[75px]"
+			>
+				Message from <br /> <span class="textGradient">the founders</span>
 			</p>
 			<div
 				class="p-1 bg-zinc-950 bg-opacity-0 rounded-[20px] border border-white border-opacity-5 mt-12"
 			>
 				<div
-					class="w-[1188px] h-[302px] flex p-12 items-center border-opacity-20 bg-opacity-30 bg-black rounded-[18px] shadow border border-white backdrop-blur-[14.35px]"
+					class="w-full h-full xl:w-[1188px] xl:h-[302px] flex p-4 xl:p-12 items-center border-opacity-20 bg-opacity-30 bg-black rounded-[18px] shadow border border-white backdrop-blur-[14.35px]"
 				>
-					<div class="relative z-50">
-						<p class="text-2xl text-slate font-light">
+					<div class="relative z-50 text-[18px] xl:text-2xl text-slate font-light">
+						<p class="">
 							At Agent Boost, our mission is to craft cutting-edge tools specifically tailored for
 							realtors like you. We recognize that optimizing your efficiency is pivotal to your
 							business success.
 						</p>
-						<p class="text-2xl mt-4 text-slate font-light">
+						<p class="mt-4">
 							Our platform will remain in a state of constant evolution, perpetually harnessing the
 							latest and most thrilling advancements in technology and AI to propel you towards
 							greater speed and effectiveness as an agent. Our journey is just beginning.

@@ -15,6 +15,9 @@ export default {
 		extend: {
 			colors: {
 				slate: '#C0C4DA'
+			},
+			screens: {
+				desktop: '1936px'
 			}
 		}
 	},

@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { slide } from 'svelte/transition';
-	import ArrowDown from '$lib/icons/Arrow/ArrowDown.svelte';
-	import ArrowUp from '$lib/icons/Arrow/ArrowUp.svelte';
+	import ArrowDown from '$lib/assets/svg/Arrow/ArrowDown.svelte';
+	import ArrowUp from '$lib/assets/svg/Arrow/ArrowUp.svelte';
 	import ProgressRadial from '../ProgressRadial/ProgressRadial.svelte';
 	import Card from '../Card/Card.svelte';
 	import Slider from '../CardSlider/Slider.svelte';

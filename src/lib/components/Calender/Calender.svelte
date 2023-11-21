@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { dndzone, type DndEvent } from 'svelte-dnd-action';
-	import ArrowLeft from '$lib/icons/Arrow/ArrowLeft.svelte';
-	import ArrowRight from '$lib/icons/Arrow/ArrowRight.svelte';
+	import ArrowLeft from '$lib/assets/svg/Arrow/ArrowLeft.svelte';
+	import ArrowRight from '$lib/assets/svg/Arrow/ArrowRight.svelte';
 	import CardModal from '../Modals/CardModal/CardModal.svelte';
 	import Chip from '../Chip/Chip.svelte';
 	import { getModalStore, type ModalSettings, type ModalComponent } from '@skeletonlabs/skeleton';

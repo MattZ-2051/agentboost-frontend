@@ -3,6 +3,9 @@
 	import Icon from '@iconify/svelte';
 	import DashboardIcon from '$lib/assets/svg/DashboardIcon.svelte';
 	import ListingsIcon from '$lib/assets/svg/ListingsIcon.svelte';
+	import ListingsIconHover from '$lib/assets/svg/ListingsIconHover.svelte';
+	import MarketingIconHover from '$lib/assets/svg/MarketingIconHover.svelte';
+	import BuyersIconHover from '$lib/assets/svg/BuyersIconHover.svelte';
 	import LogoGradient from '$lib/assets/svg/LogoGradient.svelte';
 	import MarketingIcon from '$lib/assets/svg/MarketingIcon.svelte';
 	import Button from '$lib/components/Button/Button.svelte';
@@ -16,7 +19,9 @@
 	$: showPopup = false;
 	$: iconHover = {
 		dashboard: false,
-		buyers: false
+		buyers: false,
+		listings: false,
+		marketing: false
 	};
 </script>
 
@@ -44,19 +49,49 @@
 						{/if}
 					</span>
 				</Button>
-				<Button variant="variant-filled-surface" label="Buyers" classes={headerButtonStyles}>
+				<Button
+					variant="variant-filled-surface"
+					label="Buyers"
+					classes={headerButtonStyles}
+					onMouseEnter={() => (iconHover.buyers = true)}
+					onMouseLeave={() => (iconHover.buyers = false)}
+				>
 					<span slot="icon" class="">
-						<BuyersIcon />
+						{#if iconHover.buyers}
+							<BuyersIconHover />
+						{:else}
+							<BuyersIcon />
+						{/if}
 					</span>
 				</Button>
-				<Button variant="variant-filled-surface" label="Listings" classes={headerButtonStyles}>
+				<Button
+					variant="variant-filled-surface"
+					label="Listings"
+					classes={headerButtonStyles}
+					onMouseEnter={() => (iconHover.listings = true)}
+					onMouseLeave={() => (iconHover.listings = false)}
+				>
 					<span slot="icon" class="">
-						<ListingsIcon />
+						{#if iconHover.listings}
+							<ListingsIconHover />
+						{:else}
+							<ListingsIcon />
+						{/if}
 					</span></Button
 				>
-				<Button variant="variant-filled-surface" label="Marketing" classes={headerButtonStyles}>
+				<Button
+					variant="variant-filled-surface"
+					label="Marketing"
+					classes={headerButtonStyles}
+					onMouseEnter={() => (iconHover.marketing = true)}
+					onMouseLeave={() => (iconHover.marketing = false)}
+				>
 					<span slot="icon" class="">
-						<MarketingIcon />
+						{#if iconHover.marketing}
+							<MarketingIconHover />
+						{:else}
+							<MarketingIcon />
+						{/if}
 					</span>
 				</Button>
 			</div>

@@ -5,6 +5,7 @@
 	import ChevronUp from '$lib/assets/svg/ChevronUp.svelte';
 	import Dropdown from '../Dropdown/Dropdown.svelte';
 	import { fade } from 'svelte/transition';
+	import ChevronDown from '$lib/assets/svg/ChevronDown.svelte';
 
 	export let address: string;
 	export let status: string;
@@ -39,7 +40,11 @@
 				class="hover:scale-110 hover:cursor-pointer"
 				on:click={() => (showContent = !showContent)}
 			>
-				<ChevronUp />
+				{#if showContent}
+					<ChevronUp />
+				{:else}
+					<ChevronDown />
+				{/if}
 			</div>
 		</div>
 		<div

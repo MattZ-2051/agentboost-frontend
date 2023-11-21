@@ -27,13 +27,13 @@
       </TabAnchor> -->
 			<div
 				on:click={() => handleNav(item.href)}
-				class="hover:text-primary-500 hover:cursor-pointer hover:border-b hover:border-b-primary-500 py-4 relative z-10"
+				class="hover:text-primary-500 border-b border-b-transparent hover:cursor-pointer hover:border-b hover:border-b-primary-500 py-4 relative z-10"
 			>
 				<p>{item.label}</p>
 			</div>
 		{:else}
 			<div
-				class="hover:text-primary-500 hover:cursor-pointer hover:border-b hover:border-b-primary-500 py-4 relative z-10"
+				class="hover:text-primary-500 border-b border-b-transparent hover:cursor-pointer hover:border-b hover:border-b-primary-500 py-4 relative z-10"
 			>
 				<p>{item.label}</p>
 			</div>

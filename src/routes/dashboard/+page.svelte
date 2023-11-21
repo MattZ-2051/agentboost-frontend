@@ -1,4 +1,5 @@
 <script lang="ts">
+	import ListingCard from '$lib/components/Cards/ListingCard.svelte';
 	import Tabs from '$lib/components/Tabs/Tabs.svelte';
 </script>
 
@@ -16,5 +17,8 @@
 				}
 			]}
 		/>
+	</div>
+	<div class="mt-12">
+		<ListingCard address="10044  W Springdale Ct" status="Active" />
 	</div>
 </div>

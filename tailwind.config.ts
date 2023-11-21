@@ -14,7 +14,8 @@ export default {
 	theme: {
 		extend: {
 			colors: {
-				slate: '#C0C4DA'
+				slate: '#C0C4DA',
+				card: '#171A1C'
 			},
 			screens: {
 				desktop: '1936px'

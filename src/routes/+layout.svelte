@@ -7,11 +7,9 @@
 	import { Modal } from '@skeletonlabs/skeleton';
 	import { Drawer } from '@skeletonlabs/skeleton';
 	import { Toast } from '@skeletonlabs/skeleton';
-	import Tabs from '$lib/components/Tabs/Tabs.svelte';
 	import { page } from '$app/stores';
 	import { computePosition, autoUpdate, offset, shift, flip, arrow } from '@floating-ui/dom';
 	import { storePopup } from '@skeletonlabs/skeleton';
-	import { routes } from './routes';
 	import { onMount } from 'svelte';
 
 	storePopup.set({ computePosition, autoUpdate, offset, shift, flip, arrow });

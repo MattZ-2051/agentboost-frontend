@@ -6,21 +6,16 @@
 	export let classes: string | undefined = undefined;
 	export let variant: ButtonVariant | undefined = undefined;
 	export let onClick: (() => void) | undefined = undefined;
-
-	let styles: string;
-	if (variant === 'landing') {
-		styles = 'landingButton';
-	} else if (variant === 'landing-dark') {
-		styles = 'landingDarkButton';
-	} else {
-		styles = 'btn';
-	}
+	export let onMouseEnter: (() => void) | undefined = undefined;
+	export let onMouseLeave: (() => void) | undefined = undefined;
 </script>
 
 <button
 	type="button"
-	class={`${styles} ${variant} ${classes} hover:cursor-pointer relative`}
+	class={`btn ${variant} ${classes} hover:!cursor-pointer relative`}
 	on:click={onClick}
+	on:mouseenter={onMouseEnter}
+	on:mouseleave={onMouseLeave}
 >
 	{#if variant === 'landing' || variant === 'landing-dark'}
 		<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -33,10 +28,87 @@
 			/>
 		</svg>
 	{/if}
-	{label}</button
->
+	<div
+		class={`${
+			variant === 'variant-app-primary'
+				? 'w-full h-full bg-surface-500 rounded-[10px] flex items-center justify-center'
+				: 'flex items-center justify-center gap-x-1'
+		}`}
+	>
+		<slot name="icon" />
+		<p class={`w-fit ${variant === 'variant-app-primary' ? 'textGradient1' : ''}`}>
+			{label}
+		</p>
+	</div>
+</button>
 
 <style lang="postcss">
+	.textGradient1 {
+		background: linear-gradient(88deg, #3f8bfd -50.22%, #49f9ea 89.43%);
+		background-clip: text;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+	}
+
+	.variant-app-primary:hover p {
+		background: white;
+		background-clip: text;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+	}
+
+	.textGradient1:hover {
+		background: white;
+		background-clip: text;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+	}
+
+	.variant-app-primary {
+		border-radius: 10px;
+		background: linear-gradient(93deg, #3f8bfd 26.03%, #49f9ea 90.66%);
+		padding: 2px;
+		width: 100%;
+		height: 100%;
+	}
+
+	.variant-app-primary:hover {
+		border-radius: 10px;
+		background: transparent;
+		padding: 2px;
+		width: 100%;
+		height: 100%;
+	}
+
+	.variant-app-primary::before {
+		content: '';
+		border-radius: 10px;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		position: absolute;
+		z-index: -1;
+		padding: 2px;
+		background: linear-gradient(93deg, #3f8bfd 26.03%, #49f9ea 90.66%);
+		transform: scaleX(0);
+		transition: transform 200ms ease-in-out;
+	}
+
+	.variant-app-primary:hover div {
+		@apply !bg-opacity-0;
+	}
+
+	.variant-app-primary:hover::before,
+	.variant-app-primary:focus::before {
+		transform: scaleX(1);
+	}
+
+	.variant-app-primary:hover::before,
+	.variant-app-primary:focus::before {
+		transform: scaleX(1);
+	}
+
 	.landing {
 		border-radius: 50px;
 		border: 1px solid rgba(255, 255, 255, 0.51);

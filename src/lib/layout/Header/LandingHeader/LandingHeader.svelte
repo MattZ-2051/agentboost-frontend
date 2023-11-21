@@ -22,8 +22,8 @@
 	<svelte:fragment slot="lead">
 		<div>
 			<LogoWhite />
-		</div></svelte:fragment
-	>
+		</div>
+	</svelte:fragment>
 	<div
 		class="lg:flex gap-x-14 font-extralight textLink hover:text-white hover:cursor-pointer items-center justify-center hidden"
 	>

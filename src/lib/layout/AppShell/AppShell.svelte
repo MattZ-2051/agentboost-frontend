@@ -16,7 +16,7 @@
 <AppShell
 	slotHeader="sticky"
 	on:scroll={scrollHandler}
-	regionPage="justify-center items-center"
+	regionPage="justify-center items-center overflow-hidden"
 	slotSidebarLeft="w-0 lg:w-0"
 >
 	{#if isLanding}
@@ -31,12 +31,3 @@
 		<LandingFooter />
 	{/if}
 </AppShell>
-<!-- {:else} -->
-<!-- <AppShell on:scroll={scrollHandler} slotSidebarLeft="w-0 ">
-	<svelte:fragment slot="header">
-		<Header />
-	</svelte:fragment>
-	<div class="p-12 h-full">
-		<slot />
-	</div>
-</AppShell> -->

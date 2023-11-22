@@ -108,7 +108,7 @@
 
 <div class="w-full h-full relative xl:p-12 p-4">
 	<div class="elipse absolute" />
-	<section class="w-full flex flex-col h-full items-center justify-center">
+	<section class="w-full flex flex-col items-center justify-center">
 		<div class="flex flex-col items-center justify-center">
 			<div class="w-[278px] h-[39px] relative z-30 mt-8">
 				<div

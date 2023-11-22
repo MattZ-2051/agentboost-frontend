@@ -26,6 +26,7 @@
 		variant="variant-app-primary"
 		onMouseEnter={() => (iconHover = true)}
 		onMouseLeave={() => (iconHover = false)}
+		bg={'bg-zinc-900'}
 	>
 		<span slot="icon" class="mr-2 mt-[0.5px]">
 			{#if !iconHover}

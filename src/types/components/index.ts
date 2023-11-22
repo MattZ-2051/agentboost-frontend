@@ -1,7 +1,6 @@
 type Tab = {
 	label: string;
 	href?: string;
-	name: string;
 };
 export type TabItems = Tab[];
 

@@ -2,10 +2,10 @@
 	import ShareIcon from '$lib/assets/svg/ShareIcon.svelte';
 	import TrashIcon from '$lib/assets/svg/TrashIcon.svelte';
 	import Button from '../Button/Button.svelte';
-	import ChevronUp from '$lib/assets/svg/ChevronUp.svelte';
+	import ChevronUp from '$lib/assets/svg/Chevron/ChevronUp.svelte';
 	import Dropdown from '../Dropdown/Dropdown.svelte';
 	import { fade } from 'svelte/transition';
-	import ChevronDown from '$lib/assets/svg/ChevronDown.svelte';
+	import ChevronDown from '$lib/assets/svg/Chevron/ChevronDown.svelte';
 
 	export let address: string;
 	export let status: string;
@@ -17,13 +17,15 @@
 </script>
 
 <div
-	class="card !bg-card w-fit h-full p-4 rounded-[10px] shadow border border-white border-opacity-20"
+	class="card !bg-[#171A1C] w-fit h-full p-4 rounded-[10px] shadow border border-gray-800 border-opacity-20"
 >
-	<img
-		class="w-[292px] h-[233px] rounded-[10px]"
-		src="https://via.placeholder.com/292x233"
-		alt=""
-	/>
+	<div class="bg-[#25282D] p-3 rounded-[10px]">
+		<img
+			class="w-[292px] h-[233px] rounded-[10px]"
+			src="https://via.placeholder.com/292x233"
+			alt=""
+		/>
+	</div>
 	<div class="flex justify-between items-center pt-[1.125rem] pb-[24px]">
 		<p class="text-base leading-[15px]">{address}</p>
 		<div class="flex gap-x-[14px]">
@@ -31,7 +33,7 @@
 			<TrashIcon />
 		</div>
 	</div>
-	<Dropdown {showContent}>
+	<Dropdown {showContent} classes="px-[18px] py-3 !h-[48px] bg-[#25282D]">
 		<div class="flex justify-between w-full">
 			<div class="text-neutral-300 text-[15px] font-medium leading-normal text-left">
 				{status}
@@ -77,6 +79,11 @@
 		</div>
 	</Dropdown>
 	<div class="mt-4">
-		<Button label="View Listing" variant="variant-app-primary" classes="!h-[48px]" />
+		<Button
+			label="View Listing"
+			variant="variant-app-primary"
+			classes="!h-[48px]"
+			bg={'bg-[#171A1C]'}
+		/>
 	</div>
 </div>

@@ -60,7 +60,6 @@
 		<ListingCard address="10044 W Springdale Ct" status="Active" />
 		<ListingCard address="10044 W Springdale Ct" status="Active" />
 		<ListingCard address="10044 W Springdale Ct" status="Active" />
-		<ListingCard address="10044 W Springdale Ct" status="Active" />
 	</div>
 </div>
 

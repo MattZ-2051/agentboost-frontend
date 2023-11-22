@@ -12,6 +12,7 @@
 	import dummyProfileImg from '$lib/assets/images/dummy-profile.png';
 	import ProfilePopup from '$lib/components/Popups/ProfilePopup/ProfilePopup.svelte';
 	import DashboardIconHover from '$lib/assets/svg/DashboardIconHover.svelte';
+	import { goto } from '$app/navigation';
 
 	const headerButtonStyles =
 		'!text-[rgba(255,255,255,0.8)] text-base font-light hover:!bg-[rgba(255,255,255,0.09)] w-[9rem] h-[2.125rem]';
@@ -38,6 +39,7 @@
 					variant="variant-filled-surface"
 					label="Dashboard"
 					classes={headerButtonStyles}
+					onClick={() => goto('/dashboard')}
 					onMouseEnter={() => (iconHover.dashboard = true)}
 					onMouseLeave={() => (iconHover.dashboard = false)}
 				>
@@ -52,6 +54,7 @@
 				<Button
 					variant="variant-filled-surface"
 					label="Buyers"
+					onClick={() => goto('/buyers')}
 					classes={headerButtonStyles}
 					onMouseEnter={() => (iconHover.buyers = true)}
 					onMouseLeave={() => (iconHover.buyers = false)}
@@ -67,6 +70,7 @@
 				<Button
 					variant="variant-filled-surface"
 					label="Listings"
+					onClick={() => goto('/listings')}
 					classes={headerButtonStyles}
 					onMouseEnter={() => (iconHover.listings = true)}
 					onMouseLeave={() => (iconHover.listings = false)}

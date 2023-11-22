@@ -4,6 +4,7 @@
 
 	export let label: string;
 	export let classes: string | undefined = undefined;
+	export let bg: string | undefined = undefined;
 	export let variant: ButtonVariant | undefined = undefined;
 	export let onClick: (() => void) | undefined = undefined;
 	export let onMouseEnter: (() => void) | undefined = undefined;
@@ -31,7 +32,7 @@
 	<div
 		class={`${
 			variant === 'variant-app-primary'
-				? 'w-full h-full bg-surface-500 rounded-[10px] flex items-center justify-center'
+				? `w-full h-full ${bg} rounded-[10px] flex items-center justify-center`
 				: 'flex items-center justify-center gap-x-1'
 		}`}
 	>

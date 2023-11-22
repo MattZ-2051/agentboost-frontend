@@ -2,27 +2,22 @@ import type { TabItems } from '$types/components';
 export const routes: TabItems = [
 	{
 		label: 'Dashboard',
-		href: '/dashboard',
-		name: 'dashboard'
+		href: '/dashboard'
 	},
 	{
 		label: 'Listings',
-		href: '/listings',
-		name: 'listings'
+		href: '/listings'
 	},
 	{
 		label: 'Buyers',
-		href: '/buyers',
-		name: 'buyers'
+		href: '/buyers'
 	},
 	{
 		label: 'Marketing',
-		href: '/marketing',
-		name: 'marketing'
+		href: '/marketing'
 	},
 	{
 		label: 'Profile',
-		href: '/profile',
-		name: 'profile'
+		href: '/profile'
 	}
 ];

@@ -16,7 +16,7 @@
 <AppShell
 	slotHeader="sticky"
 	on:scroll={scrollHandler}
-	regionPage="h-full justify-center items-center"
+	regionPage="justify-center items-center"
 	slotSidebarLeft="w-0 lg:w-0"
 >
 	{#if isLanding}
@@ -24,7 +24,7 @@
 	{:else}
 		<AppHeader />
 	{/if}
-	<div class={`h-full ${isLanding ? `` : `max-w-screen-desktop w-screen min-h-screen  px-12`}`}>
+	<div class={`h-full ${isLanding ? `` : `max-w-screen-desktop min-w-screen px-12`}`}>
 		<slot />
 	</div>
 	{#if isLanding}

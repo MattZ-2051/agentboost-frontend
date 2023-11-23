@@ -1,4 +1,4 @@
-<script lang>
+<script lang="ts">
 	import Button from '$lib/components/Button/Button.svelte';
 	import SearchBar from '$lib/components/SearchBar/SearchBar.svelte';
 	import Tabs from '$lib/components/Tabs/Tabs.svelte';
@@ -8,12 +8,29 @@
 	import TypeDropdown from '$lib/pages/Listings/Dropdowns/TypeDropdown.svelte';
 	import StatesDropdown from '$lib/pages/Listings/Dropdowns/StatesDropdown.svelte';
 	import MoreDropdown from '$lib/pages/Listings/Dropdowns/MoreDropdown.svelte';
+	import { getDrawerStore } from '@skeletonlabs/skeleton';
+	import type { DrawerSettings } from '@skeletonlabs/skeleton';
 
 	$: showStatus = false;
 	$: showTypes = false;
 	$: showStates = false;
 	$: showMore = false;
 	$: showGrid = false;
+
+	const drawerStore = getDrawerStore();
+	const drawerSettings: DrawerSettings = {
+		id: 'new-listing',
+		bgDrawer: 'bg-[#171A1C]'
+	};
+	const createNewListing = () => {
+		drawerStore.open(drawerSettings);
+
+		// drawerStore.update((store) => {
+		// 	store.open = !store.open;
+		// 	store.meta = drawerSettings.meta;
+		// 	return store;
+		// });
+	};
 	const tabItems = [{ label: 'Active' }, { label: 'Inactive' }, { label: 'Incoming' }];
 </script>
 
@@ -23,6 +40,7 @@
 		<Button
 			label="Create New Listing"
 			variant="variant-app-primary"
+			onClick={createNewListing}
 			classes="!w-[179px] !h-[48px]"
 			bg={'bg-surface-500'}
 		/>

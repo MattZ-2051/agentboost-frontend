@@ -6,6 +6,7 @@
 	const drawerStore = getDrawerStore();
 	function drawerOpen(): void {
 		drawerStore.update((store) => {
+			store.id = 'mobile-nav';
 			store.open = !store.open;
 			return store;
 		});

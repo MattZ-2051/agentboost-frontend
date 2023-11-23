@@ -4,7 +4,7 @@
 	import '../app.postcss';
 	import AppShell from '$lib/layout/AppShell/AppShell.svelte';
 	import Sidebar from '$lib/layout/Sidebar/Sidebar.svelte';
-	import { Modal } from '@skeletonlabs/skeleton';
+	import { Modal, getDrawerStore } from '@skeletonlabs/skeleton';
 	import { Drawer } from '@skeletonlabs/skeleton';
 	import { Toast } from '@skeletonlabs/skeleton';
 	import { page } from '$app/stores';
@@ -15,6 +15,7 @@
 	storePopup.set({ computePosition, autoUpdate, offset, shift, flip, arrow });
 
 	import { initializeStores } from '@skeletonlabs/skeleton';
+	import NewListingDrawer from '$lib/pages/Listings/Drawer/NewListingDrawer.svelte';
 
 	$: hideTabs =
 		$page.url.pathname.includes('signup') ||
@@ -23,12 +24,7 @@
 
 	initializeStores();
 
-	onMount(() => {
-		const el = document.getElementsByTagName('body');
-		for (let i = 0; i < el.length; i++) {
-			// el[i].className += ' overflow-y-scroll';
-		}
-	});
+	const drawerStore = getDrawerStore();
 
 	const fbId = import.meta.env?.VITE_FB_APP_ID;
 	window.fbAsyncInit = function () {
@@ -49,8 +45,12 @@
 <div class="dark bg-surface-500" data-theme="agentboost-theme">
 	<Toast position="t" />
 	<Modal />
-	<Drawer>
-		<Sidebar />
+	<Drawer position="right" width="w-[380px]">
+		{#if $drawerStore.id === 'nav-link'}
+			<Sidebar />
+		{:else if $drawerStore.id === 'new-listing'}
+			<NewListingDrawer />
+		{/if}
 	</Drawer>
 	<AppShell>
 		<slot />

@@ -1,4 +1,5 @@
 <script lang="ts">
+	import AddIcon from '$lib/assets/svg/AddIcon.svelte';
 	import CloseIcon from '$lib/assets/svg/CloseIcon.svelte';
 	import HomeIcon from '$lib/assets/svg/HomeIcon.svelte';
 	import Button from '$lib/components/Button/Button.svelte';
@@ -38,40 +39,48 @@
 	</p>
 	<div class="mt-8 flex flex-col gap-y-8">
 		<Input
-			label="Property Address"
+			label="Buyers Name"
 			value=""
 			type="text"
-			placeholder="Property Address Here"
+			placeholder="Buyer name here"
 			classes="w-[332px] border-none h-12 px-[18px] py-3 !bg-[#25282D] rounded-[10px] !mt-2 placeholder-[#4E545F]"
 		/>
-		<div class="flex justify-between w-full gap-x-4">
-			<Input
-				label="City"
-				value=""
-				type="text"
-				placeholder="State"
-				classes="w-full border-none h-12 px-[18px] py-3 !bg-[#25282D] rounded-[10px] !mt-2 placeholder-[#4E545F]"
-			/>
-			<Input
-				label="State"
-				value=""
-				type="text"
-				placeholder="City"
-				classes="w-full border-none h-12 px-[18px] py-3 !bg-[#25282D] rounded-[10px] !mt-2 placeholder-[#4E545F]"
-			/>
-		</div>
 		<Input
-			label="Key Info"
+			label="Property Address 1"
 			value=""
-			type="textarea"
-			placeholder="Key Info Here"
-			classes="w-full border-none px-[18px] py-3 !bg-[#25282D] rounded-[10px] !mt-2 placeholder-[#4E545F]"
+			type="text"
+			placeholder="Buyer name here"
+			classes="w-[332px] border-none h-12 px-[18px] py-3 !bg-[#25282D] rounded-[10px] !mt-2 placeholder-[#4E545F]"
 		/>
+		{#if showAddress2}
+			<Input
+				label="Property Address 2"
+				value=""
+				type="text"
+				placeholder="Buyer name here"
+				classes="w-[332px] border-none h-12 px-[18px] py-3 !bg-[#25282D] rounded-[10px] !mt-2 placeholder-[#4E545F]"
+			/>
+		{/if}
+		{#if showAddress3}
+			<Input
+				label="Property Address 3"
+				value=""
+				type="text"
+				placeholder="Buyer name here"
+				classes="w-[332px] border-none h-12 px-[18px] py-3 !bg-[#25282D] rounded-[10px] !mt-2 placeholder-[#4E545F]"
+			/>
+		{/if}
+		<div class="flex gap-x-2 justify-center w-full mb-12">
+			<div on:click={handleAdd}>
+				<AddIcon />
+			</div>
+			<p>Add New Address</p>
+		</div>
 		<Button
 			label="Boost"
 			variant="variant-app-primary"
 			bg="!bg-[#171A1C]"
-			classes="!w-[331px] !h-[48px] !mt-8"
+			classes="!w-[331px] !h-[48px]"
 		/>
 	</div>
 </div>

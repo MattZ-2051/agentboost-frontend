@@ -1,10 +1,11 @@
-<svg
-	xmlns="http://www.w3.org/2000/svg"
-	fill="none"
-	viewBox="0 0 24 24"
-	stroke-width="1.5"
-	stroke="currentColor"
-	class="w-8 h-8"
->
-	<path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+	<g id="vuesax/outline/arrow-left">
+		<g id="arrow-left">
+			<path
+				id="Vector"
+				d="M15.0013 20.67C14.8113 20.67 14.6213 20.6 14.4713 20.45L7.95125 13.93C6.89125 12.87 6.89125 11.13 7.95125 10.07L14.4713 3.55C14.7613 3.26 15.2413 3.26 15.5312 3.55C15.8212 3.84 15.8212 4.32 15.5312 4.61L9.01125 11.13C8.53125 11.61 8.53125 12.39 9.01125 12.87L15.5312 19.39C15.8212 19.68 15.8212 20.16 15.5312 20.45C15.3813 20.59 15.1912 20.67 15.0013 20.67Z"
+				fill="white"
+			/>
+		</g>
+	</g>
 </svg>

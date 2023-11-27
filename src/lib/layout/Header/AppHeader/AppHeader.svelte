@@ -27,7 +27,7 @@
 </script>
 
 <div class="flex justify-between w-screen max-w-screen-desktop px-12 py-4 items-center">
-	<div class="">
+	<div class="hover:cursor-pointer" on:click={() => goto('/')}>
 		<LogoGradient />
 	</div>
 	<div class="w-full flex justify-center">
@@ -87,6 +87,7 @@
 					variant="variant-filled-surface"
 					label="Marketing"
 					classes={headerButtonStyles}
+					onClick={() => goto('/marketing')}
 					onMouseEnter={() => (iconHover.marketing = true)}
 					onMouseLeave={() => (iconHover.marketing = false)}
 				>

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Calender from '$lib/components/Calender/Calender.svelte';
+	import Calender from '$lib/pages/Marketing/Calender/Calender.svelte';
 	import Activity from '$lib/pages/Listings/Activity/Activity.svelte';
 	import SocialAccounts from '$lib/pages/Listings/SocialAccounts/SocialAccounts.svelte';
 </script>
@@ -9,6 +9,6 @@
 	<SocialAccounts />
 	<Activity />
 </div>
-<div class="mt-6">
+<div class="mt-6 w-full flex justify-center">
 	<Calender />
 </div>

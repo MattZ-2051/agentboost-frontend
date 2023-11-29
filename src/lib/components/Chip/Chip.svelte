@@ -5,4 +5,4 @@
 	export let onClick: (() => void) | undefined = undefined;
 </script>
 
-<span on:click={onClick} class={`chip ${variant}`} on:keydown={onClick}>{title}</span>
+<span on:click={onClick} class={`chip ${variant}`} on:click={onClick}>{title}</span>

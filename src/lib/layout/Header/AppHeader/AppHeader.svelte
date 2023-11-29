@@ -10,7 +10,7 @@
 	import MarketingIcon from '$lib/assets/svg/MarketingIcon.svelte';
 	import Button from '$lib/components/Button/Button.svelte';
 	import dummyProfileImg from '$lib/assets/images/dummy-profile.png';
-	import ProfilePopup from '$lib/components/Popups/ProfilePopup/ProfilePopup.svelte';
+	import ProfilePopup from '$lib/pages/App/Popups/ProfilePopup/ProfilePopup.svelte';
 	import DashboardIconHover from '$lib/assets/svg/DashboardIconHover.svelte';
 	import { goto } from '$app/navigation';
 

@@ -7,8 +7,6 @@
 	$: showPopup = false;
 
 	export let gridColNum: number;
-
-	console.log('grid colum num', gridColNum);
 </script>
 
 <div class="relative">
@@ -16,7 +14,7 @@
 		<div
 			class={`${
 				gridColNum > 5 || gridColNum === 0 ? 'right-[9.5rem] bottom-0' : 'left-[9.5rem]'
-			} absolute bottom-0 popup`}
+			} absolute bottom-0 z-50`}
 		>
 			<PostPopup
 				classes={`${
@@ -28,12 +26,12 @@
 		</div>
 	{/if}
 	<div
-		class="w-[137px] h-7 px-2 py-1 bg-[#0085FF] bg-opacity-10 rounded justify-center items-center gap-2 inline-flex hover:bg-[#48E8ED]"
+		class="w-[137px] h-7 px-2 py-1 bg-[#0085FF] bg-opacity-10 rounded justify-center items-center gap-2 inline-flex hover:bg-[#48E8ED] relative z-0"
 		on:click={() => (showPopup = !showPopup)}
 	>
-		<img class="w-5 h-5 rounded-full" src={facebookIcon} />
-		<img class="w-5 h-5 rounded-full" src={instagramIcon} />
-		<img class="w-5 h-5 rounded-full" src={xIcon} />
+		<img class="w-5 h-5 rounded-full" src={facebookIcon} alt="" />
+		<img class="w-5 h-5 rounded-full" src={instagramIcon} alt="" />
+		<img class="w-5 h-5 rounded-full" src={xIcon} alt="" />
 		<div class="text-[#0085FF] text-sm font-medium font-['Inter']">12PM</div>
 	</div>
 </div>

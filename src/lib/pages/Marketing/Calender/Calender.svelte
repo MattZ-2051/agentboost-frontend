@@ -1,13 +1,11 @@
 <script lang="ts">
-	import AddIconHover from '$lib/assets/AddIcon/AddIconHover.svelte';
-
 	import { dndzone, type DndEvent } from 'svelte-dnd-action';
 	import ArrowLeft from '$lib/assets/svg/Arrow/ArrowLeft.svelte';
 	import ArrowRight from '$lib/assets/svg/Arrow/ArrowRight.svelte';
-	import Chip from '../Chip/Chip.svelte';
 	import { onMount } from 'svelte';
 	import CalenderIcon from '$lib/assets/svg/CalenderIcon.svelte';
-	import Add from '$lib/pages/Marketing/Calender/Add.svelte';
+	import PostChip from './PostChip.svelte';
+	import Add from './Add.svelte';
 
 	const date = new Date();
 
@@ -101,19 +99,19 @@
 		{
 			id: 1,
 			label: 'listing 1',
-			day: '10',
+			day: '11',
 			month: 'November'
 		},
 		{
 			id: 2,
 			label: 'listing 2',
-			day: '13',
+			day: '10',
 			month: 'November'
 		},
 		{
 			id: 3,
 			label: 'listing 3',
-			day: '10',
+			day: '5',
 			month: 'November'
 		}
 	];
@@ -140,91 +138,95 @@
 	};
 </script>
 
-<div class="bg-[#151719] h-[1288px] w-[1270px] rounded-[20px] py-6 px-8">
-	<div class="flex justify-between">
-		<div class="flex items-center">
-			<CalenderIcon />
-			<p class="text-white text-xl font-semibold ml-2">Your Monthly Marketing Calender</p>
-		</div>
-		<div class="flex items-center gap-x-4">
-			<h1 class="text-xl">{month} {year}</h1>
-			<div class="flex items-center gap-x-6">
-				<div
-					class="hover:cursor-pointer hover:scale-110"
-					on:click={goToPrevMonth}
-					on:keydown={goToPrevMonth}
-				>
-					<ArrowLeft />
-				</div>
-				<div
-					class="hover:cursor-pointer hover:scale-110"
-					on:click={goToNextMonth}
-					on:keydown={goToNextMonth}
-				>
-					<ArrowRight />
+<div class="w-full rounded-[20px] py-6 px-8 bg-[#151719] flex justify-center">
+	<div class="h-[1288px] w-[1270px]">
+		<div class="flex justify-between">
+			<div class="flex items-center">
+				<CalenderIcon />
+				<p class="text-white text-xl font-semibold ml-2">Your Monthly Marketing Calender</p>
+			</div>
+			<div class="flex items-center gap-x-4">
+				<h1 class="text-xl">{month} {year}</h1>
+				<div class="flex items-center gap-x-6">
+					<div
+						class="hover:cursor-pointer hover:scale-110"
+						on:click={goToPrevMonth}
+						on:keydown={goToPrevMonth}
+					>
+						<ArrowLeft />
+					</div>
+					<div
+						class="hover:cursor-pointer hover:scale-110"
+						on:click={goToNextMonth}
+						on:keydown={goToNextMonth}
+					>
+						<ArrowRight />
+					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-	<div class="mt-12" />
-	<ul class="weekdays grid grid-cols-7 font-[500]">
-		<li class="!border-r-[0.937px] !border-l-0 !border-t-0 !border-b-0">SUN</li>
-		<li class="!border-t-0 !border-b-0 !border-l-0 !border-r-[0.937px]">MON</li>
-		<li class="!border-t-0 !border-b-0 !border-l-0 !border-r-[0.937px]">TUE</li>
-		<li class="!border-t-0 !border-b-0 !border-l-0 !border-r-[0.937px]">WED</li>
-		<li class="!border-t-0 !border-b-0 !border-l-0 !border-r-[0.937px]">THUR</li>
-		<li class="!border-t-0 !border-b-!border-b-0 !border-l-0 !border-r-[0.937px]">FRI</li>
-		<li class="border-l !border-t-0 !border-r-0 !border-b-0">SAT</li>
-	</ul>
-	<ul class="days grid grid-cols-7">
-		{#each calender as item, i (item.id)}
-			{#if i < firstDayIndex || i >= numberOfDays + firstDayIndex}
-				<div
-					class={`cell  ${
-						i === 0
-							? '!border-l-[0.937px] !border-r-[0.937px] !border-b-[0.937px] !border-t-0'
-							: i < 6
-							? '!border-r-[0.937px] !border-l-0 !border-b-[0.937px] !border-t-0'
-							: '!border-none'
-					}`}
-				>
-					&nbsp;
-				</div>
-			{:else}
-				<div
-					class={`cell  ${'flex flex-col h-full !border-l-0 !border-r-[0.937px] !border-b-[0.937px] !border-t-0'}`}
-				>
-					<span class="flex justify-between w-full items-start !text-neutral-400 !text-opacity-70">
-						{i - firstDayIndex + 1}
-						<!-- <AddIconHover /> -->
-						<Add />
-					</span>
+		<div class="mt-12" />
+		<ul class="weekdays grid grid-cols-7 font-[500]">
+			<li class="!border-r-[0.937px] !border-l-0 !border-t-0 !border-b-0">SUN</li>
+			<li class="!border-t-0 !border-b-0 !border-l-0 !border-r-[0.937px]">MON</li>
+			<li class="!border-t-0 !border-b-0 !border-l-0 !border-r-[0.937px]">TUE</li>
+			<li class="!border-t-0 !border-b-0 !border-l-0 !border-r-[0.937px]">WED</li>
+			<li class="!border-t-0 !border-b-0 !border-l-0 !border-r-[0.937px]">THUR</li>
+			<li class="!border-t-0 !border-b-!border-b-0 !border-l-0 !border-r-[0.937px]">FRI</li>
+			<li class="border-l !border-t-0 !border-r-0 !border-b-0">SAT</li>
+		</ul>
+		<ul class="days grid grid-cols-7">
+			{#each calender as item, i (item.id)}
+				{#if i < firstDayIndex || i >= numberOfDays + firstDayIndex}
 					<div
-						use:dndzone={{
-							items: item.items,
-							dropTargetStyle: {}
-						}}
-						on:consider={(e) => handleItemConsider(item.id, e)}
-						on:finalize={(e) =>
-							handleItemFinalize(
-								item.id,
-								{ day: (i - firstDayIndex + 1).toString(), month: month },
-								e
-							)}
-						id={`${i - firstDayIndex + 1}`}
-						class="flex flex-col h-full"
+						class={`cell  ${
+							i === 0
+								? '!border-l-[0.937px] !border-r-[0.937px] !border-b-[0.937px] !border-t-0'
+								: i < 6
+								? '!border-r-[0.937px] !border-l-0 !border-b-[0.937px] !border-t-0'
+								: '!border-none'
+						}`}
 					>
-						{#each item.items as info, x (info.id)}
-							{#if info.month === month}
-								<div class={`${x > 0 ? 'mb-2' : ''}`}>
-									<!-- <Chip title={info.label} variant="variant-filled" /> -->
-								</div>
-							{/if}
-						{/each}
+						&nbsp;
 					</div>
-				</div>{/if}
-		{/each}
-	</ul>
+				{:else}
+					<div
+						class={`cell  ${'flex flex-col h-full !border-l-0 !border-r-[0.937px] !border-b-[0.937px] !border-t-0'}`}
+					>
+						<span
+							class="flex justify-between w-full items-start !text-neutral-400 !text-opacity-70"
+						>
+							{i - firstDayIndex + 1}
+							<Add />
+						</span>
+						<div
+							use:dndzone={{
+								items: item.items,
+								dropTargetStyle: {}
+							}}
+							on:consider={(e) => handleItemConsider(item.id, e)}
+							on:finalize={(e) =>
+								handleItemFinalize(
+									item.id,
+									{ day: (i - firstDayIndex + 1).toString(), month: month },
+									e
+								)}
+							id={`${i - firstDayIndex + 1}`}
+							class="flex flex-col h-full justify-end"
+						>
+							{#each item.items as info, x (info.id)}
+								{#if info.month === month}
+									<div class={`${x > 0 ? 'mb-2' : ''}`}>
+										<!-- <Chip title={info.label} variant="variant-filled" /> -->
+										<PostChip gridColNum={(i + 1) % 7} />
+									</div>
+								{/if}
+							{/each}
+						</div>
+					</div>{/if}
+			{/each}
+		</ul>
+	</div>
 </div>
 
 <style>

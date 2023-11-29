@@ -1,5 +1,5 @@
 <script>
-	import AddIconHover from '$lib/assets/AddIcon/AddIconHover.svelte';
+	import AddIconHover from '$lib/assets/svg/AddIcon/AddIconHover.svelte';
 	import { fade } from 'svelte/transition';
 
 	$: showAdd = false;

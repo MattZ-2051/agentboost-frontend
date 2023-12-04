@@ -2,7 +2,7 @@
 	import { slide } from 'svelte/transition';
 	import ArrowDown from '$lib/assets/svg/Arrow/ArrowDown.svelte';
 	import ArrowUp from '$lib/assets/svg/Arrow/ArrowUp.svelte';
-	import ProgressRadial from '../ProgressRadial/ProgressRadial.svelte';
+	import ProgressRadial from '../../components/ProgressRadial/ProgressRadial.svelte';
 	import Card from '../Card/Card.svelte';
 	import Slider from '../CardSlider/Slider.svelte';
 	import { sliderItems } from '$mockData/listings';

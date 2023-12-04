@@ -141,9 +141,9 @@
 <div class="w-full rounded-[20px] py-6 px-8 bg-[#151719] flex justify-center">
 	<div class="h-[1288px] w-[1270px]">
 		<div class="flex justify-between">
-			<div class="flex items-center">
+			<div class="flex items-center gap-x-4">
 				<CalenderIcon />
-				<p class="text-white text-xl font-semibold ml-2">Your Monthly Marketing Calender</p>
+				<p class="text-white text-2xl font-semibold">My Campaigns</p>
 			</div>
 			<div class="flex items-center gap-x-4">
 				<h1 class="text-xl">{month} {year}</h1>

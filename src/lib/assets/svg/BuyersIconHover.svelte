@@ -1,4 +1,9 @@
-<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<script lang="ts">
+	export let width: number = 16;
+	export let height: number = 16;
+</script>
+
+<svg {width} {height} viewBox={`0 0 16 16`} fill="none" xmlns="http://www.w3.org/2000/svg">
 	<g id="ICON" opacity="0.8">
 		<g id="vuesax/outline/home-2">
 			<g id="home-2">

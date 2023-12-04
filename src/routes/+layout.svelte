@@ -10,17 +10,10 @@
 	import { page } from '$app/stores';
 	import { computePosition, autoUpdate, offset, shift, flip, arrow } from '@floating-ui/dom';
 	import { storePopup } from '@skeletonlabs/skeleton';
-	import { onMount } from 'svelte';
+	import { initializeStores } from '@skeletonlabs/skeleton';
+	import NewListingDrawer from '$lib/pages/Listings/NewListingDrawer.svelte';
 
 	storePopup.set({ computePosition, autoUpdate, offset, shift, flip, arrow });
-
-	import { initializeStores } from '@skeletonlabs/skeleton';
-	import NewListingDrawer from '$lib/pages/Listings/Drawer/NewListingDrawer.svelte';
-
-	$: hideTabs =
-		$page.url.pathname.includes('signup') ||
-		$page.url.pathname.includes('login') ||
-		$page.url.pathname.length === 1;
 
 	initializeStores();
 

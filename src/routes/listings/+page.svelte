@@ -2,7 +2,7 @@
 	import Button from '$lib/components/Button/Button.svelte';
 	import SearchBar from '$lib/components/SearchBar/SearchBar.svelte';
 	import Tabs from '$lib/components/Tabs/Tabs.svelte';
-	import ListingCard from '$lib/components/Cards/ListingCard.svelte';
+	import ListingCard from '$lib/pages/Listings/ListingCard.svelte';
 	import StatusDropdown from '$lib/pages/Listings/Dropdowns/StatusDropdown.svelte';
 	import GridDropdown from '$lib/pages/Listings/Dropdowns/GridDropdown.svelte';
 	import TypeDropdown from '$lib/pages/Listings/Dropdowns/TypeDropdown.svelte';

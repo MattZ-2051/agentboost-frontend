@@ -1,11 +1,12 @@
 <script lang="ts">
 	import ShareIcon from '$lib/assets/svg/ShareIcon.svelte';
 	import TrashIcon from '$lib/assets/svg/TrashIcon.svelte';
-	import Button from '../Button/Button.svelte';
+	import Button from '../../components/Button/Button.svelte';
 	import ChevronUp from '$lib/assets/svg/Chevron/ChevronUp.svelte';
-	import Dropdown from '../Dropdown/Dropdown.svelte';
+	import Dropdown from '../../components/Dropdown/Dropdown.svelte';
 	import { fade } from 'svelte/transition';
 	import ChevronDown from '$lib/assets/svg/Chevron/ChevronDown.svelte';
+	import Card from '$lib/components/Card/Card.svelte';
 
 	export let address: string;
 	export let status: string;
@@ -16,10 +17,8 @@
 	$: showContent = false;
 </script>
 
-<div
-	class="card !bg-[#171A1C] w-fit h-full p-4 rounded-[10px] shadow border border-gray-800 border-opacity-20"
->
-	<div class="bg-[#25282D] p-3 rounded-[10px]">
+<Card width="w-[297px]" height="h-full">
+	<div class="bg-[#1E2225] p-3 rounded-[10px]">
 		<img
 			class="w-[292px] h-[233px] rounded-[10px]"
 			src="https://via.placeholder.com/292x233"
@@ -86,4 +85,4 @@
 			bg={'bg-[#171A1C]'}
 		/>
 	</div>
-</div>
+</Card>

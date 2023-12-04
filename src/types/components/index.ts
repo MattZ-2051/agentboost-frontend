@@ -11,7 +11,7 @@ export type CardItem = {
 
 export type SliderItems = CardItem[];
 
-export type ChipVariant = 'variant-filled';
+export type ChipVariant = 'variant-filled' | 'variant-app-primary';
 
 export type ButtonVariant =
 	| 'variant-filled'

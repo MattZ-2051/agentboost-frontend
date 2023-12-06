@@ -39,7 +39,7 @@
 	];
 </script>
 
-<div class="w-full h-full bg-[#141718] rounded-[10px] px-6 py-8">
+<div class="w-full h-full bg-[#141718] max-w-[95vw] rounded-[10px] px-6 py-8">
 	<div class="flex justify-between items-center">
 		<div class="flex items-center gap-x-4 mb-6">
 			<MyCampaignIcon />
@@ -113,8 +113,10 @@
 	</div>
 	<div class="mt-8">
 		<Tabs items={socialCampaignTabs} classes="text-lg" />
-		<div>
-			<SocialCard />
+		<div class="w-full flex justify-start">
+			<Slider length={8} classes="">
+				<SocialCard />
+			</Slider>
 		</div>
 	</div>
 </div>

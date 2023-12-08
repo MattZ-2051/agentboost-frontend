@@ -27,3 +27,5 @@ export type ButtonVariant =
 	| 'variant-app-primary';
 
 export type Variants = Record<ButtonVariant, string>;
+
+export type SocialTypes = 'instagram' | 'x' | 'facebook';

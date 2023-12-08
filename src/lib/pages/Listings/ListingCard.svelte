@@ -2,18 +2,13 @@
 	import ShareIcon from '$lib/assets/svg/ShareIcon.svelte';
 	import TrashIcon from '$lib/assets/svg/TrashIcon.svelte';
 	import Button from '../../components/Button/Button.svelte';
-	import ChevronUp from '$lib/assets/svg/Chevron/ChevronUp.svelte';
-	import Dropdown from '../../components/Dropdown/Dropdown.svelte';
-	import { fade } from 'svelte/transition';
-	import ChevronDown from '$lib/assets/svg/Chevron/ChevronDown.svelte';
 	import Card from '$lib/components/Card/Card.svelte';
+	import RadioDropdown from '$lib/components/Dropdown/RadioDropdown.svelte';
 
 	export let address: string;
-	export let status: string;
 
 	const items = ['Active', 'Inactive', 'Upcoming'];
 
-	let activeTab = 0;
 	$: showContent = false;
 </script>
 
@@ -32,51 +27,12 @@
 			<TrashIcon />
 		</div>
 	</div>
-	<Dropdown {showContent} classes="px-[18px] py-3 !h-[48px] bg-[#25282D]">
-		<div class="flex justify-between w-full">
-			<div class="text-neutral-300 text-[15px] font-medium leading-normal text-left">
-				{status}
-			</div>
-			<div
-				class="hover:scale-110 hover:cursor-pointer"
-				on:click={() => (showContent = !showContent)}
-			>
-				{#if showContent}
-					<ChevronUp />
-				{:else}
-					<ChevronDown />
-				{/if}
-			</div>
-		</div>
-		<div
-			slot="content"
-			class="flex-col flex h-full w-full"
-			transition:fade={{ delay: 0, duration: 100 }}
-		>
-			{#each items as item, i}
-				<div
-					class={`flex items-center gap-x-2  border-neutral-700 py-[13px] h-full ${
-						i === items.length - 1 ? '' : 'border-b'
-					}`}
-				>
-					<div class="w-[18px] h-[18px] relative">
-						<div
-							class="w-[18px] h-[18px] left-0 top-0 absolute rounded-full border border-gray-500 hover:cursor-pointer hover:scale-110"
-							on:click={() => (activeTab = i)}
-						/>
-						{#if activeTab === i}
-							<div
-								class="w-3 h-3 left-[3px] top-[3px] absolute bg-gradient-to-br from-blue-500 via-blue-500 to-teal-300 rounded-full"
-							/>
-						{/if}
-					</div>
-					<p class="leading-normal text-[15px] text-neutral-300">
-						{item}
-					</p>
-				</div>
-			{/each}
-		</div>
-	</Dropdown>
+	<RadioDropdown
+		label="Active"
+		{items}
+		classes="w-full h-[48px] px-[18px] py-[12px]"
+		{showContent}
+	/>
 	<div class="mt-4">
 		<Button
 			label="View Listing"

@@ -100,19 +100,19 @@
 			id: 1,
 			label: 'listing 1',
 			day: '11',
-			month: 'November'
+			month: 'December'
 		},
 		{
 			id: 2,
 			label: 'listing 2',
 			day: '10',
-			month: 'November'
+			month: 'December'
 		},
 		{
 			id: 3,
 			label: 'listing 3',
 			day: '9',
-			month: 'November'
+			month: 'December'
 		}
 	];
 

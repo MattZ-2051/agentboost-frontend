@@ -4,11 +4,11 @@
 	import Button from '$lib/components/Button/Button.svelte';
 	import LandingBezier from '$lib/assets/svg/LandingBezier.svelte';
 	import landingScreenshot1 from '$lib/assets/images/landingAppScreenshot1.png';
-	import Instagram from '$lib/assets/svg/Instagram.svelte';
+	import Instagram from '$lib/assets/svg/Social/Instagram.svelte';
 	import matt from '$lib/assets/images/matt-landing.jpeg';
 	import sam from '$lib/assets/images/sam-landing.jpeg';
 	import LogoIconBlue from '$lib/assets/svg/LogoIconBlue.svelte';
-	import Twitter from '$lib/assets/svg/Twitter.svelte';
+	import Twitter from '$lib/assets/svg/Social/Twitter.svelte';
 	import { onMount } from 'svelte';
 	import BackgroundGradient from '$lib/pages/Landing/BackgroundGradient.svelte';
 	import LandingSeperator from '$lib/assets/svg/LandingSeperator.svelte';

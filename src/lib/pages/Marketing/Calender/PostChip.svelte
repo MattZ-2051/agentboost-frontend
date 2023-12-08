@@ -1,7 +1,7 @@
 <script lang="ts">
-	import facebookIcon from '$lib/assets/images/facebook-icon.png';
-	import instagramIcon from '$lib/assets/images/instagram-icon.png';
-	import xIcon from '$lib/assets/images/x-icon.png';
+	import facebookIcon from '$lib/assets/images/Social/facebook-icon.png';
+	import instagramIcon from '$lib/assets/images/Social/instagram-icon.png';
+	import xIcon from '$lib/assets/images/Social/x-icon.png';
 	import PostPopup from './PostPopup.svelte';
 
 	$: showPopup = false;

@@ -1,6 +1,4 @@
 <script lang="ts">
-	import Dropdown from '../Dropdown/Dropdown.svelte';
-
 	$: showContent = false;
 
 	// export let graphItems: number[];

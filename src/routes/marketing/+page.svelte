@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Calender from '$lib/pages/Marketing/Calender/Calender.svelte';
-	import Activity from '$lib/pages/Listings/Activity.svelte';
-	import SocialAccounts from '$lib/pages/Listings/SocialAccounts.svelte';
+	import Activity from '$lib/pages/Marketing/Activity/Activity.svelte';
+	import SocialAccounts from '$lib/pages/Marketing/Social/SocialAccounts.svelte';
 	import ActiveListings from '$lib/pages/Marketing/ActiveListings/ActiveListings.svelte';
 	import SuggestedCampaigns from '$lib/pages/Marketing/SuggestedCampaigns/SuggestedCampaigns.svelte';
 	import MyCampaigns from '$lib/pages/Marketing/MyCampaigns/MyCampaigns.svelte';

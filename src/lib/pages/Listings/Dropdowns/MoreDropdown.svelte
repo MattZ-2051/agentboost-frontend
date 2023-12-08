@@ -5,11 +5,11 @@
 	export let showContent: boolean;
 </script>
 
-<Dropdown>
-	<div class="w-full h-full p-2.5 bg-zinc-900 rounded-[10px]">
-		<div class="flex justify-between">
+<Dropdown {showContent} classes="bg-[#1A1B1E] px-3 w-full h-[38px]">
+	<div class="flex justify-between w-full items-center gap-x-2 h-full" slot="icon">
+		<div>
 			<MoreIcon />
-			<div class="text-neutral-300 text-[15px] leading-[18px]">More</div>
 		</div>
+		<div class="text-neutral-300 text-[15px] leading-[18px]">More</div>
 	</div>
 </Dropdown>

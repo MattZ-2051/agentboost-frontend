@@ -1,7 +1,7 @@
 <script lang="ts">
 	import LogoGradient from '$lib/assets/svg/LogoGradient.svelte';
-	import Facebook from '$lib/assets/svg/Facebook.svelte';
-	import InstagramFooter from '$lib/assets/svg/InstagramFooter.svelte';
+	import Facebook from '$lib/assets/svg/Social/Facebook.svelte';
+	import InstagramFooter from '$lib/assets/svg/Social/InstagramFooter.svelte';
 	import Linkedin from '$lib/assets/svg/Linkedin.svelte';
 </script>
 

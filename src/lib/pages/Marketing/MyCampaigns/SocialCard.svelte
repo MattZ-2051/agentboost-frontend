@@ -2,6 +2,11 @@
 	import Plus from '$lib/assets/svg/Plus.svelte';
 	import Button from '$lib/components/Button/Button.svelte';
 	import Card from '$lib/components/Card/Card.svelte';
+
+	const handleFileInput = () => {
+		console.log('here');
+		document.getElementById('fileInput')?.click();
+	};
 </script>
 
 <Card width="w-[284px]" height="h-[578px]">
@@ -10,7 +15,11 @@
 			<div
 				class="flex flex-col items-center justify-center w-full !h-[251px] relative bg-[#1E2225] rounded-[10px] border border-dashed border-[#2E2F37]"
 			>
-				<div class="bg-[#1D3335] w-12 h-12 rounded-full flex items-center justify-center">
+				<div
+					class="bg-[#1D3335] w-12 h-12 rounded-full flex items-center justify-center"
+					on:click={handleFileInput}
+				>
+					<input type="file" class="w-full h-full hidden" id="fileInput" />
 					<Plus />
 				</div>
 				<p class="font-semibold text-[#E9E9E9] text-lg mt-2">Add an img</p>

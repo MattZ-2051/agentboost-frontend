@@ -9,7 +9,7 @@
 	const items = ['Weekly', 'Monthly', 'Yearly'];
 </script>
 
-<div class="w-full h-[320px] bg-[#151719] rounded-[10px] borderClass p-6">
+<div class="w-full h-[340px] bg-[#151719] rounded-[10px] p-6">
 	<div class="flex items-center justify-between gap-x-3">
 		<RadioDropdown
 			label="7 Day Activity"
@@ -34,19 +34,34 @@
 			</div>
 		</div>
 	</Slider>
-	<div class="w-full my-4 h-[1px] bg-white opacity-10" />
-	<div>
+	<div class="w-full my-3 h-[1px] bg-white opacity-10" />
+	<div class="flex w-full justify-between">
 		<div>
-			<svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8" fill="none">
-				<circle cx="4" cy="4" r="4" fill="#3E8AFD" />
-			</svg>
-			<p class="text-[#6F767E]">Reach</p>
+			<div class="flex items-center gap-x-1">
+				<svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8" fill="none">
+					<circle cx="4" cy="4" r="4" fill="#3E8AFD" />
+				</svg>
+				<p class="text-[#6F767E] text-sm font-normal">Reach</p>
+			</div>
+			<p class="text-white font-semibold text-lg">1,409</p>
+		</div>
+		<div>
+			<div class="flex items-center gap-x-1">
+				<svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8" fill="none">
+					<circle cx="4" cy="4" r="4" fill="#FD8539" />
+				</svg>
+				<p class="text-[#6F767E] text-sm font-normal">Profile views</p>
+			</div>
+			<p class="text-white font-semibold text-lg">427</p>
+		</div>
+		<div>
+			<div class="flex items-center gap-x-1">
+				<svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8" fill="none">
+					<circle cx="4" cy="4" r="4" fill="#FE6D8E" />
+				</svg>
+				<p class="text-[#6F767E] text-sm font-normal">Interactions</p>
+			</div>
+			<p class="text-white font-semibold text-lg">131</p>
 		</div>
 	</div>
 </div>
-
-<style lang="postcss">
-	.borderClass {
-		border: 1px solid rgba(255, 255, 255, 0.1);
-	}
-</style>

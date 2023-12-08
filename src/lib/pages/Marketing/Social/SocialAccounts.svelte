@@ -3,7 +3,7 @@
 	import Account from './Account.svelte';
 </script>
 
-<div class="w-[150%] h-[320px] bg-[#151719] p-8 borderClass rounded-[10px]">
+<div class="w-[150%] h-[340px] bg-[#151719] p-8 rounded-[10px]">
 	<div class="flex w-full justify-between items-center">
 		<p class="text-[#EFEFEF] text-lg">Connected accounts</p>
 		<div
@@ -21,9 +21,3 @@
 		<Account socialType="x" />
 	</div>
 </div>
-
-<style lang="postcss">
-	.borderClass {
-		border: 1px solid rgba(255, 255, 255, 0.1);
-	}
-</style>

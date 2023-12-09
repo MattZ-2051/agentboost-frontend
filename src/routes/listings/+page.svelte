@@ -35,7 +35,8 @@
 </script>
 
 <div class="w-full h-full relative">
-	<div class="headerContainer border-t flex justify-between items-center py-6">
+	<div class="h-[1px] bg-[#181818] w-full my-6" />
+	<div class="flex justify-between items-center mb-4">
 		<h1 class="text-2xl font-semibold">My Listings</h1>
 		<Button
 			label="Create New Listing"
@@ -48,7 +49,6 @@
 	<div class="">
 		<Tabs items={tabItems} />
 	</div>
-
 	<div class="pt-8 flex justify-center items-center w-full gap-x-5">
 		<div class="w-[300px] h-[38px]">
 			<SearchBar />
@@ -86,9 +86,3 @@
 		<ListingCard address="10044 W Springdale Ct" status="Active" />
 	</div>
 </div>
-
-<style>
-	.headerContainer {
-		border-color: #181818;
-	}
-</style>

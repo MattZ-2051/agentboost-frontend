@@ -24,13 +24,13 @@
 	<div class="flex justify-between items-center">
 		<div class="flex items-center">
 			<HomeIcon />
-			<h1 class="ml-2">Create New Listing</h1>
+			<h1 class="ml-2">Create New Comparison</h1>
 		</div>
 		<div on:click={() => drawerStore.close()}>
 			<CloseIcon />
 		</div>
 	</div>
-	<div class="w-[332px] h-[0px] border border-gray-800 my-6" />
+	<div class="w-[332px] h-[0px] border border-[#2E3438] my-6" />
 	<p class="text-base font-normal leading-normal">Here's how it works</p>
 	<p class="text-opacity-60 text-white text-sm font-light leading-[1.75] pt-4">
 		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut

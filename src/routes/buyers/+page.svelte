@@ -1,11 +1,12 @@
 <script lang="ts">
+	import Button from '$lib/components/Button/Button.svelte';
 	import BuyerCard from '$lib/pages/Buyers/BuyerCard.svelte';
 	import { getDrawerStore } from '@skeletonlabs/skeleton';
 	import type { DrawerSettings } from '@skeletonlabs/skeleton';
 
 	const drawerStore = getDrawerStore();
 	const drawerSettings: DrawerSettings = {
-		id: 'new-listing',
+		id: 'new-buyer',
 		bgDrawer: 'bg-[#171A1C]'
 	};
 
@@ -22,7 +23,16 @@
 
 <div>
 	<div class="h-[1px] bg-[#181818] w-full my-6" />
-	<p class="text-white text-2xl font-semibold">Buyers</p>
+	<div class="flex justify-between w-full items-center">
+		<p class="text-white text-2xl font-semibold">Buyers</p>
+		<Button
+			label="Add Buyer"
+			bg="bg-[#010101]"
+			variant="variant-app-primary"
+			classes="!h-12 !w-32"
+			onClick={createNewBuyer}
+		/>
+	</div>
 	<div class="mt-12 grid grid-cols-3 gap-8">
 		<BuyerCard />
 		<BuyerCard />

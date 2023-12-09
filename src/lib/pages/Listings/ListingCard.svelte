@@ -6,6 +6,7 @@
 	import RadioDropdown from '$lib/components/Dropdown/RadioDropdown.svelte';
 
 	export let address: string;
+	export let status: string;
 
 	const items = ['Active', 'Inactive', 'Upcoming'];
 
@@ -30,7 +31,7 @@
 	<RadioDropdown
 		label="Active"
 		{items}
-		classes="w-full h-[48px] px-[18px] py-[12px]"
+		classes="w-full h-[48px] px-[18px] py-[12px] flex justify-between"
 		{showContent}
 	/>
 	<div class="mt-4">

@@ -7,11 +7,11 @@
 	import { Modal, getDrawerStore } from '@skeletonlabs/skeleton';
 	import { Drawer } from '@skeletonlabs/skeleton';
 	import { Toast } from '@skeletonlabs/skeleton';
-	import { page } from '$app/stores';
 	import { computePosition, autoUpdate, offset, shift, flip, arrow } from '@floating-ui/dom';
 	import { storePopup } from '@skeletonlabs/skeleton';
 	import { initializeStores } from '@skeletonlabs/skeleton';
 	import NewListingDrawer from '$lib/pages/Listings/NewListingDrawer.svelte';
+	import NewBuyersDrawer from '$lib/pages/Buyers/Drawers/NewBuyersDrawer.svelte';
 
 	storePopup.set({ computePosition, autoUpdate, offset, shift, flip, arrow });
 
@@ -43,6 +43,8 @@
 			<Sidebar />
 		{:else if $drawerStore.id === 'new-listing'}
 			<NewListingDrawer />
+		{:else if $drawerStore.id === 'new-buyer'}
+			<NewBuyersDrawer />
 		{/if}
 	</Drawer>
 	<AppShell>

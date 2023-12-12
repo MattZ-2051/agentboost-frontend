@@ -217,7 +217,6 @@
 							{#each item.items as info, x (info.id)}
 								{#if info.month === month}
 									<div class={`${x > 0 ? 'mb-2' : ''}`}>
-										<!-- <Chip title={info.label} variant="variant-filled" /> -->
 										<PostChip gridColNum={(i + 1) % 7} />
 									</div>
 								{/if}

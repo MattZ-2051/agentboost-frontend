@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Button from '$lib/components/Button/Button.svelte';
-	import BuyerCard from '$lib/pages/Buyers/BuyerCard.svelte';
+	import BuyerCard from '$lib/pages/Buyers/Cards/BuyerCard.svelte';
 	import { getDrawerStore } from '@skeletonlabs/skeleton';
 	import type { DrawerSettings } from '@skeletonlabs/skeleton';
 

@@ -1,7 +1,7 @@
 <script lang="ts">
 	import ShareIcon from '$lib/assets/svg/ShareIcon.svelte';
 	import TrashIcon from '$lib/assets/svg/TrashIcon.svelte';
-	import Button from '../../components/Button/Button.svelte';
+	import Button from '../../../components/Button/Button.svelte';
 	import Card from '$lib/components/Card/Card.svelte';
 	import RadioDropdown from '$lib/components/Dropdown/RadioDropdown.svelte';
 

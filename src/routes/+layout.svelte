@@ -10,7 +10,7 @@
 	import { computePosition, autoUpdate, offset, shift, flip, arrow } from '@floating-ui/dom';
 	import { storePopup } from '@skeletonlabs/skeleton';
 	import { initializeStores } from '@skeletonlabs/skeleton';
-	import NewListingDrawer from '$lib/pages/Listings/NewListingDrawer.svelte';
+	import NewListingDrawer from '$lib/pages/Listings/Drawers/NewListingDrawer.svelte';
 	import NewBuyersDrawer from '$lib/pages/Buyers/Drawers/NewBuyersDrawer.svelte';
 
 	storePopup.set({ computePosition, autoUpdate, offset, shift, flip, arrow });

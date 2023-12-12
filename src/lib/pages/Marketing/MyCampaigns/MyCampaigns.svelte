@@ -11,6 +11,7 @@
 	import ChevronUp from '$lib/assets/svg/Chevron/ChevronUp.svelte';
 	import Slider from '$lib/components/Slider/Slider.svelte';
 	import SocialCard from './SocialCard.svelte';
+	import CloseIcon from '$lib/assets/svg/CloseIcon.svelte';
 
 	$: showContent = false;
 
@@ -68,9 +69,18 @@
 				<div class="mt-8">
 					<p class="text-[#C6C7CD] text-sm font-normal leading-normal">Target Audience</p>
 					<div class="w-full h-full py-[7px] px-4 bg-[#24282D] rounded-[10px] mt-2 flex gap-x-4">
-						<Chip variant="variant-app-primary" title="First time buyers" />
-						<Chip variant="variant-app-primary" title="Luxury Sellers" />
-						<Chip variant="variant-app-primary" title="Investors" />
+						<Chip variant="variant-app-primary">
+							<p>First Time Buyers</p>
+							<span><CloseIcon width={10} height={10} /></span>
+						</Chip>
+						<Chip variant="variant-app-primary">
+							<p>Luxury Sellers</p>
+							<span><CloseIcon width={10} height={10} /></span>
+						</Chip>
+						<Chip variant="variant-app-primary">
+							<p>Investors</p>
+							<span><CloseIcon width={10} height={10} /></span>
+						</Chip>
 					</div>
 				</div>
 				<div class="mt-8">

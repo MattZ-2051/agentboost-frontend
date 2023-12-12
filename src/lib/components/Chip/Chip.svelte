@@ -1,14 +1,13 @@
 <script lang="ts">
-	import CloseIcon from '$lib/assets/svg/CloseIcon.svelte';
+	``;
 	import type { ChipVariant } from '$types/components';
-	export let title: string;
 	export let variant: ChipVariant;
+	export let classes: string = '';
 	export let onClick: (() => void) | undefined = undefined;
 </script>
 
-<span on:click={onClick} class={`chip ${variant}`} on:click={onClick}>
-	{title}
-	<span><CloseIcon width={12} height={12} /></span>
+<span on:click={onClick} class={`chip ${variant} ${classes}`} on:click={onClick}>
+	<slot />
 </span>
 
 <style>

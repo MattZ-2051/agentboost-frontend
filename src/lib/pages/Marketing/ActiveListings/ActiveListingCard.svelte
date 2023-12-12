@@ -1,10 +1,10 @@
 <script lang="ts">
 	import Card from '$lib/components/Card/Card.svelte';
 	import SlideToggle from '$lib/components/SlideToggle/SlideToggle.svelte';
-	import LocationIcon from '$lib/assets/svg/LocationIcon.svelte';
 	import DollarIcon from '$lib/assets/svg/DollarIcon.svelte';
 	import EditIcon from '$lib/assets/svg/EditIcon.svelte';
 	import RadioButton from '$lib/components/RadioButton/RadioButton.svelte';
+	import LocationIconFilled from '$lib/assets/svg/Location/LocationIconFilled.svelte';
 </script>
 
 <Card width="w-[297px]" height="h-full">
@@ -24,7 +24,7 @@
 		</div>
 	</div>
 	<div class="my-5 flex items-center gap-x-2">
-		<LocationIcon />
+		<LocationIconFilled />
 		<p class="text-white text-base leading-[15px] font-semibold">10044 W Springdale Ct</p>
 	</div>
 	<div

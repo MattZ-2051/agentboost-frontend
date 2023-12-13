@@ -27,9 +27,11 @@
 				/>
 			</div>
 		</div>
-		<div class="flex">
+		<div class="pb-4">
 			<Slider length={10} classes="gap-x-8 w-[95vw]">
-				<BuyerInfo />
+				<div class="border-r border-[#22272A] pr-8">
+					<BuyerInfo />
+				</div>
 			</Slider>
 		</div>
 	</div>

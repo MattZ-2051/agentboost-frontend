@@ -2,6 +2,8 @@
 	import { Loader } from '@googlemaps/js-api-loader';
 	import { onMount } from 'svelte';
 
+	export let mapSize: string;
+
 	let map: google.maps.Map;
 	const center: google.maps.LatLngLiteral = { lat: 30, lng: -110 };
 	const mapId = import.meta.env?.VITE_GOOGLE_MAP_ID;
@@ -66,6 +68,6 @@
 	});
 </script>
 
-<div class="w-fit h-fit rounded-[10px] p-2 border border-white border-opacity-10">
-	<div id="map" class="w-[824px] h-[668px] rounded-[10px]" />
+<div class="w-full h-full rounded-[10px] p-2 border border-white border-opacity-10">
+	<div id="map" class={`${mapSize} rounded-[10px]`} />
 </div>

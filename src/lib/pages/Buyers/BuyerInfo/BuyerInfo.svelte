@@ -26,7 +26,7 @@
 		</div>
 	</div>
 	<div class="pb-4">
-		<Slider length={10} classes="gap-x-8 w-[90vw]">
+		<Slider length={10} classes="gap-x-8 w-[88vw]">
 			<div class="border-r border-[#22272A] pr-8">
 				<BuyerInfoCard />
 			</div>

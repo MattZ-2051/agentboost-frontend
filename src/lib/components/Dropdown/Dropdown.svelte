@@ -11,7 +11,7 @@
 
 <div class={`${classes} rounded-[10px] relative`}>
 	{#if label}
-		<div class="flex w-full items-center justify-between">
+		<div class="flex w-full h-full items-center justify-between">
 			<p class="text-[#CFD0D5] text-sm font-medium">{label}</p>
 			<div
 				class="hover:scale-110 hover:cursor-pointer"

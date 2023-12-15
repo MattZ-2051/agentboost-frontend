@@ -1,5 +1,17 @@
 <script lang="ts">
-	import Map from '$lib/components/Map/Map.svelte';
+	import ComparableProperties from '$lib/pages/Buyers/ComparableProperties/ComparableProperties.svelte';
+	import Insights from '$lib/pages/Buyers/Insights/Insights.svelte';
+	import PropertyInfo from '$lib/pages/Listings/PropertyInfo/PropertyInfo.svelte';
 </script>
 
-<Map />
+<div>
+	<div>
+		<PropertyInfo />
+	</div>
+	<div class="mt-16">
+		<ComparableProperties />
+	</div>
+	<div class="mt-16">
+		<Insights />
+	</div>
+</div>

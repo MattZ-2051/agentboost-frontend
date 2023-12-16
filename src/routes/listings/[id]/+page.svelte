@@ -1,6 +1,6 @@
 <script lang="ts">
-	import ComparableProperties from '$lib/pages/Buyers/ComparableProperties/ComparableProperties.svelte';
-	import Insights from '$lib/pages/Buyers/Insights/Insights.svelte';
+	import ComparableProperties from '$lib/pages/Listings/ComparableProperties/ComparableProperties.svelte';
+	import Insights from '$lib/pages/Listings/Insights/Insights.svelte';
 	import PropertyInfo from '$lib/pages/Listings/PropertyInfo/PropertyInfo.svelte';
 </script>
 

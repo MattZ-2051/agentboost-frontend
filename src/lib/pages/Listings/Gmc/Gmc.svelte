@@ -4,7 +4,9 @@
 	import Slider from '$lib/components/Slider/Slider.svelte';
 	import Tabs from '$lib/components/Tabs/Tabs.svelte';
 	import SocialCard from '$lib/pages/Marketing/MyCampaigns/SocialCard.svelte';
+	import ReelScript from '$lib/pages/Marketing/MyCampaigns/ReelsScript/ReelsScript.svelte';
 	import type { TabItems } from '$types/components';
+
 	import EmailView from './EmailView/EmailView.svelte';
 
 	const gmcTabs: TabItems = [
@@ -22,7 +24,9 @@
 	$: selectedItem = gmcTabs[0].label;
 </script>
 
-<div class="bg-[#151719] rounded-[20px] overflow-auto w-full h-full p-8 flex flex-col max-w-[95vw]">
+<div
+	class="bg-[#151719] rounded-[20px] overflow-auto w-full h-full mb-12 p-8 flex flex-col max-w-[95vw]"
+>
 	<div class="flex w-full items-center justify-between">
 		<div class="flex items-center gap-x-2 text-[#fff] font-semibold text-[24px]">
 			<GmcIcon />
@@ -37,7 +41,7 @@
 	</div>
 	<div class="mt-4">
 		<Tabs items={gmcTabs} bind:selectedItem>
-			<div slot="content" class="h-[80vh]">
+			<div slot="content" class="h-[55vh]">
 				{#if selectedItem === 'Social Media'}
 					<div class="w-full justify-start">
 						<Slider length={8} classes="">
@@ -47,6 +51,12 @@
 				{:else if selectedItem === 'Email'}
 					<div>
 						<EmailView />
+					</div>
+				{:else if selectedItem === 'Reel Ideas'}
+					<div>
+						<Slider length={10}>
+							<ReelScript />
+						</Slider>
 					</div>
 				{/if}
 			</div>

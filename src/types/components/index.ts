@@ -28,4 +28,6 @@ export type ButtonVariant =
 
 export type Variants = Record<ButtonVariant, string>;
 
+export type InputVariant = 'variant-app-primary';
+
 export type SocialTypes = 'instagram' | 'x' | 'facebook';

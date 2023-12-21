@@ -1,5 +1,5 @@
 <script lang="ts">
-	import CloseIcon from '$lib/assets/svg/CloseIcon.svelte';
+	import CloseIcon from '$lib/assets/svg/CloseIcon/CloseIconWhite.svelte';
 	import HomeIcon from '$lib/assets/svg/HomeIcon.svelte';
 	import Button from '$lib/components/Button/Button.svelte';
 	import Input from '$lib/components/Input/Input.svelte';

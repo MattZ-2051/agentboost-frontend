@@ -116,7 +116,6 @@
 
 		const content = document.getElementById('content');
 
-		console.log('content', content);
 		popup = new Popup(center, content as HTMLElement);
 		popup.setMap(map);
 	}
@@ -131,63 +130,21 @@
 			initMap();
 		});
 	});
+
+	$: showContent = '!flex';
 </script>
 
-<div class="w-full h-full rounded-[10px] p-2 border border-white border-opacity-10">
+<div class="w-full h-full rounded-[10px] p-2 border border-white border-opacity-10 relative">
 	<div id="map" class={`${mapSize} rounded-[10px]`} />
-	<div id="content" />
+	<div id="content" class={`popover ${showContent}`} on:mouseenter={() => (showContent = '!flex')}>
+		<img class="w-12 h-full rounded-[10px]" src="https://via.placeholder.com/80x64" alt="" />
+		<p class="text-white text-sm">McMillan Elementary School</p>
+	</div>
 </div>
 
 <style lang="postcss">
-	/* The popup bubble styling. */
-	.popup-bubble {
-		/* Position the bubble centred-above its parent. */
-		position: absolute;
-		top: 0;
-		left: 0;
-		transform: translate(-50%, -100%);
-		/* Style the bubble. */
-		background-color: white;
-		padding: 5px;
-		border-radius: 5px;
-		font-family: sans-serif;
-		overflow-y: auto;
-		max-height: 60px;
-		box-shadow: 0px 2px 10px 1px rgba(0, 0, 0, 0.5);
-	}
-
-	/* The parent of the bubble. A zero-height div at the top of the tip. */
-	.popup-bubble-anchor {
-		/* Position the div a fixed distance above the tip. */
-		position: absolute;
-		width: 100%;
-		bottom: 8px;
-		left: 0;
-	}
-
-	/* This element draws the tip. */
-	.popup-bubble-anchor::after {
-		content: '';
-		position: absolute;
-		top: 0;
-		left: 0;
-		/* Center the tip horizontally. */
-		transform: translate(-50%, 0);
-		/* The tip is a https://css-tricks.com/snippets/css/css-triangle/ */
-		width: 0;
-		height: 0;
-		/* The tip is 8px high, and 12px wide. */
-		border-left: 6px solid transparent;
-		border-right: 6px solid transparent;
-		border-top: 8px solid white;
-	}
-
-	/* JavaScript will position this div at the bottom of the popup tip. */
-	.popup-container {
-		cursor: auto;
-		height: 20px;
-		position: absolute;
-		/* The max width of the info window. */
-		width: 200px;
+	.popover {
+		@apply w-[222px] flex h-[62px] border-opacity-20 border border-white rounded-[10px] p-2 text-[#fff] bg-[#22272A] items-center gap-x-2 -left-28 absolute top-4;
+		box-shadow: 10px 10px 16px 0px rgba(0, 0, 0, 0.2);
 	}
 </style>

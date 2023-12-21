@@ -10,7 +10,7 @@
 		<p class="text-[#FFF] font-semibold text-[24px]">Comparable Properties</p>
 	</div>
 	<div class="w-full flex justify-start">
-		<Slider length={10} classes="gap-x-8 w-[87vw]">
+		<Slider length={10} classes="gap-x-8 w-[88vw]">
 			<ComparableCard />
 		</Slider>
 	</div>

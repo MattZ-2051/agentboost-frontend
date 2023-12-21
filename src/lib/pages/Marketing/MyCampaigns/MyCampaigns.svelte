@@ -7,11 +7,10 @@
 	import SlideToggle from '$lib/components/SlideToggle/SlideToggle.svelte';
 	import Tabs from '$lib/components/Tabs/Tabs.svelte';
 	import ChevronDown from '$lib/assets/svg/Chevron/ChevronDown.svelte';
-	import LittleChevronDown from '$lib/assets/svg/Chevron/LittleChevronDown.svelte';
 	import ChevronUp from '$lib/assets/svg/Chevron/ChevronUp.svelte';
 	import Slider from '$lib/components/Slider/Slider.svelte';
 	import SocialCard from './SocialCard.svelte';
-	import CloseIcon from '$lib/assets/svg/CloseIcon.svelte';
+	import CloseIcon from '$lib/assets/svg/CloseIcon/CloseIconWhite.svelte';
 
 	$: showContent = false;
 

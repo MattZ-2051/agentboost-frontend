@@ -4,19 +4,24 @@
 	import { onMount } from 'svelte';
 
 	export let items: TabItems;
+	export let selectedItem: string = items[0].label;
 	export let classes: string = '';
 
 	const handleNav = async (url: string | undefined) => {
 		url && (await goto(url));
 	};
 
-	onMount(async () => {});
+	const handleTabSelect = (item: string) => {
+		selectedItem = item;
+		console.log('selectedItem', selectedItem);
+	};
 </script>
 
-<div class="flex gap-x-8 relative text-base">
-	{#each items as item, index}
-		{#if item.href}
-			<!-- <TabAnchor
+<div class="flex flex-col w-full h-full">
+	<div class="flex gap-x-8 relative text-base">
+		{#each items as item, index}
+			{#if item.href}
+				<!-- <TabAnchor
         bind:group={tabSet}
         href={item.href}
         name={item.name}
@@ -26,19 +31,26 @@
       >
         <span class="text-2xl">{item.label}</span>
       </TabAnchor> -->
-			<div
-				on:click={() => handleNav(item.href)}
-				class={`${classes} hover:text-primary-500 border-b border-b-transparent hover:cursor-pointer hover:border-b hover:border-b-primary-500 py-4 relative z-10`}
-			>
-				<p>{item.label}</p>
-			</div>
-		{:else}
-			<div
-				class={`${classes} hover:text-primary-500 border-b border-b-transparent hover:cursor-pointer hover:border-b hover:border-b-primary-500 py-4 relative z-10`}
-			>
-				<p>{item.label}</p>
-			</div>
-		{/if}
-	{/each}
-	<div class="w-full bg-[#252A2D] absolute bottom-0 h-[1px]" />
+				<div
+					on:click={() => handleNav(item.href)}
+					class={`${classes} hover:text-primary-500 border-b border-b-transparent hover:cursor-pointer hover:border-b hover:border-b-primary-500 py-4 relative z-10`}
+				>
+					<p>{item.label}</p>
+				</div>
+			{:else}
+				<div
+					class={`${classes} ${
+						selectedItem === item.label ? '!text-primary-500 border-b border-b-primary-500' : ''
+					} hover:text-primary-500 border-b border-b-transparent hover:cursor-pointer hover:border-b hover:border-b-primary-500 py-4 relative z-10`}
+					on:click={() => handleTabSelect(item.label)}
+				>
+					<p>{item.label}</p>
+				</div>
+			{/if}
+		{/each}
+	</div>
+	<div class="w-full bg-[#252A2D] h-[1px]" />
+	<div>
+		<slot name="content" />
+	</div>
 </div>

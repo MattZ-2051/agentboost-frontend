@@ -4,7 +4,7 @@
 </script>
 
 <div
-	class={`snap-x slider w-fit scroll-px-4 snap-mandatory scroll-smooth flex gap-4 overflow-x-auto pb-10 pt-6 ${classes}`}
+	class={`snap-x slider scroll-px-4 snap-mandatory scroll-smooth flex gap-4 overflow-x-auto pb-10 pt-6 ${classes}`}
 >
 	{#each Array.from({ length }) as _, i}
 		<div class="snap-center shrink-0">

@@ -68,15 +68,16 @@
 	.variant-app-primary {
 		border-radius: 10px;
 		background: linear-gradient(93deg, #3f8bfd 26.03%, #49f9ea 90.66%);
-		padding: 2px;
+		padding: 1px;
 		width: 100%;
 		height: 100%;
+		font-size: 15px;
 	}
 
 	.variant-app-primary:hover {
 		border-radius: 10px;
 		background: transparent;
-		padding: 2px;
+		padding: 1px;
 		width: 100%;
 		height: 100%;
 	}

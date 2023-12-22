@@ -3,4 +3,4 @@
 	export let showContent: boolean;
 </script>
 
-<Dropdown classes="p-2 px-4 !bg-[#1A1B1E]" {showContent} label="All States" />
+<Dropdown classes="p-2 px-4 !bg-[#1A1B1E] text-sm" {showContent} label="All States" />

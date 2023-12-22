@@ -1,0 +1,208 @@
+<script lang="ts">
+	import GrowthIndicatorIcon from '$lib/assets/svg/GrowthIndicatorIcon.svelte';
+	import Dropdown from '$lib/components/Dropdown/Dropdown.svelte';
+	import RadioDropdown from '$lib/components/Dropdown/RadioDropdown.svelte';
+	import ProgressRadial from '$lib/components/ProgressRadial/ProgressRadial.svelte';
+
+	$: showRadioContent = false;
+	$: showSocialContent = false;
+	$: showDateContent = false;
+
+	const items = [
+		'10165 W Burntwood Ct',
+		'10165 W Burntwood Ct',
+		'10165 W Burntwood Ct',
+		'10165 W Burntwood Ct'
+	];
+</script>
+
+<div class="w-full h-[458px] grid grid-cols-2 gap-x-6">
+	<div class="box">
+		<div class="flex w-full items-center justify-between">
+			<p class="title">Social media activity</p>
+			<div class="flex gap-x-4">
+				<Dropdown
+					showContent={showDateContent}
+					classes="bg-[#1E2225] w-[98px] h-[38px] px-2 py-[10px] !text-xs"
+					label="Annually"
+					iconSize={16}
+				/>
+				<Dropdown
+					showContent={showSocialContent}
+					classes="bg-[#1E2225] w-[123px] h-[38px] px-2 py-[10px] !text-xs"
+					label="Instagram"
+					iconSize={16}
+				/>
+			</div>
+		</div>
+		<div class="mt-6 flex gap-x-3 items-baseline">
+			<p class="title">12.5k</p>
+			<div class="flex items-center gap-x-1">
+				<GrowthIndicatorIcon />
+				<p class="text-primary-500 font-semibold text-[10px]">1.3%</p>
+				<p class="text-[#9291A5] font-light text-[10px]">VS LAST YEAR</p>
+			</div>
+		</div>
+		<div class="mt-12 flex w-full items-center justify-between gap-x-8">
+			<div class="box !h-[71px] !p-3 flex justify-between items-center">
+				<div class="flex-col items-center justify-center">
+					<div class="flex items-center gap-x-1">
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							width="8"
+							height="8"
+							viewBox="0 0 8 8"
+							fill="none"
+						>
+							<circle cx="4" cy="4" r="4" fill="#3E8AFD" />
+						</svg>
+						<p class="statTitle">Reach</p>
+					</div>
+					<p class="statValue">1k</p>
+				</div>
+				<ProgressRadial value={20} width="w-[40px]" color="stroke-[#3E8AFD]" />
+			</div>
+			<div class="box !h-[71px] !p-3 flex justify-between items-center">
+				<div class="flex-col items-center justify-center">
+					<div class="flex items-center gap-x-1">
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							width="8"
+							height="8"
+							viewBox="0 0 8 8"
+							fill="none"
+						>
+							<circle cx="4" cy="4" r="4" fill="#FD853A" />
+						</svg>
+						<p class="statTitle">Profile Views</p>
+					</div>
+					<p class="statValue">1k</p>
+				</div>
+				<ProgressRadial value={60} width="w-[40px]" color="stroke-[#FD853A]" />
+			</div>
+			<div class="box !h-[71px] !p-3 flex justify-between items-center">
+				<div class="flex-col items-center justify-center">
+					<div class="flex items-center gap-x-1">
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							width="8"
+							height="8"
+							viewBox="0 0 8 8"
+							fill="none"
+						>
+							<circle cx="4" cy="4" r="4" fill="#FE6D8E" />
+						</svg>
+						<p class="statTitle">Interactions</p>
+					</div>
+					<p class="statValue">1k</p>
+				</div>
+				<ProgressRadial value={70} width="w-[40px]" color="stroke-[#FE6D8E]" />
+			</div>
+		</div>
+	</div>
+	<div class="box">
+		<div class="w-full flex justify-between">
+			<RadioDropdown
+				label="10044 W Springadle Ct"
+				{items}
+				iconSize={14}
+				classes="w-[253px] text-[20px] !text-white !bg-transparent flex items-center gap-x-2"
+				showContent={showRadioContent}
+				dropdownClasses="!top-[2.2rem]"
+			/>
+			<Dropdown
+				showContent={showDateContent}
+				classes="bg-[#1E2225] w-[98px] h-[38px] px-2 py-[10px] !text-xs"
+				label="Annually"
+				iconSize={16}
+			/>
+		</div>
+		<div class="mt-24 flex w-full items-center justify-between gap-x-8">
+			<div class="box !h-[71px] !p-3 flex justify-between items-center">
+				<div class="flex-col items-center justify-center">
+					<div class="flex items-center gap-x-1">
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							width="8"
+							height="8"
+							viewBox="0 0 8 8"
+							fill="none"
+						>
+							<circle cx="4" cy="4" r="4" fill="#3E8AFD" />
+						</svg>
+						<p class="statTitle">Reach</p>
+					</div>
+					<p class="statValue">1k</p>
+				</div>
+				<ProgressRadial value={20} width="w-[40px]" color="stroke-[#3E8AFD]" />
+			</div>
+			<div class="box !h-[71px] !p-3 flex justify-between items-center">
+				<div class="flex-col items-center justify-center">
+					<div class="flex items-center gap-x-1">
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							width="8"
+							height="8"
+							viewBox="0 0 8 8"
+							fill="none"
+						>
+							<circle cx="4" cy="4" r="4" fill="#FD853A" />
+						</svg>
+						<p class="statTitle">Profile Views</p>
+					</div>
+					<p class="statValue">1k</p>
+				</div>
+				<ProgressRadial value={60} width="w-[40px]" color="stroke-[#FD853A]" />
+			</div>
+			<div class="box !h-[71px] !p-3 flex justify-between items-center">
+				<div class="flex-col items-center justify-center">
+					<div class="flex items-center gap-x-1">
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							width="8"
+							height="8"
+							viewBox="0 0 8 8"
+							fill="none"
+						>
+							<circle cx="4" cy="4" r="4" fill="#FE6D8E" />
+						</svg>
+						<p class="statTitle">Interactions</p>
+					</div>
+					<p class="statValue">1k</p>
+				</div>
+				<ProgressRadial value={70} width="w-[40px]" color="stroke-[#FE6D8E]" />
+			</div>
+		</div>
+	</div>
+</div>
+
+<style lang="postcss">
+	.title {
+		color: #efefef;
+		font-size: 20px;
+		font-style: normal;
+		font-weight: 600;
+		line-height: normal;
+	}
+
+	.box {
+		@apply bg-[#151719] border border-white border-opacity-20 rounded-[10px] w-full h-full p-6;
+	}
+
+	.statTitle {
+		color: #6f767e;
+		font-size: 14px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: normal;
+	}
+
+	.statValue {
+		color: #efefef;
+		font-size: 16px;
+		font-style: normal;
+		font-weight: 600;
+		line-height: normal;
+		margin-top: 1px;
+	}
+</style>

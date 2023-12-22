@@ -57,8 +57,10 @@
 	<div>
 		<Tabs items={customCampaignTabs} classes="text-lg" />
 		<div class="mt-8 grid grid-cols-2 gap-x-8">
-			<div class="w-full h-[357px] bg-[#171A1C] rounded-[10px] border border-gray-800 p-6">
-				<div class="flex w-full items-center justify-between">
+			<div
+				class="w-full h-[357px] bg-[#171A1C] rounded-[10px] border border-white border-opacity-10 p-6"
+			>
+				<div class="flex w-full items-start justify-between">
 					<p class="text-white text-lg font-medium leading-[21px]">My Custom Campaign title</p>
 					<div class="flex items-center">
 						<p class="text-sm font-bold mr-2">Active</p>
@@ -93,21 +95,17 @@
 					</div>
 				</div>
 			</div>
-			<div class="w-full h-full bg-[#171A1C] border-gray-800 border rounded-[10px] px-6 py-8">
-				<div class="flex w-full justify-between">
+			<div
+				class="w-full h-full bg-[#171A1C] border border-white border-opacity-10 rounded-[10px] p-6"
+			>
+				<div class="flex w-full justify-between items-start">
 					<p class="text-lg">Campaign 7 day activity</p>
-					<Dropdown {showContent} classes="rounded-[10px] !w-fit">
-						<div
-							class="w-40 h-[38px] p-2.5 bg-[#1E2225] rounded-[10px] border border-white border-opacity-20 flex justify-between"
-						>
-							<p class="text-xs text-[#CFDOD5]">Instagram</p>
-							{#if showContent}
-								<ChevronUp width={16} height={16} />
-							{:else}
-								<ChevronDown width={16} height={16} />
-							{/if}
-						</div>
-					</Dropdown>
+					<Dropdown
+						{showContent}
+						classes="rounded-[10px] text-sm w-40 h-[38px] py-[10px] px-2 bg-[#1E2225] rounded-[10px] border border-white border-opacity-20 flex justify-between"
+						label="Instagram"
+						iconSize={16}
+					/>
 				</div>
 				<Slider length={20} classes="gap-x-8">
 					<div class="w-full h-[110px] mt-8 flex pb-4">

@@ -5,7 +5,7 @@
 	$: showContent = false;
 </script>
 
-<Dropdown classes="bg-[#1A1B1E]" {showContent}>
+<Dropdown classes="bg-[#1A1B1E] text-sm" {showContent}>
 	<div class="w-full h-full flex items-center justify-center" slot="icon">
 		<FilterIcon />
 	</div>

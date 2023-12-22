@@ -74,7 +74,7 @@
 				</p>
 				<div class="mt-6 flex gap-x-6">
 					<Dropdown
-						classes="p-2 px-4 !bg-[#25282D] !min-w-[256px] !h-[48px]"
+						classes="p-2 px-4 !bg-[#25282D] !min-w-[256px] !h-[48px] text-sm"
 						showContent={showCityContent}
 						label="City"
 					/>

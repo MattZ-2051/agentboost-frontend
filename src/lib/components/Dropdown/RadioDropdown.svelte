@@ -13,8 +13,8 @@
 	let activeTab = 0;
 </script>
 
-<div class={`${classes} rounded-[10px] relative bg-[#25282D]`}>
-	<p class="text-[#C6C7CD] opacity-60 font-medium leading-normal text-left whitespace-nowrap">
+<div class={`${classes} text-[#C6C7CD] rounded-[10px] relative bg-[#25282D]`}>
+	<p class="font-medium leading-normal text-left whitespace-nowrap">
 		{label}
 	</p>
 	<div class="hover:scale-110 hover:cursor-pointer" on:click={() => (showContent = !showContent)}>

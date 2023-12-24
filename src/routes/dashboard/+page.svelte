@@ -1,5 +1,5 @@
 <script lang="ts">
-	import SocialMedia from '$lib/pages/Dashboard/SocialMedia.svelte';
+	import SocialMediaActivity from '$lib/pages/Dashboard/SocialMediaActivity/SocialMediaActivity.svelte';
 </script>
 
 <div class="">
@@ -27,7 +27,7 @@
 		</div>
 	</div>
 	<div class="mt-6">
-		<SocialMedia />
+		<SocialMediaActivity />
 	</div>
 </div>
 

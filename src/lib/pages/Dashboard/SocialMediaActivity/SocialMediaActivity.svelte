@@ -43,7 +43,7 @@
 				<p class="text-[#9291A5] font-light text-[10px]">VS LAST YEAR</p>
 			</div>
 		</div>
-		<div class="mt-12 flex w-full items-center justify-between gap-x-8">
+		<div class="mt-10 flex w-full items-center justify-between gap-x-8">
 			<div class="box !h-[71px] !p-3 flex justify-between items-center">
 				<div class="flex-col items-center justify-center">
 					<div class="flex items-center gap-x-1">
@@ -117,7 +117,7 @@
 				iconSize={16}
 			/>
 		</div>
-		<div class="mt-24 flex w-full items-center justify-between gap-x-8">
+		<div class="mt-[89px] flex w-full items-center justify-between gap-x-8">
 			<div class="box !h-[71px] !p-3 flex justify-between items-center">
 				<div class="flex-col items-center justify-center">
 					<div class="flex items-center gap-x-1">
@@ -130,9 +130,9 @@
 						>
 							<circle cx="4" cy="4" r="4" fill="#3E8AFD" />
 						</svg>
-						<p class="statTitle">Reach</p>
+						<p class="statTitle">Open rate</p>
 					</div>
-					<p class="statValue">1k</p>
+					<p class="statValue">25k</p>
 				</div>
 				<ProgressRadial value={20} width="w-[40px]" color="stroke-[#3E8AFD]" />
 			</div>
@@ -148,9 +148,9 @@
 						>
 							<circle cx="4" cy="4" r="4" fill="#FD853A" />
 						</svg>
-						<p class="statTitle">Profile Views</p>
+						<p class="statTitle">Clickthrough</p>
 					</div>
-					<p class="statValue">1k</p>
+					<p class="statValue">33%</p>
 				</div>
 				<ProgressRadial value={60} width="w-[40px]" color="stroke-[#FD853A]" />
 			</div>
@@ -166,9 +166,9 @@
 						>
 							<circle cx="4" cy="4" r="4" fill="#FE6D8E" />
 						</svg>
-						<p class="statTitle">Interactions</p>
+						<p class="statTitle">Conversion</p>
 					</div>
-					<p class="statValue">1k</p>
+					<p class="statValue">8%</p>
 				</div>
 				<ProgressRadial value={70} width="w-[40px]" color="stroke-[#FE6D8E]" />
 			</div>

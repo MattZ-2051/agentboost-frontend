@@ -1,5 +1,6 @@
 <script lang="ts">
 	import SocialMediaActivity from '$lib/pages/Dashboard/SocialMediaActivity/SocialMediaActivity.svelte';
+	import CurrentCalender from '$lib/pages/Dashboard/CurrentCalender/CurrentCalender.svelte';
 </script>
 
 <div class="">
@@ -28,6 +29,9 @@
 	</div>
 	<div class="mt-6">
 		<SocialMediaActivity />
+	</div>
+	<div class="mt-6">
+		<CurrentCalender />
 	</div>
 </div>
 

@@ -3,6 +3,7 @@
 	import Dropdown from '$lib/components/Dropdown/Dropdown.svelte';
 	import RadioDropdown from '$lib/components/Dropdown/RadioDropdown.svelte';
 	import ProgressRadial from '$lib/components/ProgressRadial/ProgressRadial.svelte';
+	import Chart from '../Chart/Chart.svelte';
 
 	$: showRadioContent = false;
 	$: showSocialContent = false;
@@ -16,7 +17,7 @@
 	];
 </script>
 
-<div class="w-full h-[458px] grid grid-cols-2 gap-x-6">
+<div class="w-full h-full grid grid-cols-2 gap-x-6">
 	<div class="box">
 		<div class="flex w-full items-center justify-between">
 			<p class="title">Social media activity</p>
@@ -99,6 +100,9 @@
 				<ProgressRadial value={70} width="w-[40px]" color="stroke-[#FE6D8E]" />
 			</div>
 		</div>
+		<div>
+			<Chart color={'#49F9EA'} chartId="chart1" />
+		</div>
 	</div>
 	<div class="box">
 		<div class="w-full flex justify-between">
@@ -172,6 +176,9 @@
 				</div>
 				<ProgressRadial value={70} width="w-[40px]" color="stroke-[#FE6D8E]" />
 			</div>
+		</div>
+		<div class="">
+			<Chart color={'#3E89FD'} chartId="chart2" />
 		</div>
 	</div>
 </div>

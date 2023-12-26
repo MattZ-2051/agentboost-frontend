@@ -35,7 +35,15 @@ export const hexToRgba = (hex: string) => {
 			c = [c[0], c[0], c[1], c[1], c[2], c[2]];
 		}
 		c = '0x' + c.join('');
-		return 'rgba(' + [(c >> 16) & 255, (c >> 8) & 255, c & 255].join(',') + ',0.3)';
+		return 'rgba(' + [(c >> 16) & 255, (c >> 8) & 255, c & 255].join(',') + ',0.8)';
 	}
 	throw new Error('Bad Hex');
+};
+
+export const getCurrentWeek = () => {
+	const currentdate: any = new Date();
+	const oneJan: any = new Date(currentdate.getFullYear(), 0, 1);
+	const numberOfDays = Math.floor((currentdate - oneJan) / (24 * 60 * 60 * 1000));
+	const result = Math.ceil((currentdate.getDay() + 1 + numberOfDays) / 7);
+	return result;
 };

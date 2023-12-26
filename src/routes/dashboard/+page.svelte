@@ -1,9 +1,13 @@
 <script lang="ts">
 	import SocialMediaActivity from '$lib/pages/Dashboard/SocialMediaActivity/SocialMediaActivity.svelte';
 	import CurrentCalender from '$lib/pages/Dashboard/CurrentCalender/CurrentCalender.svelte';
+	import Announcements from '$lib/pages/Dashboard/Announcements/Announcements.svelte';
+	import ActiveListings from '$lib/pages/Marketing/ActiveListings/ActiveListings.svelte';
+	import MortgageStats from '$lib/pages/Dashboard/MortgageStats/MortgageStats.svelte';
+	import Feedback from '$lib/pages/Dashboard/Feedback/Feedback.svelte';
 </script>
 
-<div class="">
+<div class="mb-12">
 	<div class="h-[1px] bg-[#181818] w-full my-6" />
 	<p class="text-2xl font-semibold text-white">Welcome <span class="textGradient">Jacob</span></p>
 	<div class="mt-12">
@@ -32,6 +36,14 @@
 	</div>
 	<div class="mt-6">
 		<CurrentCalender />
+	</div>
+	<div class="mt-6">
+		<ActiveListings />
+	</div>
+	<div class="mt-6 w-full grid grid-cols-3 gap-x-6 h-full">
+		<Announcements />
+		<MortgageStats />
+		<Feedback />
 	</div>
 </div>
 

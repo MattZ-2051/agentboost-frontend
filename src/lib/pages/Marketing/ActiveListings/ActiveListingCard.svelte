@@ -17,7 +17,7 @@
 		</div>
 		<div class="bg-[#1E2225] p-3 rounded-[10px]">
 			<img
-				class="w-[292px] h-[233px] rounded-[10px]"
+				class="w-[292px] h-[233px] rounded-[10px] object-cover"
 				src="https://via.placeholder.com/292x233"
 				alt=""
 			/>

@@ -5,7 +5,9 @@
 	import { hexToRgba } from '$utils';
 
 	export let color: string;
+	export let classes: string = '';
 	export let chartId: string;
+	export let hideAxes: boolean = false;
 	export let chartData = [100, 59, 80, 81, 56, 55, 40, 65, 59, 80, 81, 56, 55, 40, 65, 59, 80];
 
 	const colorRgba = hexToRgba(color);
@@ -75,7 +77,10 @@
 					},
 					scales: {
 						y: {
-							beginAtZero: true
+							display: !hideAxes
+						},
+						x: {
+							display: !hideAxes
 						}
 					}
 				}
@@ -85,8 +90,5 @@
 </script>
 
 <div>
-	<canvas id={chartId} class="w-[500px] h-[147px]" />
+	<canvas id={chartId} class={`${classes} w-[500px] h-[147px]`} />
 </div>
-
-<style lang="postcss">
-</style>

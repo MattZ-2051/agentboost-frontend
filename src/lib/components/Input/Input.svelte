@@ -76,7 +76,6 @@
 	}
 
 	.variant-app-primary::placeholder {
-		color: #c6c7cd;
-		opacity: 0.6;
+		color: #4e555f;
 	}
 </style>

@@ -77,10 +77,27 @@
 					},
 					scales: {
 						y: {
-							display: !hideAxes
+							display: !hideAxes,
+							ticks: {
+								padding: 12
+							},
+							position: 'right',
+							grid: {
+								color: '#e5e5ef30',
+								borderColor: '#e5e5ef30',
+								tickColor: '#e5e5ef30'
+							}
 						},
 						x: {
-							display: !hideAxes
+							display: !hideAxes,
+							ticks: {
+								padding: 12
+							},
+							grid: {
+								color: 'transparent',
+								borderColor: 'transparent',
+								tickColor: 'transparent'
+							}
 						}
 					}
 				}

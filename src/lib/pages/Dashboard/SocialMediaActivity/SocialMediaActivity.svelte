@@ -100,7 +100,7 @@
 				<ProgressRadial value={70} width="w-[40px]" color="stroke-[#FE6D8E]" />
 			</div>
 		</div>
-		<div>
+		<div class="mt-4">
 			<Chart color={'#49F9EA'} chartId="chart1" />
 		</div>
 	</div>
@@ -177,7 +177,7 @@
 				<ProgressRadial value={70} width="w-[40px]" color="stroke-[#FE6D8E]" />
 			</div>
 		</div>
-		<div class="">
+		<div class="mt-4">
 			<Chart color={'#3E89FD'} chartId="chart2" />
 		</div>
 	</div>

@@ -1,7 +1,6 @@
 <script lang="ts">
 	import type { TabItems } from '$types/components';
 	import { goto } from '$app/navigation';
-	import { onMount } from 'svelte';
 
 	export let items: TabItems;
 	export let selectedItem: string = items[0].label;
@@ -40,7 +39,7 @@
 			{:else}
 				<div
 					class={`${classes} ${
-						selectedItem === item.label ? '!text-primary-500 border-b border-b-primary-500' : ''
+						selectedItem === item.label ? '!text-primary-500 border-b !border-b-primary-500' : ''
 					} hover:text-primary-500 border-b border-b-transparent hover:cursor-pointer hover:border-b hover:border-b-primary-500 py-4 relative z-10`}
 					on:click={() => handleTabSelect(item.label)}
 				>

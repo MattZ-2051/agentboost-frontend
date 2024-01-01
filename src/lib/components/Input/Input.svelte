@@ -64,6 +64,7 @@
 			{name}
 		/>
 	{/if}
+	<slot name="icon" />
 </label>
 
 <style lang="postcss">

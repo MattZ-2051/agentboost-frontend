@@ -6,13 +6,13 @@
 	import ListingsIconHover from '$lib/assets/svg/ListingsIconHover.svelte';
 	import MarketingIconHover from '$lib/assets/svg/MarketingIconHover.svelte';
 	import BuyersIconHover from '$lib/assets/svg/BuyersIconHover.svelte';
-	import LogoGradient from '$lib/assets/svg/LogoGradient.svelte';
 	import MarketingIcon from '$lib/assets/svg/MarketingIcon.svelte';
 	import Button from '$lib/components/Button/Button.svelte';
 	import dummyProfileImg from '$lib/assets/images/dummy-profile.png';
 	import ProfilePopup from '$lib/pages/App/Popups/ProfilePopup/ProfilePopup.svelte';
 	import DashboardIconHover from '$lib/assets/svg/DashboardIconHover.svelte';
 	import { goto } from '$app/navigation';
+	import LogoWhiteGradient from '$lib/assets/svg/Logo/LogoWhiteGradient.svelte';
 
 	const headerButtonStyles =
 		'!text-[rgba(255,255,255,0.8)] text-base font-light hover:!bg-[rgba(255,255,255,0.09)] w-[9rem] h-[2.125rem]';
@@ -26,9 +26,9 @@
 	};
 </script>
 
-<div class="flex justify-between w-screen max-w-screen-desktop px-12 py-4 items-center">
+<div class="flex justify-between items-center w-screen max-w-screen-desktop px-12 py-[25px]">
 	<div class="hover:cursor-pointer" on:click={() => goto('/')}>
-		<LogoGradient />
+		<LogoWhiteGradient />
 	</div>
 	<div class="w-full flex justify-center">
 		<div
@@ -104,8 +104,8 @@
 	</div>
 	<div class="flex items-center gap-x-6 h-full relative">
 		<Icon icon="mi:notification" class="text-3xl" />
-		<div class="flex gap-x-2 items-center w-full">
-			<img src={dummyProfileImg} alt="profile photo" class="w-[40px] h-[40px]" />
+		<div class="flex gap-x-2 items-center">
+			<img src={dummyProfileImg} alt="profile" class="w-[40px] h-[40px]" />
 			<p class="text-base whitespace-nowrap">Jacob Jones</p>
 			<div on:click={() => (showPopup = !showPopup)}>
 				<Icon
@@ -115,10 +115,11 @@
 			</div>
 		</div>
 		{#if showPopup}
-			<ProfilePopup />
+			<ProfilePopup bind:showPopup />
 		{/if}
 	</div>
 </div>
+<div class="h-[1px] bg-[#181818] mb-4 mx-12" />
 
 <style lang="postcss">
 	div :global(.white-icon) {

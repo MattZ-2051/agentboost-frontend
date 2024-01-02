@@ -6,8 +6,17 @@
 	import { goto } from '$app/navigation';
 
 	$: iconHover = false;
+	export let showPopup: boolean = false;
 
 	const username = 'jacobjones';
+
+	const handleClick = async () => {
+		showPopup = true;
+		try {
+			await goto(`/profile/${username}`);
+			showPopup = false;
+		} catch {}
+	};
 </script>
 
 <div
@@ -16,7 +25,7 @@
 >
 	<div
 		class="flex items-start hover:bg-white hover:bg-opacity-[0.05] py-1 px-2 rounded-[10px]"
-		on:click={() => goto(`/profile/${username}`)}
+		on:click={handleClick}
 	>
 		<div class="px-3 flex hover:cursor-pointer">
 			<div class="mr-2 text-base mt-1">

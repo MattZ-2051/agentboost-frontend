@@ -27,7 +27,6 @@
 </script>
 
 <div>
-	<div class="h-[1px] bg-[#181818] w-full my-6" />
 	<h1 class="text-[24px] font-semibold mb-8">Account</h1>
 	<div class="bg-[#171A1C] rounded-[20px] w-full h-full p-6">
 		<Tabs items={tabItems} bind:selectedItem>

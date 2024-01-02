@@ -35,7 +35,6 @@
 </script>
 
 <div class="w-full h-full relative">
-	<div class="h-[1px] bg-[#181818] w-full my-6" />
 	<div class="flex justify-between items-center mb-4">
 		<h1 class="text-2xl font-semibold">My Listings</h1>
 		<Button

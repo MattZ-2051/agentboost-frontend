@@ -1,5 +1,5 @@
 <script lang="ts">
-	import LogoWhite from '$lib/assets/svg/LogoWhite.svelte';
+	import LogoWhite from '$lib/assets/svg/Logo/LogoWhite.svelte';
 	import Button from '$lib/components/Button/Button.svelte';
 	import { AppBar, getDrawerStore } from '@skeletonlabs/skeleton';
 

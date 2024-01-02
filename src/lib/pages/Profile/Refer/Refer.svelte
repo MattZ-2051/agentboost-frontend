@@ -18,7 +18,7 @@
 			<p class="text-[#55B467]">Earn $100 USD - Your friend earns $50 off</p>
 		</div>
 		<div
-			class="bg-[#24282D] w-full rounded-[10px] px-4 py-1 mt-2 flex items-center justify-between mb-12"
+			class="bg-[#24282D] w-full rounded-[10px] px-4 py-1 mt-2 flex items-center justify-between mb-12zx"
 		>
 			<p class="text-[#C6C7CD] text-[15px]">AGBJACOBXUR29B01D</p>
 			<div class="flex items-center">

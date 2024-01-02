@@ -24,7 +24,8 @@ export type ButtonVariant =
 	| 'variant-ringed-secondary'
 	| 'landing'
 	| 'landing-dark'
-	| 'variant-app-primary';
+	| 'variant-app-primary'
+	| 'variant-app-secondary';
 
 export type Variants = Record<ButtonVariant, string>;
 

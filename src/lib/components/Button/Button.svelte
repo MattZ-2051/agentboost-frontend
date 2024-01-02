@@ -97,6 +97,14 @@
 		transition: transform 200ms ease-in-out;
 	}
 
+	.variant-app-secondary {
+		background: #1d3335;
+		padding: 12px 24px;
+		color: white;
+		font-size: 15px;
+		font-weight: 600;
+		border-radius: 10px;
+	}
 	.variant-app-primary:hover div {
 		@apply !bg-opacity-0;
 	}

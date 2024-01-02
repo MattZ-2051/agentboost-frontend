@@ -1,5 +1,19 @@
-<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-	<rect x="0.5" y="0.5" width="39" height="39" rx="9.5" stroke="url(#paint0_linear_833_1822)" />
+<script lang="ts">
+	export let showBorder: boolean = true;
+	export let iconSize: number = 40;
+</script>
+
+<svg
+	width={iconSize}
+	height={iconSize}
+	viewBox="0 0 40 40"
+	fill="none"
+	xmlns="http://www.w3.org/2000/svg"
+	class="hover:cursor-pointer hover:scale-110"
+>
+	{#if showBorder}
+		<rect x="0.5" y="0.5" width="39" height="39" rx="9.5" stroke="url(#paint0_linear_833_1822)" />
+	{/if}
 	<path
 		d="M22.5013 20.7917H16.668C16.3263 20.7917 16.043 20.5083 16.043 20.1667C16.043 19.825 16.3263 19.5417 16.668 19.5417H22.5013C22.843 19.5417 23.1263 19.825 23.1263 20.1667C23.1263 20.5083 22.843 20.7917 22.5013 20.7917Z"
 		fill="url(#paint1_linear_833_1822)"

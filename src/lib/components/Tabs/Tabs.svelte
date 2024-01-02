@@ -32,7 +32,7 @@
       </TabAnchor> -->
 				<div
 					on:click={() => handleNav(item.href)}
-					class={`${classes} hover:text-primary-500 border-b border-b-transparent hover:cursor-pointer hover:border-b hover:border-b-primary-500 py-4 relative z-10`}
+					class={`${classes} hover:text-primary-500 border-b border-b-transparent hover:cursor-pointer hover:border-b hover:border-b-primary-500 pb-4 relative z-10 text-[#8E8E8E]`}
 				>
 					<p>{item.label}</p>
 				</div>
@@ -40,7 +40,7 @@
 				<div
 					class={`${classes} ${
 						selectedItem === item.label ? '!text-primary-500 border-b !border-b-primary-500' : ''
-					} hover:text-primary-500 border-b border-b-transparent hover:cursor-pointer hover:border-b hover:border-b-primary-500 py-4 relative z-10`}
+					} hover:text-primary-500 border-b border-b-transparent hover:cursor-pointer hover:border-b hover:border-b-primary-500 pb-4 relative z-10 text-[#8E8E8E]`}
 					on:click={() => handleTabSelect(item.label)}
 				>
 					<p>{item.label}</p>

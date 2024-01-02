@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { fade } from 'svelte/transition';
 	import Tabs from '$lib/components/Tabs/Tabs.svelte';
 	import Feedback from '$lib/pages/Profile/Feedback/Feedback.svelte';
 	import Refer from '$lib/pages/Profile/Refer/Refer.svelte';
@@ -27,28 +28,28 @@
 </script>
 
 <div>
-	<h1 class="text-[24px] font-semibold mb-8">Account</h1>
+	<h1 class="text-[24px] font-semibold mb-6">Account</h1>
 	<div class="bg-[#171A1C] rounded-[20px] w-full h-full p-6">
 		<Tabs items={tabItems} bind:selectedItem>
-			<div slot="content" class="mt-6">
+			<div slot="content" class="mt-[25px]">
 				{#if selectedItem === 'Profile'}
-					<div>
+					<div transition:fade={{ delay: 0, duration: 100 }}>
 						<UserInfo />
 					</div>
 				{:else if selectedItem === 'Subscription'}
-					<div>
+					<div transition:fade={{ delay: 0, duration: 100 }}>
 						<Subscription />
 					</div>
 				{:else if selectedItem === 'Give feedback'}
-					<div>
+					<div transition:fade={{ delay: 0, duration: 100 }}>
 						<Feedback />
 					</div>
 				{:else if selectedItem === 'Contact support'}
-					<div>
+					<div transition:fade={{ delay: 0, duration: 100 }}>
 						<Support />
 					</div>
 				{:else if selectedItem === 'Refer & earn'}
-					<div>
+					<div transition:fade={{ delay: 0, duration: 100 }}>
 						<Refer />
 					</div>{/if}
 			</div>

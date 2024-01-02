@@ -106,7 +106,7 @@
 		'xl:!w-[8rem] w-[82px] !bg-transparent xl:!bg-inherit !text-sm xl:!text-lg !text-opacity-40 !text-white hover:!text-primary-500 hover:!bg-white hover:!bg-opacity-10';
 </script>
 
-<div class="w-full h-full relative xl:p-12 p-4">
+<div class="w-full h-full relative xl:p-12 p-4 !font-[Made-Evolve]">
 	<div class="elipse absolute" />
 	<section class="w-full flex flex-col items-center justify-center">
 		<div class="flex flex-col items-center justify-center">

@@ -22,7 +22,6 @@
 </script>
 
 <div>
-	<div class="h-[1px] bg-[#181818] w-full my-6" />
 	<div class="flex justify-between w-full items-center">
 		<p class="text-white text-2xl font-semibold">Buyers</p>
 		<Button

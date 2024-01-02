@@ -8,7 +8,6 @@
 </script>
 
 <div class="mb-12">
-	<div class="h-[1px] bg-[#181818] w-full my-6" />
 	<p class="text-2xl font-semibold text-white">Welcome <span class="textGradient">Jacob</span></p>
 	<div class="mt-12">
 		<p class="text-[#EFEFEF] text-xl">Local market statistics</p>

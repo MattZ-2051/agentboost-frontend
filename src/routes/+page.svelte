@@ -464,7 +464,7 @@
 							<div class="xl:mr-32 px-4 py-8">
 								<p class="text-[30px] xl:text-[3.6rem] font-normal leading-normal text-white">
 									Ready to boost your <br />
-									<span class="textGradient textGradient5">real estate business?</span>
+									<span class="textGradient5">real estate business?</span>
 								</p>
 								<p class="mt-4 text-[18px] text-slate font-light">
 									Seize the opportunity to elevate your real estate business and <br

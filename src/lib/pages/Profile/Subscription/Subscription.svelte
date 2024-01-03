@@ -5,8 +5,8 @@
 	import visaIcon from '$lib/assets/images/CC/visa.png';
 </script>
 
-<h1 class="text-white font-bold text-[18px]">Subscription</h1>
-<p class="text-[#707281] text-[15px] mt-2">
+<h1 class="text-white font-semibold text-[18px]">Subscription</h1>
+<p class="text-[#707281] text-[15px] mt-[6px]">
 	This page displays general information about your subscription.
 </p>
 <div class="infoBox mt-8 flex w-full gap-x-12">
@@ -137,23 +137,25 @@
 </div>
 <div class="infoBox mt-12">
 	<p class="text-white text-base font-medium">Payment Details</p>
-	<div class="flex w-full justify-between mt-6">
+	<div class="flex w-full justify-between mt-[25px]">
 		<div>
-			<p class="text-[#707281] text-base">Card Number</p>
-			<div class="flex gap-x-2 items-center mt-2">
+			<p class="text-[#707281] text-base font-normal">Card Number</p>
+			<div class="flex gap-x-2 items-center mt-4">
 				<img src={visaIcon} alt="" class="w-5 h-5 rounded" />
 				<p>Visa •••• 8743</p>
 			</div>
 		</div>
 		<div>
-			<p class="text-[#707281] text-base">Expires</p>
-			<p class="mt-2">06/2028</p>
+			<p class="text-[#707281] text-base font-normal">Expires</p>
+			<p class="mt-4">06/2028</p>
 		</div>
-		<Button label="Edit" variant="variant-app-secondary" classes="!w-[77px] !h-12" />
+		<div class="flex h-full items-end w-fit">
+			<Button label="Edit" variant="variant-app-secondary" classes="!w-[77px] !h-12" />
+		</div>
 	</div>
 </div>
 
-<style>
+<style lang="postcss">
 	.infoBox {
 		@apply bg-[#1E2225] border border-white border-opacity-10 w-full h-full p-6 rounded-[10px];
 	}

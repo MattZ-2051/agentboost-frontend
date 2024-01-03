@@ -33,19 +33,19 @@
 		<Tabs items={tabItems} bind:selectedItem>
 			<div slot="content" class="mt-[25px]">
 				{#if selectedItem === 'Profile'}
-					<div transition:fade={{ delay: 0, duration: 100 }}>
+					<div>
 						<UserInfo />
 					</div>
 				{:else if selectedItem === 'Subscription'}
-					<div transition:fade={{ delay: 0, duration: 100 }}>
+					<div>
 						<Subscription />
 					</div>
 				{:else if selectedItem === 'Give feedback'}
-					<div transition:fade={{ delay: 0, duration: 100 }}>
+					<div>
 						<Feedback />
 					</div>
 				{:else if selectedItem === 'Contact support'}
-					<div transition:fade={{ delay: 0, duration: 100 }}>
+					<div>
 						<Support />
 					</div>
 				{:else if selectedItem === 'Refer & earn'}

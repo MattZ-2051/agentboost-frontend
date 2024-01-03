@@ -15,7 +15,7 @@
 	import LogoWhiteGradient from '$lib/assets/svg/Logo/LogoWhiteGradient.svelte';
 
 	const headerButtonStyles =
-		'!text-[rgba(255,255,255,0.8)] text-base font-light hover:!bg-[rgba(255,255,255,0.09)] w-[9rem] h-[2.125rem]';
+		'!text-[rgba(255,255,255,0.8)] text-base !font-light hover:!bg-[rgba(255,255,255,0.09)] w-[9rem] h-[2.125rem]';
 
 	$: showPopup = false;
 	$: iconHover = {

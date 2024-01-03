@@ -1,6 +1,5 @@
 <script lang="ts">
 	import CameraIcon from '$lib/assets/svg/CameraIcon.svelte';
-	import DangerIconBlue from '$lib/assets/svg/DangerIconBlue.svelte';
 	import Button from '$lib/components/Button/Button.svelte';
 	import Input from '$lib/components/Input/Input.svelte';
 </script>
@@ -52,11 +51,7 @@
 			variant="variant-app-primary"
 			type="text"
 			placeholder="Connect Email"
-		>
-			<span slot="icon">
-				<DangerIconBlue />
-			</span>
-		</Input>
+		/>
 	</div>
 	<div class="mt-5">
 		<Input
@@ -95,24 +90,24 @@
 		</div>
 	</div>
 </div>
-<h1 class="text-white mt-10 font-bold text-[18px]">Password Reset</h1>
+<h1 class="text-white mt-12 font-semibold text-[18px]">Password Reset</h1>
 <div class="grid grid-cols-2 gap-x-[26px] w-[90%]">
 	<div class="mt-5">
 		<Input
-			label="Brokerage"
-			value="Smart Properties"
+			label="Current Password"
+			value="pass@123"
 			variant="variant-app-primary"
-			type="text"
-			placeholder="Brokerage"
+			type="password"
+			placeholder="Current Password"
 		/>
 	</div>
 	<div class="mt-5">
 		<Input
-			label="Brokerage"
-			value="Smart Properties"
+			label="New password"
+			value=""
 			variant="variant-app-primary"
-			type="text"
-			placeholder="Brokerage"
+			type="password"
+			placeholder="New Password"
 		/>
 		<div class="w-full flex justify-end mt-6">
 			<Button

@@ -12,58 +12,60 @@
 	export let variant: InputVariant | '' = '';
 </script>
 
-<p class="mb-[6px] text-[15px] text-[#CFD0D5] font-semibold">{label}</p>
-{#if type === 'text'}
-	<input
-		class={`${classes} ${variant} input w-full`}
-		type="text"
-		{name}
-		{placeholder}
-		bind:value
-		{disabled}
-	/>
-{/if}
-{#if type === 'email'}
-	<input
-		class={`${classes}  ${variant} input w-full`}
-		type="email"
-		{name}
-		{placeholder}
-		bind:value
-		{disabled}
-	/>
-{/if}
-{#if type === 'date'}
-	<input
-		class={`${classes} ${variant} input w-full`}
-		type="date"
-		{placeholder}
-		{name}
-		bind:value
-		{disabled}
-	/>
-{/if}
-{#if type === 'password'}
-	<input
-		class={`${classes} ${variant} input w-full`}
-		type="password"
-		{placeholder}
-		{name}
-		bind:value
-		{disabled}
-	/>
-{/if}
-{#if type === 'textarea'}
-	<textarea
-		class={`${classes} ${variant} input w-full`}
-		{rows}
-		{placeholder}
-		bind:value
-		{disabled}
-		{name}
-	/>
-{/if}
-<slot name="icon" />
+<div>
+	<p class="mb-[6px] text-[15px] text-[#CFD0D5] font-semibold">{label}</p>
+	{#if type === 'text'}
+		<input
+			class={`${classes} ${variant} input w-full`}
+			type="text"
+			{name}
+			{placeholder}
+			bind:value
+			{disabled}
+		/>
+	{/if}
+	{#if type === 'email'}
+		<input
+			class={`${classes}  ${variant} input w-full`}
+			type="email"
+			{name}
+			{placeholder}
+			bind:value
+			{disabled}
+		/>
+	{/if}
+	{#if type === 'date'}
+		<input
+			class={`${classes} ${variant} input w-full`}
+			type="date"
+			{placeholder}
+			{name}
+			bind:value
+			{disabled}
+		/>
+	{/if}
+	{#if type === 'password'}
+		<input
+			class={`${classes} ${variant} input w-full`}
+			type="password"
+			{placeholder}
+			{name}
+			bind:value
+			{disabled}
+		/>
+	{/if}
+	{#if type === 'textarea'}
+		<textarea
+			class={`${classes} ${variant} input w-full`}
+			{rows}
+			{placeholder}
+			bind:value
+			{disabled}
+			{name}
+		/>
+	{/if}
+	<slot name="icon" />
+</div>
 
 <style lang="postcss">
 	.variant-app-primary {

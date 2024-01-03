@@ -6,41 +6,37 @@
 </script>
 
 <div>
-	<h1 class="text-white font-bold text-[18px]">Profile 👋</h1>
-	<p class="text-[#707281] text-[15px] mt-2">
+	<h1 class="text-white font-semibold text-[18px]">Profile 👋</h1>
+	<p class="text-[#707281] text-[15px] mt-[6px] font-normal">
 		This page displays general information about your account.
 	</p>
 </div>
-<div class="grid grid-cols-2 gap-x-[26px] w-[90%]">
-	<div class="mt-6 flex gap-x-2">
+<div class="grid grid-cols-2 gap-x-[26px] w-[90%] mt-6">
+	<div class="flex gap-x-2 items-center">
 		<img class="w-20 h-20 relative rounded-[60px]" src="https://via.placeholder.com/80x80" alt="" />
 		<div>
-			<p class="text-[#707281] text-[15px] mb-[6px]">Profile image</p>
-			<div
-				class="bg-[#2E2F37] rounded-[90px] py-[6px] px-[16px] flex items-center justify-center h-[36px] w-[192px] gap-x-[10px]"
-			>
+			<p class="text-[#707281] text-[15px] font-normal mb-[6px]">Profile image</p>
+			<div class="imgBtn">
 				<div>
 					<CameraIcon />
 				</div>
-				<p class="text-[#C6C7CD] text-[15px] whitespace-nowrap">Upload new image</p>
+				<p class="text-[#C6C7CD] text-[15px] font-normal whitespace-nowrap">Upload new image</p>
 			</div>
 		</div>
 	</div>
-	<div class="mt-6 flex gap-x-2">
+	<div class="flex gap-x-2 items-center">
 		<img class="w-20 h-20 relative rounded-[60px]" src="https://via.placeholder.com/80x80" alt="" />
 		<div>
-			<p class="text-[#707281] text-[15px] mb-[6px]">Profile image</p>
-			<div
-				class="bg-[#2E2F37] rounded-[90px] py-[6px] px-[16px] flex items-center justify-center h-[36px] w-[192px] gap-x-[10px]"
-			>
+			<p class="text-[#707281] text-[15px] font-normal mb-[6px]">Profile image</p>
+			<div class="imgBtn">
 				<div>
 					<CameraIcon />
 				</div>
-				<p class="text-[#C6C7CD] text-[15px] whitespace-nowrap">Upload new image</p>
+				<p class="text-[#C6C7CD] text-[15px] font-normal whitespace-nowrap">Upload new image</p>
 			</div>
 		</div>
 	</div>
-	<div class="mt-8">
+	<div class="mt-[42px]">
 		<Input
 			label="Full Name"
 			value="Jacob Jones"
@@ -49,7 +45,7 @@
 			placeholder="Full Name"
 		/>
 	</div>
-	<div class="mt-8">
+	<div class="mt-[42px]">
 		<Input
 			label="Email"
 			value="jacob@smartproperties.com"
@@ -128,3 +124,10 @@
 		</div>
 	</div>
 </div>
+
+<style lang="postcss">
+	.imgBtn {
+		@apply bg-[#2E2F37] rounded-[90px] py-[6px] px-[16px] flex items-center justify-center h-[36px] w-[192px] gap-x-[10px];
+		@apply hover:cursor-pointer hover:bg-opacity-80;
+	}
+</style>

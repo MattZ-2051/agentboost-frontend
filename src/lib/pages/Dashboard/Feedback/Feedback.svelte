@@ -1,9 +1,10 @@
 <script lang="ts">
 	import Input from '$lib/components/Input/Input.svelte';
+	import Box from '$lib/components/Box/Box.svelte';
 	import Button from '$lib/components/Button/Button.svelte';
 </script>
 
-<div class="p-6 border border-white border-opacity-10 w-full h-[398px] bg-[#151719] rounded-[10px]">
+<Box bgColor="bg-[#151719]" height="!h-[398px]" width="w-full" classes="p-6">
 	<p class="text-[#EFEFEF] text-xl font-semibold mb-4">Feeback</p>
 	<p class="text-[#707281] text-[15px] mb-4">Tell us your thoughts about the platform</p>
 	<Input
@@ -20,7 +21,4 @@
 		classes="!w-full !h-[48px] mt-4"
 		variant="variant-app-primary"
 	/>
-</div>
-
-<style lang="">
-</style>
+</Box>

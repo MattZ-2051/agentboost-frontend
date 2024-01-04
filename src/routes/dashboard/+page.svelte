@@ -2,32 +2,61 @@
 	import SocialMediaActivity from '$lib/pages/Dashboard/SocialMediaActivity/SocialMediaActivity.svelte';
 	import CurrentCalender from '$lib/pages/Dashboard/CurrentCalender/CurrentCalender.svelte';
 	import Announcements from '$lib/pages/Dashboard/Announcements/Announcements.svelte';
-	import ActiveListings from '$lib/pages/Marketing/ActiveListings/ActiveListings.svelte';
+	import ActiveListings from '$lib/pages/Shared/ActiveListings/ActiveListings.svelte';
 	import MortgageStats from '$lib/pages/Dashboard/MortgageStats/MortgageStats.svelte';
 	import Feedback from '$lib/pages/Dashboard/Feedback/Feedback.svelte';
+	import Box from '$lib/components/Box/Box.svelte';
 </script>
 
 <div>
 	<p class="text-2xl font-semibold text-white">Welcome <span class="textGradient">Jacob</span></p>
-	<div class="mt-12">
+	<div class="mt-12 w-full">
 		<p class="text-[#EFEFEF] text-xl">Local market statistics</p>
 		<div class="mt-6 flex items-center w-full h-full justify-start gap-x-6">
-			<div class="statCard">
-				<p>Average home price</p>
-				<p>$354,763</p>
-			</div>
-			<div class="statCard">
-				<p>Total active listings</p>
-				<p>14</p>
-			</div>
-			<div class="statCard">
-				<p>Total pending</p>
-				<p>3</p>
-			</div>
-			<div class="statCard">
-				<p>Months of inventory</p>
-				<p>2.3</p>
-			</div>
+			<Box
+				width="!w-[299px]"
+				height="h-[108px]"
+				classes="px-[24px] py-[22px]"
+				bgColor="bg-[#151719]"
+			>
+				<span class="statInfo">
+					<p>Average home price</p>
+					<p>$354,763</p>
+				</span>
+			</Box>
+			<Box
+				width="!w-[299px]"
+				height="h-[108px]"
+				classes="px-[24px] py-[22px]"
+				bgColor="bg-[#151719]"
+			>
+				<span class="statInfo">
+					<p>Total active listings</p>
+					<p>14</p>
+				</span>
+			</Box>
+			<Box
+				width="!w-[299px]"
+				height="h-[108px]"
+				classes="px-[24px] py-[22px]"
+				bgColor="bg-[#151719]"
+			>
+				<span class="statInfo">
+					<p>Total pending</p>
+					<p>3</p>
+				</span></Box
+			>
+			<Box
+				width="!w-[299px]"
+				height="h-[108px]"
+				classes="px-[24px] py-[22px]"
+				bgColor="bg-[#151719]"
+			>
+				<span class="statInfo">
+					<p>Months of inventory</p>
+					<p>2.3</p>
+				</span>
+			</Box>
 		</div>
 	</div>
 	<div class="mt-6">
@@ -54,16 +83,7 @@
 		-webkit-text-fill-color: transparent;
 	}
 
-	.statCard {
-		width: 299.5px;
-		height: 108px;
-		padding: 24px 22px;
-		border-radius: 10px;
-		background: #151719;
-		@apply border-opacity-20 border border-white;
-	}
-
-	.statCard p:nth-child(1) {
+	.statInfo p:nth-child(1) {
 		color: #6f767e;
 		font-size: 14px;
 		font-style: normal;
@@ -71,7 +91,7 @@
 		line-height: normal;
 	}
 
-	.statCard p:nth-child(2) {
+	.statInfo p:nth-child(2) {
 		color: #efefef;
 		font-size: 32px;
 		font-style: normal;

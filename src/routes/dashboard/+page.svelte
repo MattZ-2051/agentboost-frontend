@@ -7,7 +7,7 @@
 	import Feedback from '$lib/pages/Dashboard/Feedback/Feedback.svelte';
 </script>
 
-<div class="mb-12">
+<div>
 	<p class="text-2xl font-semibold text-white">Welcome <span class="textGradient">Jacob</span></p>
 	<div class="mt-12">
 		<p class="text-[#EFEFEF] text-xl">Local market statistics</p>

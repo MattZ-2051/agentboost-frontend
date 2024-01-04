@@ -2,7 +2,7 @@
 	import Card from '../../Card/Card.svelte';
 </script>
 
-<Card height="h-[400px]">
+<Card height="h-[400px]" width="w-fit">
 	<div class="w-[400px] h-full">
 		<header class="" />
 		<div class="p-4 space-y-4">

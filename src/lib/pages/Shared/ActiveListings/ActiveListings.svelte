@@ -1,14 +1,13 @@
 <script lang="ts">
-	import BuyersIconHover from '$lib/assets/svg/BuyersIconHover.svelte';
+	import Box from '$lib/components/Box/Box.svelte';
 	import Slider from '$lib/components/Slider/Slider.svelte';
-	import ActiveListingCard from './ActiveListingCard.svelte';
+	import ActiveListingCard from '../ActiveListingCard/ActiveListingCard.svelte';
 </script>
 
-<div class="h-full bg-[#141718] rounded-[20px] py-8 px-6 w-full max-w-[95vw]">
+<Box width="w-full" height="h-full" bgColor="bg-[#151719]" classes="max-w-[95vw] p-6">
 	<div class="w-full">
 		<div class="flex gap-x-4 items-center">
-			<BuyersIconHover width={24} height={24} />
-			<p class="text-white text-2xl font-semibold">Active Listings</p>
+			<p class="text-white text-[20px] font-semibold">Active Listings</p>
 		</div>
 	</div>
 	<div class="flex justify-start">
@@ -16,7 +15,7 @@
 			<ActiveListingCard />
 		</Slider>
 	</div>
-</div>
+</Box>
 
 <style>
 	.scrollbar::-webkit-scrollbar {

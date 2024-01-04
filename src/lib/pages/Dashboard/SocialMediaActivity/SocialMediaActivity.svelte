@@ -1,5 +1,6 @@
 <script lang="ts">
 	import GrowthIndicatorIcon from '$lib/assets/svg/GrowthIndicatorIcon.svelte';
+	import Box from '$lib/components/Box/Box.svelte';
 	import Dropdown from '$lib/components/Dropdown/Dropdown.svelte';
 	import RadioDropdown from '$lib/components/Dropdown/RadioDropdown.svelte';
 	import ProgressRadial from '$lib/components/ProgressRadial/ProgressRadial.svelte';
@@ -18,7 +19,7 @@
 </script>
 
 <div class="w-full h-full grid grid-cols-2 gap-x-6">
-	<div class="box">
+	<Box bgColor="bg-[#151719]" width="w-full" height="h-full" classes="p-6">
 		<div class="flex w-full items-center justify-between">
 			<p class="title">Social media activity</p>
 			<div class="flex gap-x-4">
@@ -45,7 +46,12 @@
 			</div>
 		</div>
 		<div class="mt-10 flex w-full items-center justify-between gap-x-8">
-			<div class="box !h-[71px] !p-3 flex justify-between items-center">
+			<Box
+				bgColor="bg-[#151719]"
+				width="w-full"
+				height="h-[71px]"
+				classes="p-3 flex justify-between items-center"
+			>
 				<div class="flex-col items-center justify-center">
 					<div class="flex items-center gap-x-1">
 						<svg
@@ -62,8 +68,13 @@
 					<p class="statValue">1k</p>
 				</div>
 				<ProgressRadial value={20} width="w-[40px]" color="stroke-[#3E8AFD]" />
-			</div>
-			<div class="box !h-[71px] !p-3 flex justify-between items-center">
+			</Box>
+			<Box
+				bgColor="bg-[#151719]"
+				width="w-full"
+				height="h-[71px]"
+				classes="p-3 flex justify-between items-center"
+			>
 				<div class="flex-col items-center justify-center">
 					<div class="flex items-center gap-x-1">
 						<svg
@@ -80,8 +91,13 @@
 					<p class="statValue">1k</p>
 				</div>
 				<ProgressRadial value={60} width="w-[40px]" color="stroke-[#FD853A]" />
-			</div>
-			<div class="box !h-[71px] !p-3 flex justify-between items-center">
+			</Box>
+			<Box
+				bgColor="bg-[#151719]"
+				width="w-full"
+				height="h-[71px]"
+				classes="p-3 flex justify-between items-center"
+			>
 				<div class="flex-col items-center justify-center">
 					<div class="flex items-center gap-x-1">
 						<svg
@@ -98,13 +114,13 @@
 					<p class="statValue">1k</p>
 				</div>
 				<ProgressRadial value={70} width="w-[40px]" color="stroke-[#FE6D8E]" />
-			</div>
+			</Box>
 		</div>
 		<div class="mt-4">
 			<Chart color={'#49F9EA'} chartId="chart1" />
 		</div>
-	</div>
-	<div class="box">
+	</Box>
+	<Box bgColor="bg-[#151719]" width="w-full" height="h-full" classes="p-6">
 		<div class="w-full flex justify-between">
 			<RadioDropdown
 				label="10044 W Springadle Ct"
@@ -122,7 +138,12 @@
 			/>
 		</div>
 		<div class="mt-[89px] flex w-full items-center justify-between gap-x-8">
-			<div class="box !h-[71px] !p-3 flex justify-between items-center">
+			<Box
+				bgColor="bg-[#151719]"
+				width="w-full"
+				height="h-[71px]"
+				classes="p-3 flex justify-between items-center"
+			>
 				<div class="flex-col items-center justify-center">
 					<div class="flex items-center gap-x-1">
 						<svg
@@ -139,8 +160,14 @@
 					<p class="statValue">25k</p>
 				</div>
 				<ProgressRadial value={20} width="w-[40px]" color="stroke-[#3E8AFD]" />
-			</div>
-			<div class="box !h-[71px] !p-3 flex justify-between items-center">
+			</Box>
+
+			<Box
+				bgColor="bg-[#151719]"
+				width="w-full"
+				height="h-[71px]"
+				classes="p-3 flex justify-between items-center"
+			>
 				<div class="flex-col items-center justify-center">
 					<div class="flex items-center gap-x-1">
 						<svg
@@ -157,8 +184,13 @@
 					<p class="statValue">33%</p>
 				</div>
 				<ProgressRadial value={60} width="w-[40px]" color="stroke-[#FD853A]" />
-			</div>
-			<div class="box !h-[71px] !p-3 flex justify-between items-center">
+			</Box>
+			<Box
+				bgColor="bg-[#151719]"
+				width="w-full"
+				height="h-[71px]"
+				classes="p-3 flex justify-between items-center"
+			>
 				<div class="flex-col items-center justify-center">
 					<div class="flex items-center gap-x-1">
 						<svg
@@ -175,12 +207,12 @@
 					<p class="statValue">8%</p>
 				</div>
 				<ProgressRadial value={70} width="w-[40px]" color="stroke-[#FE6D8E]" />
-			</div>
+			</Box>
 		</div>
 		<div class="mt-4">
 			<Chart color={'#3E89FD'} chartId="chart2" />
 		</div>
-	</div>
+	</Box>
 </div>
 
 <style lang="postcss">
@@ -190,10 +222,6 @@
 		font-style: normal;
 		font-weight: 600;
 		line-height: normal;
-	}
-
-	.box {
-		@apply bg-[#151719] border border-white border-opacity-20 rounded-[10px] w-full h-full p-6;
 	}
 
 	.statTitle {

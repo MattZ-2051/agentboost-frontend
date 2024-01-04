@@ -1,9 +1,9 @@
 <script lang="ts">
-	import Graph from '$lib/components/Graph/Graph.svelte';
+	import Box from '$lib/components/Box/Box.svelte';
 	import Chart from '../Chart/Chart.svelte';
 </script>
 
-<div class="p-6 border border-white border-opacity-10 w-full h-[398px] bg-[#151719] rounded-[10px]">
+<Box bgColor="bg-[#151719]" height="!h-[398px]" width="w-full" classes="p-6">
 	<p class="text-[#EFEFEF] text-xl font-semibold">Mortgage Statistics</p>
 	<div class="w-full h-full flex justify-center items-center flex-col">
 		<p class="textGradient">8.275%</p>
@@ -11,7 +11,7 @@
 			<Chart chartId="mortgageStats" color="#3E89FD" classes="!w-full !h-full" hideAxes={true} />
 		</div>
 	</div>
-</div>
+</Box>
 
 <style lang="postcss">
 	.textGradient {

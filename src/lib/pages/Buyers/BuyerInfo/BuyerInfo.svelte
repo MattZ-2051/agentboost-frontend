@@ -5,15 +5,17 @@
 	import BuyerInfoCard from './BuyerInfoCard.svelte';
 </script>
 
-<div class="bg-[#151719] rounded-[20px] w-full h-full py-4 px-8">
+<div class="bg-[#151719] rounded-[20px] w-full h-full px-8">
 	<div class="flex items-center w-full justify-between">
 		<div class="flex items-center gap-x-6">
-			<ChevronLeft />
+			<div class="hover:cursor-pointer hover:scale-110">
+				<ChevronLeft />
+			</div>
 			<p class="text-white text-2xl font-semibold leading-[normal]">Buyer Name Here</p>
 		</div>
 		<div class="flex items-center gap-x-2">
 			<div
-				class="bg-[#1D3335] !w-[164px] h-12 text-white py-4 px-6 flex items-center justify-center rounded-[10px] text-[15px] font-semibold whitespace-nowrap"
+				class="bg-[#1D3335] hover:cursor-pointer hover:bg-opacity-80 !w-[164px] h-12 text-white py-4 px-6 flex items-center justify-center rounded-[10px] text-[15px] font-semibold whitespace-nowrap"
 			>
 				View Full Profile
 			</div>

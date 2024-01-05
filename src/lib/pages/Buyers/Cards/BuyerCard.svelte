@@ -5,7 +5,7 @@
 	import TrashIcon from '$lib/assets/svg/TrashIcon.svelte';
 	import Button from '$lib/components/Button/Button.svelte';
 	import Card from '$lib/components/Card/Card.svelte';
-	import { linear } from 'svelte/easing';
+	import dummyImg from '$lib/assets/images/dummy-buyer-img.png';
 
 	const buyers = [
 		'10044 W Springdale Ct',
@@ -16,7 +16,7 @@
 	];
 </script>
 
-<Card width="w-[402px]" height="h-full" classes="!p-6">
+<Card width="w-[402px]" height="h-full" classes="!p-4">
 	<div>
 		<div class="flex items-center w-full justify-between">
 			<div class="flex items-center gap-x-4">
@@ -26,8 +26,8 @@
 				<p class="text-white font-semibold text-lg">Buyer name here</p>
 			</div>
 			<div class="flex items-center gap-x-4">
-				<ShareIcon iconSize={18} />
-				<TrashIcon iconSize={18} />
+				<ShareIcon iconSize={16} />
+				<TrashIcon iconSize={16} />
 			</div>
 		</div>
 		<div class="w-full h-[128px] bg-[#2E2F37] rounded-[10px] my-6 p-4 pr-3 relative">

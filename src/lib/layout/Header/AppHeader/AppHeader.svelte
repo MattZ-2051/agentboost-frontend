@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import BuyersIcon from '$lib/assets/svg/BuyersIcon.svelte';
 	import Icon from '@iconify/svelte';
 	import DashboardIcon from '$lib/assets/svg/DashboardIcon.svelte';
@@ -13,16 +13,37 @@
 	import DashboardIconHover from '$lib/assets/svg/DashboardIconHover.svelte';
 	import { goto } from '$app/navigation';
 	import LogoWhiteGradient from '$lib/assets/svg/Logo/LogoWhiteGradient.svelte';
+	import { page } from '$app/stores';
 
 	const headerButtonStyles =
 		'!text-[rgba(255,255,255,0.8)] text-base !font-light hover:!bg-[rgba(255,255,255,0.09)] w-[9rem] h-[2.125rem]';
 
+	const activeStyle = '!bg-[rgba(255,255,255,0.09)]';
 	$: showPopup = false;
+
 	$: iconHover = {
-		dashboard: false,
+		dashboard: $page.url.pathname.includes('dashboard') ? true : false,
 		buyers: false,
 		listings: false,
 		marketing: false
+	} as Record<string, boolean>;
+
+	$: currentPage = {
+		dashboard: $page.url.pathname.includes('dashboard') ? true : false,
+		buyers: false,
+		listings: false,
+		marketing: false
+	} as Record<string, boolean>;
+
+	const handleRoute = async (route: string) => {
+		await goto(`/${route}`);
+		for (let item in currentPage) {
+			if (item.toString() === route) {
+				currentPage[item] = true;
+			} else {
+				currentPage[item] = false;
+			}
+		}
 	};
 </script>
 
@@ -38,13 +59,13 @@
 				<Button
 					variant="variant-filled-surface"
 					label="Dashboard"
-					classes={headerButtonStyles}
-					onClick={() => goto('/dashboard')}
+					classes={`${headerButtonStyles} ${currentPage.dashboard === true ? activeStyle : ''}`}
+					onClick={() => handleRoute('dashboard')}
 					onMouseEnter={() => (iconHover.dashboard = true)}
 					onMouseLeave={() => (iconHover.dashboard = false)}
 				>
 					<span slot="icon" class="">
-						{#if iconHover.dashboard}
+						{#if iconHover.dashboard || currentPage.dashboard}
 							<DashboardIconHover />
 						{:else}
 							<DashboardIcon />
@@ -54,13 +75,13 @@
 				<Button
 					variant="variant-filled-surface"
 					label="Buyers"
-					onClick={() => goto('/buyers')}
-					classes={headerButtonStyles}
+					onClick={() => handleRoute('buyers')}
+					classes={`${headerButtonStyles} ${currentPage.buyers === true ? activeStyle : ''}`}
 					onMouseEnter={() => (iconHover.buyers = true)}
 					onMouseLeave={() => (iconHover.buyers = false)}
 				>
 					<span slot="icon" class="">
-						{#if iconHover.buyers}
+						{#if iconHover.buyers || currentPage.buyers}
 							<BuyersIconHover />
 						{:else}
 							<BuyersIcon />
@@ -70,13 +91,13 @@
 				<Button
 					variant="variant-filled-surface"
 					label="Listings"
-					onClick={() => goto('/listings')}
-					classes={headerButtonStyles}
+					onClick={() => handleRoute('listings')}
+					classes={`${headerButtonStyles} ${currentPage.listings === true ? activeStyle : ''}`}
 					onMouseEnter={() => (iconHover.listings = true)}
 					onMouseLeave={() => (iconHover.listings = false)}
 				>
 					<span slot="icon" class="">
-						{#if iconHover.listings}
+						{#if iconHover.listings || currentPage.listings}
 							<ListingsIconHover />
 						{:else}
 							<ListingsIcon />
@@ -86,13 +107,13 @@
 				<Button
 					variant="variant-filled-surface"
 					label="Marketing"
-					classes={headerButtonStyles}
-					onClick={() => goto('/marketing')}
+					classes={`${headerButtonStyles} ${currentPage.marketing === true ? activeStyle : ''}`}
+					onClick={() => handleRoute('marketing')}
 					onMouseEnter={() => (iconHover.marketing = true)}
 					onMouseLeave={() => (iconHover.marketing = false)}
 				>
 					<span slot="icon" class="">
-						{#if iconHover.marketing}
+						{#if iconHover.marketing || currentPage.marketing}
 							<MarketingIconHover />
 						{:else}
 							<MarketingIcon />

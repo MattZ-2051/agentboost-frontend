@@ -35,8 +35,8 @@
 </script>
 
 <div class="w-full h-full relative">
-	<div class="flex justify-between items-center mb-4">
-		<h1 class="text-2xl font-semibold">My Listings</h1>
+	<div class="flex justify-between items-start mb-4">
+		<h1 class="text-[24px] font-semibold">My Listings</h1>
 		<Button
 			label="Create New Listing"
 			variant="variant-app-primary"
@@ -48,7 +48,7 @@
 	<div class="">
 		<Tabs items={tabItems} />
 	</div>
-	<div class="pt-8 flex justify-center items-center w-full gap-x-5">
+	<div class="pt-8 flex justify-end items-center w-full gap-x-5">
 		<div class="w-[300px] h-[38px]">
 			<SearchBar />
 		</div>
@@ -69,7 +69,7 @@
 		</div>
 	</div>
 	<div
-		class="flex flex-grow flex-wrap justify-center gap-y-8 gap-x-12 mt-8 w-full overflow-y-auto mb-40"
+		class="flex flex-grow flex-wrap justify-start gap-y-8 gap-x-12 mt-8 w-full overflow-y-auto mb-40"
 	>
 		<ListingCard address="10044 W Springdale Ct" status="Active" />
 		<ListingCard address="10044 W Springdale Ct" status="Active" />

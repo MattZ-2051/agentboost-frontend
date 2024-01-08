@@ -1,46 +1,48 @@
 <script lang="ts">
 	import BuyersIcon from '$lib/assets/svg/BuyersIcon.svelte';
 	import FacebookDarkIcon from '$lib/assets/svg/Social/FacebookDarkIcon.svelte';
-	import TwitterDarkIcon from '$lib/assets/svg/Social/TwitterDarkIcon.svelte';
 	import InstagramDarkIcon from '$lib/assets/svg/Social/InstagramDarkIcon.svelte';
+	import Box from '$lib/components/Box/Box.svelte';
+	import dummyImg from '$lib/assets/images/dummy-buyer-profile-img.png';
+	import XDarkIcon from '$lib/assets/svg/Social/XDarkIcon.svelte';
 </script>
 
 <div class="w-[382px]">
-	<div
-		class="bg-[#1E2225] w-full h-12 flex gap-x-2 items-center px-4 py-2 rounded-[10px] border border-white border-opacity-20"
+	<Box
+		classes="flex gap-x-2 items-center px-4 py-2"
+		bgColor="bg-[#1E2225]"
+		width="w-full"
+		height="h-12"
 	>
 		<BuyersIcon iconSize={20} />
 		<p class="text-[#C6C7CD] text-base">10044 W Springdale Ct</p>
-	</div>
-	<div
-		class="bg-[#1E2225] w-full h-full flex-col flex gap-y-4 p-6 rounded-[10px] border border-white border-opacity-20 mt-6"
-	>
-		<div class="flex items-center w-full justify-between">
-			<div class="flex w-full items-center gap-x-2">
-				<img
-					class="w-[60px] h-[60px] rounded-[50px]"
-					src="https://via.placeholder.com/60x60"
-					alt=""
-				/>
-				<p class="text-[#EFEFEF] text-base">John Doe</p>
+	</Box>
+	<div class="mt-6">
+		<Box bgColor="bg-[#1E2225]" width="w-full" height="h-full" classes="flex-col flex gap-y-4 p-6">
+			<div class="flex items-center w-full justify-between">
+				<div class="flex w-full items-center gap-x-2">
+					<img class="w-[60px] h-[60px] rounded-[50px]" src={dummyImg} alt="" />
+					<p class="text-[#EFEFEF] text-base">John Doe</p>
+				</div>
+				<div class="flex items-center gap-x-2">
+					<FacebookDarkIcon />
+					<XDarkIcon />
+					<InstagramDarkIcon />
+				</div>
 			</div>
-			<div class="flex items-center gap-x-2">
-				<FacebookDarkIcon />
-				<InstagramDarkIcon />
+			<div class="flex w-full items-center">
+				<div class="w-1/4 flex flex-col gap-y-[15px]">
+					<p class="realtorInfoLabel">Agent ID:</p>
+					<p class="realtorInfoLabel">Phone:</p>
+					<p class="realtorInfoLabel">Email:</p>
+				</div>
+				<div class="w-3/4 flex flex-col gap-y-[15px]">
+					<p class="realtorInfoText">#18457 865 8745</p>
+					<p class="realtorInfoText">+1 123 123 4567</p>
+					<p class="realtorInfoText">johndoe@smartproperties.com</p>
+				</div>
 			</div>
-		</div>
-		<div class="flex w-full items-center">
-			<div class="w-1/4">
-				<p class="realtorInfoLabel">Agent ID:</p>
-				<p class="realtorInfoLabel">Phone:</p>
-				<p class="realtorInfoLabel">Email:</p>
-			</div>
-			<div class="w-3/4">
-				<p class="realtorInfoText">#18457 865 8745</p>
-				<p class="realtorInfoText">+1 123 123 4567</p>
-				<p class="realtorInfoText">johndoe@smartproperties.com</p>
-			</div>
-		</div>
+		</Box>
 	</div>
 </div>
 

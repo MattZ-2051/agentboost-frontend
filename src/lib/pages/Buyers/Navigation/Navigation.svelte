@@ -12,7 +12,7 @@
 	const items = ['15 minutes', '30 minutes', '45 minutes', '1 hour'];
 </script>
 
-<div class="bg-[#151719] rounded-[20px] w-full h-full py-12 px-8 flex flex-col">
+<div class="bg-[#151719] rounded-[20px] w-full h-full p-6 flex flex-col">
 	<div>
 		<div class="flex items-center gap-x-2 w-full h-full">
 			<InfoIconHover />

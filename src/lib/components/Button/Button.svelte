@@ -33,7 +33,7 @@
 		class={`${
 			variant === 'variant-app-primary'
 				? `w-full h-full ${bg} rounded-[10px] flex items-center justify-center`
-				: 'flex items-center justify-center gap-x-1'
+				: 'flex items-center justify-center gap-x-[6px]'
 		}`}
 	>
 		<slot name="icon" />

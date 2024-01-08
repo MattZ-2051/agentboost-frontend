@@ -1,49 +1,22 @@
 <script lang="ts">
+	import Box from '$lib/components/Box/Box.svelte';
+	import AnnouncementCard from './AnnouncementCard.svelte';
 </script>
 
-<div class="p-6 border border-white border-opacity-10 w-full bg-[#151719] rounded-[10px] h-[398px]">
+<Box bgColor="bg-[#151719]" height="!h-[398px]" width="w-full" classes="p-6">
 	<p class="text-[#EFEFEF] text-xl font-semibold">Announcements</p>
-	<div
-		class="scrollbarStyle pr-4 w-full h-[90%] overflow-hidden hover:overflow-y-auto overflow-x-hidden"
-	>
-		<div class="mt-6 flex flex-col items-start justify-start w-full gap-y-3">
-			<div class="announcementCard">
-				<p class="text-[#EFEFEF] text-base">New feature is live 🚀</p>
-				<p class="text-[#A0A1AB] text-[14px]">
-					Lorem ipsum dolor sit amet consectetur. Egestas viverra eget nibh nibh ipsum facilisi.
-				</p>
-			</div>
-			<div class="announcementCard">
-				<p class="text-[#EFEFEF] text-base">New feature is live 🚀</p>
-				<p class="text-[#A0A1AB] text-[14px]">
-					Lorem ipsum dolor sit amet consectetur. Egestas viverra eget nibh nibh ipsum facilisi.
-				</p>
-			</div>
-			<div class="announcementCard">
-				<p class="text-[#EFEFEF] text-base">New feature is live 🚀</p>
-				<p class="text-[#A0A1AB] text-[14px]">
-					Lorem ipsum dolor sit amet consectetur. Egestas viverra eget nibh nibh ipsum facilisi.
-				</p>
-			</div>
-			<div class="announcementCard">
-				<p class="text-[#EFEFEF] text-base">New feature is live 🚀</p>
-				<p class="text-[#A0A1AB] text-[14px]">
-					Lorem ipsum dolor sit amet consectetur. Egestas viverra eget nibh nibh ipsum facilisi.
-				</p>
-			</div>
-			<div class="announcementCard">
-				<p class="text-[#EFEFEF] text-base">New feature is live 🚀</p>
-				<p class="text-[#A0A1AB] text-[14px]">
-					Lorem ipsum dolor sit amet consectetur. Egestas viverra eget nibh nibh ipsum facilisi.
-				</p>
-			</div>
+	<div class="mt-6 scrollbarStyle pr-4 w-full h-[90%] overflow-y-auto overflow-x-hidden">
+		<div class="flex flex-col items-start justify-start w-full gap-y-3">
+			<AnnouncementCard />
+			<AnnouncementCard />
+			<AnnouncementCard />
+			<AnnouncementCard />
 		</div>
 	</div>
-</div>
+</Box>
 
 <style lang="postcss">
 	.announcementCard {
-		@apply bg-[#1E2225] border border-white border-opacity-10 p-6 rounded-[10px];
 	}
 
 	.scrollbarStyle::-webkit-scrollbar-track {

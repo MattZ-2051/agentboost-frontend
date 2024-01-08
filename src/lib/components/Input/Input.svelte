@@ -12,8 +12,8 @@
 	export let variant: InputVariant | '' = '';
 </script>
 
-<label class="label">
-	<span class="">{label}</span>
+<div>
+	<p class="mb-[6px] text-[15px] text-[#CFD0D5] font-semibold">{label}</p>
 	{#if type === 'text'}
 		<input
 			class={`${classes} ${variant} input w-full`}
@@ -65,7 +65,7 @@
 		/>
 	{/if}
 	<slot name="icon" />
-</label>
+</div>
 
 <style lang="postcss">
 	.variant-app-primary {

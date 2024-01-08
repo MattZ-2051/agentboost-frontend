@@ -12,17 +12,22 @@
 	import TaxIcon from '$lib/assets/svg/TaxIcon.svelte';
 	import DollarIcon from '$lib/assets/svg/DollarIcon.svelte';
 	import Uneasy from '../SellerComfort/Uneasy.svelte';
+	import dummyBuyerImg from '$lib/assets/images/dummy-buyer-img.png';
+	import Box from '$lib/components/Box/Box.svelte';
 </script>
 
 <div class="w-[431px] flex flex-col h-full">
-	<div
-		class="bg-[#1E2225] w-full flex items-center justify-start h-[48px] rounded-[10px] gap-x-2 px-4 py-[18px] border border-white border-opacity-20"
+	<Box
+		bgColor="bg-[#1e2225]"
+		width="w-full"
+		height="h-[48px]"
+		classes="gap-x-2 !px-4 !py-[12px] flex items-center justify-start"
 	>
-		<BuyersIcon iconSize={20} />
-		<p class="text-[#C6C7CD] text-base">10044 W springdale ct</p>
-	</div>
+		<BuyersIcon iconSize={24} />
+		<p class="text-[#C6C7CD] text-[18px]">10044 W springdale ct</p>
+	</Box>
 	<div class="mt-4">
-		<img class="w-full h-[280px] rounded-xl" src="https://via.placeholder.com/431x280" alt="" />
+		<img class="w-full h-[280px] rounded-xl object-cover" src={dummyBuyerImg} alt="" />
 	</div>
 	<div class="mt-6 flex gap-x-4 gap-y-4 flex-wrap">
 		<Chip variant="variant-app-primary" classes="!min-w-[105px] !bg-[#22272A]">
@@ -117,17 +122,17 @@
 				</Chip>
 			</div>
 		</div>
-		<div
-			class="mt-8 bg-[#1E2225] w-full h-[340px] p-6 rounded-[20px] border border-white border-opacity-20"
-		>
-			<p class="font-medium text-xl text-[#EFEFEF] mb-4">Property Description</p>
-			<p class="text-sm text-[#CFD0D5] leading-6">
-				Welcome to 10044 W Springdale Ct, a charming Single Family home located in Boise, ID. This
-				stunning property boasts an array of features that will surely capture your attention. With
-				2 bedrooms and 2 bathrooms, this home offers a comfortable and flexible living space for
-				individuals or small families. Spread across true floors, this home was built in 1976,
-				showcasing its timeless character and durability.
-			</p>
+		<div class="mt-8">
+			<Box bgColor="bg-[#1E2225]" width="w-full" height="h-[340px]" classes="p-6">
+				<p class="font-medium text-xl text-[#EFEFEF] mb-4">Property Description</p>
+				<p class="text-sm text-[#CFD0D5] leading-6">
+					Welcome to 10044 W Springdale Ct, a charming Single Family home located in Boise, ID. This
+					stunning property boasts an array of features that will surely capture your attention.
+					With 2 bedrooms and 2 bathrooms, this home offers a comfortable and flexible living space
+					for individuals or small families. Spread across true floors, this home was built in 1976,
+					showcasing its timeless character and durability.
+				</p>
+			</Box>
 		</div>
 		<div class="mt-8">
 			<p class="text-[#EFEFEF] text-xl font-medium">Optimized Offer</p>

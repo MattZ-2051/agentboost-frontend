@@ -5,7 +5,6 @@
 	import TrashIcon from '$lib/assets/svg/TrashIcon.svelte';
 	import Button from '$lib/components/Button/Button.svelte';
 	import Card from '$lib/components/Card/Card.svelte';
-	import dummyImg from '$lib/assets/images/dummy-buyer-img.png';
 
 	const buyers = [
 		'10044 W Springdale Ct',

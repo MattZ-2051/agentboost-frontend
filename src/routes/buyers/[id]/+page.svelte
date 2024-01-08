@@ -6,6 +6,6 @@
 <div class="mt-[80px]">
 	<BuyerInfo />
 </div>
-<div class="mt-12">
+<div class="mt-[64px]">
 	<Navigation />
 </div>

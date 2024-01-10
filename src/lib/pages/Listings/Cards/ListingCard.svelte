@@ -31,7 +31,6 @@
 		</div>
 	</div>
 	<RadioDropdown
-		label={status}
 		{items}
 		classes="w-full h-[48px] px-[18px] py-[12px] flex justify-between"
 		{showContent}

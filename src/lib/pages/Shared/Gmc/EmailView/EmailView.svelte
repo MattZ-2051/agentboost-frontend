@@ -126,7 +126,6 @@
 				<div class="mt-6 flex flex-col">
 					<p class="text-[#CFD0D5] text-[15px] font-semibold">Headline</p>
 					<RadioDropdown
-						label="Chose Headline"
 						{items}
 						classes="w-full h-[48px] px-[18px] py-[12px] flex justify-between mt-2"
 						showContent={showHeadlineContent}

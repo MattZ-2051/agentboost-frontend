@@ -33,7 +33,6 @@
 					<p class="text-[#CFD0D5] text-[15px] font-semibold">Choose Start Time</p>
 					<div class="flex items-center justify-between gap-x-4 mt-2">
 						<RadioDropdown
-							label="Time"
 							{items}
 							classes="w-[253px] h-[48px] px-[18px] py-[12px] flex justify-between"
 							{showContent}

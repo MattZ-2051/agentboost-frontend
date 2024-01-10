@@ -13,7 +13,6 @@
 <Box bgColor="bg-[#151719]" width="w-full" height="h-[340px]" classes="p-6">
 	<div class="flex items-center justify-between gap-x-3">
 		<RadioDropdown
-			label="7 Day Activity"
 			classes="w-[153px] h-full !bg-transparent flex justify-start items-center gap-x-2 !text-lg"
 			dropdownClasses="!top-[2.0rem]"
 			{showContent}

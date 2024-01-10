@@ -16,19 +16,3 @@
 		</Slider>
 	</div>
 </Box>
-
-<style>
-	.scrollbar::-webkit-scrollbar {
-		width: 0.25rem !important;
-		height: 0.25rem !important;
-	}
-
-	.scrollbar::-webkit-scrollbar-track {
-		background: #22272a !important;
-	}
-
-	.scrollbar::-webkit-scrollbar-thumb {
-		color: #22272a !important;
-		background-color: #48e8ed !important;
-	}
-</style>

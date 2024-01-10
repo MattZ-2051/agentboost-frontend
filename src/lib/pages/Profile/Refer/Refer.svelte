@@ -3,7 +3,7 @@
 	import MoneyIcon from '$lib/assets/svg/MoneyIcon.svelte';
 </script>
 
-<div class="w-1/2">
+<div class="w-1/2 mb-12">
 	<h1 class="text-white font-semibold text-[18px]">Refer & earn</h1>
 	<div class="w-[85%] mt-[33px]">
 		<p class="text-white font-semibold text-[28px] leading-snug">

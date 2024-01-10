@@ -138,12 +138,12 @@
 	};
 </script>
 
-<div class="w-full rounded-[20px] py-6 px-8 bg-[#151719] flex justify-center">
-	<div class="h-[1288px] w-[1270px]">
+<div class="w-full rounded-[20px] p-6 bg-[#151719] flex justify-center">
+	<div class="h-[1288px] w-full">
 		<div class="flex justify-between">
-			<div class="flex items-center gap-x-4">
+			<div class="flex items-center gap-x-[6px]">
 				<CalenderIcon />
-				<p class="text-white text-2xl font-semibold">My Campaigns</p>
+				<p class="text-white text-2xl font-semibold">Your montly marketing calender</p>
 			</div>
 			<div class="flex items-center gap-x-4">
 				<h1 class="text-xl">{month} {year}</h1>

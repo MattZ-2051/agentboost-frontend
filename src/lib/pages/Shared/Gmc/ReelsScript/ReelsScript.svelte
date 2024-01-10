@@ -5,7 +5,7 @@
 			<p class="body">Step into tranquility with this charming home</p>
 		</div>
 		<div>
-			<p class="title" />
+			<p class="title">CAPTION</p>
 			<p class="body">
 				Step into tranquility with this charming home in Boise, ID. Experience the beauty of nature
 				in your own private atrium. 🏡🌿 #BoiseRealEstate #HomeSweetHome #AtriumLiving #NatureLovers
@@ -13,39 +13,7 @@
 			</p>
 		</div>
 		<div>
-			<p class="title">Suggested Idea</p>
-			<p class="body">
-				Step into tranquility with this charming home in Boise, ID. Experience the beauty of nature
-				in your own private atrium. 🏡🌿 #BoiseRealEstate #HomeSweetHome #AtriumLiving #NatureLovers
-				#SunshineandGreenery
-			</p>
-		</div>
-		<div>
-			<p class="title">Suggested Idea</p>
-			<p class="body">
-				Step into tranquility with this charming home in Boise, ID. Experience the beauty of nature
-				in your own private atrium. 🏡🌿 #BoiseRealEstate #HomeSweetHome #AtriumLiving #NatureLovers
-				#SunshineandGreenery
-			</p>
-		</div>
-		<div>
-			<p class="title">Suggested Idea</p>
-			<p class="body">
-				Step into tranquility with this charming home in Boise, ID. Experience the beauty of nature
-				in your own private atrium. 🏡🌿 #BoiseRealEstate #HomeSweetHome #AtriumLiving #NatureLovers
-				#SunshineandGreenery
-			</p>
-		</div>
-		<div>
-			<p class="title">Suggested Idea</p>
-			<p class="body">
-				Step into tranquility with this charming home in Boise, ID. Experience the beauty of nature
-				in your own private atrium. 🏡🌿 #BoiseRealEstate #HomeSweetHome #AtriumLiving #NatureLovers
-				#SunshineandGreenery
-			</p>
-		</div>
-		<div>
-			<p class="title">Suggested Idea</p>
+			<p class="title">SUGGESTED IDEA</p>
 			<p class="body">
 				Step into tranquility with this charming home in Boise, ID. Experience the beauty of nature
 				in your own private atrium. 🏡🌿 #BoiseRealEstate #HomeSweetHome #AtriumLiving #NatureLovers

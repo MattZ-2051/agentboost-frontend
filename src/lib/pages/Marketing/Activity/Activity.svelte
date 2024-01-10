@@ -3,13 +3,14 @@
 	import RadioDropdown from '$lib/components/Dropdown/RadioDropdown.svelte';
 	import Slider from '$lib/components/Slider/Slider.svelte';
 	import Graph from '$lib/components/Graph/Graph.svelte';
+	import Box from '$lib/components/Box/Box.svelte';
 
 	$: showContent = false;
 
 	const items = ['Weekly', 'Monthly', 'Yearly'];
 </script>
 
-<div class="w-full h-[340px] bg-[#151719] rounded-[10px] p-6">
+<Box bgColor="bg-[#151719]" width="w-full" height="h-[340px]" classes="p-6">
 	<div class="flex items-center justify-between gap-x-3">
 		<RadioDropdown
 			label="7 Day Activity"
@@ -64,4 +65,4 @@
 			<p class="text-white font-semibold text-lg">131</p>
 		</div>
 	</div>
-</div>
+</Box>

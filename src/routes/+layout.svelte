@@ -10,12 +10,21 @@
 	import { computePosition, autoUpdate, offset, shift, flip, arrow } from '@floating-ui/dom';
 	import { storePopup } from '@skeletonlabs/skeleton';
 	import { initializeStores } from '@skeletonlabs/skeleton';
+	import ModalForm from '$lib/components/Modals/ModalForm.svelte';
+	import ModalConfirm from '$lib/components/Modals/ModalConfirm.svelte';
 	import NewListingDrawer from '$lib/pages/Listings/Drawers/NewListingDrawer.svelte';
 	import NewBuyersDrawer from '$lib/pages/Buyers/Drawers/NewBuyersDrawer.svelte';
 
 	storePopup.set({ computePosition, autoUpdate, offset, shift, flip, arrow });
 
 	initializeStores();
+
+	const modalRegistry: any = {
+		// Set a unique modal ID, then pass the component reference
+		modalForm: { ref: ModalForm },
+		modalConfirm: { ref: ModalConfirm }
+		// ...
+	};
 
 	const drawerStore = getDrawerStore();
 
@@ -37,7 +46,7 @@
 
 <div class="dark bg-surface-500" data-theme="agentboost-theme">
 	<Toast position="t" />
-	<Modal />
+	<Modal background="bg-[#1A1A1A]" padding="p-6" components={modalRegistry} />
 	<Drawer position="right" width="w-[380px]">
 		{#if $drawerStore.id === 'nav-link'}
 			<Sidebar />

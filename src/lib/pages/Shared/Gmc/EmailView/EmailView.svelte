@@ -1,8 +1,6 @@
-<script>
+<script lang="ts">
 	import CloseIconGrey from '$lib/assets/svg/CloseIcon/CloseIconGrey.svelte';
 	import GmcUserIcon from '$lib/assets/svg/GmcUserIcon/GmcUserIcon.svelte';
-	import GradientBorder from '$lib/assets/svg/GmcUserIcon/GradientBorder.svelte';
-	import UserIcon from '$lib/assets/svg/GmcUserIcon/UserIcon.svelte';
 	import LocationIconOutlined from '$lib/assets/svg/Location/LocationIconOutlined.svelte';
 	import PdfIcon from '$lib/assets/svg/PdfIcon.svelte';
 	import Button from '$lib/components/Button/Button.svelte';
@@ -10,22 +8,46 @@
 	import Dropdown from '$lib/components/Dropdown/Dropdown.svelte';
 	import RadioDropdown from '$lib/components/Dropdown/RadioDropdown.svelte';
 	import Input from '$lib/components/Input/Input.svelte';
+	import dummyImg from '$lib/assets/images/dummy-email-template-img.png';
+	import { getModalStore, type ModalSettings } from '@skeletonlabs/skeleton';
 
 	$: showCityContent = false;
 
 	$: showHeadlineContent = false;
 
 	const items = ['Just Listed', 'Price Reduced', 'Back on Market'];
+
+	$: cities = [
+		'Boise, ID',
+		'nampa, ID',
+		'sadf, ID',
+		'Boisdde, ID',
+		'czxvsd, ID',
+		'Bdsafewoise, ID'
+	];
+
+	const handleCityAction = (city: string) => {
+		cities = cities.filter((item) => item !== city);
+	};
+
+	const modalStore = getModalStore();
+	const handleSendToLocalAgents = () => {
+		const modal: ModalSettings = {
+			type: 'component',
+			component: 'modalConfirm',
+			body: 'Are you sure you want to send to local agents?',
+			title: 'Send to local agents',
+			// TRUE if confirm pressed, FALSE if cancel pressed
+			response: (r: boolean) => console.log('response:', r)
+		};
+		modalStore.trigger(modal);
+	};
 </script>
 
 <div class="w-full flex mt-4 gap-x-12">
 	<div class="w-1/4">
 		<div class="border-[#2E2F37] rounded-[10px] p-4 border w-full bg-[#171A1C]">
-			<img
-				class="rounded-[10px] w-full h-[150px] object-cover"
-				src="https://via.placeholder.com/259x264"
-				alt=""
-			/>
+			<img class="rounded-[10px] w-full h-[150px] object-cover" src={dummyImg} alt="" />
 			<div class="flex gap-x-2 my-4">
 				<span>
 					<PdfIcon />
@@ -79,7 +101,7 @@
 						label="City"
 					/>
 					<Button
-						label="Add City"
+						label="Add city"
 						bg="bg-[#171A1C]"
 						classes="!h-[48px] w-full"
 						variant="variant-app-primary"
@@ -88,48 +110,17 @@
 				<div class="mt-8">
 					<p class="text-[#CFD0D5] text-[15px] font-semibold">Added cities</p>
 					<div class="flex flex-wrap w-full gap-4 mt-2">
-						<Chip variant="variant-app-primary" classes="!min-w-[125px] !h-[34px] !bg-[#22272A]">
-							<div class="flex w-full items-center justify-between gap-x-2">
-								<LocationIconOutlined />
-								<p>Boise, ID</p>
-								<CloseIconGrey />
-							</div>
-						</Chip>
-						<Chip variant="variant-app-primary" classes="!min-w-[125px] !h-[34px] !bg-[#22272A]">
-							<div class="flex w-full items-center justify-between gap-x-2">
-								<LocationIconOutlined />
-								<p>Boise, ID</p>
-								<CloseIconGrey />
-							</div>
-						</Chip>
-						<Chip variant="variant-app-primary" classes="!min-w-[125px] !h-[34px] !bg-[#22272A]">
-							<div class="flex w-full items-center justify-between gap-x-2">
-								<LocationIconOutlined />
-								<p>Boise, ID</p>
-								<CloseIconGrey />
-							</div>
-						</Chip>
-						<Chip variant="variant-app-primary" classes="!min-w-[125px] !h-[34px] !bg-[#22272A]">
-							<div class="flex w-full items-center justify-between gap-x-2">
-								<LocationIconOutlined />
-								<p>Boise, ID</p>
-								<CloseIconGrey />
-							</div>
-						</Chip>
-						<Chip variant="variant-app-primary" classes="!min-w-[125px] !h-[34px] !bg-[#22272A]">
-							<div class="flex w-full items-center justify-between gap-x-2">
-								<LocationIconOutlined />
-								<p>Boise, ID</p>
-								<CloseIconGrey />
-							</div>
-						</Chip>
-						<Chip variant="variant-app-primary" classes="!min-w-[125px] !h-[34px] !bg-[#22272A]">
-							<div class="flex w-full items-center justify-between gap-x-2">
-								<LocationIconOutlined />
-								<p>Boise, ID</p>
-								<CloseIconGrey />
-							</div>
-						</Chip>
+						{#each cities as city, i}
+							<Chip variant="variant-app-primary" classes="!min-w-[125px] !h-[34px] !bg-[#22272A]">
+								<div class="flex w-full items-center justify-between gap-x-2">
+									<LocationIconOutlined />
+									<p>{city}</p>
+									<div on:click={() => handleCityAction(city)}>
+										<CloseIconGrey />
+									</div>
+								</div>
+							</Chip>
+						{/each}
 					</div>
 				</div>
 				<div class="mt-6 flex flex-col">
@@ -174,10 +165,11 @@
 						</p>
 						<div class="px-6 mt-8 my-6">
 							<Button
-								label="Send to Local Agents"
+								label="Send to local agents"
 								bg="bg-[#1E2225]"
 								classes="!h-[48px] !w-[249px]"
 								variant="variant-app-primary"
+								onClick={handleSendToLocalAgents}
 							/>
 						</div>
 					</div>

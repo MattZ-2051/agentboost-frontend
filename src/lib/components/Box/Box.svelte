@@ -10,7 +10,7 @@
 </script>
 
 <div
-	class={`w-fit h-full bg-gradient-to-b from-[#ffffff33] via-[#ffffff33] to-transparent p-[1px] rounded-[10px] ${width} ${height} ${
+	class={`bg-gradient-to-b from-[#ffffff33] via-[#ffffff33] to-transparent p-[1px] rounded-[10px] ${width} ${height} ${
 		hover ? hoverClasses : ''
 	}`}
 >

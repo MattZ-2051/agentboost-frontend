@@ -1,9 +1,10 @@
 <script lang="ts">
 	import AddIcon from '$lib/assets/svg/AddIcon/AddIcon.svelte';
+	import Box from '$lib/components/Box/Box.svelte';
 </script>
 
-<div class="campaignBox">
-	<div class="flex items-center justify-between">
+<Box bgColor="bg-[#1E2225]" width="w-full" height="h-[350px]" classes="p-6">
+	<div class="flex items-center justify-between -mt-2">
 		<p>Campaign 1</p>
 		<div class="myCampaignBox">
 			<div>
@@ -30,13 +31,9 @@
 			</p>
 		</div>
 	</div>
-</div>
+</Box>
 
 <style lang="postcss">
-	.campaignBox {
-		@apply bg-[#1E2225] rounded-[10px] border border-white border-opacity-10 w-full h-[350px] p-6;
-	}
-
 	.myCampaignBox {
 		@apply bg-[#1D3335] h-11 relative rounded-[10px] w-[158px] flex items-center justify-center gap-x-2 p-4;
 	}

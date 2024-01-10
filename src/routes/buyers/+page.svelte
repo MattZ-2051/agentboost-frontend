@@ -24,7 +24,7 @@
 <div class="flex justify-between w-full items-start">
 	<h1 class="text-[24px] font-semibold">Buyers</h1>
 	<Button
-		label="Add Buyer"
+		label="Add buyer"
 		bg="bg-[#010101]"
 		variant="variant-app-primary"
 		classes="!h-12 !w-32"

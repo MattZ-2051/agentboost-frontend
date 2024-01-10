@@ -4,9 +4,9 @@
 </script>
 
 <div class="w-full h-full px-6 py-8 bg-[#141718] rounded-[10px]">
-	<div class="flex items-center gap-x-4 mb-6">
+	<div class="flex items-center gap-x-[6px] mb-6">
 		<CampaignsIcon />
-		<p class="text-white text-2xl font-semibold">Suggested Campaigns</p>
+		<p class="text-white text-2xl font-semibold">Suggested campaigns</p>
 	</div>
 	<div class="grid grid-cols-3 gap-x-8">
 		<CampaignBox />

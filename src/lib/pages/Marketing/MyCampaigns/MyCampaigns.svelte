@@ -9,8 +9,21 @@
 	import Slider from '$lib/components/Slider/Slider.svelte';
 	import SocialCard from '../../Shared/Gmc/SocialCard/SocialCard.svelte';
 	import CloseIcon from '$lib/assets/svg/CloseIcon/CloseIconWhite.svelte';
+	import EmailView from '$lib/pages/Shared/Gmc/EmailView/EmailView.svelte';
+	import ReelsScript from '$lib/pages/Shared/Gmc/ReelsScript/ReelsScript.svelte';
+	import type { TabItems } from '$types/components';
 
-	$: showContent = false;
+	const gmcTabs: TabItems = [
+		{
+			label: 'Social Media'
+		},
+		{
+			label: 'Email'
+		},
+		{
+			label: 'Reel Ideas'
+		}
+	];
 
 	const customCampaignTabs = [
 		{
@@ -35,12 +48,19 @@
 			label: 'Reel Ideas'
 		}
 	];
+
+	const chipClasses = 'flex items-center justify-center';
+
+	$: selectedItem = gmcTabs[0].label;
+	$: showContent = false;
 </script>
 
-<div class="w-full h-full bg-[#141718] max-w-[95vw] rounded-[10px] px-6 py-8">
-	<div class="flex justify-between items-center">
-		<div class="flex items-center gap-x-4 mb-6">
-			<MyCampaignIcon />
+<div class="w-full h-full bg-[#141718] max-w-[95vw] rounded-[10px] p-6">
+	<div class="flex justify-between items-start">
+		<div class="flex items-center gap-x-[6px] mb-6">
+			<div>
+				<MyCampaignIcon />
+			</div>
 			<p class="text-white text-2xl font-semibold">My Campaigns</p>
 		</div>
 		<div>
@@ -54,7 +74,7 @@
 	</div>
 	<div>
 		<Tabs items={customCampaignTabs} classes="text-lg" />
-		<div class="mt-8 grid grid-cols-2 gap-x-8">
+		<div class="mt-8 grid grid-cols-2 gap-x-5">
 			<div
 				class="w-full h-[357px] bg-[#171A1C] rounded-[10px] border border-white border-opacity-10 p-6"
 			>
@@ -68,15 +88,15 @@
 				<div class="mt-8">
 					<p class="text-[#C6C7CD] text-sm font-normal leading-normal">Target Audience</p>
 					<div class="w-full h-full py-[7px] px-4 bg-[#24282D] rounded-[10px] mt-2 flex gap-x-4">
-						<Chip variant="variant-app-primary">
+						<Chip variant="variant-app-primary" classes={chipClasses}>
 							<p>First Time Buyers</p>
 							<span><CloseIcon width={10} height={10} /></span>
 						</Chip>
-						<Chip variant="variant-app-primary">
+						<Chip variant="variant-app-primary" classes={chipClasses}>
 							<p>Luxury Sellers</p>
 							<span><CloseIcon width={10} height={10} /></span>
 						</Chip>
-						<Chip variant="variant-app-primary">
+						<Chip variant="variant-app-primary" classes={chipClasses}>
 							<p>Investors</p>
 							<span><CloseIcon width={10} height={10} /></span>
 						</Chip>
@@ -116,12 +136,27 @@
 			</div>
 		</div>
 	</div>
-	<div class="mt-8">
-		<Tabs items={socialCampaignTabs} classes="text-lg" />
-		<div class="w-full flex justify-start">
-			<Slider length={8} classes="">
-				<SocialCard />
-			</Slider>
-		</div>
+	<div class="mt-[48px]">
+		<Tabs items={gmcTabs} bind:selectedItem classes="text-lg">
+			<div slot="content" class="">
+				{#if selectedItem === 'Social Media'}
+					<div class="flex justify-start w-[88vw]">
+						<Slider length={8} classes="">
+							<SocialCard />
+						</Slider>
+					</div>
+				{:else if selectedItem === 'Email'}
+					<div>
+						<EmailView />
+					</div>
+				{:else if selectedItem === 'Reel Ideas'}
+					<div class="justify-start w-[88vw] flex">
+						<Slider length={10}>
+							<ReelsScript />
+						</Slider>
+					</div>
+				{/if}
+			</div>
+		</Tabs>
 	</div>
 </div>

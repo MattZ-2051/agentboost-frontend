@@ -123,7 +123,6 @@
 	<Box bgColor="bg-[#151719]" width="w-full" height="h-full" classes="p-6">
 		<div class="w-full flex justify-between">
 			<RadioDropdown
-				label="10044 W Springadle Ct"
 				{items}
 				iconSize={14}
 				classes="w-[253px] text-[20px] !text-white !bg-transparent flex items-center gap-x-2"

@@ -5,7 +5,6 @@
 
 	export let showContent: boolean = false;
 	export let classes: string;
-	export let label: string;
 	export let items: string[];
 	export let iconSize: number = 24;
 	export let dropdownClasses: string = '';

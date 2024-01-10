@@ -1,9 +1,10 @@
 <script lang="ts">
 	import AddIcon from '$lib/assets/svg/AddIcon/AddIcon.svelte';
 	import Account from './Account.svelte';
+	import Box from '$lib/components/Box/Box.svelte';
 </script>
 
-<div class="w-[150%] h-[340px] bg-[#151719] p-8 rounded-[10px]">
+<Box bgColor="bg-[#151719]" width="!w-[150%]" height="h-[340px]" classes="p-6">
 	<div class="flex w-full justify-between items-center">
 		<p class="text-[#EFEFEF] text-lg">Connected accounts</p>
 		<div
@@ -20,4 +21,4 @@
 		<Account socialType="instagram" />
 		<Account socialType="x" />
 	</div>
-</div>
+</Box>

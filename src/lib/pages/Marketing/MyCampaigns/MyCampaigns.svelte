@@ -6,10 +6,8 @@
 	import Graph from '$lib/components/Graph/Graph.svelte';
 	import SlideToggle from '$lib/components/SlideToggle/SlideToggle.svelte';
 	import Tabs from '$lib/components/Tabs/Tabs.svelte';
-	import ChevronDown from '$lib/assets/svg/Chevron/ChevronDown.svelte';
-	import ChevronUp from '$lib/assets/svg/Chevron/ChevronUp.svelte';
 	import Slider from '$lib/components/Slider/Slider.svelte';
-	import SocialCard from './SocialCard.svelte';
+	import SocialCard from '../../Shared/Gmc/SocialCard/SocialCard.svelte';
 	import CloseIcon from '$lib/assets/svg/CloseIcon/CloseIconWhite.svelte';
 
 	$: showContent = false;

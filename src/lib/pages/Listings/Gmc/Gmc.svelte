@@ -3,11 +3,11 @@
 	import Button from '$lib/components/Button/Button.svelte';
 	import Slider from '$lib/components/Slider/Slider.svelte';
 	import Tabs from '$lib/components/Tabs/Tabs.svelte';
-	import SocialCard from '$lib/pages/Marketing/MyCampaigns/SocialCard.svelte';
-	import ReelScript from '$lib/pages/Marketing/MyCampaigns/ReelsScript/ReelsScript.svelte';
+	import SocialCard from '$lib/pages/Shared/Gmc/SocialCard/SocialCard.svelte';
+	import ReelScript from '$lib/pages/Shared/Gmc/ReelsScript/ReelsScript.svelte';
 	import type { TabItems } from '$types/components';
 
-	import EmailView from './EmailView/EmailView.svelte';
+	import EmailView from '../../Shared/Gmc/EmailView/EmailView.svelte';
 
 	const gmcTabs: TabItems = [
 		{
@@ -25,12 +25,12 @@
 </script>
 
 <div
-	class="bg-[#151719] rounded-[20px] overflow-auto w-full h-full mb-12 p-8 flex flex-col max-w-[95vw]"
+	class="bg-[#151719] rounded-[20px] overflow-auto w-full h-full mb-12 p-6 flex flex-col max-w-[95vw]"
 >
 	<div class="flex w-full items-center justify-between">
-		<div class="flex items-center gap-x-2 text-[#fff] font-semibold text-[24px]">
+		<div class="flex items-center gap-x-2">
 			<GmcIcon />
-			<p>Generate marketing content</p>
+			<p class="text-[#fff] font-semibold text-[24px]">Generate marketing content</p>
 		</div>
 		<Button
 			label="Generate new content"
@@ -39,11 +39,11 @@
 			classes="!w-[210px] !h-12"
 		/>
 	</div>
-	<div class="mt-4">
+	<div class="mt-[22px]">
 		<Tabs items={gmcTabs} bind:selectedItem>
-			<div slot="content" class="h-[55vh]">
+			<div slot="content" class="">
 				{#if selectedItem === 'Social Media'}
-					<div class="w-full justify-start">
+					<div class="flex justify-start w-[88vw]">
 						<Slider length={8} classes="">
 							<SocialCard />
 						</Slider>
@@ -53,7 +53,7 @@
 						<EmailView />
 					</div>
 				{:else if selectedItem === 'Reel Ideas'}
-					<div>
+					<div class="justify-start w-[88vw] flex">
 						<Slider length={10}>
 							<ReelScript />
 						</Slider>

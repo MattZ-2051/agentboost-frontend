@@ -1,4 +1,5 @@
 import type { AuthTokens, StorageTokenData } from '$types/api';
+import { getToastStore } from '@skeletonlabs/skeleton';
 import jwt_decode from 'jwt-decode';
 export const decodeJwtToken = (token: string): Record<string, string> => {
 	return jwt_decode(token);
@@ -46,4 +47,13 @@ export const getCurrentWeek = () => {
 	const numberOfDays = Math.floor((currentdate - oneJan) / (24 * 60 * 60 * 1000));
 	const result = Math.ceil((currentdate.getDay() + 1 + numberOfDays) / 7);
 	return result;
+};
+
+export const copyTextToClipboard = async (text: string) => {
+	try {
+		await navigator.clipboard.writeText(text);
+		getToastStore().trigger({ message: 'Copied to clipboard!' });
+	} catch (err) {
+		throw new Error('failed to copy text to clipboard');
+	}
 };

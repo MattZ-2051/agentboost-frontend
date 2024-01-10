@@ -10,12 +10,18 @@
 	export let iconSize: number = 24;
 	export let dropdownClasses: string = '';
 
-	let activeTab = 0;
+	$: activeTab = 0;
+	$: activeItem = items[0];
+	const handleClick = (tabIndex: number) => {
+		activeTab = tabIndex;
+		activeItem = items[tabIndex];
+		showContent = false;
+	};
 </script>
 
 <div class={`${classes} text-[#C6C7CD] rounded-[10px] relative bg-[#25282D]`}>
 	<p class="font-medium leading-normal text-left whitespace-nowrap">
-		{label}
+		{activeItem}
 	</p>
 	<div class="hover:scale-110 hover:cursor-pointer" on:click={() => (showContent = !showContent)}>
 		{#if showContent}
@@ -38,7 +44,7 @@
 						<div class="w-[18px] h-[18px] relative">
 							<div
 								class="w-[18px] h-[18px] left-0 top-0 absolute rounded-full border border-gray-500 hover:cursor-pointer hover:scale-110"
-								on:click={() => (activeTab = i)}
+								on:click={() => handleClick(i)}
 							/>
 							{#if activeTab === i}
 								<div

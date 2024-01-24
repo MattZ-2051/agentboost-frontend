@@ -50,7 +50,7 @@
 			value="jacob@smartproperties.com"
 			variant="variant-app-primary"
 			type="text"
-			placeholder="Connect Email"
+			placeholder="Email"
 		/>
 	</div>
 	<div class="mt-5">

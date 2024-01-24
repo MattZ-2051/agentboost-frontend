@@ -1,9 +1,6 @@
 <script lang="ts">
 	import cityVector from '$lib/assets/images/vector.png';
-	import landingPlaceholder from '$lib/assets/images/landingPlaceholder.png';
 	import Button from '$lib/components/Button/Button.svelte';
-	import LandingBezier from '$lib/assets/svg/LandingBezier.svelte';
-	import landingScreenshot1 from '$lib/assets/images/landingAppScreenshot1.png';
 	import Instagram from '$lib/assets/svg/Social/Instagram.svelte';
 	import matt from '$lib/assets/images/matt-landing.jpeg';
 	import sam from '$lib/assets/images/sam-landing.jpeg';
@@ -12,6 +9,7 @@
 	import { onMount } from 'svelte';
 	import BackgroundGradient from '$lib/pages/Landing/BackgroundGradient.svelte';
 	import LandingSeperator from '$lib/assets/svg/LandingSeperator.svelte';
+	import Marketing from '$lib/pages/Landing/FeatureTabs/Marketing.svelte';
 	// const handleShare = () => {
 	//   FB.ui(
 	//     {
@@ -104,6 +102,12 @@
 
 	const section2ButtonStyle =
 		'xl:!w-[8rem] w-[82px] !bg-transparent xl:!bg-inherit !text-sm xl:!text-lg !text-opacity-40 !text-white hover:!text-primary-500 hover:!bg-white hover:!bg-opacity-10';
+
+	$: featureTabs = ['Marketing', 'Insights', 'Listings', 'Buyers'];
+
+	$: selectedTab = featureTabs[0];
+
+	const handleTabSelect = () => {};
 </script>
 
 <div class="w-full h-full relative xl:p-12 p-4 !font-[Made-Evolve]">
@@ -112,20 +116,22 @@
 		<div class="flex flex-col items-center justify-center">
 			<div class="w-[278px] h-[39px] relative z-30 mt-8">
 				<div
-					class="text-base w-[278px] h-[39px] pl-[75px] pr-4 pt-[9px] pb-2.5 left-0 top-0 absolute bg-white bg-opacity-10 rounded-[50px] shadow backdrop-blur-[7.22px] justify-end items-center inline-flex"
+					class="text-base w-fit h-[39px] pl-[75px] pr-4 pt-[9px] pb-2.5 left-0 top-0 absolute bg-white bg-opacity-10 rounded-[50px] shadow backdrop-blur-[7.22px] justify-start items-center inline-flex"
 				>
 					<div class="text-white text-base leading-tight">Free beta now available</div>
 				</div>
 				<div
-					class="w-[65px] h-[35px] left-[2px] top-[2px] absolute bg-white bg-opacity-10 rounded-[50px] shadow backdrop-blur-[7.22px]"
+					class="w-[65px] flex justify-center h-[35px] left-[2px] top-[2px] absolute bg-white bg-opacity-10 rounded-[50px] shadow backdrop-blur-[7.22px]"
 				/>
-				<div class="left-[16px] top-[9px] absolute text-white text-base leading-tight">New</div>
+				<div class="left-[20px] top-[9px] absolute text-white text-base text-center leading-tight">
+					New
+				</div>
 			</div>
 			<div
 				class="mt-8 flex flex-col items-center xl:text-[90px] text-[40px] w-full leading-tight xl:leading-[6rem] z-30 text-white"
 			>
 				<p class="whitespace-nowrap hidden xl:inline-block">We make your real</p>
-				<p class="-ml-[17rem] hidden xl:inline-block">
+				<p class="-ml-[15rem] hidden xl:inline-block">
 					estate business <span id="text1" class="textGradient1" />
 					<span id="text2" class="textGradient1" />
 				</p>
@@ -142,7 +148,7 @@
 			</div>
 		</div>
 		<p
-			class="text-white opacity-70 text-center z-20 text-[18px] xl:text-[22px] font-light mt-6 mb-12 whitespace-nowrap leading-normal"
+			class="text-[#C0C4DA] text-center z-20 text-[18px] xl:text-[22px] font-light mt-6 mb-12 whitespace-nowrap leading-normal"
 		>
 			The ultimate tech suite for real estate <br class="inline-block md:hidden" /> professionals has
 			arrived.
@@ -173,7 +179,7 @@
 			The <span class="textGradient2">Power of AI </span> in <br class="xl:hidden inline-block" /> real
 			estate
 		</p>
-		<div class="text-center mt-6 text-base sm:text-lg text-slate font-light mb-12">
+		<div class="text-center mt-6 text-[19px] sm:text-lg text-[#C0C4DA] font-light mb-[34px]">
 			<p class="whitespace-nowrap">
 				Explore the tools that empower <br class="inline-block xl:hidden" /> you to work smarter &
 				faster
@@ -224,125 +230,24 @@
 	<section class="mt-20 xl:mt-40 text-white relative z-50 bg-transparent">
 		<p class="text-[30px] xl:text-6xl text-center leading-normal whitespace-nowrap">
 			Effortless <span class="textGradient5">
-				<br class="inline-block xl:hidden" /> Expertise & Exposure</span
+				<br class="inline-block xl:hidden" /> expertise & exposure</span
 			>
 		</p>
-		<div class="text-center my-8 text-lg text-slate font-light">
+		<div class="text-center mt-6 mb-[34px] text-lg text-[#C0C4DA] font-light">
 			<p>Get your competitive advantage. <br class="inline-block xl:hidden" /> Get Boosted.</p>
 		</div>
 		<div class="w-full flex flex-col items-center justify-center">
-			<div class="bg-zinc-950 bg-opacity-0 rounded-[40px] border border-white border-opacity-10">
+			<div class="rounded-[40px] border border-white border-opacity-10">
 				<div
-					class="bg-zinc-950 m-[.15rem] xl:m-[.25rem] bg-opacity-0 rounded-[40px] border border-white border-opacity-10 flex"
+					class="m-[.15rem] xl:m-[.25rem] rounded-[40px] border border-white border-opacity-10 flex"
 				>
-					<Button
-						variant="variant-filled-surface"
-						label="Marketing"
-						classes={section2ButtonStyle}
-					/>
-					<Button variant="variant-filled-surface" label="Insights" classes={section2ButtonStyle} />
-					<Button variant="variant-filled-surface" label="Listings" classes={section2ButtonStyle} />
-					<Button variant="variant-filled-surface" label="Buyers" classes={section2ButtonStyle} />
-				</div>
-			</div>
-			<div
-				class="p-1 xl:w-[1188px] sm:w-[600px] bg-zinc-950 bg-opacity-0 rounded-[20px] w-full md:w-[600px] lg:w-[800px] border border-white border-opacity-5 mt-8 xl:mt-16"
-			>
-				<div
-					class="w-full h-full xl:h-[490px] border-opacity-10 bg-black bg-opacity-30 rounded-[18px] shadow border border-white backdrop-blur-[14.35px] flex flex-col items-center p-8 sm:p-12"
-				>
-					<div
-						class="flex flex-col w-full xl:flex-row items-start xl:justify-center justify-start xl:items-center opacity-100"
-					>
-						<div class="mr-4">
-							<LandingBezier />
-						</div>
-						<p
-							class="text-white text-xl xl:text-[32px] tracking-tight whitespace-nowrap mt-4 xl:mt-0"
-						>
-							Fully automated social media
-						</p>
-					</div>
-					<p
-						class="text-left xl:text-center whitespace-nowrap mt-4 text-slate font-light text-base w-full"
-					>
-						See our feature packed app that’s <br class="inline-block xl:hidden" /> going to be your
-						best friend.
-					</p>
-					<div class="mt-8 w-full">
-						<img
-							src={landingScreenshot1}
-							alt=""
-							class="object-cover xl:w-full xl:h-full h-[300px] md:h-[400px] rounded-[18px]"
-						/>
-					</div>
+					{#each featureTabs as item, i}
+						<Button variant="variant-filled-surface" label={item} classes={section2ButtonStyle} />
+					{/each}
 				</div>
 			</div>
 		</div>
-		<div class="flex justify-center mt-6">
-			<div
-				class="flex justify-between xl:w-[1188px] sm:w-[600px] w-full md:w-[600px] lg:w-[800px] xl:flex-row flex-col items-center"
-			>
-				<div
-					class="p-1 bg-zinc-950 bg-opacity-0 rounded-[20px] border border-white border-opacity-5"
-				>
-					<div
-						class="h-full md:w-[600px] sm:w-[600px] lg:w-[800px] xl:w-[576px] xl:h-[598px] border-opacity-10 bg-black bg-opacity-30 rounded-[18px] shadow border border-white backdrop-blur-[14.35px] p-8 sm:p-12"
-					>
-						<div class="flex xl:items-center xl:flex-row flex-col">
-							<div class="mr-4">
-								<LandingBezier />
-							</div>
-							<p class="text-white text-xl xl:text-[32px] tracking-tight mt-4 xl:mt-0">
-								Automated Campaigns
-							</p>
-						</div>
-						<p
-							class="text-left xl:text-center whitespace-nowrap mt-4 xl:mt-8 text-slate font-light text-base w-full"
-						>
-							See our feature packed app that’s <br class="inline-block xl:hidden" /> going to be your
-							best friend.
-						</p>
-						<div class="mt-8">
-							<img
-								class="xl:w-[487px] xl:h-[335px] h-[300px] md:h-[400px] w-full mix-blend-lighten rounded-[18px] object-cover"
-								src={landingPlaceholder}
-								alt=""
-							/>
-						</div>
-					</div>
-				</div>
-				<div
-					class="p-1 bg-zinc-950 bg-opacity-0 rounded-[20px] border border-white border-opacity-5 mt-6 xl:mt-0"
-				>
-					<div
-						class="h-full md:w-[600px] lg:w-[800px] sm:w-[600px] xl:w-[576px] xl:h-[598px] border-opacity-10 bg-black bg-opacity-30 rounded-[18px] shadow border border-white backdrop-blur-[14.35px] p-8 sm:p-12"
-					>
-						<div class="flex xl:items-center xl:flex-row flex-col items-start justify-start">
-							<div class="mr-4">
-								<LandingBezier />
-							</div>
-							<p class="text-white text-xl xl:text-[32px] tracking-tight mt-4 xl:mt-0">
-								Advanced analytics and ai generated suggestions
-							</p>
-						</div>
-						<p
-							class="text-left xl:text-center whitespace-nowrap mt-4 xl:mt-8 text-slate font-light text-base w-full"
-						>
-							See our feature packed app that’s <br class="inline-block xl:hidden" /> going to be your
-							best friend.
-						</p>
-						<div class="mt-8">
-							<img
-								class="xl:w-[487px] xl:h-[335px] mix-blend-lighten rounded-[18px] h-[300px] md:h-[400px] w-full object-cover"
-								src={landingPlaceholder}
-								alt=""
-							/>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+		<Marketing />
 	</section>
 	<section class="xl:mt-40 mt-20 text-white relative">
 		<div class="w-full flex justify-center flex-col items-center">
@@ -554,20 +459,6 @@
 
 	.textGradient2 {
 		background: linear-gradient(89deg, #42aef8 24.63%, #48efed 60.38%);
-		background-clip: text;
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-	}
-
-	.textGradient3 {
-		background: linear-gradient(93deg, #3f8bfd 26.03%, #49f9ea 100.66%);
-		background-clip: text;
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-	}
-
-	.textGradient4 {
-		background: linear-gradient(93deg, #3f8bfd 39.11%, #49f9ea 92.48%);
 		background-clip: text;
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;

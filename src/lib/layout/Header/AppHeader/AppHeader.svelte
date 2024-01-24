@@ -124,7 +124,6 @@
 		</div>
 	</div>
 	<div class="flex items-center gap-x-6 h-full relative">
-		<Icon icon="mi:notification" class="text-3xl" />
 		<div class="flex gap-x-2 items-center">
 			<img src={dummyProfileImg} alt="profile" class="w-[40px] h-[40px]" />
 			<p class="text-base whitespace-nowrap">Jacob Jones</p>

@@ -12,9 +12,9 @@
 		{
 			label: 'Profile'
 		},
-		{
-			label: 'Subscription'
-		},
+		// {
+		// 	label: 'Subscription'
+		// },
 		{
 			label: 'Give feedback'
 		},
@@ -36,10 +36,10 @@
 					<div>
 						<UserInfo />
 					</div>
-				{:else if selectedItem === 'Subscription'}
+					<!-- {:else if selectedItem === 'Subscription'}
 					<div>
 						<Subscription />
-					</div>
+					</div> -->
 				{:else if selectedItem === 'Give feedback'}
 					<div>
 						<Feedback />

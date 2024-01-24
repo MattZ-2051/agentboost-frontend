@@ -1,7 +1,8 @@
 <script lang="ts">
 	import LandingBezier from '$lib/assets/svg/LandingBezier.svelte';
 	import landingPlaceholder from '$lib/assets/images/landingPlaceholder.png';
-	import landingScreenshot1 from '$lib/assets/images/landingAppScreenshot1.png';
+	import marketingImg from '$lib/assets/images/Landing/Marketing/landing-marketing-preview.png';
+	import campaignImg from '$lib/assets/images/Landing/Marketing/landing-marketing-campaign.png';
 </script>
 
 <div class="w-full flex flex-col items-center justify-center">
@@ -29,7 +30,7 @@
 			</p>
 			<div class="mt-8 w-full">
 				<img
-					src={landingScreenshot1}
+					src={marketingImg}
 					alt=""
 					class="object-cover xl:w-full xl:h-full h-[300px] md:h-[400px] rounded-[18px]"
 				/>
@@ -63,7 +64,7 @@
 				<div class="mt-8">
 					<img
 						class="xl:w-[487px] xl:h-[335px] h-[300px] md:h-[400px] w-full mix-blend-lighten rounded-[18px] object-cover"
-						src={landingPlaceholder}
+						src={campaignImg}
 						alt=""
 					/>
 				</div>

@@ -109,8 +109,6 @@
 	$: featureTabs = ['Marketing', 'Insights', 'Listings', 'Buyers'];
 
 	$: selectedTab = featureTabs[0];
-
-	const handleTabSelect = () => {};
 </script>
 
 <div class="w-full h-full relative xl:p-12 p-12 !font-[Made-Evolve]">

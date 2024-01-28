@@ -9,7 +9,7 @@
 	import { onMount } from 'svelte';
 	import BackgroundGradient from '$lib/pages/Landing/BackgroundGradient.svelte';
 	import LandingSeperator from '$lib/assets/svg/LandingSeperator.svelte';
-	import Marketing from '$lib/pages/Landing/FeatureTabs/Marketing.svelte';
+	import FeatureTabs from '$lib/pages/Landing/FeatureTabs/FeatureTabs.svelte';
 	// const handleShare = () => {
 	//   FB.ui(
 	//     {
@@ -101,7 +101,10 @@
 	});
 
 	const section2ButtonStyle =
-		'xl:!w-[8rem] w-[82px] !bg-transparent xl:!bg-inherit !text-sm xl:!text-lg !text-opacity-40 !text-white hover:!text-primary-500 hover:!bg-white hover:!bg-opacity-10';
+		'xl:!w-[8rem] w-[82px] !bg-transparent !text-sm xl:!text-lg !text-opacity-40 !text-white hover:!text-primary-500 hover:!bg-white hover:!bg-opacity-10';
+
+	const section2ButtonActiveStyle =
+		'xl:!w-[8rem] w-[82px] !bg-white !text-sm xl:!text-lg !text-primary-500 !bg-opacity-10';
 
 	$: featureTabs = ['Marketing', 'Insights', 'Listings', 'Buyers'];
 
@@ -110,7 +113,7 @@
 	const handleTabSelect = () => {};
 </script>
 
-<div class="w-full h-full relative xl:p-12 p-4 !font-[Made-Evolve]">
+<div class="w-full h-full relative xl:p-12 p-12 !font-[Made-Evolve]">
 	<div class="elipse absolute" />
 	<section class="w-full flex flex-col items-center justify-center">
 		<div class="flex flex-col items-center justify-center">
@@ -242,12 +245,19 @@
 					class="m-[.15rem] xl:m-[.25rem] rounded-[40px] border border-white border-opacity-10 flex"
 				>
 					{#each featureTabs as item, i}
-						<Button variant="variant-filled-surface" label={item} classes={section2ButtonStyle} />
+						<Button
+							variant="variant-filled-surface"
+							label={item}
+							classes={` ${
+								selectedTab === item ? section2ButtonActiveStyle : section2ButtonStyle
+							} `}
+							onClick={() => (selectedTab = item)}
+						/>
 					{/each}
 				</div>
 			</div>
 		</div>
-		<Marketing />
+		<FeatureTabs {selectedTab} />
 	</section>
 	<section class="xl:mt-40 mt-20 text-white relative">
 		<div class="w-full flex justify-center flex-col items-center">

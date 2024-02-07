@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
 	import GoogleIcon from '$lib/assets/svg/Landing/GoogleIcon.svelte';
-	import ZapIconWhite from '$lib/assets/svg/ZapIconWhite.svelte';
 	import Button from '$lib/components/Button/Button.svelte';
 </script>
 
@@ -17,12 +16,18 @@
 		<div class="h-[1px] bg-[#4E5358] w-1/2" />
 	</div>
 	<div class="flex flex-col gap-y-3">
-		<input class="inputAndButtonBg" type="email" placeholder="Email" value="" />
-		<input class="inputAndButtonBg" type="password" placeholder="Password" value="" />
-		<div class="mt-3 flex items-center h-full">
-			<input class="inputCheckbox focus:bg-primary-500 checked:bg-primary-500" type="checkbox" />
-			<p class="ml-2 text-[#C0C4DA] text-[18px] font-light">Remember me?</p>
-		</div>
+		<input
+			class="inputAndButtonBg !outline-none focus:!outline-none focus:!border-none focus:!border-transparent focus:!ring-0"
+			type="email"
+			placeholder="Email"
+			value=""
+		/>
+		<input
+			class="inputAndButtonBg !outline-none focus:!outline-none focus:!border-none focus:!border-transparent focus:!ring-0"
+			type="password"
+			placeholder="Password"
+			value=""
+		/>
 		<div class="mt-8">
 			<Button
 				label=""
@@ -35,6 +40,7 @@
 		</div>
 		<div class="flex text-[#C0C4DA] text-[19px] justify-center mt-3">
 			<p class="font-light">Don't have an account?</p>
+			<!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
 			<p
 				class="font-semibold ml-1 hover:cursor-pointer hover:underline"
 				on:click={() => goto('/signup')}
@@ -67,10 +73,5 @@
 	}
 	.inputAndButtonBg::placeholder {
 		color: #c0c4da;
-	}
-
-	input:focus {
-		outline: none !important;
-		border: 0px !important;
 	}
 </style>

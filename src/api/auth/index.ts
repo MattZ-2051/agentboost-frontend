@@ -12,12 +12,13 @@ export const login = async ({ email, password }: AuthData) => {
 	return response.data;
 };
 
-export const signup = async ({ email, password }: AuthData) => {
+export const signup = async ({ email, password, fullName }: AuthData) => {
 	const response = await post<{
 		data: AuthTokens;
 	}>('/auth/signup', {
 		email,
-		password
+		password,
+		fullName
 	});
 	return response.data;
 };

@@ -5,9 +5,11 @@ import { checkStorage } from '$utils';
 export async function load() {
 	const data = checkStorage();
 	if (data) {
+    console.log("data", data)
 		await updateUser({
 			email: data.tokenData.email,
 			id: data.tokenData.sub,
+      fullName: data.tokenData.fullName,
 			authTokens: data.authTokens
 		});
 

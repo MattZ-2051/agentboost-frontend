@@ -6,74 +6,81 @@
 	import MortgageStats from '$lib/pages/Dashboard/MortgageStats/MortgageStats.svelte';
 	import Feedback from '$lib/pages/Dashboard/Feedback/Feedback.svelte';
 	import Box from '$lib/components/Box/Box.svelte';
+	import { $user as user } from '$store/user';
+
+	console.log('user', $user);
 </script>
 
-<div>
-	<p class="text-2xl font-semibold text-white">Welcome <span class="textGradient">Jacob</span></p>
-	<div class="mt-12 w-full">
-		<p class="text-[#EFEFEF] text-xl">Local market statistics</p>
-		<div class="mt-6 flex items-center w-full h-full justify-start gap-x-6">
-			<Box
-				width="!w-[299px]"
-				height="h-[108px]"
-				classes="px-[24px] py-[22px]"
-				bgColor="bg-[#151719]"
-			>
-				<span class="statInfo">
-					<p>Average home price</p>
-					<p>$354,763</p>
-				</span>
-			</Box>
-			<Box
-				width="!w-[299px]"
-				height="h-[108px]"
-				classes="px-[24px] py-[22px]"
-				bgColor="bg-[#151719]"
-			>
-				<span class="statInfo">
-					<p>Total active listings</p>
-					<p>14</p>
-				</span>
-			</Box>
-			<Box
-				width="!w-[299px]"
-				height="h-[108px]"
-				classes="px-[24px] py-[22px]"
-				bgColor="bg-[#151719]"
-			>
-				<span class="statInfo">
-					<p>Total pending</p>
-					<p>3</p>
-				</span></Box
-			>
-			<Box
-				width="!w-[299px]"
-				height="h-[108px]"
-				classes="px-[24px] py-[22px]"
-				bgColor="bg-[#151719]"
-			>
-				<span class="statInfo">
-					<p>Months of inventory</p>
-					<p>2.3</p>
-				</span>
-			</Box>
+{#if $user}
+	<div>
+		<p class="text-2xl font-semibold text-white">
+			Welcome <span class="textGradient">{$user.fullName}</span>
+		</p>
+		<div class="mt-12 w-full">
+			<p class="text-[#EFEFEF] text-xl">Local market statistics</p>
+			<div class="mt-6 flex items-center w-full h-full justify-start gap-x-6">
+				<Box
+					width="!w-[299px]"
+					height="h-[108px]"
+					classes="px-[24px] py-[22px]"
+					bgColor="bg-[#151719]"
+				>
+					<span class="statInfo">
+						<p>Average home price</p>
+						<p>$354,763</p>
+					</span>
+				</Box>
+				<Box
+					width="!w-[299px]"
+					height="h-[108px]"
+					classes="px-[24px] py-[22px]"
+					bgColor="bg-[#151719]"
+				>
+					<span class="statInfo">
+						<p>Total active listings</p>
+						<p>14</p>
+					</span>
+				</Box>
+				<Box
+					width="!w-[299px]"
+					height="h-[108px]"
+					classes="px-[24px] py-[22px]"
+					bgColor="bg-[#151719]"
+				>
+					<span class="statInfo">
+						<p>Total pending</p>
+						<p>3</p>
+					</span></Box
+				>
+				<Box
+					width="!w-[299px]"
+					height="h-[108px]"
+					classes="px-[24px] py-[22px]"
+					bgColor="bg-[#151719]"
+				>
+					<span class="statInfo">
+						<p>Months of inventory</p>
+						<p>2.3</p>
+					</span>
+				</Box>
+			</div>
+		</div>
+		<div class="mt-6">
+			<SocialMediaActivity />
+		</div>
+		<div class="mt-6">
+			<CurrentCalender />
+		</div>
+		<div class="mt-6">
+			<ActiveListings />
+		</div>
+		<div class="mt-6 w-full grid grid-cols-3 gap-x-6 h-full">
+			<Announcements />
+			<MortgageStats />
+			<Feedback />
 		</div>
 	</div>
-	<div class="mt-6">
-		<SocialMediaActivity />
-	</div>
-	<div class="mt-6">
-		<CurrentCalender />
-	</div>
-	<div class="mt-6">
-		<ActiveListings />
-	</div>
-	<div class="mt-6 w-full grid grid-cols-3 gap-x-6 h-full">
-		<Announcements />
-		<MortgageStats />
-		<Feedback />
-	</div>
-</div>
+{/if}
 
 <style lang="postcss">
 	.textGradient {

@@ -14,6 +14,7 @@
 	import { goto } from '$app/navigation';
 	import LogoWhiteGradient from '$lib/assets/svg/Logo/LogoWhiteGradient.svelte';
 	import { page } from '$app/stores';
+	import { $user as user } from '$store/user';
 
 	const headerButtonStyles =
 		'!text-[rgba(255,255,255,0.8)] text-base !font-light hover:!bg-[rgba(255,255,255,0.09)] w-[9rem] h-[2.125rem]';
@@ -126,7 +127,7 @@
 	<div class="flex items-center gap-x-6 h-full relative">
 		<div class="flex gap-x-2 items-center">
 			<img src={dummyProfileImg} alt="profile" class="w-[40px] h-[40px]" />
-			<p class="text-base whitespace-nowrap">Jacob Jones</p>
+			<p class="text-base whitespace-nowrap">{$user?.fullName}</p>
 			<div on:click={() => (showPopup = !showPopup)}>
 				<Icon
 					icon="tabler:chevron-down"

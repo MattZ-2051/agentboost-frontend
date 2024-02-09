@@ -9,6 +9,7 @@ import { goto } from '$app/navigation';
 export const updateUser = createEvent<{
 	email: string;
 	id: string;
+	fullName: string;
 	authTokens: AuthTokens;
 } | null>();
 export const loginFx = createEffect<typeof login, ApiError>(login);
@@ -54,11 +55,13 @@ getUserProfileFx.failData.watch((error) => {
 });
 
 signUpFx.doneData.watch(async (result) => {
+	console.log('result', result);
 	handleUserTokenData(result);
 	const jwtData = decodeJwtToken(result.access);
 	updateUser({
 		id: jwtData.sub,
 		email: jwtData.email,
+		fullName: jwtData.fullName,
 		authTokens: result
 	});
 	// const toast: ToastSettings = {
@@ -66,7 +69,7 @@ signUpFx.doneData.watch(async (result) => {
 	// 	background: 'variant-filled-success'
 	// };
 	// // toastStore.trigger(toast);
-	await goto('/home');
+	await goto('/dashboard');
 });
 
 signUpFx.failData.watch(() => {
@@ -84,6 +87,7 @@ loginFx.doneData.watch(async (result) => {
 	updateUser({
 		id: jwtData.sub,
 		email: jwtData.email,
+		fullName: jwtData.fullName,
 		authTokens: result
 	});
 	await goto('/home');

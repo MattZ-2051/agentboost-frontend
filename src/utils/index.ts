@@ -1,6 +1,6 @@
 import type { AuthTokens, StorageTokenData } from '$types/api';
 import { getToastStore } from '@skeletonlabs/skeleton';
-import {jwtDecode} from 'jwt-decode';
+import { jwtDecode } from 'jwt-decode';
 export const decodeJwtToken = (token: string): Record<string, string> => {
 	return jwtDecode(token);
 };

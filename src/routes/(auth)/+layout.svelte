@@ -1,7 +1,6 @@
 <script lang="ts">
 	import authImg from '$lib/assets/images/Landing/Auth/auth-bg.png';
 	import LogoWhite from '$lib/assets/svg/Logo/LogoWhite.svelte';
-	import GoogleIcon from '$lib/assets/svg/Landing/GoogleIcon.svelte';
 </script>
 
 <div class="relative h-screen w-screen p-12 max-w-screen-desktop !font-[Made-Evolve]">
@@ -39,7 +38,7 @@
 					</div>
 				</div>
 			</div>
-			<div>
+			<div class="hidden lg:block">
 				<img src={authImg} alt="" class="w-full h-[90%] object-cover rounded-[30px]" />
 			</div>
 		</div>

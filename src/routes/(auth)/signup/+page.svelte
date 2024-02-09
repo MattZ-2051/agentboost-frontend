@@ -3,6 +3,16 @@
 	import ZapIconWhite from '$lib/assets/svg/ZapIconWhite.svelte';
 	import Button from '$lib/components/Button/Button.svelte';
 	import GoogleIcon from '$lib/assets/svg/Landing/GoogleIcon.svelte';
+	import { signUpFx } from '$store/user';
+
+	let email: string;
+	let password: string;
+	let fullName: string;
+
+	const handleSignup = async () => {
+		console.log('email', email, password, fullName);
+		await signUpFx({ email, password, fullName });
+	};
 </script>
 
 <div class="flex flex-col items-center justify-center">
@@ -18,24 +28,9 @@
 	</div>
 </div>
 <div class="flex flex-col gap-y-3">
-	<input
-		class="inputAndButtonBg !outline-none focus:!outline-none focus:!border-none focus:!border-transparent focus:!ring-0"
-		type="text"
-		placeholder="Full Name"
-		value=""
-	/>
-	<input
-		class="inputAndButtonBg !outline-none focus:!outline-none focus:!border-none focus:!border-transparent focus:!ring-0"
-		type="email"
-		placeholder="Email"
-		value=""
-	/>
-	<input
-		class="inputAndButtonBg !outline-none focus:!outline-none focus:!border-none focus:!border-transparent focus:!ring-0"
-		type="password"
-		placeholder="Password"
-		value=""
-	/>
+	<input class="inputAndButtonBg" type="text" placeholder="Full Name" bind:value={fullName} />
+	<input class="inputAndButtonBg" type="email" placeholder="Email" bind:value={email} />
+	<input class="inputAndButtonBg" type="password" placeholder="Password" bind:value={password} />
 	<div class="mt-3 flex items-center h-full">
 		<input
 			class="inputCheckbox checkbox !bg-white !bg-opacity-[0.06] checked:!bg-primary-500 checked:!bg-opacity-100"
@@ -48,7 +43,8 @@
 			label=""
 			variant="variant-app-primary"
 			bg="bg-gradient-to-r from-[#3F8BFD] via-[#3F8BFD] to-[#49F9EA]"
-			classes="!text-white !h-[60px] !text-[20px] w-full"
+			classes="!text-white !h-[54px] !text-[20px] w-full"
+			onClick={handleSignup}
 		>
 			<div slot="icon" class="z-10 flex items-center gap-x-2">
 				<ZapIconWhite />
@@ -71,6 +67,7 @@
 <style lang="postcss">
 	.inputAndButtonBg {
 		@apply text-[#C0C4DA] items-center flex justify-center gap-x-2 hover:!bg-opacity-10 hover:!bg-white;
+		@apply !outline-none focus:!outline-none focus:!border-none focus:!border-transparent focus:!ring-0;
 		border-radius: 15px;
 		border: 1px solid rgba(255, 255, 255, 0.15);
 		background: rgba(255, 255, 255, 0.06);

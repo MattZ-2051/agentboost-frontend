@@ -17,7 +17,7 @@ const getHeaders = () => {
 					'Content-Type': 'application/json',
 					Authorization: 'Bearer ' + $user.getState()?.authTokens?.access?.toString()
 				}
-		  }
+			}
 		: {};
 };
 

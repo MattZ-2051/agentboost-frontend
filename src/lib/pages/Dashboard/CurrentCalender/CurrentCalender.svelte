@@ -175,8 +175,8 @@
 							i === 0
 								? '!border-l-[0.937px] !border-r-[0.937px] !border-b-[0.937px] !border-t-0'
 								: i < 6
-								? '!border-r-[0.937px] !border-l-0 !border-b-[0.937px] !border-t-0'
-								: '!border-none'
+									? '!border-r-[0.937px] !border-l-0 !border-b-[0.937px] !border-t-0'
+									: '!border-none'
 						}`}
 					>
 						&nbsp;

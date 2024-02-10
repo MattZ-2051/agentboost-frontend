@@ -1,4 +1,4 @@
-import { post } from '..';
+import { post, get } from '..';
 import type { AuthTokens } from '$types/api';
 import type { AuthData } from './types';
 
@@ -20,6 +20,11 @@ export const signup = async ({ email, password, fullName }: AuthData) => {
 		password,
 		fullName
 	});
+	return response.data;
+};
+
+export const googleSignin = async () => {
+	const response = await get<{ data: any }>('/auth/google-redirect');
 	return response.data;
 };
 export const logout = async ({ userId }: { userId: string }) => {

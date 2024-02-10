@@ -5,6 +5,7 @@ import { decodeJwtToken, handleUserTokenData } from '$utils';
 import type { User } from '$types/models';
 import type { ApiError, AuthTokens } from '$types/api';
 import { goto } from '$app/navigation';
+import { getToastStore } from '@skeletonlabs/skeleton';
 
 export const updateUser = createEvent<{
 	email: string;
@@ -55,7 +56,6 @@ getUserProfileFx.failData.watch((error) => {
 });
 
 signUpFx.doneData.watch(async (result) => {
-	console.log('result', result);
 	handleUserTokenData(result);
 	const jwtData = decodeJwtToken(result.access);
 	updateUser({
@@ -64,11 +64,12 @@ signUpFx.doneData.watch(async (result) => {
 		fullName: jwtData.fullName,
 		authTokens: result
 	});
-	// const toast: ToastSettings = {
-	// 	message: `Successfully signup up with email ${jwtData.email}`,
-	// 	background: 'variant-filled-success'
-	// };
-	// // toastStore.trigger(toast);
+	const toastStore = getToastStore();
+
+	toastStore.trigger({
+		message: `Successfully signup up with email ${jwtData.email}`,
+		background: 'variant-filled-success'
+	});
 	await goto('/dashboard');
 });
 

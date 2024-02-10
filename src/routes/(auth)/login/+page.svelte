@@ -2,6 +2,14 @@
 	import { goto } from '$app/navigation';
 	import GoogleIcon from '$lib/assets/svg/Landing/GoogleIcon.svelte';
 	import Button from '$lib/components/Button/Button.svelte';
+	import { loginFx } from '$store/user';
+
+	let email: string;
+	let password: string;
+
+	const handleLogin = async () => {
+		await loginFx({ email, password });
+	};
 </script>
 
 <div class="flex justify-center h-full items-center flex-col z-20 relative">

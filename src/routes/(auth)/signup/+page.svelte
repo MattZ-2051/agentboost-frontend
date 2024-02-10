@@ -4,13 +4,37 @@
 	import Button from '$lib/components/Button/Button.svelte';
 	import GoogleIcon from '$lib/assets/svg/Landing/GoogleIcon.svelte';
 	import { signUpFx } from '$store/user';
+	import { getToastStore } from '@skeletonlabs/skeleton';
+	import { errorMessages } from '$lib/constants/toastMessages';
+	import { googleSignin } from '$api/auth';
 
 	let email: string;
 	let password: string;
 	let fullName: string;
+	let terms: boolean = false;
+	const toastStore = getToastStore();
 
 	const handleSignup = async () => {
-		console.log('email', email, password, fullName);
+		if (
+			!email ||
+			email.length === 0 ||
+			!password ||
+			password.length === 0 ||
+			!fullName ||
+			fullName.length === 0
+		) {
+			toastStore.trigger({
+				message: 'Required fields are missing.',
+				background: 'variant-filled-error'
+			});
+			return;
+		}
+
+		if (!terms) {
+			toastStore.trigger(errorMessages.terms);
+			return;
+		}
+
 		await signUpFx({ email, password, fullName });
 	};
 </script>
@@ -18,7 +42,7 @@
 <div class="flex flex-col items-center justify-center">
 	<p class="text-[48px] text-[#f7f7f7]">Create your account</p>
 	<p class="text-[#C0C4DA] text-[20px] font-light my-8">Get free access to our beta.</p>
-	<button class="inputAndButtonBg">
+	<button class="inputAndButtonBg" on:click={() => googleSignin()}>
 		<GoogleIcon /> Continue with Google
 	</button>
 	<div class="my-6 flex items-center w-[424px]">
@@ -35,6 +59,7 @@
 		<input
 			class="inputCheckbox checkbox !bg-white !bg-opacity-[0.06] checked:!bg-primary-500 checked:!bg-opacity-100"
 			type="checkbox"
+			bind:value={terms}
 		/>
 		<p class="ml-2 text-[#C0C4DA] text-[18px] font-light">I agree to all Terms & Conditions</p>
 	</div>

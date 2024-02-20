@@ -14,7 +14,7 @@
 <button class="relative h-fit [&>*]:pointer-events-none" use:popup={popupHover}>
 	<slot name="icon" />
 </button>
-<div class="card p-4 variant-filled-secondary max-w-[300px]" data-popup={target}>
+<div class="card variant-filled-secondary max-w-[300px] p-4" data-popup={target}>
 	<p>{hoverContent}</p>
-	<div class="arrow variant-filled-secondary" />
+	<div class="variant-filled-secondary arrow" />
 </div>

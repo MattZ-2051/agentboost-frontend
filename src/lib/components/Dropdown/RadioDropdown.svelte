@@ -18,8 +18,8 @@
 	};
 </script>
 
-<div class={`${classes} text-[#C6C7CD] rounded-[10px] relative bg-[#25282D]`}>
-	<p class="font-medium leading-normal text-left whitespace-nowrap">
+<div class={`${classes} relative rounded-[10px] bg-[#25282D] text-[#C6C7CD]`}>
+	<p class="whitespace-nowrap text-left font-medium leading-normal">
 		{activeItem}
 	</p>
 	<div class="hover:scale-110 hover:cursor-pointer" on:click={() => (showContent = !showContent)}>
@@ -31,27 +31,27 @@
 	</div>
 	{#if showContent}
 		<div
-			class={`${dropdownClasses} absolute top-[3.5rem] right-0 z-20 bg-[#25282D] w-full h-fit px-[18px] py-3 rounded-[10px] dropdown`}
+			class={`${dropdownClasses} dropdown absolute right-0 top-[3.5rem] z-20 h-fit w-full rounded-[10px] bg-[#25282D] px-[18px] py-3`}
 		>
-			<div class="flex-col flex h-full w-full" transition:fade={{ delay: 0, duration: 100 }}>
+			<div class="flex h-full w-full flex-col" transition:fade={{ delay: 0, duration: 100 }}>
 				{#each items as item, i}
 					<div
-						class={`flex items-center gap-x-2  border-neutral-700 py-[13px] h-full ${
+						class={`flex h-full items-center  gap-x-2 border-neutral-700 py-[13px] ${
 							i === items.length - 1 ? '' : 'border-b'
 						}`}
 					>
-						<div class="w-[18px] h-[18px] relative">
+						<div class="relative h-[18px] w-[18px]">
 							<div
-								class="w-[18px] h-[18px] left-0 top-0 absolute rounded-full border border-gray-500 hover:cursor-pointer hover:scale-110"
+								class="absolute left-0 top-0 h-[18px] w-[18px] rounded-full border border-gray-500 hover:scale-110 hover:cursor-pointer"
 								on:click={() => handleClick(i)}
 							/>
 							{#if activeTab === i}
 								<div
-									class="w-3 h-3 left-[3px] top-[3px] absolute bg-gradient-to-br from-blue-500 via-blue-500 to-teal-300 rounded-full"
+									class="absolute left-[3px] top-[3px] h-3 w-3 rounded-full bg-gradient-to-br from-blue-500 via-blue-500 to-teal-300"
 								/>
 							{/if}
 						</div>
-						<p class="leading-normal text-[15px] text-neutral-300">
+						<p class="text-[15px] leading-normal text-neutral-300">
 							{item}
 						</p>
 					</div>

@@ -25,12 +25,12 @@
 </script>
 
 <div
-	class="bg-[#151719] rounded-[20px] overflow-auto w-full h-full mb-12 p-6 flex flex-col max-w-[95vw]"
+	class="mb-12 flex h-full w-full max-w-[95vw] flex-col overflow-auto rounded-[20px] bg-[#151719] p-6"
 >
 	<div class="flex w-full items-center justify-between">
 		<div class="flex items-center gap-x-2">
 			<GmcIcon />
-			<p class="text-[#fff] font-semibold text-[24px]">Generate marketing content</p>
+			<p class="text-[24px] font-semibold text-[#fff]">Generate marketing content</p>
 		</div>
 		<Button
 			label="Generate new content"
@@ -43,7 +43,7 @@
 		<Tabs items={gmcTabs} bind:selectedItem>
 			<div slot="content" class="">
 				{#if selectedItem === 'Social Media'}
-					<div class="flex justify-start w-[88vw]">
+					<div class="flex w-[88vw] justify-start">
 						<Slider length={8} classes="">
 							<SocialCard />
 						</Slider>
@@ -53,7 +53,7 @@
 						<EmailView />
 					</div>
 				{:else if selectedItem === 'Reel Ideas'}
-					<div class="justify-start w-[88vw] flex">
+					<div class="flex w-[88vw] justify-start">
 						<Slider length={10}>
 							<ReelScript />
 						</Slider>

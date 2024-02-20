@@ -9,13 +9,13 @@
 	height="h-[86px]"
 	classes="flex items-center gap-x-4 p-4"
 >
-	<input class="checkbox w-[31px] h-[31px] rounded-[8px]" type="checkbox" />
-	<div class="bg-[#1D3335] rounded-full p-3">
+	<input class="checkbox h-[31px] w-[31px] rounded-[8px]" type="checkbox" />
+	<div class="rounded-full bg-[#1D3335] p-3">
 		<LocationIconOutlined />
 	</div>
 	<div>
-		<p class="text-white text-[15px] font-semibold">10044 W Springdale Ct</p>
-		<p class="text-xs text-[#A0A1AB] font-normal mt-1">2.5 miles from city center</p>
+		<p class="text-[15px] font-semibold text-white">10044 W Springdale Ct</p>
+		<p class="mt-1 text-xs font-normal text-[#A0A1AB]">2.5 miles from city center</p>
 	</div>
 </Box>
 

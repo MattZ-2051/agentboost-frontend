@@ -18,7 +18,7 @@
 	];
 </script>
 
-<div class="w-full h-full grid grid-cols-2 gap-x-6">
+<div class="grid h-full w-full grid-cols-2 gap-x-6">
 	<Box bgColor="bg-[#151719]" width="w-full" height="h-full" classes="p-6">
 		<div class="flex w-full items-center justify-between">
 			<p class="title">Social media activity</p>
@@ -37,12 +37,12 @@
 				/>
 			</div>
 		</div>
-		<div class="mt-6 flex gap-x-3 items-baseline">
+		<div class="mt-6 flex items-baseline gap-x-3">
 			<p class="title">12.5k</p>
 			<div class="flex items-center gap-x-1">
 				<GrowthIndicatorIcon />
-				<p class="text-primary-500 font-semibold text-[10px]">1.3%</p>
-				<p class="text-[#9291A5] font-light text-[10px]">VS LAST YEAR</p>
+				<p class="text-[10px] font-semibold text-primary-500">1.3%</p>
+				<p class="text-[10px] font-light text-[#9291A5]">VS LAST YEAR</p>
 			</div>
 		</div>
 		<div class="mt-10 flex w-full items-center justify-between gap-x-8">
@@ -121,7 +121,7 @@
 		</div>
 	</Box>
 	<Box bgColor="bg-[#151719]" width="w-full" height="h-full" classes="p-6">
-		<div class="w-full flex justify-between">
+		<div class="flex w-full justify-between">
 			<RadioDropdown
 				{items}
 				iconSize={14}

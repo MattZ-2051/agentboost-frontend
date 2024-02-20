@@ -7,12 +7,12 @@
 	import MyCampaigns from '$lib/pages/Marketing/MyCampaigns/MyCampaigns.svelte';
 </script>
 
-<h1 class="text-[24px] font-semibold mb-8">Marketing</h1>
-<div class="flex justify-between w-full gap-x-6">
+<h1 class="mb-8 text-[24px] font-semibold">Marketing</h1>
+<div class="flex w-full justify-between gap-x-6">
 	<SocialAccounts />
 	<Activity />
 </div>
-<div class="mt-6 w-full flex justify-center mb-16">
+<div class="mb-16 mt-6 flex w-full justify-center">
 	<Calender />
 </div>
 <div>

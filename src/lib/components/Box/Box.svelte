@@ -10,11 +10,11 @@
 </script>
 
 <div
-	class={`bg-gradient-to-b from-[#ffffff33] via-[#ffffff33] to-transparent p-[1px] rounded-[10px] ${width} ${height} ${
+	class={`rounded-[10px] bg-gradient-to-b from-[#ffffff33] via-[#ffffff33] to-transparent p-[1px] ${width} ${height} ${
 		hover ? hoverClasses : ''
 	}`}
 >
-	<div class={`${bgColor} ${classes} rounded-[10px] w-full h-full`}>
+	<div class={`${bgColor} ${classes} h-full w-full rounded-[10px]`}>
 		<slot />
 	</div>
 </div>

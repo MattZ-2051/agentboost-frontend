@@ -1,5 +1,5 @@
-<div class="bg-[#171A1C] border border-[#2E2F37] w-[284px] p-6 pr-3 rounded-[10px] h-[578px]">
-	<div class="scrollbarStyle overflow-y-auto overflow-x-hidden w-full h-full flex flex-col gap-y-6">
+<div class="h-[578px] w-[284px] rounded-[10px] border border-[#2E2F37] bg-[#171A1C] p-6 pr-3">
+	<div class="scrollbarStyle flex h-full w-full flex-col gap-y-6 overflow-y-auto overflow-x-hidden">
 		<div>
 			<p class="title">Title</p>
 			<p class="body">Step into tranquility with this charming home</p>

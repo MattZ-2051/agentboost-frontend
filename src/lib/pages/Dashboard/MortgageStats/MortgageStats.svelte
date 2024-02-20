@@ -4,8 +4,8 @@
 </script>
 
 <Box bgColor="bg-[#151719]" height="!h-[398px]" width="w-full" classes="p-6">
-	<p class="text-[#EFEFEF] text-xl font-semibold">Mortgage Statistics</p>
-	<div class="w-full h-full flex justify-center items-center flex-col">
+	<p class="text-xl font-semibold text-[#EFEFEF]">Mortgage Statistics</p>
+	<div class="flex h-full w-full flex-col items-center justify-center">
 		<p class="textGradient">8.275%</p>
 		<div class="!-mx-[29px] -mb-12">
 			<Chart chartId="mortgageStats" color="#3E89FD" classes="!w-full !h-full" hideAxes={true} />

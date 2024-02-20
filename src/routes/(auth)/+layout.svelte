@@ -3,14 +3,14 @@
 	import LogoWhite from '$lib/assets/svg/Logo/LogoWhite.svelte';
 </script>
 
-<div class="relative h-screen w-screen p-12 max-w-screen-desktop !font-[Made-Evolve]">
+<div class="relative h-screen w-screen max-w-screen-desktop p-12 !font-[Made-Evolve]">
 	<div
-		class="-left-[50rem] absolute top-10 w-full h-full bg-gradient-to-r from-[#42AEF8] to-[#48EEED] blur-[1000px] rounded-full opacity-20"
+		class="absolute -left-[50rem] top-10 h-full w-full rounded-full bg-gradient-to-r from-[#42AEF8] to-[#48EEED] opacity-20 blur-[1000px]"
 	/>
 	<div class="flex h-screen items-center">
-		<div class="w-full h-full grid grid-cols-2 gap-x-12">
+		<div class="grid h-full w-full grid-cols-2 gap-x-12">
 			<div>
-				<div class="flex w-full justify-between items-center">
+				<div class="flex w-full items-center justify-between">
 					<LogoWhite />
 					<div class="flex">
 						<div>
@@ -29,49 +29,18 @@
 								/>
 							</svg>
 						</div>
-						<p class="text-[#C0C4DA] text-[18px] font-light">Go Back</p>
+						<p class="text-[18px] font-light text-[#C0C4DA]">Go Back</p>
 					</div>
 				</div>
-				<div class="flex justify-center h-full items-center flex-col z-20 relative">
+				<div class="relative z-20 flex h-full flex-col items-center justify-center">
 					<div>
 						<slot />
 					</div>
 				</div>
 			</div>
 			<div class="hidden lg:block">
-				<img src={authImg} alt="" class="w-full h-[90%] object-cover rounded-[30px]" />
+				<img src={authImg} alt="" class="h-[90%] w-full rounded-[30px] object-cover" />
 			</div>
 		</div>
 	</div>
 </div>
-
-<style lang="postcss">
-	.inputAndButtonBg {
-		@apply text-[#C0C4DA] items-center flex justify-center gap-x-2 hover:!bg-opacity-10 hover:!bg-white;
-		border-radius: 15px;
-		border: 1px solid rgba(255, 255, 255, 0.15);
-		background: rgba(255, 255, 255, 0.06);
-		box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-		width: 448px;
-		height: 50px;
-		flex-shrink: 0;
-	}
-
-	.inputCheckbox {
-		border-radius: 5px;
-		border: 1px solid rgba(255, 255, 255, 0.15);
-		background: rgba(255, 255, 255, 0.06);
-		width: 20px;
-		height: 20px;
-		flex-shrink: 0;
-	}
-
-	.inputAndButtonBg::placeholder {
-		color: #c0c4da;
-	}
-
-	input:focus {
-		outline: none !important;
-		border: 0px !important;
-	}
-</style>

@@ -20,7 +20,7 @@
 </script>
 
 <div class="w-full p-6">
-	<div class="flex justify-between items-center">
+	<div class="flex items-center justify-between">
 		<div class="flex items-center">
 			<HomeIcon />
 			<h1 class="ml-2">Create New Listing</h1>
@@ -29,9 +29,9 @@
 			<CloseIcon />
 		</div>
 	</div>
-	<div class="w-[332px] h-[0px] border border-[#2E3438] my-6" />
+	<div class="my-6 h-[0px] w-[332px] border border-[#2E3438]" />
 	<p class="text-base font-normal leading-normal">Here's how it works</p>
-	<p class="text-opacity-60 text-white text-sm font-light leading-[1.75] pt-4">
+	<p class="pt-4 text-sm font-light leading-[1.75] text-white text-opacity-60">
 		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
 		labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
 		laboris nisi ut aliquip ex ea commodo consequat.
@@ -44,7 +44,7 @@
 			placeholder="Property Address Here"
 			classes="w-[332px] border-none h-12 px-[18px] py-3 !bg-[#25282D] rounded-[10px] !mt-2 placeholder-[#4E545F]"
 		/>
-		<div class="flex justify-between w-full gap-x-4">
+		<div class="flex w-full justify-between gap-x-4">
 			<Input
 				label="City"
 				value=""

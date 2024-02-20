@@ -4,10 +4,10 @@
 </script>
 
 <div class="relative">
-	<div class="absolute top-[-60%] right-[-60%]">
+	<div class="absolute right-[-60%] top-[-60%]">
 		<GradientBorder />
 	</div>
-	<div class="flex justify-center items-center">
+	<div class="flex items-center justify-center">
 		<UserIcon />
 	</div>
 </div>

@@ -3,7 +3,7 @@
 	import { goto } from '$app/navigation';
 
 	if ($page.status === 404) {
-		goto('/home');
+		goto('/');
 	}
 </script>
 

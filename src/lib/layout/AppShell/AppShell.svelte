@@ -26,7 +26,7 @@
 	{:else if isAuth}
 		<AuthHeader />
 	{/if}
-	<div class={`h-full ${isLanding ? `` : `max-w-screen-desktop min-w-screen px-12`}`}>
+	<div class={`h-full ${isLanding ? `` : `min-w-screen max-w-screen-desktop px-12`}`}>
 		<slot />
 	</div>
 	{#if isLanding}

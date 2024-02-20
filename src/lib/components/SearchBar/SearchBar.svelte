@@ -3,14 +3,14 @@
 </script>
 
 <div
-	class="w-full h-full p-[10px] gap-x-[5px] bg-[#1A1A1D] rounded-[10px] justify-center items-center flex text-[#CFD0D5] !text-xs"
+	class="flex h-full w-full items-center justify-center gap-x-[5px] rounded-[10px] bg-[#1A1A1D] p-[10px] !text-xs text-[#CFD0D5]"
 >
 	<div>
 		<SearchIcon />
 	</div>
 	<input
 		placeholder="Enter an address, city or Zip code"
-		class="px-0 bg-transparent border-none searchInput text-white focus:!outline-none focus:!border-none !outline-none w-full !text-xs"
+		class="searchInput w-full border-none bg-transparent px-0 !text-xs text-white !outline-none focus:!border-none focus:!outline-none"
 	/>
 </div>
 

@@ -12,26 +12,26 @@
 	const items = ['15 minutes', '30 minutes', '45 minutes', '1 hour'];
 </script>
 
-<div class="bg-[#151719] rounded-[20px] w-full h-full p-6 flex flex-col">
+<div class="flex h-full w-full flex-col rounded-[20px] bg-[#151719] p-6">
 	<div>
-		<div class="flex items-center gap-x-2 w-full h-full">
+		<div class="flex h-full w-full items-center gap-x-2">
 			<InfoIconHover />
-			<p class="text-white text-2xl font-semibold leading-[normal]">Showing Navigation</p>
+			<p class="text-2xl font-semibold leading-[normal] text-white">Showing Navigation</p>
 		</div>
 		<div class="mt-12 flex gap-x-8">
 			<div class="w-2/5">
-				<div class="flex justify-between items-center">
-					<p class="text-[#CFD0D5] font-semibold text-sm">Select address</p>
+				<div class="flex items-center justify-between">
+					<p class="text-sm font-semibold text-[#CFD0D5]">Select address</p>
 					<p class="text-sm font-semibold text-primary-500">Select all</p>
 				</div>
-				<div class="flex flex-col gap-y-4 mt-2">
+				<div class="mt-2 flex flex-col gap-y-4">
 					<AddressLocation />
 					<AddressLocation />
 					<AddressLocation />
 				</div>
 				<div class="mt-8">
-					<p class="text-[#CFD0D5] text-[15px] font-semibold">Choose Start Time</p>
-					<div class="flex items-center justify-between gap-x-4 mt-2">
+					<p class="text-[15px] font-semibold text-[#CFD0D5]">Choose Start Time</p>
+					<div class="mt-2 flex items-center justify-between gap-x-4">
 						<RadioDropdown
 							{items}
 							classes="w-[253px] h-[48px] px-[18px] py-[12px] flex justify-between"

@@ -16,8 +16,8 @@
 	};
 </script>
 
-<div class="flex flex-col w-full h-full">
-	<div class="flex gap-x-8 relative text-base">
+<div class="flex h-full w-full flex-col">
+	<div class="relative flex gap-x-8 text-base">
 		{#each items as item, index}
 			{#if item.href}
 				<!-- <TabAnchor
@@ -32,15 +32,15 @@
       </TabAnchor> -->
 				<div
 					on:click={() => handleNav(item.href)}
-					class={`${classes} hover:text-primary-500 border-b border-b-transparent hover:cursor-pointer hover:border-b hover:border-b-primary-500 pb-4 relative z-10 text-[#8E8E8E]`}
+					class={`${classes} relative z-10 border-b border-b-transparent pb-4 text-[#8E8E8E] hover:cursor-pointer hover:border-b hover:border-b-primary-500 hover:text-primary-500`}
 				>
 					<p>{item.label}</p>
 				</div>
 			{:else}
 				<div
 					class={`${classes} ${
-						selectedItem === item.label ? '!text-primary-500 border-b !border-b-primary-500' : ''
-					} hover:text-primary-500 border-b border-b-transparent hover:cursor-pointer hover:border-b hover:border-b-primary-500 pb-4 relative z-10 text-[#8E8E8E]`}
+						selectedItem === item.label ? 'border-b !border-b-primary-500 !text-primary-500' : ''
+					} relative z-10 border-b border-b-transparent pb-4 text-[#8E8E8E] hover:cursor-pointer hover:border-b hover:border-b-primary-500 hover:text-primary-500`}
 					on:click={() => handleTabSelect(item.label)}
 				>
 					<p>{item.label}</p>
@@ -48,7 +48,7 @@
 			{/if}
 		{/each}
 	</div>
-	<div class="w-full bg-[#252A2D] h-[1px]" />
+	<div class="h-[1px] w-full bg-[#252A2D]" />
 	<div>
 		<slot name="content" />
 	</div>

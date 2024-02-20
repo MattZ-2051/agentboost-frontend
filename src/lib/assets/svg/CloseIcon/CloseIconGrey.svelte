@@ -4,7 +4,7 @@
 	height="14"
 	viewBox="0 0 13 14"
 	fill="none"
-	class="hover:cursor-pointer hover:scale-110"
+	class="hover:scale-110 hover:cursor-pointer"
 >
 	<g clip-path="url(#clip0_1066_836)">
 		<path

@@ -9,10 +9,10 @@
 	export let dropdownClasses: string = '';
 </script>
 
-<div class={`${classes} rounded-[10px] relative`}>
+<div class={`${classes} relative rounded-[10px]`}>
 	{#if label}
-		<div class="flex w-full h-full items-center justify-between">
-			<p class="text-[#CFD0D5] font-medium">{label}</p>
+		<div class="flex h-full w-full items-center justify-between">
+			<p class="font-medium text-[#CFD0D5]">{label}</p>
 			<div
 				class="hover:scale-110 hover:cursor-pointer"
 				on:click={() => (showContent = !showContent)}
@@ -28,7 +28,7 @@
 	<slot name="icon" />
 	{#if showContent}
 		<div
-			class={`${dropdownClasses} absolute top-[3.5rem] right-0 z-20 bg-[#25282D] w-full h-fit px-[18px] py-3 rounded-[10px]`}
+			class={`${dropdownClasses} absolute right-0 top-[3.5rem] z-20 h-fit w-full rounded-[10px] bg-[#25282D] px-[18px] py-3`}
 		>
 			<slot name="content" />
 		</div>

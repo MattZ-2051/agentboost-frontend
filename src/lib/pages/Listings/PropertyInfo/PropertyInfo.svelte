@@ -44,15 +44,15 @@
 				pouring in through the windows. The location of this property is also a major plus.`;
 </script>
 
-<div class="bg-[#151719] rounded-[20px] w-full h-full p-8 flex flex-col">
-	<div class="flex w-full h-full justify-between">
-		<div class="flex flex-col w-2/5">
+<div class="flex h-full w-full flex-col rounded-[20px] bg-[#151719] p-8">
+	<div class="flex h-full w-full justify-between">
+		<div class="flex w-2/5 flex-col">
 			<div class="flex items-center gap-x-6">
 				<ChevronLeft />
-				<p class="text-white text-2xl font-semibold leading-[normal]">10044 W Springdale Ct</p>
+				<p class="text-2xl font-semibold leading-[normal] text-white">10044 W Springdale Ct</p>
 			</div>
-			<div class="flex flex-row items-center gap-x-6 mt-[30px]">
-				<div class="flex flex-row gap-x-4 flex-wrap mt-4 w-full gap-y-1 items-start h-full">
+			<div class="mt-[30px] flex flex-row items-center gap-x-6">
+				<div class="mt-4 flex h-full w-full flex-row flex-wrap items-start gap-x-4 gap-y-1">
 					<Chip variant="variant-app-primary" classes="!min-w-[105px] !bg-[#22272A]">
 						<div class="flex w-full items-center justify-center gap-x-2">
 							<LocationIconOutlined />
@@ -84,8 +84,8 @@
 				</div>
 			</div>
 			<div class="mt-[40px]">
-				<p class="text-[#EFEFEF] text-[20px]">Property Info</p>
-				<div class="flex flex-row gap-x-4 flex-wrap mt-4 w-full gap-y-4 items-start h-full">
+				<p class="text-[20px] text-[#EFEFEF]">Property Info</p>
+				<div class="mt-4 flex h-full w-full flex-row flex-wrap items-start gap-x-4 gap-y-4">
 					<Chip variant="variant-app-primary" classes="!min-w-[105px] !bg-[#22272A]">
 						<div class="flex w-full items-center justify-center gap-x-2">
 							<BedIcon />
@@ -113,8 +113,8 @@
 				</div>
 			</div>
 			<div class="mt-[40px]">
-				<p class="text-[#EFEFEF] text-xl font-medium">Taxes and fees</p>
-				<div class="mt-4 flex gap-x-4 gap-y-2 flex-wrap">
+				<p class="text-xl font-medium text-[#EFEFEF]">Taxes and fees</p>
+				<div class="mt-4 flex flex-wrap gap-x-4 gap-y-2">
 					<Chip variant="variant-app-primary" classes="!min-w-[105px] !bg-[#22272A]">
 						<div class="flex w-full items-center justify-center gap-x-2">
 							<TaxIcon />
@@ -130,15 +130,15 @@
 				</div>
 			</div>
 		</div>
-		<div class="w-3/5 flex items-center justify-end relative">
+		<div class="relative flex w-3/5 items-center justify-end">
 			<div class="relative">
-				<img class="w-[663px] h-[435px] rounded-xl object-cover" src={dummyImg} alt="" />
+				<img class="h-[435px] w-[663px] rounded-xl object-cover" src={dummyImg} alt="" />
 				<div
-					class="bg-[#22272AB2] w-fit h-fit flex items-center justify-center bg-opacity-70 absolute top-6 left-6 rounded-[10px] p-2"
+					class="absolute left-6 top-6 flex h-fit w-fit items-center justify-center rounded-[10px] bg-[#22272AB2] bg-opacity-70 p-2"
 				>
-					<div class="flex items-end justify-center w-full h-full flex-col">
-						<p class="text-[#EFEFEF] text-[26px] mb-1">$ 379,900</p>
-						<p class="text-[#CFD0D5] w-full text-end text-sm font-light">$ 1,540 / sq ft</p>
+					<div class="flex h-full w-full flex-col items-end justify-center">
+						<p class="mb-1 text-[26px] text-[#EFEFEF]">$ 379,900</p>
+						<p class="w-full text-end text-sm font-light text-[#CFD0D5]">$ 1,540 / sq ft</p>
 					</div>
 				</div>
 			</div>
@@ -146,13 +146,13 @@
 	</div>
 	<div class="mt-10">
 		<Box bgColor="bg-[#1E2225]" width="w-full" height="h-full" classes="p-6">
-			<div class="flex w-full items-center h-full justify-between">
-				<p class="text-[#EFEFEF] text-[20px] font-medium">Property Description</p>
+			<div class="flex h-full w-full items-center justify-between">
+				<p class="text-[20px] font-medium text-[#EFEFEF]">Property Description</p>
 				<div on:click={() => copyTextToClipboard(propertyDescription)}>
 					<CopyIcon />
 				</div>
 			</div>
-			<div class="text-[#CFD0D5] text-[14px] leading-6 mt-4">
+			<div class="mt-4 text-[14px] leading-6 text-[#CFD0D5]">
 				{propertyDescription}
 			</div>
 		</Box>

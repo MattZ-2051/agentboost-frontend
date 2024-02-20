@@ -73,25 +73,25 @@
 	};
 </script>
 
-<div class="w-full flex flex-col items-center justify-center">
+<div class="flex w-full flex-col items-center justify-center">
 	<div
-		class="p-1 xl:w-[1188px] sm:w-[600px] rounded-[20px] w-full md:w-[600px] lg:w-[800px] border border-white border-opacity-5 mt-8 xl:mt-16"
+		class="mt-8 w-full rounded-[20px] border border-white border-opacity-5 p-1 sm:w-[600px] md:w-[600px] lg:w-[800px] xl:mt-16 xl:w-[1188px]"
 	>
 		<div
-			class="w-full h-full xl:h-[490px] border-opacity-10 bg-black bg-opacity-30 rounded-[18px] shadow border border-white backdrop-blur-[14.35px] flex flex-col items-center p-8 sm:p-12"
+			class="flex h-full w-full flex-col items-center rounded-[18px] border border-white border-opacity-10 bg-black bg-opacity-30 p-8 shadow backdrop-blur-[14.35px] sm:p-12 xl:h-[490px]"
 		>
 			<div
-				class="flex flex-col w-full xl:flex-row items-start xl:justify-center justify-start xl:items-center opacity-100"
+				class="flex w-full flex-col items-start justify-start opacity-100 xl:flex-row xl:items-center xl:justify-center"
 			>
 				<div class="mr-4">
 					<LandingBezier />
 				</div>
-				<p class="text-white text-xl xl:text-[32px] tracking-tight whitespace-nowrap mt-4 xl:mt-0">
+				<p class="mt-4 whitespace-nowrap text-xl tracking-tight text-white xl:mt-0 xl:text-[32px]">
 					{tabInfoMap[selectedTab.toLocaleLowerCase()].tile1.title}
 				</p>
 			</div>
 			<p
-				class="text-left xl:text-center whitespace-nowrap mt-4 text-slate font-light text-base w-full"
+				class="mt-4 w-full whitespace-nowrap text-left text-base font-light text-slate xl:text-center"
 			>
 				See our feature packed app that’s <br class="inline-block xl:hidden" /> going to be your best
 				friend.
@@ -100,35 +100,35 @@
 				<img
 					src={tabInfoMap[selectedTab.toLocaleLowerCase()].tile1.img}
 					alt=""
-					class="object-cover xl:w-full xl:h-full h-[300px] md:h-[400px] rounded-[18px]"
+					class="h-[300px] rounded-[18px] object-cover md:h-[400px] xl:h-full xl:w-full"
 				/>
 			</div>
 		</div>
 	</div>
 </div>
 
-<div class="flex justify-center mt-6">
+<div class="mt-6 flex justify-center">
 	<div
-		class="flex justify-between xl:w-[1188px] sm:w-[600px] w-full md:w-[600px] lg:w-[800px] xl:flex-row flex-col items-center"
+		class="flex w-full flex-col items-center justify-between sm:w-[600px] md:w-[600px] lg:w-[800px] xl:w-[1188px] xl:flex-row"
 	>
-		<div class="p-1 bg-zinc-950 bg-opacity-0 rounded-[20px] border border-white border-opacity-5">
+		<div class="rounded-[20px] border border-white border-opacity-5 bg-zinc-950 bg-opacity-0 p-1">
 			<div
-				class="h-full md:w-[600px] sm:w-[600px] lg:w-[800px] xl:w-[576px] xl:h-[598px] border-opacity-10 bg-black bg-opacity-30 rounded-[18px] shadow border border-white backdrop-blur-[14.35px] p-8 sm:p-8"
+				class="h-full rounded-[18px] border border-white border-opacity-10 bg-black bg-opacity-30 p-8 shadow backdrop-blur-[14.35px] sm:w-[600px] sm:p-8 md:w-[600px] lg:w-[800px] xl:h-[598px] xl:w-[576px]"
 			>
-				<div class="flex xl:items-center xl:flex-row flex-col">
+				<div class="flex flex-col xl:flex-row xl:items-center">
 					<div class="mr-4">
 						<LandingBezier />
 					</div>
-					<p class="text-white text-xl xl:text-[32px] tracking-tight mt-4 xl:mt-0">
+					<p class="mt-4 text-xl tracking-tight text-white xl:mt-0 xl:text-[32px]">
 						{tabInfoMap[selectedTab.toLocaleLowerCase()].tile2.title}
 					</p>
 				</div>
-				<p class="text-left whitespace-nowrap mt-4 text-slate font-light text-base w-full">
+				<p class="mt-4 w-full whitespace-nowrap text-left text-base font-light text-slate">
 					See our feature packed app that’s <br class="inline-block" /> going to be your best friend.
 				</p>
 				<div class="mt-8">
 					<img
-						class="xl:w-[487px] xl:h-[335px] h-[300px] md:h-[400px] w-full mix-blend-lighten rounded-[18px] object-cover"
+						class="h-[300px] w-full rounded-[18px] object-cover mix-blend-lighten md:h-[400px] xl:h-[335px] xl:w-[487px]"
 						src={tabInfoMap[selectedTab.toLocaleLowerCase()].tile2.img}
 						alt=""
 					/>
@@ -136,28 +136,28 @@
 			</div>
 		</div>
 		<div
-			class="p-1 bg-zinc-950 bg-opacity-0 rounded-[20px] border border-white border-opacity-5 mt-6 xl:mt-0"
+			class="mt-6 rounded-[20px] border border-white border-opacity-5 bg-zinc-950 bg-opacity-0 p-1 xl:mt-0"
 		>
 			<div
-				class="h-full md:w-[600px] sm:w-[600px] lg:w-[800px] xl:w-[576px] xl:h-[598px] border-opacity-10 bg-black bg-opacity-30 rounded-[18px] shadow border border-white backdrop-blur-[14.35px] p-8 sm:p-8"
+				class="h-full rounded-[18px] border border-white border-opacity-10 bg-black bg-opacity-30 p-8 shadow backdrop-blur-[14.35px] sm:w-[600px] sm:p-8 md:w-[600px] lg:w-[800px] xl:h-[598px] xl:w-[576px]"
 			>
-				<div class="flex xl:items-center xl:flex-row flex-col">
-					<div class="flex flex-col w-full relative">
+				<div class="flex flex-col xl:flex-row xl:items-center">
+					<div class="relative flex w-full flex-col">
 						<div class="absolute">
 							<LandingBezier />
 						</div>
-						<p class="text-white text-xl xl:text-[32px] tracking-tight mt-4 xl:mt-0 ml-12">
+						<p class="ml-12 mt-4 text-xl tracking-tight text-white xl:mt-0 xl:text-[32px]">
 							{tabInfoMap[selectedTab.toLocaleLowerCase()].tile3.title}
 						</p>
 					</div>
 				</div>
-				<p class="text-left whitespace-nowrap mt-4 text-slate font-light text-base w-full">
+				<p class="mt-4 w-full whitespace-nowrap text-left text-base font-light text-slate">
 					See our feature packed app that’s <br class="inline-block" /> going to be your best friend.
 				</p>
 
 				<div class="mt-8">
 					<img
-						class="xl:w-[487px] xl:h-[335px] mix-blend-lighten rounded-[18px] h-[300px] md:h-[400px] w-full object-cover"
+						class="h-[300px] w-full rounded-[18px] object-cover mix-blend-lighten md:h-[400px] xl:h-[335px] xl:w-[487px]"
 						src={tabInfoMap[selectedTab.toLocaleLowerCase()].tile3.img}
 						alt=""
 					/>

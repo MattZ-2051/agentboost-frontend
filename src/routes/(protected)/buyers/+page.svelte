@@ -21,7 +21,7 @@
 	};
 </script>
 
-<div class="flex justify-between w-full items-start">
+<div class="flex w-full items-start justify-between">
 	<h1 class="text-[24px] font-semibold">Buyers</h1>
 	<Button
 		label="Add buyer"

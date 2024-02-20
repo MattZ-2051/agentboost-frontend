@@ -1,5 +1,5 @@
 <span
-	class="w-8 h-8 bg-gradient-to-br from-teal-300 to-sky-400 rounded-[5px] flex justify-center items-center float-left"
+	class="float-left flex h-8 w-8 items-center justify-center rounded-[5px] bg-gradient-to-br from-teal-300 to-sky-400"
 >
 	<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 		<g id="vuesax/outline/bezier">

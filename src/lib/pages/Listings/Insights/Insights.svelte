@@ -19,62 +19,62 @@
 	};
 </script>
 
-<div class="bg-[#151719] rounded-[20px] w-full h-full p-8 flex flex-col">
-	<div class="flex items-center gap-x-2 text-[#fff] font-semibold text-[24px]">
+<div class="flex h-full w-full flex-col rounded-[20px] bg-[#151719] p-8">
+	<div class="flex items-center gap-x-2 text-[24px] font-semibold text-[#fff]">
 		<InfoIconHover />
 		<p>Insights</p>
 	</div>
 	<div class="grid grid-cols-3 gap-x-8 pt-11">
 		<Box {...boxStyleMap}>
-			<p class="text-[#CFD0D5] text-sm leading-6">
+			<p class="text-sm leading-6 text-[#CFD0D5]">
 				Based on the average days on market for homes in WESTVIEW SUB NO 01, which is 75.3 days, the
 				fact that the most recent home sold in just 24 days indicates that the subject home has a
 				potential advantage in terms of its desirability and appeal.
 			</p>
 		</Box>
 		<Box {...boxStyleMap}>
-			<p class="text-[#FFF] text-base font-semibold">Expected days on market</p>
-			<div class="flex mt-4 gap-x-4 items-center">
+			<p class="text-base font-semibold text-[#FFF]">Expected days on market</p>
+			<div class="mt-4 flex items-center gap-x-4">
 				<div
-					class="bg-[#1D3335] w-[54px] flex items-center justify-center h-[54px] rounded-full p-2"
+					class="flex h-[54px] w-[54px] items-center justify-center rounded-full bg-[#1D3335] p-2"
 				>
 					<CalenderIconWhite />
 				</div>
 				<div class="flex items-baseline gap-x-2">
-					<p class="text-4xl text-white font-bold">55</p>
-					<p class="text-[#A0A1AB] text-sm font-medium">Average</p>
+					<p class="text-4xl font-bold text-white">55</p>
+					<p class="text-sm font-medium text-[#A0A1AB]">Average</p>
 				</div>
 			</div>
 		</Box>
 		<Box {...boxStyleMap}>
-			<p class="text-[#FFF] text-base font-semibold">Price / sqft</p>
-			<div class="flex mt-4 gap-x-4 items-center">
+			<p class="text-base font-semibold text-[#FFF]">Price / sqft</p>
+			<div class="mt-4 flex items-center gap-x-4">
 				<div
-					class="bg-[#1D3335] w-[54px] flex items-center justify-center h-[54px] rounded-full p-2"
+					class="flex h-[54px] w-[54px] items-center justify-center rounded-full bg-[#1D3335] p-2"
 				>
 					<PriceTagIcon />
 				</div>
 				<div class="flex items-baseline gap-x-2">
-					<p class="text-4xl text-white font-bold">$1657</p>
-					<p class="text-[#A0A1AB] text-sm font-medium">Average</p>
+					<p class="text-4xl font-bold text-white">$1657</p>
+					<p class="text-sm font-medium text-[#A0A1AB]">Average</p>
 				</div>
 			</div>
 		</Box>
 	</div>
-	<div class="w-full h-full">
-		<div class="flex items-center gap-x-2 text-[#fff] font-semibold text-[24px] mt-20">
+	<div class="h-full w-full">
+		<div class="mt-20 flex items-center gap-x-2 text-[24px] font-semibold text-[#fff]">
 			<RoutingIcon />
 			<p>Nearby Points of Interest</p>
 		</div>
-		<div class="flex w-full h-full items-start mt-10 justify-between">
-			<div class="w-2/5 gap-y-5 flex flex-col">
+		<div class="mt-10 flex h-full w-full items-start justify-between">
+			<div class="flex w-2/5 flex-col gap-y-5">
 				<PoiInfo />
 				<PoiInfo />
 				<PoiInfo />
 				<PoiInfo />
 				<PoiInfo />
 			</div>
-			<div class="w-3/5 flex items-center justify-end">
+			<div class="flex w-3/5 items-center justify-end">
 				<div>
 					<Map mapSize="w-[600px] h-[500px]" />
 				</div>

@@ -3,9 +3,9 @@
 	import Input from '$lib/components/Input/Input.svelte';
 </script>
 
-<h1 class="text-white font-semibold text-[18px]">Give feedback</h1>
-<p class="text-[#707281] text-[15px] mt-[6px]">Tell us your thoughts about the platform.</p>
-<div class="w-[48%] mt-8">
+<h1 class="text-[18px] font-semibold text-white">Give feedback</h1>
+<p class="mt-[6px] text-[15px] text-[#707281]">Tell us your thoughts about the platform.</p>
+<div class="mt-8 w-[48%]">
 	<Input
 		label="Email"
 		value="jacob@smartproperties.com"

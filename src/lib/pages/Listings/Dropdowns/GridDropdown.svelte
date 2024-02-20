@@ -6,7 +6,7 @@
 </script>
 
 <Dropdown classes="p-2 px-4 !bg-[#1A1B1E] h-[38px] text-sm" {showContent}>
-	<div class="w-full h-full flex items-center justify-center" slot="icon">
+	<div class="flex h-full w-full items-center justify-center" slot="icon">
 		<div>
 			<GridIcon />
 		</div>

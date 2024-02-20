@@ -5,29 +5,29 @@
 	import Linkedin from '$lib/assets/svg/Linkedin.svelte';
 </script>
 
-<div class="hidden xl:flex w-full flex-col items-center">
+<div class="hidden w-full flex-col items-center xl:flex">
 	<div
-		class="w-[1188px] text-lg font-light items-start z-30 sticky flex justify-between text-[#9EA4C6] gap-x-10"
+		class="sticky z-30 flex w-[1188px] items-start justify-between gap-x-10 text-lg font-light text-[#9EA4C6]"
 	>
 		<div class="flex flex-col">
 			<LogoGradient />
-			<p class="leading-[18px] whitespace-nowrap mt-4">Redefining real estate success.</p>
+			<p class="mt-4 whitespace-nowrap leading-[18px]">Redefining real estate success.</p>
 		</div>
-		<div class="text-left leading-normal flex flex-col">
+		<div class="flex flex-col text-left leading-normal">
 			<p class="mb-4">Support</p>
 			<p>Contact</p>
 		</div>
-		<div class="text-left leading-normal flex flex-col">
+		<div class="flex flex-col text-left leading-normal">
 			<p class="mb-4">Partners</p>
 			<p>Partners Program</p>
 		</div>
-		<div class="text-left leading-normal flex flex-col gap-y-4">
+		<div class="flex flex-col gap-y-4 text-left leading-normal">
 			<p>Legal</p>
 			<p>Terms</p>
 			<p>Privacy Policy</p>
 			<p>Refund Policy</p>
 		</div>
-		<div class="text-left leading-normal flex flex-col">
+		<div class="flex flex-col text-left leading-normal">
 			<p class="mb-4">Social</p>
 			<div class="flex gap-x-4">
 				<Facebook />
@@ -36,9 +36,9 @@
 			</div>
 		</div>
 	</div>
-	<div class="flex flex-col items-center justify-center w-full">
+	<div class="flex w-full flex-col items-center justify-center">
 		<div class="post-title-line" />
-		<p class="opacity-80 p-5 text-[#9EA4C6] text-lg font-light leading-normal">
+		<p class="p-5 text-lg font-light leading-normal text-[#9EA4C6] opacity-80">
 			© 2023 Agent Boost AI. All rights reserved.
 		</p>
 	</div>
@@ -46,7 +46,7 @@
 
 <!-- Mobile footer  -->
 <div
-	class="flex flex-col items-center justify-center xl:hidden w-full h-full text-[#9EA4C6] gap-y-8"
+	class="flex h-full w-full flex-col items-center justify-center gap-y-8 text-[#9EA4C6] xl:hidden"
 >
 	<svg xmlns="http://www.w3.org/2000/svg" width="181" height="33" viewBox="0 0 181 33" fill="none">
 		<g clip-path="url(#clip0_682_3199)">
@@ -120,13 +120,13 @@
 			</clipPath>
 		</defs>
 	</svg>
-	<p class="leading-[18px] whitespace-nowrap">Redefining real estate success.</p>
+	<p class="whitespace-nowrap leading-[18px]">Redefining real estate success.</p>
 	<div class="flex gap-x-4">
 		<Facebook />
 		<Linkedin />
 		<InstagramFooter />
 	</div>
-	<div class="w-full flex justify-between items-center h-full px-4">
+	<div class="flex h-full w-full items-center justify-between px-4">
 		<div class="flex flex-col gap-y-2">
 			<p>Legal</p>
 			<p>Terms</p>
@@ -140,9 +140,9 @@
 			<p>Contact Us</p>
 		</div>
 	</div>
-	<div class="flex flex-col items-center justify-center w-full">
+	<div class="flex w-full flex-col items-center justify-center">
 		<div class="post-title-line !w-3/4 xl:w-[75rem]" />
-		<p class="opacity-80 p-5 text-[#9EA4C6] xl:text-lg text-sm font-light leading-normal">
+		<p class="p-5 text-sm font-light leading-normal text-[#9EA4C6] opacity-80 xl:text-lg">
 			© 2023 Agent Boost AI. All rights reserved.
 		</p>
 	</div>

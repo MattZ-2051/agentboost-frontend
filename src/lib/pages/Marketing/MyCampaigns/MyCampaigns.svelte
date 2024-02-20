@@ -55,13 +55,13 @@
 	$: showContent = false;
 </script>
 
-<div class="w-full h-full bg-[#141718] max-w-[95vw] rounded-[10px] p-6">
-	<div class="flex justify-between items-start">
-		<div class="flex items-center gap-x-[6px] mb-6">
+<div class="h-full w-full max-w-[95vw] rounded-[10px] bg-[#141718] p-6">
+	<div class="flex items-start justify-between">
+		<div class="mb-6 flex items-center gap-x-[6px]">
 			<div>
 				<MyCampaignIcon />
 			</div>
-			<p class="text-white text-2xl font-semibold">My Campaigns</p>
+			<p class="text-2xl font-semibold text-white">My Campaigns</p>
 		</div>
 		<div>
 			<Button
@@ -76,18 +76,18 @@
 		<Tabs items={customCampaignTabs} classes="text-lg" />
 		<div class="mt-8 grid grid-cols-2 gap-x-5">
 			<div
-				class="w-full h-[357px] bg-[#171A1C] rounded-[10px] border border-white border-opacity-10 p-6"
+				class="h-[357px] w-full rounded-[10px] border border-white border-opacity-10 bg-[#171A1C] p-6"
 			>
 				<div class="flex w-full items-start justify-between">
-					<p class="text-white text-lg font-medium leading-[21px]">My Custom Campaign title</p>
+					<p class="text-lg font-medium leading-[21px] text-white">My Custom Campaign title</p>
 					<div class="flex items-center">
-						<p class="text-sm font-bold mr-2">Active</p>
+						<p class="mr-2 text-sm font-bold">Active</p>
 						<SlideToggle />
 					</div>
 				</div>
 				<div class="mt-8">
-					<p class="text-[#C6C7CD] text-sm font-normal leading-normal">Target Audience</p>
-					<div class="w-full h-full py-[7px] px-4 bg-[#24282D] rounded-[10px] mt-2 flex gap-x-4">
+					<p class="text-sm font-normal leading-normal text-[#C6C7CD]">Target Audience</p>
+					<div class="mt-2 flex h-full w-full gap-x-4 rounded-[10px] bg-[#24282D] px-4 py-[7px]">
 						<Chip variant="variant-app-primary" classes={chipClasses}>
 							<p>First Time Buyers</p>
 							<span><CloseIcon width={10} height={10} /></span>
@@ -103,8 +103,8 @@
 					</div>
 				</div>
 				<div class="mt-8">
-					<p class="text-[#C6C7CD] text-sm font-normal leading-normal">Messages</p>
-					<div class="w-full h-full py-3 px-4 bg-[#24282D] rounded-[10px] mt-2 flex gap-x-4">
+					<p class="text-sm font-normal leading-normal text-[#C6C7CD]">Messages</p>
+					<div class="mt-2 flex h-full w-full gap-x-4 rounded-[10px] bg-[#24282D] px-4 py-3">
 						<p class="text-[15px]">
 							Lorem ipsum dolor sit amet consectetur. Amet habitasse at aliquam imperdiet sit sit
 							tempus. Enim purus lectus diam odio pharetra nisi et ullamcorper. Mauris egestas et at
@@ -114,9 +114,9 @@
 				</div>
 			</div>
 			<div
-				class="w-full h-full bg-[#171A1C] border border-white border-opacity-10 rounded-[10px] p-6"
+				class="h-full w-full rounded-[10px] border border-white border-opacity-10 bg-[#171A1C] p-6"
 			>
-				<div class="flex w-full justify-between items-start">
+				<div class="flex w-full items-start justify-between">
 					<p class="text-lg">Campaign 7 day activity</p>
 					<Dropdown
 						{showContent}
@@ -126,8 +126,8 @@
 					/>
 				</div>
 				<Slider length={20} classes="gap-x-8">
-					<div class="w-full h-[110px] mt-8 flex pb-4">
-						<div class="flex flex-col gap-y-4 items-center w-fit">
+					<div class="mt-8 flex h-[110px] w-full pb-4">
+						<div class="flex w-fit flex-col items-center gap-y-4">
 							<Graph />
 							<p class="text-xs text-[#6F767E]">11/06</p>
 						</div>
@@ -140,7 +140,7 @@
 		<Tabs items={gmcTabs} bind:selectedItem classes="text-lg">
 			<div slot="content" class="">
 				{#if selectedItem === 'Social Media'}
-					<div class="flex justify-start w-[88vw]">
+					<div class="flex w-[88vw] justify-start">
 						<Slider length={8} classes="">
 							<SocialCard />
 						</Slider>
@@ -150,7 +150,7 @@
 						<EmailView />
 					</div>
 				{:else if selectedItem === 'Reel Ideas'}
-					<div class="justify-start w-[88vw] flex">
+					<div class="flex w-[88vw] justify-start">
 						<Slider length={10}>
 							<ReelsScript />
 						</Slider>

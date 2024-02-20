@@ -34,8 +34,8 @@
 	const tabItems = [{ label: 'Active' }, { label: 'Inactive' }, { label: 'Incoming' }];
 </script>
 
-<div class="w-full h-full relative">
-	<div class="flex justify-between items-start mb-4">
+<div class="relative h-full w-full">
+	<div class="mb-4 flex items-start justify-between">
 		<h1 class="text-[24px] font-semibold">My Listings</h1>
 		<Button
 			label="Create New Listing"
@@ -48,28 +48,28 @@
 	<div class="">
 		<Tabs items={tabItems} />
 	</div>
-	<div class="pt-8 flex justify-end items-center w-full gap-x-5">
-		<div class="w-[300px] h-[38px]">
+	<div class="flex w-full items-center justify-end gap-x-5 pt-8">
+		<div class="h-[38px] w-[300px]">
 			<SearchBar />
 		</div>
-		<div class="w-[160px] h-[38px]">
+		<div class="h-[38px] w-[160px]">
 			<StatusDropdown showContent={showStatus} />
 		</div>
-		<div class="w-[160px] h-[38px]">
+		<div class="h-[38px] w-[160px]">
 			<TypeDropdown showContent={showTypes} />
 		</div>
-		<div class="w-[160px] h-[38px]">
+		<div class="h-[38px] w-[160px]">
 			<StatesDropdown showContent={showStates} />
 		</div>
-		<div class="w-[88px] h-[38px]">
+		<div class="h-[38px] w-[88px]">
 			<MoreDropdown showContent={showMore} />
 		</div>
-		<div class="w-[38px] h-[38px]">
+		<div class="h-[38px] w-[38px]">
 			<GridDropdown showContent={showGrid} />
 		</div>
 	</div>
 	<div
-		class="flex flex-grow flex-wrap justify-start gap-y-8 gap-x-12 mt-8 w-full overflow-y-auto mb-40"
+		class="mb-40 mt-8 flex w-full flex-grow flex-wrap justify-start gap-x-12 gap-y-8 overflow-y-auto"
 	>
 		<ListingCard address="10044 W Springdale Ct" status="Active" />
 		<ListingCard address="10044 W Springdale Ct" status="Active" />

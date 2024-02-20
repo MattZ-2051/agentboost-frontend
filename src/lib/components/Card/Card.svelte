@@ -5,7 +5,7 @@
 </script>
 
 <div
-	class={`card !bg-[#171A1C] p-4 rounded-[10px] shadow border border-[#2E2F37] ${width} ${height} ${classes}`}
+	class={`card rounded-[10px] border border-[#2E2F37] !bg-[#171A1C] p-4 shadow ${width} ${height} ${classes}`}
 >
 	<slot />
 </div>

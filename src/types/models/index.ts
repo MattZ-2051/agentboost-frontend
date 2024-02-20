@@ -7,7 +7,7 @@ export type User = {
 	brandDescription?: string;
 	areaOfExpertise?: string;
 	listings?: Listing[] | null;
-	fullName: string;
+	fullName?: string;
 };
 
 export type RealtyMoleData = {

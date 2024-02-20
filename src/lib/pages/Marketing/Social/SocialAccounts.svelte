@@ -5,18 +5,18 @@
 </script>
 
 <Box bgColor="bg-[#151719]" width="!w-[150%]" height="h-[340px]" classes="p-6">
-	<div class="flex w-full justify-between items-center">
-		<p class="text-[#EFEFEF] text-lg">Connected accounts</p>
+	<div class="flex w-full items-center justify-between">
+		<p class="text-lg text-[#EFEFEF]">Connected accounts</p>
 		<div
-			class="bg-[#1D3335] w-[221px] h-[44px] rounded-[10px] flex items-center justify-center gap-x-2 py-2 px-4"
+			class="flex h-[44px] w-[221px] items-center justify-center gap-x-2 rounded-[10px] bg-[#1D3335] px-4 py-2"
 		>
 			<div>
 				<AddIcon />
 			</div>
-			<p class="text-[15px] font-semibold whitespace-nowrap">Connect new Account</p>
+			<p class="whitespace-nowrap text-[15px] font-semibold">Connect new Account</p>
 		</div>
 	</div>
-	<div class="flex gap-x-6 w-full justify-between mt-8">
+	<div class="mt-8 flex w-full justify-between gap-x-6">
 		<Account socialType="facebook" />
 		<Account socialType="instagram" />
 		<Account socialType="x" />

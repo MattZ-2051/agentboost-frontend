@@ -20,10 +20,10 @@
 </script>
 
 <Card width="w-fit" height="h-full">
-	<div class="bg-[#2E2F37] p-3 rounded-[10px]">
-		<img class="!w-[292px] h-[233px] rounded-[10px] object-cover" src={dummyImg} alt="" />
+	<div class="rounded-[10px] bg-[#2E2F37] p-3">
+		<img class="h-[233px] !w-[292px] rounded-[10px] object-cover" src={dummyImg} alt="" />
 	</div>
-	<div class="flex justify-between items-center pt-[1.125rem] pb-[24px]">
+	<div class="flex items-center justify-between pb-[24px] pt-[1.125rem]">
 		<p class="text-base font-semibold leading-[15px]">{address}</p>
 		<div class="flex gap-x-[14px]">
 			<ShareIcon />

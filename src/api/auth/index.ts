@@ -1,4 +1,4 @@
-import { post, get } from '..';
+import { post } from '..';
 import type { AuthTokens } from '$types/api';
 import type { AuthData } from './types';
 
@@ -23,10 +23,6 @@ export const signup = async ({ email, password, fullName }: AuthData) => {
 	return response.data;
 };
 
-export const googleSignin = async () => {
-	const response = await get<{ data: any }>('/auth/google-redirect');
-	return response.data;
-};
 export const logout = async ({ userId }: { userId: string }) => {
 	const response = await post<{
 		data: AuthTokens;
@@ -34,6 +30,11 @@ export const logout = async ({ userId }: { userId: string }) => {
 		userId
 	});
 	return response.data;
+};
+
+export const googleSignin = async () => {
+	//TODO: Replace with api url env variable
+	window.open('http://localhost:5001/auth/google-login', '_self');
 };
 
 export const refreshTokens = async ({ refreshToken }: { refreshToken: string }) => {

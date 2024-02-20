@@ -17,8 +17,8 @@
 			Welcome <span class="textGradient">{$user.fullName}</span>
 		</p>
 		<div class="mt-12 w-full">
-			<p class="text-[#EFEFEF] text-xl">Local market statistics</p>
-			<div class="mt-6 flex items-center w-full h-full justify-start gap-x-6">
+			<p class="text-xl text-[#EFEFEF]">Local market statistics</p>
+			<div class="mt-6 flex h-full w-full items-center justify-start gap-x-6">
 				<Box
 					width="!w-[299px]"
 					height="h-[108px]"
@@ -74,7 +74,7 @@
 		<div class="mt-6">
 			<ActiveListings />
 		</div>
-		<div class="mt-6 w-full grid grid-cols-3 gap-x-6 h-full">
+		<div class="mt-6 grid h-full w-full grid-cols-3 gap-x-6">
 			<Announcements />
 			<MortgageStats />
 			<Feedback />

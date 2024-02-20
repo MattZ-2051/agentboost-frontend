@@ -9,7 +9,7 @@
 	viewBox="0 0 40 40"
 	fill="none"
 	xmlns="http://www.w3.org/2000/svg"
-	class="hover:cursor-pointer hover:scale-110"
+	class="hover:scale-110 hover:cursor-pointer"
 >
 	{#if showBorder}
 		<rect x="0.5" y="0.5" width="39" height="39" rx="9.5" stroke="url(#paint0_linear_833_1822)" />

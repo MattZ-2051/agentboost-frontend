@@ -6,10 +6,10 @@
 </script>
 
 <Dropdown {showContent} classes="bg-[#1A1B1E] px-3 w-full h-[38px] text-!xs">
-	<div class="flex justify-between w-full items-center gap-x-2 h-full" slot="icon">
+	<div class="flex h-full w-full items-center justify-between gap-x-2" slot="icon">
 		<div>
 			<MoreIcon />
 		</div>
-		<div class="text-neutral-300 text-[12px] leading-[18px]">More</div>
+		<div class="text-[12px] leading-[18px] text-neutral-300">More</div>
 	</div>
 </Dropdown>

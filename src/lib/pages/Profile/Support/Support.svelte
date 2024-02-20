@@ -3,11 +3,11 @@
 	import Input from '$lib/components/Input/Input.svelte';
 </script>
 
-<h1 class="text-white font-semibold text-[18px]">Contact support</h1>
-<p class="text-[#707281] text-[15px] mt-[6px]">
+<h1 class="text-[18px] font-semibold text-white">Contact support</h1>
+<p class="mt-[6px] text-[15px] text-[#707281]">
 	Need help with anything? We’ll get back to you asap.
 </p>
-<div class="w-[48%] mt-8">
+<div class="mt-8 w-[48%]">
 	<Input
 		label="Email"
 		value="jacob@smartproperties.com"

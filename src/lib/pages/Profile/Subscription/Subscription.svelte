@@ -6,24 +6,24 @@
 	import visaIcon from '$lib/assets/images/CC/visa.png';
 </script>
 
-<h1 class="text-white font-semibold text-[18px]">Subscription</h1>
-<p class="text-[#707281] text-[15px] mt-[6px]">
+<h1 class="text-[18px] font-semibold text-white">Subscription</h1>
+<p class="mt-[6px] text-[15px] text-[#707281]">
 	This page displays general information about your subscription.
 </p>
 <div class="mt-8">
 	<Box width="w-full" height="h-full" bgColor="bg-[#1E2225]" classes="p-6 rounded-[10px]">
-		<div class="flex w-full h-full gap-x-12">
-			<div class="w-2/3 flex flex-col justify-between h-full">
+		<div class="flex h-full w-full gap-x-12">
+			<div class="flex h-full w-2/3 flex-col justify-between">
 				<div>
-					<p class="text-white text-base font-medium">Current Plan</p>
-					<p class="textGradient w-fit text-[32px] mt-[21px] leading-normal font-medium">
+					<p class="text-base font-medium text-white">Current Plan</p>
+					<p class="textGradient mt-[21px] w-fit text-[32px] font-medium leading-normal">
 						Pro Package
 					</p>
 				</div>
-				<div class="flex items-start mt-[52px] gap-x-[48px] h-full">
+				<div class="mt-[52px] flex h-full items-start gap-x-[48px]">
 					<div>
-						<p class="text-[#707281] text-base">Status</p>
-						<div class="flex gap-x-2 items-center mt-2">
+						<p class="text-base text-[#707281]">Status</p>
+						<div class="mt-2 flex items-center gap-x-2">
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
 								width="12"
@@ -37,15 +37,15 @@
 						</div>
 					</div>
 					<div>
-						<p class="text-[#707281] text-base">Price/month</p>
+						<p class="text-base text-[#707281]">Price/month</p>
 						<p class="mt-2">US$99.00</p>
 					</div>
 					<div>
-						<p class="text-[#707281] text-base">Billing Cycle</p>
+						<p class="text-base text-[#707281]">Billing Cycle</p>
 						<p class="mt-2">4th each month</p>
 					</div>
 					<div>
-						<p class="text-[#707281] text-base">Active Since</p>
+						<p class="text-base text-[#707281]">Active Since</p>
 						<p class="mt-2">Aug 20, 2023</p>
 					</div>
 				</div>
@@ -53,23 +53,23 @@
 					<p class="font-medium">Terms & Conditions</p>
 				</div>
 			</div>
-			<div class="w-1/3 flex flex-col gap-y-4">
-				<p class="text-[#707281] text-base mb-[21px]">Included in this plan</p>
+			<div class="flex w-1/3 flex-col gap-y-4">
+				<p class="mb-[21px] text-base text-[#707281]">Included in this plan</p>
 				<div class="flex items-center gap-x-2">
 					<Checkmark />
-					<p class="text-white text-base">Lorem ipsum dolor si amet lorem</p>
+					<p class="text-base text-white">Lorem ipsum dolor si amet lorem</p>
 				</div>
 				<div class="flex items-center gap-x-2">
 					<Checkmark />
-					<p class="text-white text-base">Lorem ipsum dolor si amet lorem</p>
+					<p class="text-base text-white">Lorem ipsum dolor si amet lorem</p>
 				</div>
 				<div class="flex items-center gap-x-2">
 					<Checkmark />
-					<p class="text-white text-base">Lorem ipsum dolor si amet lorem</p>
+					<p class="text-base text-white">Lorem ipsum dolor si amet lorem</p>
 				</div>
 				<div class="flex items-center gap-x-2">
 					<Checkmark />
-					<p class="text-white text-base">Lorem ipsum dolor si amet lorem</p>
+					<p class="text-base text-white">Lorem ipsum dolor si amet lorem</p>
 				</div>
 			</div>
 		</div>
@@ -88,11 +88,11 @@
 
 <div class="mt-12">
 	<Box width="w-full" height="h-full" bgColor="bg-[#1E2225]" classes="p-6 rounded-[10px]">
-		<div class="flex justify-between w-full">
-			<p class="text-white text-base font-medium">Billing Information</p>
+		<div class="flex w-full justify-between">
+			<p class="text-base font-medium text-white">Billing Information</p>
 			<Button label="Edit" variant="variant-app-secondary" classes="!w-[77px] !h-12" />
 		</div>
-		<div class="grid grid-cols-2 w-4/5 gap-x-6 gap-y-5">
+		<div class="grid w-4/5 grid-cols-2 gap-x-6 gap-y-5">
 			<Input
 				label="Full Name"
 				value="Jacob Jones"
@@ -149,20 +149,20 @@
 </div>
 <div class="mt-12">
 	<Box width="w-full" height="h-full" bgColor="bg-[#1E2225]" classes="p-6 rounded-[10px]">
-		<p class="text-white text-base font-medium">Payment Details</p>
-		<div class="flex w-full justify-between mt-[25px]">
+		<p class="text-base font-medium text-white">Payment Details</p>
+		<div class="mt-[25px] flex w-full justify-between">
 			<div>
-				<p class="text-[#707281] text-base font-normal">Card Number</p>
-				<div class="flex gap-x-2 items-center mt-4">
-					<img src={visaIcon} alt="" class="w-5 h-5 rounded" />
+				<p class="text-base font-normal text-[#707281]">Card Number</p>
+				<div class="mt-4 flex items-center gap-x-2">
+					<img src={visaIcon} alt="" class="h-5 w-5 rounded" />
 					<p>Visa •••• 8743</p>
 				</div>
 			</div>
 			<div>
-				<p class="text-[#707281] text-base font-normal">Expires</p>
+				<p class="text-base font-normal text-[#707281]">Expires</p>
 				<p class="mt-4">06/2028</p>
 			</div>
-			<div class="flex h-full items-end w-fit">
+			<div class="flex h-full w-fit items-end">
 				<Button label="Edit" variant="variant-app-secondary" classes="!w-[77px] !h-12" />
 			</div>
 		</div>

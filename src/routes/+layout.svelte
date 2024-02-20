@@ -14,6 +14,7 @@
 	import ModalConfirm from '$lib/components/Modals/ModalConfirm.svelte';
 	import NewListingDrawer from '$lib/pages/Listings/Drawers/NewListingDrawer.svelte';
 	import NewBuyersDrawer from '$lib/pages/Buyers/Drawers/NewBuyersDrawer.svelte';
+	import { onMount } from 'svelte';
 
 	storePopup.set({ computePosition, autoUpdate, offset, shift, flip, arrow });
 
@@ -29,19 +30,22 @@
 	const drawerStore = getDrawerStore();
 
 	const fbId = import.meta.env?.VITE_FB_APP_ID;
-	window.fbAsyncInit = function () {
-		FB.init({
-			appId: fbId,
-			xfbml: true,
-			version: 'v18.0'
-		});
-	};
-	(function () {
-		var e = document.createElement('script');
-		e.src = document.location.protocol + '//connect.facebook.net/en_US/sdk.js';
-		e.async = true;
-		// document.getElementById('fb-root').appendChild(e);
-	})();
+
+	onMount(() => {
+		window.fbAsyncInit = function () {
+			FB.init({
+				appId: fbId,
+				xfbml: true,
+				version: 'v18.0'
+			});
+		};
+		(function () {
+			var e = document.createElement('script');
+			e.src = document.location.protocol + '//connect.facebook.net/en_US/sdk.js';
+			e.async = true;
+			// document.getElementById('fb-root').appendChild(e);
+		})();
+	});
 </script>
 
 <div class="dark bg-surface-500" data-theme="agentboost-theme">

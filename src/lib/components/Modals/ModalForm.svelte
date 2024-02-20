@@ -24,8 +24,8 @@
 </script>
 
 {#if $modalStore[0]}
-	<div class="rounded-[10px] bg-[#1A1A1A] p-6 !w-[450px]">
-		<header class="text-2xl mb-8">
+	<div class="!w-[450px] rounded-[10px] bg-[#1A1A1A] p-6">
+		<header class="mb-8 text-2xl">
 			{$modalStore[0].title ?? '(title missing)'}
 		</header>
 		<article class="text-[#CFD0D5]">{$modalStore[0].body ?? '(body missing)'}</article>
@@ -38,7 +38,7 @@
 				variant="variant-app-primary"
 			/>
 		</div>
-		<div class="w-full grid grid-cols-2 gap-x-4 mt-8">
+		<div class="mt-8 grid w-full grid-cols-2 gap-x-4">
 			<Button
 				variant="variant-app-primary"
 				classes="!h-10"

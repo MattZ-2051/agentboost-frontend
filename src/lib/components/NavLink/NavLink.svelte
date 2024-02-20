@@ -10,7 +10,7 @@
 <div class={classes}>
 	<!-- svelte-ignore a11y-interactive-supports-focus -->
 	<div
-		class={`navLink hover:cursor-pointer flex flex-col text-sm sm:text-base h-full`}
+		class={`navLink flex h-full flex-col text-sm hover:cursor-pointer sm:text-base`}
 		on:mouseenter={() => (showLine = true)}
 		on:mouseleave={() => (showLine = false)}
 		role="link"
@@ -22,9 +22,9 @@
 			<p on:keydown={onClick} on:click={onClick}>{label}</p>
 		{/if}
 		{#if showLine}
-			<span class={`bg-white inline-block h-[2px] line`} />
+			<span class={`line inline-block h-[2px] bg-white`} />
 		{:else}
-			<span class="w-full bg-transparent h-[2px]" />
+			<span class="h-[2px] w-full bg-transparent" />
 		{/if}
 	</div>
 </div>

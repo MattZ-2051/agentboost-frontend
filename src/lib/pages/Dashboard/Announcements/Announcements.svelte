@@ -4,9 +4,9 @@
 </script>
 
 <Box bgColor="bg-[#151719]" height="!h-[398px]" width="w-full" classes="p-6">
-	<p class="text-[#EFEFEF] text-xl font-semibold">Announcements</p>
-	<div class="mt-6 scrollbarStyle pr-4 w-full h-[90%] overflow-y-auto overflow-x-hidden">
-		<div class="flex flex-col items-start justify-start w-full gap-y-3">
+	<p class="text-xl font-semibold text-[#EFEFEF]">Announcements</p>
+	<div class="scrollbarStyle mt-6 h-[90%] w-full overflow-y-auto overflow-x-hidden pr-4">
+		<div class="flex w-full flex-col items-start justify-start gap-y-3">
 			<AnnouncementCard />
 			<AnnouncementCard />
 			<AnnouncementCard />

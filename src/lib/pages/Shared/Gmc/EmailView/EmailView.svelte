@@ -44,20 +44,20 @@
 	};
 </script>
 
-<div class="w-full flex mt-4 gap-x-12">
+<div class="mt-4 flex w-full gap-x-12">
 	<div class="w-1/4">
-		<div class="border-[#2E2F37] rounded-[10px] p-4 border w-full bg-[#171A1C]">
-			<img class="rounded-[10px] w-full h-[150px] object-cover" src={dummyImg} alt="" />
-			<div class="flex gap-x-2 my-4">
+		<div class="w-full rounded-[10px] border border-[#2E2F37] bg-[#171A1C] p-4">
+			<img class="h-[150px] w-full rounded-[10px] object-cover" src={dummyImg} alt="" />
+			<div class="my-4 flex gap-x-2">
 				<span>
 					<PdfIcon />
 				</span>
 				<div>
-					<p class="text-[#fff] text-base font-semibold">
+					<p class="text-base font-semibold text-[#fff]">
 						10044 W Springdale Ct Generated Document
 					</p>
-					<div class="mt-2 flex gap-x-2 items-center whitespace-nowrap">
-						<p class="text-[#8E8E8E] text-sm font-light">12 pages</p>
+					<div class="mt-2 flex items-center gap-x-2 whitespace-nowrap">
+						<p class="text-sm font-light text-[#8E8E8E]">12 pages</p>
 						<span>
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
@@ -69,7 +69,7 @@
 								<circle cx="2" cy="2" r="2" fill="#292F33" />
 							</svg>
 						</span>
-						<p class="text-[#8E8E8E] text-sm font-light">PDF</p>
+						<p class="text-sm font-light text-[#8E8E8E]">PDF</p>
 						<span>
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
@@ -81,17 +81,17 @@
 								<circle cx="2" cy="2" r="2" fill="#292F33" />
 							</svg>
 						</span>
-						<p class="text-[#8E8E8E] text-sm font-light">156 MB</p>
+						<p class="text-sm font-light text-[#8E8E8E]">156 MB</p>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	<div class="border-[#2E2F37] rounded-[10px] w-4/5 bg-[#171A1C] border px-4 py-6">
+	<div class="w-4/5 rounded-[10px] border border-[#2E2F37] bg-[#171A1C] px-4 py-6">
 		<div class="grid grid-cols-2">
 			<div>
-				<p class="text-[#fff] text-[18px] font-semibold">Add cities</p>
-				<p class="text-[#707281] text-[15px] font-normal mt-2">
+				<p class="text-[18px] font-semibold text-[#fff]">Add cities</p>
+				<p class="mt-2 text-[15px] font-normal text-[#707281]">
 					To increase the number of agents the document is sent to.
 				</p>
 				<div class="mt-6 flex gap-x-6">
@@ -108,8 +108,8 @@
 					/>
 				</div>
 				<div class="mt-8">
-					<p class="text-[#CFD0D5] text-[15px] font-semibold">Added cities</p>
-					<div class="flex flex-wrap w-full gap-4 mt-2">
+					<p class="text-[15px] font-semibold text-[#CFD0D5]">Added cities</p>
+					<div class="mt-2 flex w-full flex-wrap gap-4">
 						{#each cities as city, i}
 							<Chip variant="variant-app-primary" classes="!min-w-[125px] !h-[34px] !bg-[#22272A]">
 								<div class="flex w-full items-center justify-between gap-x-2">
@@ -124,7 +124,7 @@
 					</div>
 				</div>
 				<div class="mt-6 flex flex-col">
-					<p class="text-[#CFD0D5] text-[15px] font-semibold">Headline</p>
+					<p class="text-[15px] font-semibold text-[#CFD0D5]">Headline</p>
 					<RadioDropdown
 						{items}
 						classes="w-full h-[48px] px-[18px] py-[12px] flex justify-between mt-2"
@@ -132,7 +132,7 @@
 					/>
 				</div>
 				<div class="mt-6 flex flex-col">
-					<p class="text-[#CFD0D5] text-[15px] font-semibold">Subject</p>
+					<p class="text-[15px] font-semibold text-[#CFD0D5]">Subject</p>
 					<Input
 						label=""
 						placeholder="Subject Here"
@@ -143,7 +143,7 @@
 					/>
 				</div>
 				<div class="mt-6 flex flex-col">
-					<p class="text-[#CFD0D5] text-[15px] font-semibold">Preview</p>
+					<p class="text-[15px] font-semibold text-[#CFD0D5]">Preview</p>
 					<Input
 						label=""
 						placeholder="Preview Here"
@@ -155,14 +155,14 @@
 				</div>
 			</div>
 			<div class="flex w-full justify-end">
-				<div class="bg-[#1E2225] w-[297px] h-fit rounded-[10px]">
+				<div class="h-fit w-[297px] rounded-[10px] bg-[#1E2225]">
 					<div class="mt-20 flex flex-col items-center">
 						<GmcUserIcon />
-						<p class="text-[#fff] text-[35px] font-semibold mt-12">125</p>
-						<p class="text-[#707281] font-light mt-8 text-[15px] text-center">
+						<p class="mt-12 text-[35px] font-semibold text-[#fff]">125</p>
+						<p class="mt-8 text-center text-[15px] font-light text-[#707281]">
 							Number of agents based on <br /> your location
 						</p>
-						<div class="px-6 mt-8 my-6">
+						<div class="my-6 mt-8 px-6">
 							<Button
 								label="Send to local agents"
 								bg="bg-[#1E2225]"

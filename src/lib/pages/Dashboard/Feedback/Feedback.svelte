@@ -5,8 +5,8 @@
 </script>
 
 <Box bgColor="bg-[#151719]" height="!h-[398px]" width="w-full" classes="p-6">
-	<p class="text-[#EFEFEF] text-xl font-semibold mb-4">Feeback</p>
-	<p class="text-[#707281] text-[15px] mb-4">Tell us your thoughts about the platform</p>
+	<p class="mb-4 text-xl font-semibold text-[#EFEFEF]">Feeback</p>
+	<p class="mb-4 text-[15px] text-[#707281]">Tell us your thoughts about the platform</p>
 	<Input
 		placeholder="Your feedback here..."
 		rows={7}

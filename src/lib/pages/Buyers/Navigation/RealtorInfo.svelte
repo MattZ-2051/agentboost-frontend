@@ -15,14 +15,14 @@
 		height="h-12"
 	>
 		<BuyersIcon iconSize={20} />
-		<p class="text-[#C6C7CD] text-base">10044 W Springdale Ct</p>
+		<p class="text-base text-[#C6C7CD]">10044 W Springdale Ct</p>
 	</Box>
 	<div class="mt-6">
 		<Box bgColor="bg-[#1E2225]" width="w-full" height="h-full" classes="flex-col flex gap-y-4 p-6">
-			<div class="flex items-center w-full justify-between">
+			<div class="flex w-full items-center justify-between">
 				<div class="flex w-full items-center gap-x-2">
-					<img class="w-[60px] h-[60px] rounded-[50px]" src={dummyImg} alt="" />
-					<p class="text-[#EFEFEF] text-base">John Doe</p>
+					<img class="h-[60px] w-[60px] rounded-[50px]" src={dummyImg} alt="" />
+					<p class="text-base text-[#EFEFEF]">John Doe</p>
 				</div>
 				<div class="flex items-center gap-x-2">
 					<FacebookDarkIcon />
@@ -31,12 +31,12 @@
 				</div>
 			</div>
 			<div class="flex w-full items-center">
-				<div class="w-1/4 flex flex-col gap-y-[15px]">
+				<div class="flex w-1/4 flex-col gap-y-[15px]">
 					<p class="realtorInfoLabel">Agent ID:</p>
 					<p class="realtorInfoLabel">Phone:</p>
 					<p class="realtorInfoLabel">Email:</p>
 				</div>
-				<div class="w-3/4 flex flex-col gap-y-[15px]">
+				<div class="flex w-3/4 flex-col gap-y-[15px]">
 					<p class="realtorInfoText">#18457 865 8745</p>
 					<p class="realtorInfoText">+1 123 123 4567</p>
 					<p class="realtorInfoText">johndoe@smartproperties.com</p>
@@ -48,10 +48,10 @@
 
 <style lang="postcss">
 	.realtorInfoLabel {
-		@apply text-[#6F767E] text-sm;
+		@apply text-sm text-[#6F767E];
 	}
 
 	.realtorInfoText {
-		@apply text-[#EFEFEF] text-sm;
+		@apply text-sm text-[#EFEFEF];
 	}
 </style>

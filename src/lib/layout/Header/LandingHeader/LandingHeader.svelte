@@ -26,7 +26,7 @@
 		</div>
 	</svelte:fragment>
 	<div
-		class="lg:flex gap-x-14 font-extralight textLink hover:text-white hover:cursor-pointer items-center justify-center hidden"
+		class="textLink hidden items-center justify-center gap-x-14 font-extralight hover:cursor-pointer hover:text-white lg:flex"
 	>
 		<p>Features</p>
 		<p>Platform</p>
@@ -34,7 +34,7 @@
 	</div>
 	<svelte:fragment slot="trail">
 		<div class="flex items-center">
-			<button class="lg:hidden btn btn-sm" on:click={drawerOpen}>
+			<button class="btn btn-sm lg:hidden" on:click={drawerOpen}>
 				<span>
 					<svg
 						xmlns="http://www.w3.org/2000/svg"

@@ -13,7 +13,7 @@
 
 <button
 	type="button"
-	class={`btn ${variant} ${classes} hover:!cursor-pointer relative`}
+	class={`btn ${variant} ${classes} relative hover:!cursor-pointer`}
 	on:click={onClick}
 	on:mouseenter={onMouseEnter}
 	on:mouseleave={onMouseLeave}
@@ -32,7 +32,7 @@
 	<div
 		class={`${
 			variant === 'variant-app-primary'
-				? `w-full h-full ${bg} rounded-[10px] flex items-center justify-center`
+				? `h-full w-full ${bg} flex items-center justify-center rounded-[10px]`
 				: 'flex items-center justify-center gap-x-[6px]'
 		}`}
 	>

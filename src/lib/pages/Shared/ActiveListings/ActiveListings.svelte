@@ -6,8 +6,8 @@
 
 <Box width="w-full" height="h-full" bgColor="bg-[#151719]" classes="max-w-[95vw] p-6">
 	<div class="w-full">
-		<div class="flex gap-x-4 items-center">
-			<p class="text-white text-[20px] font-semibold">Active Listings</p>
+		<div class="flex items-center gap-x-4">
+			<p class="text-[20px] font-semibold text-white">Active Listings</p>
 		</div>
 	</div>
 	<div class="flex justify-start">

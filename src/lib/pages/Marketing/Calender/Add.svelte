@@ -8,10 +8,10 @@
 <div class="relative">
 	{#if showAdd}
 		<div
-			class="absolute w-[93px] h-[27px] bg-neutral-900 rounded-[5px] shadow bottom-8 -left-8"
+			class="absolute -left-8 bottom-8 h-[27px] w-[93px] rounded-[5px] bg-neutral-900 shadow"
 			transition:fade={{ delay: 0, duration: 100 }}
 		>
-			<div class="text-neutral-300 text-sm font-medium">Add post</div>
+			<div class="text-sm font-medium text-neutral-300">Add post</div>
 		</div>
 	{/if}
 	<div on:mouseenter={() => (showAdd = true)} on:mouseleave={() => (showAdd = false)}>

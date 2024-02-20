@@ -28,8 +28,8 @@
 </script>
 
 <div>
-	<h1 class="text-[24px] font-semibold mb-6">Account</h1>
-	<div class="bg-[#171A1C] rounded-[20px] w-full h-full p-6">
+	<h1 class="mb-6 text-[24px] font-semibold">Account</h1>
+	<div class="h-full w-full rounded-[20px] bg-[#171A1C] p-6">
 		<Tabs items={tabItems} bind:selectedItem>
 			<div slot="content" class="mt-[25px]">
 				{#if selectedItem === 'Profile'}

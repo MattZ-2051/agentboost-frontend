@@ -13,7 +13,7 @@
 </script>
 
 <div>
-	<p class="mb-[6px] text-[15px] text-[#CFD0D5] font-semibold">{label}</p>
+	<p class="mb-[6px] text-[15px] font-semibold text-[#CFD0D5]">{label}</p>
 	{#if type === 'text'}
 		<input
 			class={`${classes} ${variant} input w-full`}

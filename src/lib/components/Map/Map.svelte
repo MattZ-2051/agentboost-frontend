@@ -134,17 +134,17 @@
 	$: showContent = '!flex';
 </script>
 
-<div class="w-full h-full rounded-[10px] p-2 border border-white border-opacity-10 relative">
+<div class="relative h-full w-full rounded-[10px] border border-white border-opacity-10 p-2">
 	<div id="map" class={`${mapSize} rounded-[10px]`} />
 	<div id="content" class={`popover ${showContent}`} on:mouseenter={() => (showContent = '!flex')}>
-		<img class="w-12 h-full rounded-[10px]" src="https://via.placeholder.com/80x64" alt="" />
-		<p class="text-white text-sm">McMillan Elementary School</p>
+		<img class="h-full w-12 rounded-[10px]" src="https://via.placeholder.com/80x64" alt="" />
+		<p class="text-sm text-white">McMillan Elementary School</p>
 	</div>
 </div>
 
 <style lang="postcss">
 	.popover {
-		@apply w-[222px] flex h-[62px] border-opacity-20 border border-white rounded-[10px] p-2 text-[#fff] bg-[#22272A] items-center gap-x-2 -left-28 absolute top-4;
+		@apply absolute -left-28 top-4 flex h-[62px] w-[222px] items-center gap-x-2 rounded-[10px] border border-white border-opacity-20 bg-[#22272A] p-2 text-[#fff];
 		box-shadow: 10px 10px 16px 0px rgba(0, 0, 0, 0.2);
 	}
 </style>

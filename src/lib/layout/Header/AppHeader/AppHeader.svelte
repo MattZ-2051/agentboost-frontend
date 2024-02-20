@@ -48,13 +48,13 @@
 	};
 </script>
 
-<div class="flex justify-between items-center w-screen max-w-screen-desktop px-12 py-[25px]">
+<div class="flex w-screen max-w-screen-desktop items-center justify-between px-12 py-[25px]">
 	<div class="hover:cursor-pointer" on:click={() => goto('/')}>
 		<LogoWhiteGradient />
 	</div>
-	<div class="w-full flex justify-center">
+	<div class="flex w-full justify-center">
 		<div
-			class="h-full bg-white bg-opacity-0 rounded-[40px] shadow border border-white border-opacity-10 flex items-center justify-center p-1"
+			class="flex h-full items-center justify-center rounded-[40px] border border-white border-opacity-10 bg-white bg-opacity-0 p-1 shadow"
 		>
 			<div>
 				<Button
@@ -124,14 +124,14 @@
 			</div>
 		</div>
 	</div>
-	<div class="flex items-center gap-x-6 h-full relative">
-		<div class="flex gap-x-2 items-center">
-			<img src={dummyProfileImg} alt="profile" class="w-[40px] h-[40px]" />
-			<p class="text-base whitespace-nowrap">{$user?.fullName}</p>
+	<div class="relative flex h-full items-center gap-x-6">
+		<div class="flex items-center gap-x-2">
+			<img src={dummyProfileImg} alt="profile" class="h-[40px] w-[40px]" />
+			<p class="whitespace-nowrap text-base">{$user?.fullName}</p>
 			<div on:click={() => (showPopup = !showPopup)}>
 				<Icon
 					icon="tabler:chevron-down"
-					class="white-icon text-[1.5rem] hover:scale-[1.2] hover:cursor-pointer h-fit"
+					class="white-icon h-fit text-[1.5rem] hover:scale-[1.2] hover:cursor-pointer"
 				/>
 			</div>
 		</div>
@@ -140,7 +140,7 @@
 		{/if}
 	</div>
 </div>
-<div class="h-[1px] bg-[#181818] mb-4 mx-12" />
+<div class="mx-12 mb-4 h-[1px] bg-[#181818]" />
 
 <style lang="postcss">
 	div :global(.white-icon) {

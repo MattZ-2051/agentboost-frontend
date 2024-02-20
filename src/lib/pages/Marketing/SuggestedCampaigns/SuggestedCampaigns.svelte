@@ -3,10 +3,10 @@
 	import CampaignBox from './CampaignBox.svelte';
 </script>
 
-<div class="w-full h-full px-6 py-8 bg-[#141718] rounded-[10px]">
-	<div class="flex items-center gap-x-[6px] mb-6">
+<div class="h-full w-full rounded-[10px] bg-[#141718] px-6 py-8">
+	<div class="mb-6 flex items-center gap-x-[6px]">
 		<CampaignsIcon />
-		<p class="text-white text-2xl font-semibold">Suggested campaigns</p>
+		<p class="text-2xl font-semibold text-white">Suggested campaigns</p>
 	</div>
 	<div class="grid grid-cols-3 gap-x-8">
 		<CampaignBox />

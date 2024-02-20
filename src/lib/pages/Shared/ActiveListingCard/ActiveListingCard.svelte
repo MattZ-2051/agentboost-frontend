@@ -11,29 +11,29 @@
 <Card width="w-[297px]" height="h-full">
 	<div class="relative">
 		<div
-			class="absolute right-8 top-6 bg-[#22272ab3] rounded-[10px] px-2.5 py-[7px] w-[113px] h-[38px] flex items-center"
+			class="absolute right-8 top-6 flex h-[38px] w-[113px] items-center rounded-[10px] bg-[#22272ab3] px-2.5 py-[7px]"
 		>
-			<p class="text-[13px] font-bold mr-2">Active</p>
+			<p class="mr-2 text-[13px] font-bold">Active</p>
 			<SlideToggle />
 		</div>
-		<div class="bg-[#1E2225] p-3 rounded-[10px]">
-			<img class="w-[292px] h-[233px] rounded-[10px] object-cover" src={dummyImg} alt="" />
+		<div class="rounded-[10px] bg-[#1E2225] p-3">
+			<img class="h-[233px] w-[292px] rounded-[10px] object-cover" src={dummyImg} alt="" />
 		</div>
 	</div>
 	<div class="my-5 flex items-center gap-x-2">
 		<LocationIconFilled />
-		<p class="text-white text-base leading-[15px] font-semibold">10044 W Springdale Ct</p>
+		<p class="text-base font-semibold leading-[15px] text-white">10044 W Springdale Ct</p>
 	</div>
 	<div
-		class="w-[265px] h-10 px-4 py-2 bg-[#25282D] text-[#CFD0D5] rounded-[10px] justify-between items-center flex"
+		class="flex h-10 w-[265px] items-center justify-between rounded-[10px] bg-[#25282D] px-4 py-2 text-[#CFD0D5]"
 	>
 		<div class="flex items-center gap-x-4">
 			<DollarIcon />
-			<div class="text-[#CFD0D5] text-xl font-medium leading-normal">379,900</div>
+			<div class="text-xl font-medium leading-normal text-[#CFD0D5]">379,900</div>
 		</div>
 		<EditIcon />
 	</div>
-	<div class="mt-8 mb-4 flex gap-x-4">
+	<div class="mb-4 mt-8 flex gap-x-4">
 		<RadioButton selected={true} label="Pending" />
 		<RadioButton selected={false} label="Sold" />
 	</div>

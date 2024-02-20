@@ -13,7 +13,7 @@
 	{#if showPopup}
 		<div
 			class={`${
-				gridColNum > 5 || gridColNum === 0 ? 'right-[9.5rem] bottom-0' : 'left-[9.5rem]'
+				gridColNum > 5 || gridColNum === 0 ? 'bottom-0 right-[9.5rem]' : 'left-[9.5rem]'
 			} absolute bottom-0 z-50`}
 		>
 			<PostPopup
@@ -26,12 +26,12 @@
 		</div>
 	{/if}
 	<div
-		class="w-[137px] h-7 px-2 py-1 bg-[#0085FF] bg-opacity-10 rounded justify-center items-center gap-2 inline-flex hover:bg-[#48E8ED] relative z-0"
+		class="relative z-0 inline-flex h-7 w-[137px] items-center justify-center gap-2 rounded bg-[#0085FF] bg-opacity-10 px-2 py-1 hover:bg-[#48E8ED]"
 		on:click={() => (showPopup = !showPopup)}
 	>
-		<img class="w-5 h-5 rounded-full" src={facebookIcon} alt="" />
-		<img class="w-5 h-5 rounded-full" src={instagramIcon} alt="" />
-		<img class="w-5 h-5 rounded-full" src={xIcon} alt="" />
-		<div class="text-[#0085FF] text-sm font-medium font-['Inter']">12PM</div>
+		<img class="h-5 w-5 rounded-full" src={facebookIcon} alt="" />
+		<img class="h-5 w-5 rounded-full" src={instagramIcon} alt="" />
+		<img class="h-5 w-5 rounded-full" src={xIcon} alt="" />
+		<div class="font-['Inter'] text-sm font-medium text-[#0085FF]">12PM</div>
 	</div>
 </div>

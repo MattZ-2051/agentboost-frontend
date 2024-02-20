@@ -16,7 +16,7 @@
 			viewBox="0 0 24 24"
 			stroke-width="1.5"
 			stroke="currentColor"
-			class="w-6 h-6"
+			class="h-6 w-6"
 		>
 			<path
 				stroke-linecap="round"
@@ -32,7 +32,7 @@
 			viewBox="0 0 24 24"
 			stroke-width="1.5"
 			stroke="currentColor"
-			class="w-6 h-6"
+			class="h-6 w-6"
 		>
 			<path
 				stroke-linecap="round"
@@ -48,7 +48,7 @@
 			viewBox="0 0 24 24"
 			stroke-width="1.5"
 			stroke="currentColor"
-			class="w-6 h-6"
+			class="h-6 w-6"
 		>
 			<path
 				stroke-linecap="round"

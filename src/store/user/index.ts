@@ -5,17 +5,15 @@ import { decodeJwtToken, handleUserTokenData } from '$utils';
 import type { User } from '$types/models';
 import type { ApiError, AuthTokens } from '$types/api';
 import { goto } from '$app/navigation';
-import { getToastStore } from '@skeletonlabs/skeleton';
+import { getToastStore, type ToastSettings } from '@skeletonlabs/skeleton';
 
 export const updateUser = createEvent<{
 	email: string;
 	id: string;
-	fullName: string;
+	fullName?: string;
 	authTokens: AuthTokens;
 } | null>();
-export const loginFx = createEffect<typeof login, ApiError>(login);
-export const signUpFx = createEffect<typeof signup, ApiError>(signup);
-export const logoutFx = createEffect<typeof logout, ApiError>(logout);
+
 export const getUserProfileFx = createEffect<typeof getUserProfile, ApiError>(getUserProfile);
 export const updateUserProfileFx = createEffect<typeof updateUserProfile, ApiError>(
 	updateUserProfile
@@ -23,6 +21,9 @@ export const updateUserProfileFx = createEffect<typeof updateUserProfile, ApiErr
 export const restoreUserSessionFx = createEffect<typeof restoreUserSession, ApiError>(
 	restoreUserSession
 );
+export const loginFx = createEffect<typeof login, ApiError>(login);
+export const signUpFx = createEffect<typeof signup, ApiError>(signup);
+export const logoutFx = createEffect<typeof logout, ApiError>(logout);
 
 restoreUserSessionFx.doneData.watch((result) => {
 	updateUser(result);
@@ -91,7 +92,7 @@ loginFx.doneData.watch(async (result) => {
 		fullName: jwtData.fullName,
 		authTokens: result
 	});
-	await goto('/home');
+	await goto('/dashboard');
 	// const toast: ToastSettings = {
 	// 	message: `Successfully Logged In! Welcome back ${jwtData.email}`,
 	// 	background: 'variant-filled-success'
@@ -99,27 +100,25 @@ loginFx.doneData.watch(async (result) => {
 	// toastStore.trigger(toast);
 });
 
-loginFx.failData.watch(() => {
-	// const message = error.response?.data?.message;
-	// const toast: ToastSettings = {
-	// 	message: message ? message : 'Login failed',
-	// 	background: 'variant-filled-error'
-	// };
-	// toastStore.trigger(toast);
+loginFx.failData.watch((error) => {
+	const toastStore = getToastStore();
+
+	const message = error.response?.data?.message;
+	const toast: ToastSettings = {
+		message: message ? message : 'Login failed',
+		background: 'variant-filled-error'
+	};
+	toastStore.trigger(toast);
 });
 
 logoutFx.doneData.watch(async () => {
 	updateUser(null);
-	localStorage.removeItem('authTokens');
+	if (localStorage) localStorage.removeItem('authTokens');
 	await goto('/');
-	// const toast: ToastSettings = {
-	// 	message: 'Successfully logged out',
-	// 	background: 'variant-filled-success'
-	// };
-	// // toastStore.trigger(toast);
 });
 
 logoutFx.failData.watch(() => {
+	// const toastStore = getToastStore();
 	// const message = error.response?.data?.message;
 	// const toast: ToastSettings = {
 	// 	message: message ? message : 'Logout failed',

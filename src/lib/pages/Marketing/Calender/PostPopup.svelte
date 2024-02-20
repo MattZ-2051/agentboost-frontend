@@ -8,34 +8,34 @@
 </script>
 
 <div
-	class={`${classes} text-[#CFD0D5] w-[451px] h-full min-h-[296px] bg-[#1E2225] rounded-tl-[10px] rounded-tr-[10px] rounded-br-[10px] shadow border border-white border-opacity-10 py-3 px-6 overflow-hidden`}
+	class={`${classes} h-full min-h-[296px] w-[451px] overflow-hidden rounded-br-[10px] rounded-tl-[10px] rounded-tr-[10px] border border-white border-opacity-10 bg-[#1E2225] px-6 py-3 text-[#CFD0D5] shadow`}
 >
 	<div class="flex w-full justify-between">
 		<div class="flex gap-x-2">
-			<img class="w-6 h-6 rounded-full" src={facebookIcon} />
-			<img class="w-6 h-6 rounded-full" src={instagramIcon} />
-			<img class="w-6 h-6 rounded-full" src={xIcon} />
+			<img class="h-6 w-6 rounded-full" src={facebookIcon} />
+			<img class="h-6 w-6 rounded-full" src={instagramIcon} />
+			<img class="h-6 w-6 rounded-full" src={xIcon} />
 		</div>
 		<div class="flex gap-x-2 text-base font-medium leading-[21px]">
 			<ClockIcon />
 			<p>12:00 PM</p>
 		</div>
 	</div>
-	<div class="w-full h-[0px] opacity-10 border border-white my-2" />
-	<div class="grid grid-cols-2 w-full">
-		<p class="text-sm font-normal text-left leading-snug">
+	<div class="my-2 h-[0px] w-full border border-white opacity-10" />
+	<div class="grid w-full grid-cols-2">
+		<p class="text-left text-sm font-normal leading-snug">
 			Step into tranquility with this charming home in Boise, ID. Experience the beauty of nature in
 			your own private atrium. 🏡🌿 #BoiseRealEstate #HomeSweetHome #AtriumLiving #NatureLovers
 			#SunshineandGreenery
 		</p>
-		<div class="flex w-full h-full justify-center items-center h-full">
-			<img class="w-[170px] h-[170px] rounded-[10px]" src="https://via.placeholder.com/170x170" />
+		<div class="flex h-full h-full w-full items-center justify-center">
+			<img class="h-[170px] w-[170px] rounded-[10px]" src="https://via.placeholder.com/170x170" />
 		</div>
 	</div>
-	<div class="w-full h-[0px] opacity-10 border border-white my-2" />
-	<div class="flex justify-between items-center">
-		<p class="text-[#48E8ED] text-base font-medium leading-[21px] hover:cursor-pointer">Approve</p>
-		<div class="text-white flex gap-x-4">
+	<div class="my-2 h-[0px] w-full border border-white opacity-10" />
+	<div class="flex items-center justify-between">
+		<p class="text-base font-medium leading-[21px] text-[#48E8ED] hover:cursor-pointer">Approve</p>
+		<div class="flex gap-x-4 text-white">
 			<p class="text-base font-medium leading-[21px] hover:cursor-pointer">Delete</p>
 			<p class="text-base font-medium leading-[21px] hover:cursor-pointer">Edit</p>
 		</div>

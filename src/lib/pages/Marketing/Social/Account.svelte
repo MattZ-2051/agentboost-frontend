@@ -19,8 +19,8 @@
 >
 	<div class="flex gap-x-4">
 		<div class="relative">
-			<img class="w-[47px] h-[47px] rounded-full" src="https://via.placeholder.com/47x47" alt="" />
-			<img alt="" src={icon} class="rounded-full w-6 h-6 absolute bottom-0 -right-2" />
+			<img class="h-[47px] w-[47px] rounded-full" src="https://via.placeholder.com/47x47" alt="" />
+			<img alt="" src={icon} class="absolute -right-2 bottom-0 h-6 w-6 rounded-full" />
 		</div>
 		<div class="text-sm">
 			<p class="mb-1">@jacob.jones</p>

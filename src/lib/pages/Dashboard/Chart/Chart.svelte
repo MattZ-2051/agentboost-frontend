@@ -173,5 +173,5 @@
 </script>
 
 <div>
-	<canvas id={chartId} class={`${classes} w-[500px] h-[147px]`} />
+	<canvas id={chartId} class={`${classes} h-[147px] w-[500px]`} />
 </div>

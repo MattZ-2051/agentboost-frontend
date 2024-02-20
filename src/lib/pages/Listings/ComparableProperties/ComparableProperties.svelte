@@ -4,12 +4,12 @@
 	import ComparableCard from './ComparableCard.svelte';
 </script>
 
-<div class="bg-[#151719] rounded-[20px] w-full h-full p-8 flex flex-col">
+<div class="flex h-full w-full flex-col rounded-[20px] bg-[#151719] p-8">
 	<div class="flex items-center gap-x-2">
 		<ComparablePropertiesIcon />
-		<p class="text-[#FFF] font-semibold text-[24px]">Comparable Properties</p>
+		<p class="text-[24px] font-semibold text-[#FFF]">Comparable Properties</p>
 	</div>
-	<div class="w-full flex justify-start">
+	<div class="flex w-full justify-start">
 		<Slider length={10} classes="gap-x-8 w-[88vw]">
 			<ComparableCard />
 		</Slider>

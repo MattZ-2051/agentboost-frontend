@@ -138,25 +138,25 @@
 	};
 </script>
 
-<div class="w-full rounded-[20px] p-6 bg-[#151719] flex justify-center">
+<div class="flex w-full justify-center rounded-[20px] bg-[#151719] p-6">
 	<div class="h-[1288px] w-full">
 		<div class="flex justify-between">
 			<div class="flex items-center gap-x-[6px]">
 				<CalenderIcon />
-				<p class="text-white text-2xl font-semibold">Your montly marketing calender</p>
+				<p class="text-2xl font-semibold text-white">Your montly marketing calender</p>
 			</div>
 			<div class="flex items-center gap-x-4">
 				<h1 class="text-xl">{month} {year}</h1>
 				<div class="flex items-center gap-x-6">
 					<div
-						class="hover:cursor-pointer hover:scale-110"
+						class="hover:scale-110 hover:cursor-pointer"
 						on:click={goToPrevMonth}
 						on:keydown={goToPrevMonth}
 					>
 						<ArrowLeft />
 					</div>
 					<div
-						class="hover:cursor-pointer hover:scale-110"
+						class="hover:scale-110 hover:cursor-pointer"
 						on:click={goToNextMonth}
 						on:keydown={goToNextMonth}
 					>
@@ -167,13 +167,13 @@
 		</div>
 		<div class="mt-12" />
 		<ul class="weekdays grid grid-cols-7 font-[500]">
-			<li class="!border-r-[0.937px] !border-l-0 !border-t-0 !border-b-0">SUN</li>
-			<li class="!border-t-0 !border-b-0 !border-l-0 !border-r-[0.937px]">MON</li>
-			<li class="!border-t-0 !border-b-0 !border-l-0 !border-r-[0.937px]">TUE</li>
-			<li class="!border-t-0 !border-b-0 !border-l-0 !border-r-[0.937px]">WED</li>
-			<li class="!border-t-0 !border-b-0 !border-l-0 !border-r-[0.937px]">THUR</li>
-			<li class="!border-t-0 !border-b-!border-b-0 !border-l-0 !border-r-[0.937px]">FRI</li>
-			<li class="border-l !border-t-0 !border-r-0 !border-b-0">SAT</li>
+			<li class="!border-b-0 !border-l-0 !border-r-[0.937px] !border-t-0">SUN</li>
+			<li class="!border-b-0 !border-l-0 !border-r-[0.937px] !border-t-0">MON</li>
+			<li class="!border-b-0 !border-l-0 !border-r-[0.937px] !border-t-0">TUE</li>
+			<li class="!border-b-0 !border-l-0 !border-r-[0.937px] !border-t-0">WED</li>
+			<li class="!border-b-0 !border-l-0 !border-r-[0.937px] !border-t-0">THUR</li>
+			<li class="!border-b-!border-b-0 !border-l-0 !border-r-[0.937px] !border-t-0">FRI</li>
+			<li class="!border-b-0 !border-r-0 !border-t-0 border-l">SAT</li>
 		</ul>
 		<ul class="days grid grid-cols-7">
 			{#each calender as item, i (item.id)}
@@ -181,9 +181,9 @@
 					<div
 						class={`cell  ${
 							i === 0
-								? '!border-l-[0.937px] !border-r-[0.937px] !border-b-[0.937px] !border-t-0'
+								? '!border-b-[0.937px] !border-l-[0.937px] !border-r-[0.937px] !border-t-0'
 								: i < 6
-									? '!border-r-[0.937px] !border-l-0 !border-b-[0.937px] !border-t-0'
+									? '!border-b-[0.937px] !border-l-0 !border-r-[0.937px] !border-t-0'
 									: '!border-none'
 						}`}
 					>
@@ -191,10 +191,10 @@
 					</div>
 				{:else}
 					<div
-						class={`cell  ${'flex flex-col h-full !border-l-0 !border-r-[0.937px] !border-b-[0.937px] !border-t-0'}`}
+						class={`cell  ${'flex h-full flex-col !border-b-[0.937px] !border-l-0 !border-r-[0.937px] !border-t-0'}`}
 					>
 						<span
-							class="flex justify-between w-full items-start !text-neutral-400 !text-opacity-70"
+							class="flex w-full items-start justify-between !text-neutral-400 !text-opacity-70"
 						>
 							{i - firstDayIndex + 1}
 							<Add />
@@ -212,7 +212,7 @@
 									e
 								)}
 							id={`${i - firstDayIndex + 1}`}
-							class="flex flex-col h-full justify-end"
+							class="flex h-full flex-col justify-end"
 						>
 							{#each item.items as info, x (info.id)}
 								{#if info.month === month}

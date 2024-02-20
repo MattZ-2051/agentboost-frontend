@@ -111,35 +111,35 @@
 	$: selectedTab = featureTabs[0];
 </script>
 
-<div class="w-full h-full relative xl:p-12 p-12 !font-[Made-Evolve]">
+<div class="relative h-full w-full p-12 !font-[Made-Evolve] xl:p-12">
 	<div class="elipse absolute" />
-	<section class="w-full flex flex-col items-center justify-center">
+	<section class="flex w-full flex-col items-center justify-center">
 		<div class="flex flex-col items-center justify-center">
-			<div class="w-[278px] h-[39px] relative z-30 mt-8">
+			<div class="relative z-30 mt-8 h-[39px] w-[278px]">
 				<div
-					class="text-base w-fit h-[39px] pl-[75px] pr-4 pt-[9px] pb-2.5 left-0 top-0 absolute bg-white bg-opacity-10 rounded-[50px] shadow backdrop-blur-[7.22px] justify-start items-center inline-flex"
+					class="absolute left-0 top-0 inline-flex h-[39px] w-fit items-center justify-start rounded-[50px] bg-white bg-opacity-10 pb-2.5 pl-[75px] pr-4 pt-[9px] text-base shadow backdrop-blur-[7.22px]"
 				>
-					<div class="text-white text-base leading-tight">Free beta now available</div>
+					<div class="text-base leading-tight text-white">Free beta now available</div>
 				</div>
 				<div
-					class="w-[65px] flex justify-center h-[35px] left-[2px] top-[2px] absolute bg-white bg-opacity-10 rounded-[50px] shadow backdrop-blur-[7.22px]"
+					class="absolute left-[2px] top-[2px] flex h-[35px] w-[65px] justify-center rounded-[50px] bg-white bg-opacity-10 shadow backdrop-blur-[7.22px]"
 				/>
-				<div class="left-[20px] top-[9px] absolute text-white text-base text-center leading-tight">
+				<div class="absolute left-[20px] top-[9px] text-center text-base leading-tight text-white">
 					New
 				</div>
 			</div>
 			<div
-				class="mt-8 flex flex-col items-center xl:text-[90px] text-[40px] w-full leading-tight xl:leading-[6rem] z-30 text-white"
+				class="z-30 mt-8 flex w-full flex-col items-center text-[40px] leading-tight text-white xl:text-[90px] xl:leading-[6rem]"
 			>
-				<p class="whitespace-nowrap hidden xl:inline-block">We make your real</p>
+				<p class="hidden whitespace-nowrap xl:inline-block">We make your real</p>
 				<p class="-ml-[15rem] hidden xl:inline-block">
 					estate business <span id="text1" class="textGradient1" />
 					<span id="text2" class="textGradient1" />
 				</p>
 				<!-- mobile styles  -->
-				<p class="xl:hidden inline-block whitespace-nowrap">We make your</p>
-				<p class="xl:hidden inline-block text-center">real estate</p>
-				<p class="xl:hidden inline-block whitespace-nowrap">
+				<p class="inline-block whitespace-nowrap xl:hidden">We make your</p>
+				<p class="inline-block text-center xl:hidden">real estate</p>
+				<p class="inline-block whitespace-nowrap xl:hidden">
 					business <span class="textGradient1">faster </span>
 					<!-- <span id="text1" class="textGradient1" /> -->
 					<!-- <span id="text2" class="textGradient1" /> -->
@@ -149,7 +149,7 @@
 			</div>
 		</div>
 		<p
-			class="text-[#C0C4DA] text-center z-20 text-[18px] xl:text-[22px] font-light mt-6 mb-12 whitespace-nowrap leading-normal"
+			class="z-20 mb-12 mt-6 whitespace-nowrap text-center text-[18px] font-light leading-normal text-[#C0C4DA] xl:text-[22px]"
 		>
 			The ultimate tech suite for real estate <br class="inline-block md:hidden" /> professionals has
 			arrived.
@@ -158,29 +158,29 @@
 		<Button label="Join Free Beta" variant="landing-dark" classes="!z-[38]" />
 		<div class="relative w-full">
 			<div class="flex justify-center">
-				<div class="w-[40rem] absolute h-full z-10 mask -rotate-90 -left-[8rem]" />
-				<div class="w-[40rem] h-full z-10 mask rotate-90 -right-[12rem] absolute" />
-				<div class="w-full absolute h-[35rem] xl:h-[40rem] mask rotate-180 z-30 bottom-0" />
+				<div class="mask absolute -left-[8rem] z-10 h-full w-[40rem] -rotate-90" />
+				<div class="mask absolute -right-[12rem] z-10 h-full w-[40rem] rotate-90" />
+				<div class="mask absolute bottom-0 z-30 h-[35rem] w-full rotate-180 xl:h-[40rem]" />
 				<img
 					src={cityVector}
 					alt=""
-					class="xl:w-[80rem] xl:h-[42rem] h-[40rem] -mt-32 xl:mt-0 z-20 xl:z-0 w-full xl:inline-block object-cover"
+					class="z-20 -mt-32 h-[40rem] w-full object-cover xl:z-0 xl:mt-0 xl:inline-block xl:h-[42rem] xl:w-[80rem]"
 				/>
 				<p
-					class="text-white opacity-40 text-center text-lg font-light w-full bottom-[10rem] xl:bottom-[13rem] z-[38] absolute"
+					class="absolute bottom-[10rem] z-[38] w-full text-center text-lg font-light text-white opacity-40 xl:bottom-[13rem]"
 				>
 					BACKED BY THE BEST
 				</p>
 			</div>
 		</div>
 	</section>
-	<section class="w-full flex flex-col items-center justify-center mt-40 relative">
+	<section class="relative mt-40 flex w-full flex-col items-center justify-center">
 		<BackgroundGradient />
-		<p class="text-[30px] xl:text-6xl text-center text-white leading-tight">
-			The <span class="textGradient2">Power of AI </span> in <br class="xl:hidden inline-block" /> real
+		<p class="text-center text-[30px] leading-tight text-white xl:text-6xl">
+			The <span class="textGradient2">Power of AI </span> in <br class="inline-block xl:hidden" /> real
 			estate
 		</p>
-		<div class="text-center mt-6 text-[19px] sm:text-lg text-[#C0C4DA] font-light mb-[34px]">
+		<div class="mb-[34px] mt-6 text-center text-[19px] font-light text-[#C0C4DA] sm:text-lg">
 			<p class="whitespace-nowrap">
 				Explore the tools that empower <br class="inline-block xl:hidden" /> you to work smarter &
 				faster
@@ -188,19 +188,19 @@
 				to <br class="inline-block xl:hidden" /> achieve your goals.
 			</p>
 		</div>
-		<div class="p-1 bg-zinc-950 bg-opacity-0 rounded-[20px] border border-white border-opacity-5">
+		<div class="rounded-[20px] border border-white border-opacity-5 bg-zinc-950 bg-opacity-0 p-1">
 			<div
-				class="xl:w-[1188px] xl:h-[643px] h-[225px] md:h-[400px] w-full md:w-[600px] lg:w-[800px] sm:w-[600px] bg-white bg-opacity-0 rounded-[19px] shadow border border-white border-opacity-40"
+				class="h-[225px] w-full rounded-[19px] border border-white border-opacity-40 bg-white bg-opacity-0 shadow sm:w-[600px] md:h-[400px] md:w-[600px] lg:w-[800px] xl:h-[643px] xl:w-[1188px]"
 			>
-				<video controls width="100%" class="rounded-[19px] h-full w-full">
+				<video controls width="100%" class="h-full w-full rounded-[19px]">
 					<track kind="captions" />
 				</video>
 			</div>
 		</div>
 		<!-- Mobile styles for under video feature section  -->
-		<div class="xl:hidden w-full flex justify-center just sm:px-0 pt-4">
+		<div class="just flex w-full justify-center pt-4 sm:px-0 xl:hidden">
 			<div
-				class="p-8 grid grid-cols-2 lg:w-[800px] sm:w-[600px] h-[225px] md:w-[600px] items-center md:h-[400px] text-lg gap-y-8 gap-x-8 w-full text-center justify-center border-opacity-10 bg-black bg-opacity-0 rounded-[20px] shadow border border-white backdrop-blur-[14.35px]"
+				class="grid h-[225px] w-full grid-cols-2 items-center justify-center gap-x-8 gap-y-8 rounded-[20px] border border-white border-opacity-10 bg-black bg-opacity-0 p-8 text-center text-lg shadow backdrop-blur-[14.35px] sm:w-[600px] md:h-[400px] md:w-[600px] lg:w-[800px]"
 			>
 				<p class="whitespace-nowrap">140 million+ <br /> property records</p>
 				<p class="whitespace-nowrap">AI driven <br /> Property insights</p>
@@ -209,8 +209,8 @@
 			</div>
 		</div>
 		<!-- Desktop styles for under video feature section -->
-		<div class="mt-12 hidden xl:flex xl:w-[1188px] justify-center w-full">
-			<div class="flex items-center leading-9 text-[2rem] text-white font-normal">
+		<div class="mt-12 hidden w-full justify-center xl:flex xl:w-[1188px]">
+			<div class="flex items-center text-[2rem] font-normal leading-9 text-white">
 				<p class="whitespace-nowrap">140 million+ <br /> property records</p>
 				<div class="mx-10 hidden xl:inline-block">
 					<LandingSeperator />
@@ -228,19 +228,19 @@
 			</div>
 		</div>
 	</section>
-	<section class="mt-20 xl:mt-40 text-white relative z-50 bg-transparent">
-		<p class="text-[30px] xl:text-6xl text-center leading-normal whitespace-nowrap">
+	<section class="relative z-50 mt-20 bg-transparent text-white xl:mt-40">
+		<p class="whitespace-nowrap text-center text-[30px] leading-normal xl:text-6xl">
 			Effortless <span class="textGradient5">
 				<br class="inline-block xl:hidden" /> expertise & exposure</span
 			>
 		</p>
-		<div class="text-center mt-6 mb-[34px] text-lg text-[#C0C4DA] font-light">
+		<div class="mb-[34px] mt-6 text-center text-lg font-light text-[#C0C4DA]">
 			<p>Get your competitive advantage. <br class="inline-block xl:hidden" /> Get Boosted.</p>
 		</div>
-		<div class="w-full flex flex-col items-center justify-center">
+		<div class="flex w-full flex-col items-center justify-center">
 			<div class="rounded-[40px] border border-white border-opacity-10">
 				<div
-					class="m-[.15rem] xl:m-[.25rem] rounded-[40px] border border-white border-opacity-10 flex"
+					class="m-[.15rem] flex rounded-[40px] border border-white border-opacity-10 xl:m-[.25rem]"
 				>
 					{#each featureTabs as item, i}
 						<Button
@@ -257,20 +257,20 @@
 		</div>
 		<FeatureTabs {selectedTab} />
 	</section>
-	<section class="xl:mt-40 mt-20 text-white relative">
-		<div class="w-full flex justify-center flex-col items-center">
+	<section class="relative mt-20 text-white xl:mt-40">
+		<div class="flex w-full flex-col items-center justify-center">
 			<p
-				class="text-neutral-100 text-center text-[30px] xl:text-6xl leading-normal xl:leading-[75px]"
+				class="text-center text-[30px] leading-normal text-neutral-100 xl:text-6xl xl:leading-[75px]"
 			>
 				Message from <br /> <span class="textGradient2">the founders</span>
 			</p>
 			<div
-				class="p-1 bg-zinc-950 bg-opacity-0 rounded-[20px] border border-white border-opacity-5 mt-12"
+				class="mt-12 rounded-[20px] border border-white border-opacity-5 bg-zinc-950 bg-opacity-0 p-1"
 			>
 				<div
-					class="leading-normal w-full h-full xl:w-[1188px] md:w-[600px] lg:w-[800px] xl:h-[302px] flex p-4 xl:p-12 items-center border-opacity-10 bg-opacity-30 bg-black rounded-[18px] shadow border border-white backdrop-blur-[14.35px]"
+					class="flex h-full w-full items-center rounded-[18px] border border-white border-opacity-10 bg-black bg-opacity-30 p-4 leading-normal shadow backdrop-blur-[14.35px] md:w-[600px] lg:w-[800px] xl:h-[302px] xl:w-[1188px] xl:p-12"
 				>
-					<div class="relative z-50 text-[18px] xl:text-2xl text-slate font-light">
+					<div class="relative z-50 text-[18px] font-light text-slate xl:text-2xl">
 						<p class="">
 							At Agent Boost, our mission is to craft cutting-edge tools specifically tailored for
 							realtors like you. We recognize that optimizing your efficiency is pivotal to your
@@ -284,36 +284,36 @@
 					</div>
 				</div>
 			</div>
-			<div class="mt-12 flex xl:flex-row flex-col items-center justify-center gap-x-8 w-full">
+			<div class="mt-12 flex w-full flex-col items-center justify-center gap-x-8 xl:flex-row">
 				<div
-					class="p-1 w-full md:w-fit bg-zinc-950 bg-opacity-0 rounded-[20px] border border-white border-opacity-10"
+					class="w-full rounded-[20px] border border-white border-opacity-10 bg-zinc-950 bg-opacity-0 p-1 md:w-fit"
 				>
-					<div class="md:w-[576px] h-[179px] relative z-10 cta rounded-[18px]">
-						<div class="absolute p-4 flex justify-center items-center w-full h-full">
+					<div class="cta relative z-10 h-[179px] rounded-[18px] md:w-[576px]">
+						<div class="absolute flex h-full w-full items-center justify-center p-4">
 							<img
-								class="w-[133px] xl:h-[155px] h-full rounded-[17px] object-cover"
+								class="h-full w-[133px] rounded-[17px] object-cover xl:h-[155px]"
 								src={sam}
 								alt=""
 							/>
-							<div class="ml-6 whitespace-nowrap xl:inline-block hidden">
-								<p class="text-white text-[22px] xl:text-[28px] leading-[35px]">Sam Hamilton</p>
-								<p class="text-[#8298AB] text-[15px] xl:text-[17px] font-normal leading-[25px]">
+							<div class="ml-6 hidden whitespace-nowrap xl:inline-block">
+								<p class="text-[22px] leading-[35px] text-white xl:text-[28px]">Sam Hamilton</p>
+								<p class="text-[15px] font-normal leading-[25px] text-[#8298AB] xl:text-[17px]">
 									Founder & CEO
 								</p>
 							</div>
-							<div class="hidden justify-end mr-8 w-full gap-x-4 xl:flex">
+							<div class="mr-8 hidden w-full justify-end gap-x-4 xl:flex">
 								<Instagram />
 								<Twitter />
 							</div>
 							<!-- Mobile Styles for founder section -->
-							<div class="xl:hidden ml-6 flex flex-col h-full w-full">
+							<div class="ml-6 flex h-full w-full flex-col xl:hidden">
 								<div class="whitespace-nowrap">
-									<p class="text-white text-[22px] xl:text-[28px] leading-[35px]">Sam Hamilton</p>
-									<p class="text-[#8298AB] text-[15px] xl:text-[17px] font-normal leading-[25px]">
+									<p class="text-[22px] leading-[35px] text-white xl:text-[28px]">Sam Hamilton</p>
+									<p class="text-[15px] font-normal leading-[25px] text-[#8298AB] xl:text-[17px]">
 										Founder & CEO
 									</p>
 								</div>
-								<div class="flex flex-col w-full h-full justify-end">
+								<div class="flex h-full w-full flex-col justify-end">
 									<div class="flex gap-x-2">
 										<Instagram />
 										<Twitter />
@@ -325,34 +325,34 @@
 					</div>
 				</div>
 				<div
-					class="p-1 mt-12 xl:mt-0 md:w-fit w-full bg-zinc-950 bg-opacity-0 rounded-[20px] border border-white border-opacity-10"
+					class="mt-12 w-full rounded-[20px] border border-white border-opacity-10 bg-zinc-950 bg-opacity-0 p-1 md:w-fit xl:mt-0"
 				>
-					<div class="md:w-[576px] h-[179px] relative z-10 cta rounded-[18px]">
-						<div class="absolute p-4 flex justify-center items-center w-full h-full">
+					<div class="cta relative z-10 h-[179px] rounded-[18px] md:w-[576px]">
+						<div class="absolute flex h-full w-full items-center justify-center p-4">
 							<img
-								class="w-[133px] xl:h-[155px] h-full rounded-[17px] object-cover"
+								class="h-full w-[133px] rounded-[17px] object-cover xl:h-[155px]"
 								src={matt}
 								alt=""
 							/>
-							<div class="ml-6 whitespace-nowrap xl:inline-block hidden">
-								<p class="text-white text-[22px] xl:text-[28px] leading-[35px]">Matt Zamora</p>
-								<p class="text-[#8298AB] text-[15px] xl:text-[17px] font-normal leading-[25px]">
+							<div class="ml-6 hidden whitespace-nowrap xl:inline-block">
+								<p class="text-[22px] leading-[35px] text-white xl:text-[28px]">Matt Zamora</p>
+								<p class="text-[15px] font-normal leading-[25px] text-[#8298AB] xl:text-[17px]">
 									Tech Lead
 								</p>
 							</div>
-							<div class="hidden justify-end mr-8 w-full gap-x-4 xl:flex">
+							<div class="mr-8 hidden w-full justify-end gap-x-4 xl:flex">
 								<Instagram />
 								<Twitter />
 							</div>
 							<!-- Mobile Styles for founder section -->
-							<div class="xl:hidden ml-6 flex flex-col h-full w-full">
+							<div class="ml-6 flex h-full w-full flex-col xl:hidden">
 								<div class="whitespace-nowrap">
-									<p class="text-white text-[22px] xl:text-[28px] leading-[35px]">Matt Zamora</p>
-									<p class="text-[#8298AB] text-[15px] xl:text-[17px] font-normal leading-[25px]">
+									<p class="text-[22px] leading-[35px] text-white xl:text-[28px]">Matt Zamora</p>
+									<p class="text-[15px] font-normal leading-[25px] text-[#8298AB] xl:text-[17px]">
 										Tech Lead
 									</p>
 								</div>
-								<div class="flex flex-col w-full h-full justify-end">
+								<div class="flex h-full w-full flex-col justify-end">
 									<div class="flex gap-x-2">
 										<Instagram />
 										<Twitter />
@@ -366,20 +366,20 @@
 			</div>
 		</div>
 	</section>
-	<section class="xl:mt-40 mt-20 mb-12 flex justify-center">
+	<section class="mb-12 mt-20 flex justify-center xl:mt-40">
 		<div
-			class="p-1 bg-zinc-950 bg-opacity-0 w-full md:w-fit rounded-[20px] border border-white border-opacity-10"
+			class="w-full rounded-[20px] border border-white border-opacity-10 bg-zinc-950 bg-opacity-0 p-1 md:w-fit"
 		>
-			<div class="md:h-[500px] relative xl:w-[1188px] md:w-[600px] lg:w-[800px] w-full h-[388px]">
-				<div class="absolute top-0 w-full h-full rounded-[20px] cta">
-					<div class="w-full h-full relative flex justify-center items-center">
+			<div class="relative h-[388px] w-full md:h-[500px] md:w-[600px] lg:w-[800px] xl:w-[1188px]">
+				<div class="cta absolute top-0 h-full w-full rounded-[20px]">
+					<div class="relative flex h-full w-full items-center justify-center">
 						<div class="absolute z-50 flex items-center">
-							<div class="xl:mr-32 px-4 py-8">
-								<p class="text-[30px] xl:text-[3.6rem] font-normal leading-normal text-white">
+							<div class="px-4 py-8 xl:mr-32">
+								<p class="text-[30px] font-normal leading-normal text-white xl:text-[3.6rem]">
 									Ready to boost your <br />
 									<span class="textGradient5">real estate business?</span>
 								</p>
-								<p class="mt-4 text-[18px] text-slate font-light">
+								<p class="mt-4 text-[18px] font-light text-slate">
 									Seize the opportunity to elevate your real estate business and <br
 										class="hidden xl:inline-block"
 									/>
@@ -388,7 +388,7 @@
 								</p>
 								<Button variant="landing" label="Get started" classes="text-white mt-8 xl:mt-12" />
 							</div>
-							<div class="xl:inline-block hidden">
+							<div class="hidden xl:inline-block">
 								<LogoIconBlue />
 							</div>
 						</div>

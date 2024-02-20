@@ -17,23 +17,23 @@
 
 <Card width="w-[402px]" height="h-full" classes="!p-4">
 	<div>
-		<div class="flex items-center w-full justify-between">
+		<div class="flex w-full items-center justify-between">
 			<div class="flex items-center gap-x-4">
-				<div class="bg-[#2F3336] w-11 h-11 rounded-full flex items-center justify-center">
+				<div class="flex h-11 w-11 items-center justify-center rounded-full bg-[#2F3336]">
 					<BuyerProfileIcon />
 				</div>
-				<p class="text-white font-semibold text-lg">Buyer name here</p>
+				<p class="text-lg font-semibold text-white">Buyer name here</p>
 			</div>
 			<div class="flex items-center gap-x-4">
 				<ShareIcon iconSize={16} />
 				<TrashIcon iconSize={16} />
 			</div>
 		</div>
-		<div class="w-full h-[128px] bg-[#2E2F37] rounded-[10px] my-6 p-4 pr-3 relative">
-			<div class="w-full scrollbarStyle overflow-y-scroll h-full">
-				<div class="flex gap-x-2 relative">
+		<div class="relative my-6 h-[128px] w-full rounded-[10px] bg-[#2E2F37] p-4 pr-3">
+			<div class="scrollbarStyle h-full w-full overflow-y-scroll">
+				<div class="relative flex gap-x-2">
 					{#if buyers.length > 1}
-						<div class="flex flex-col relative mt-3">
+						<div class="relative mt-3 flex flex-col">
 							{#each Array.from({ length: buyers.length }) as _, i}
 								<!-- <div class={`${i > 0 ? '-mt-3' : ''}`}>
 								<svg
@@ -55,25 +55,25 @@
 								</svg>
 							</div> -->
 								<div
-									class={` border-[#515361] h-[36px] border-t w-3 ${
+									class={` h-[36px] w-3 border-t border-[#515361] ${
 										i + 1 === buyers.length ? '' : 'border-l'
 									}`}
 								/>
 							{/each}
 						</div>
 					{/if}
-					<div class="flex flex-col gap-y-4 ml-2">
+					<div class="ml-2 flex flex-col gap-y-4">
 						{#each buyers as buyer, i}
 							<div class="flex gap-x-2">
 								<BuyersIcon iconSize={20} />
-								<p class="text-sm text-[#C6C7CD] font-medium">{buyer}</p>
+								<p class="text-sm font-medium text-[#C6C7CD]">{buyer}</p>
 							</div>
 						{/each}
 					</div>
 				</div>
 			</div>
 		</div>
-		<div class="flex gap-x-6 -mb-1">
+		<div class="-mb-1 flex gap-x-6">
 			<Button
 				label="Add to buyer"
 				bg="bg-[#171A1C]"

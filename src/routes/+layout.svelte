@@ -15,6 +15,7 @@
 	import NewListingDrawer from '$lib/pages/Listings/Drawers/NewListingDrawer.svelte';
 	import NewBuyersDrawer from '$lib/pages/Buyers/Drawers/NewBuyersDrawer.svelte';
 	import { onMount } from 'svelte';
+	import { $user as user } from '$store/user';
 
 	storePopup.set({ computePosition, autoUpdate, offset, shift, flip, arrow });
 
@@ -46,6 +47,8 @@
 			// document.getElementById('fb-root').appendChild(e);
 		})();
 	});
+
+	console.log('user', $user);
 </script>
 
 <div class="dark bg-surface-500" data-theme="agentboost-theme">

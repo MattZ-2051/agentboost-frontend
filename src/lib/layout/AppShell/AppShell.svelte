@@ -15,21 +15,16 @@
 	$: isAuth = $page.url.pathname.includes('signup') || $page.url.pathname.includes('login');
 </script>
 
-<AppShell
-	slotHeader="sticky"
-	on:scroll={scrollHandler}
-	regionPage="justify-center items-center overflow-hidden"
-	slotSidebarLeft="w-0 lg:w-0"
->
-	{#if isLanding}
-		<LandingHeader />
-	{:else if isAuth}
-		<AuthHeader />
-	{/if}
-	<div class={`h-full ${isLanding ? `` : `min-w-screen max-w-screen-desktop px-12`}`}>
-		<slot />
-	</div>
-	{#if isLanding}
-		<LandingFooter />
-	{/if}
-</AppShell>
+{#if isLanding}
+	<LandingHeader />
+{:else if isAuth}
+	<AuthHeader />
+{:else}
+	<AppHeader />
+{/if}
+<div class={`h-full ${isLanding ? `` : `min-w-screen max-w-screen-desktop px-12`}`}>
+	<slot />
+</div>
+{#if isLanding}
+	<LandingFooter />
+{/if}

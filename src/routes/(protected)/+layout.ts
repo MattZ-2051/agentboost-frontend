@@ -13,16 +13,15 @@ export async function load() {
 		});
 
 		await restoreUserSessionFx(data.authTokens.access);
+	} else {
+		const redirect =
+			window.location.pathname.includes('signup') ||
+			window.location.pathname.includes('login') ||
+			window.location.pathname.length === 1;
+		if (!redirect) {
+			window.location.pathname = '/';
+		}
 	}
-	// } else {
-	// 	const redirect =
-	// 		window.location.pathname.includes('signup') ||
-	// 		window.location.pathname.includes('login') ||
-	// 		window.location.pathname.length === 1;
-	// 	if (!redirect) {
-	// 		window.location.pathname = '/';
-	// 	}
-	// }
 	return {};
 }
 

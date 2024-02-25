@@ -15,7 +15,7 @@
 	];
 </script>
 
-<Card width="w-[402px]" height="h-full" classes="!p-4">
+<Card width="w-[402px]" height="h-[320px]" classes="!p-4">
 	<div>
 		<div class="flex w-full items-center justify-between">
 			<div class="flex items-center gap-x-4">

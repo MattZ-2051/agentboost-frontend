@@ -7,12 +7,10 @@
 	import Feedback from '$lib/pages/Dashboard/Feedback/Feedback.svelte';
 	import Box from '$lib/components/Box/Box.svelte';
 	import { $user as user } from '$store/user';
-
-	console.log('user', $user);
 </script>
 
 {#if $user}
-	<div>
+	<div class="relative h-full w-full pb-12">
 		<p class="text-2xl font-semibold text-white">
 			Welcome <span class="textGradient">{$user.fullName}</span>
 		</p>

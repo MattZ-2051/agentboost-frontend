@@ -34,7 +34,7 @@
 	const tabItems = [{ label: 'Active' }, { label: 'Inactive' }, { label: 'Incoming' }];
 </script>
 
-<div class="relative h-full w-full">
+<div class="relative h-full w-full pb-12">
 	<div class="mb-4 flex items-start justify-between">
 		<h1 class="text-[24px] font-semibold">My Listings</h1>
 		<Button
@@ -68,9 +68,7 @@
 			<GridDropdown showContent={showGrid} />
 		</div>
 	</div>
-	<div
-		class="mb-40 mt-8 flex w-full flex-grow flex-wrap justify-start gap-x-12 gap-y-8 overflow-y-auto"
-	>
+	<div class="mt-8 flex w-full flex-grow flex-wrap justify-start gap-x-12 gap-y-8 overflow-y-auto">
 		<ListingCard address="10044 W Springdale Ct" status="Active" />
 		<ListingCard address="10044 W Springdale Ct" status="Active" />
 		<ListingCard address="10044 W Springdale Ct" status="Active" />

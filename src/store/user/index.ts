@@ -5,7 +5,6 @@ import { decodeJwtToken, handleUserTokenData } from '$utils';
 import type { User } from '$types/models';
 import type { ApiError, AuthTokens } from '$types/api';
 import { goto } from '$app/navigation';
-import { getToastStore, type ToastSettings } from '@skeletonlabs/skeleton';
 
 export const updateUser = createEvent<{
 	email: string;
@@ -65,22 +64,12 @@ signUpFx.doneData.watch(async (result) => {
 		fullName: jwtData.fullName,
 		authTokens: result
 	});
-	const toastStore = getToastStore();
-
-	toastStore.trigger({
-		message: `Successfully signup up with email ${jwtData.email}`,
-		background: 'variant-filled-success'
-	});
 	await goto('/dashboard');
 });
 
-signUpFx.failData.watch(() => {
-	// const message = error.response?.data?.message;
-	// const toast: ToastSettings = {
-	// 	message: message ? message : 'Signup failed',
-	// 	background: 'variant-filled-error'
-	// };
-	// // toastStore.trigger(toast);
+signUpFx.failData.watch((error) => {
+	console.log('here');
+	return error;
 });
 
 loginFx.doneData.watch(async (result) => {
@@ -101,14 +90,7 @@ loginFx.doneData.watch(async (result) => {
 });
 
 loginFx.failData.watch((error) => {
-	const toastStore = getToastStore();
-
-	const message = error.response?.data?.message;
-	const toast: ToastSettings = {
-		message: message ? message : 'Login failed',
-		background: 'variant-filled-error'
-	};
-	toastStore.trigger(toast);
+	return error;
 });
 
 logoutFx.doneData.watch(async () => {

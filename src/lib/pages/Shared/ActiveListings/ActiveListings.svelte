@@ -4,11 +4,9 @@
 	import ActiveListingCard from '../ActiveListingCard/ActiveListingCard.svelte';
 </script>
 
-<Box width="w-full" height="h-full" bgColor="bg-[#151719]" classes="max-w-[95vw] p-6">
-	<div class="w-full">
-		<div class="flex items-center gap-x-4">
-			<p class="text-[20px] font-semibold text-white">Active Listings</p>
-		</div>
+<Box width="max-w-[95vw]" height="h-full" bgColor="bg-[#151719]" classes="p-6">
+	<div class="flex items-center gap-x-4">
+		<p class="text-[20px] font-semibold text-white">Active Listings</p>
 	</div>
 	<div class="flex justify-start">
 		<Slider length={10}>

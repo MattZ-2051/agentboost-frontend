@@ -71,7 +71,7 @@
 		<div class="mt-6">
 			<CurrentCalender />
 		</div>
-		<div class="mt-6">
+		<div class="mt-6 flex w-full justify-center">
 			<ActiveListings />
 		</div>
 		<div class="mt-6 grid h-full w-full grid-cols-3 gap-x-6">

@@ -4,7 +4,7 @@
 	import Button from '$lib/components/Button/Button.svelte';
 	import LogoutIcon from '$lib/assets/svg/LogoutIcon.svelte';
 	import { goto } from '$app/navigation';
-	// import { $user as user, logoutFx } from '$store/user';
+	import { $user as user, logoutFx } from '$store/user';
 	import { clickOutside } from '$utils';
 
 	$: iconHover = false;
@@ -13,9 +13,9 @@
 	const username = 'jacobjones';
 
 	const handleLogout = async () => {
-		// if ($user) {
-		// 	// await logoutFx({ userId: $user.id });
-		// }
+		if ($user) {
+			await logoutFx({ userId: $user.id });
+		}
 	};
 	const handleClick = async () => {
 		showPopup = true;

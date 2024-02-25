@@ -8,11 +8,12 @@
 	import { errorMessages } from '$lib/constants/toastMessages';
 	import { googleSignin } from '$api/auth';
 
+	const toastStore = getToastStore();
+
 	let email: string;
 	let password: string;
 	let fullName: string;
 	let terms: boolean = false;
-	const toastStore = getToastStore();
 
 	const handleSignup = async () => {
 		if (
@@ -35,7 +36,14 @@
 			return;
 		}
 
-		await signUpFx({ email, password, fullName });
+		try {
+			await signUpFx({ email, password, fullName });
+		} catch (error: any) {
+			toastStore.trigger({
+				message: error?.response?.data?.message,
+				background: 'variant-filled-error'
+			});
+		}
 	};
 </script>
 

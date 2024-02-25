@@ -12,7 +12,6 @@
 
 	const handleTabSelect = (item: string) => {
 		selectedItem = item;
-		console.log('selectedItem', selectedItem);
 	};
 </script>
 

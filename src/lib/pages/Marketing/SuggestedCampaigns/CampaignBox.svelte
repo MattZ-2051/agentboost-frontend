@@ -1,13 +1,28 @@
 <script lang="ts">
 	import AddIcon from '$lib/assets/svg/AddIcon/AddIcon.svelte';
 	import Box from '$lib/components/Box/Box.svelte';
+	import { getModalStore } from '@skeletonlabs/skeleton';
+	import { type ModalSettings } from '@skeletonlabs/skeleton';
+
+	const modalStore = getModalStore();
+	const handleAddCampaign = () => {
+		const modal: ModalSettings = {
+			type: 'component',
+			component: 'modalConfirm',
+			body: 'Are you sure you want to add this campaign?',
+			title: 'Create New Campaign',
+			// TRUE if confirm pressed, FALSE if cancel pressed
+			response: (r: boolean) => console.log('response:', r)
+		};
+		modalStore.trigger(modal);
+	};
 </script>
 
 <Box bgColor="bg-[#1E2225]" width="w-full" height="h-[350px]" classes="p-6">
 	<div class="-mt-2 flex items-center justify-between">
 		<p>Campaign 1</p>
 		<div class="myCampaignBox">
-			<div>
+			<div on:click={handleAddCampaign}>
 				<AddIcon />
 			</div>
 			<p class="whitespace-nowrap text-[14px] font-semibold">My Campaigns</p>

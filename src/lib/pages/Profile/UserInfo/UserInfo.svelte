@@ -2,6 +2,10 @@
 	import CameraIcon from '$lib/assets/svg/CameraIcon.svelte';
 	import Button from '$lib/components/Button/Button.svelte';
 	import Input from '$lib/components/Input/Input.svelte';
+	import type { User } from '$types/models';
+	import ProfileAvatar from '../ProfileAvatar/ProfileAvatar.svelte';
+
+	export let user: User;
 </script>
 
 <div>
@@ -12,7 +16,7 @@
 </div>
 <div class="mt-6 grid w-[90%] grid-cols-2 gap-x-[26px]">
 	<div class="flex items-center gap-x-2">
-		<img class="relative h-20 w-20 rounded-[60px]" src="https://via.placeholder.com/80x80" alt="" />
+		<ProfileAvatar width="w-20" />
 		<div>
 			<p class="mb-[6px] text-[15px] font-normal text-[#707281]">Profile image</p>
 			<div class="imgBtn">
@@ -24,7 +28,7 @@
 		</div>
 	</div>
 	<div class="flex items-center gap-x-2">
-		<img class="relative h-20 w-20 rounded-[60px]" src="https://via.placeholder.com/80x80" alt="" />
+		<ProfileAvatar width="w-20" />
 		<div>
 			<p class="mb-[6px] text-[15px] font-normal text-[#707281]">Profile image</p>
 			<div class="imgBtn">
@@ -38,7 +42,7 @@
 	<div class="mt-[42px]">
 		<Input
 			label="Full Name"
-			value="Jacob Jones"
+			value={user.fullName}
 			variant="variant-app-primary"
 			type="text"
 			placeholder="Full Name"
@@ -47,25 +51,18 @@
 	<div class="mt-[42px]">
 		<Input
 			label="Email"
-			value="jacob@smartproperties.com"
+			disabled
+			value={user.email}
 			variant="variant-app-primary"
 			type="text"
 			placeholder="Email"
 		/>
 	</div>
-	<div class="mt-5">
-		<Input
-			label="Phone Number"
-			value="+1 628 400-1472"
-			variant="variant-app-primary"
-			type="text"
-			placeholder="Phone Number"
-		/>
-	</div>
+	<div class="mt-5"></div>
 	<div class="mt-5">
 		<Input
 			label="Brokerage"
-			value="Smart Properties"
+			value={user.brokerage}
 			variant="variant-app-primary"
 			type="text"
 			placeholder="Brokerage"
@@ -74,7 +71,7 @@
 	<div class="col-span-2 mt-5">
 		<Input
 			label="Brand description"
-			value=""
+			value={user.brandDescription}
 			variant="variant-app-primary"
 			type="textarea"
 			rows={3}

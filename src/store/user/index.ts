@@ -3,15 +3,10 @@ import { getUserProfile, restoreUserSession, updateUserProfile } from '$api/user
 import { createEffect, createEvent, createStore } from 'effector';
 import { decodeJwtToken, handleUserTokenData } from '$utils';
 import type { User } from '$types/models';
-import type { ApiError, AuthTokens } from '$types/api';
+import type { ApiError } from '$types/api';
 import { goto } from '$app/navigation';
 
-export const updateUser = createEvent<{
-	email: string;
-	id: string;
-	fullName?: string;
-	authTokens: AuthTokens;
-} | null>();
+export const updateUser = createEvent<User | null>();
 
 export const getUserProfileFx = createEffect<typeof getUserProfile, ApiError>(getUserProfile);
 export const updateUserProfileFx = createEffect<typeof updateUserProfile, ApiError>(
@@ -58,12 +53,24 @@ getUserProfileFx.failData.watch((error) => {
 signUpFx.doneData.watch(async (result) => {
 	handleUserTokenData(result);
 	const jwtData = decodeJwtToken(result.access);
-	updateUser({
+	const newUserData: User = {
 		id: jwtData.sub,
 		email: jwtData.email,
 		fullName: jwtData.fullName,
-		authTokens: result
-	});
+		profileImg: '',
+		businessLogo: '',
+		authTokens: result,
+		brokerage: '',
+		brandDescription: '',
+		areaOfExpertise: '',
+		x: false,
+		instagram: false,
+		facebook: false,
+		campaigns: [],
+		listings: [],
+		buyers: []
+	};
+	updateUser(newUserData);
 	await goto('/dashboard');
 });
 
@@ -75,12 +82,24 @@ signUpFx.failData.watch((error) => {
 loginFx.doneData.watch(async (result) => {
 	handleUserTokenData(result);
 	const jwtData = decodeJwtToken(result.access);
-	updateUser({
+	const newUserData: User = {
 		id: jwtData.sub,
 		email: jwtData.email,
 		fullName: jwtData.fullName,
-		authTokens: result
-	});
+		profileImg: '',
+		businessLogo: '',
+		authTokens: result,
+		brandDescription: '',
+		brokerage: '',
+		areaOfExpertise: '',
+		x: false,
+		instagram: false,
+		facebook: false,
+		campaigns: [],
+		listings: [],
+		buyers: []
+	};
+	updateUser(newUserData);
 	await goto('/dashboard');
 	// const toast: ToastSettings = {
 	// 	message: `Successfully Logged In! Welcome back ${jwtData.email}`,

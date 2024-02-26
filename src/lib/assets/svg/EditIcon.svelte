@@ -1,4 +1,11 @@
-<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg
+	width="20"
+	height="20"
+	viewBox="0 0 20 20"
+	fill="none"
+	xmlns="http://www.w3.org/2000/svg"
+	class="hover:scale-110 hover:cursor-pointer"
+>
 	<g id="edit">
 		<g id="vuesax/linear/edit">
 			<g id="edit_2">

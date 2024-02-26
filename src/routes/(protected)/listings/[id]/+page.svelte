@@ -1,6 +1,6 @@
 <script lang="ts">
 	import ComparableProperties from '$lib/pages/Listings/ComparableProperties/ComparableProperties.svelte';
-	import Gmc from '$lib/pages/Listings/Gmc/Gmc.svelte';
+	import ListingGmc from '$lib/pages/Listings/Gmc/ListingGmc.svelte';
 	import Insights from '$lib/pages/Listings/Insights/Insights.svelte';
 	import PropertyInfo from '$lib/pages/Listings/PropertyInfo/PropertyInfo.svelte';
 </script>
@@ -16,6 +16,6 @@
 		<Insights />
 	</div>
 	<div class="mt-16">
-		<Gmc />
+		<ListingGmc />
 	</div>
 </div>

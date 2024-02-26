@@ -22,7 +22,7 @@
 {:else}
 	<AppHeader />
 {/if}
-<div class={`h-full ${isLanding ? `` : `min-w-screen max-w-screen-desktop px-12`}`}>
+<div class={`!h-full ${isLanding ? `` : `min-w-screen max-w-screen-desktop px-12`}`}>
 	<slot />
 </div>
 {#if isLanding}

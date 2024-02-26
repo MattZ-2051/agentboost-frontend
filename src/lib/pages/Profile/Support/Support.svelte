@@ -1,6 +1,8 @@
 <script lang="ts">
 	import Button from '$lib/components/Button/Button.svelte';
 	import Input from '$lib/components/Input/Input.svelte';
+
+	export let email: string;
 </script>
 
 <h1 class="text-[18px] font-semibold text-white">Contact support</h1>
@@ -10,7 +12,7 @@
 <div class="mt-8 w-[48%]">
 	<Input
 		label="Email"
-		value="jacob@smartproperties.com"
+		value={email}
 		variant="variant-app-primary"
 		type="text"
 		placeholder="Full Name"

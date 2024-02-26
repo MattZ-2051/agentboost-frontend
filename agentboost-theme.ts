@@ -92,7 +92,7 @@ export const agentBoostTheme: CustomThemeConfig = {
 		'--color-surface-200': '192 192 192', // #c0c0c0
 		'--color-surface-300': '153 153 153', // #999999
 		'--color-surface-400': '77 77 77', // #4d4d4d
-		'--color-surface-500': '1 1 1', // #010101
+		'--color-surface-500': '1 1 1', // #7f0f47
 		'--color-surface-600': '1 1 1', // #010101
 		'--color-surface-700': '1 1 1', // #010101
 		'--color-surface-800': '1 1 1', // #010101

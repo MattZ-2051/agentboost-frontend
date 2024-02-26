@@ -64,13 +64,13 @@
 			</div>
 		</div>
 		<div class="mt-6">
-			<SocialMediaActivity />
+			<SocialMediaActivity user={$user} />
 		</div>
 		<div class="mt-6">
 			<CurrentCalender />
 		</div>
 		<div class="mt-6 flex w-full justify-center">
-			<ActiveListings />
+			<ActiveListings listings={$user.listings} />
 		</div>
 		<div class="mt-6 grid h-full w-full grid-cols-3 gap-x-6">
 			<Announcements />

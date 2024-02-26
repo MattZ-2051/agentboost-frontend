@@ -1,13 +1,28 @@
 import type { AuthTokens } from '$types/api';
 
 export type User = {
+	id: string;
 	email: string;
 	authTokens: AuthTokens;
+	brandDescription: string;
+	profileImg: string;
+	businessLogo: string;
+	areaOfExpertise: string;
+	fullName: string;
+	brokerage: string;
+	x: boolean;
+	instagram: boolean;
+	facebook: boolean;
+	listings: Listing[];
+	buyers: Buyer[];
+	campaigns: Campaign[];
+};
+
+export type Campaign = {
 	id: string;
-	brandDescription?: string;
-	areaOfExpertise?: string;
-	listings?: Listing[] | null;
-	fullName?: string;
+	title: string;
+	messages: string;
+	targetAudience: string[];
 };
 
 export type RealtyMoleData = {
@@ -84,55 +99,25 @@ export type Listing = {
 	userId: string;
 };
 
-// export class Listing {
-//   @PrimaryGeneratedColumn()
-//   id: number;
-
-//   @Column({ nullable: false, type: 'int' })
-//   zpid: number;
-
-//   @Column({ nullable: false, type: 'int' })
-//   price: number;
-
-//   @Column({ nullable: false, type: 'varchar' })
-//   imgSrc: string;
-
-//   @Column({ nullable: false, type: 'varchar' })
-//   city: string;
-
-//   @Column({ nullable: false, type: 'varchar' })
-//   state: string;
-
-//   @Column({ nullable: false, type: 'varchar' })
-//   zipCode: string;
-
-//   @Column({ nullable: false, type: 'varchar' })
-//   streetAddress: string;
-
-//   @Column({ nullable: false, type: 'text' })
-//   description: string;
-
-//   @Column({ nullable: false, type: 'int' })
-//   bedrooms: number;
-
-//   @Column({ nullable: false, type: 'float' })
-//   bathrooms: number;
-
-//   @Column({ nullable: true, type: 'varchar', default: null })
-//   county: string;
-
-//   @Column({ nullable: true, type: 'varchar', default: null })
-//   neighberhood: string;
-
-//   @Column({ nullable: true, default: null, type: 'jsonb' })
-//   cma: JSON;
-
-//   @ManyToOne(() => User, (user) => user.listings, { nullable: false })
-//   user: User;
-
-//   @OneToMany(() => Gmc, (gmc) => gmc.listing, { nullable: true })
-//   gmcs: Gmc[];
-// }
+export type Buyer = {
+	id?: number;
+	address: string;
+	propertyDescription: string;
+	propertyInsight?: string;
+	city: string;
+	state: string;
+	zipCode: string;
+	formattedAddress: string;
+	bedrooms: number;
+	county: string | null;
+	neighberhood: string | null;
+	bathrooms: number;
+	lotSize: string;
+	livingArea: string;
+	cma?: CMA[];
+	gmcs?: GMC[];
+	userId: string;
+};
 
 export type ZillowPropertyInfo = {
 	zpid: number;

@@ -10,6 +10,7 @@
 	import MoreDropdown from '$lib/pages/Listings/Dropdowns/MoreDropdown.svelte';
 	import { getDrawerStore } from '@skeletonlabs/skeleton';
 	import type { DrawerSettings } from '@skeletonlabs/skeleton';
+	import { $user as user } from '$store/user';
 
 	$: showStatus = false;
 	$: showTypes = false;
@@ -42,13 +43,14 @@
 			variant="variant-app-primary"
 			onClick={createNewListing}
 			classes="!w-[179px] !h-[48px]"
-			bg={'bg-surface-500'}
+			bg={'bg-[#010101]'}
 		/>
 	</div>
-	<div class="">
-		<Tabs items={tabItems} />
-	</div>
-	<div class="flex w-full items-center justify-end gap-x-5 pt-8">
+	{#if $user && $user.listings && $user?.listings.length > 0}
+		<div class="">
+			<Tabs items={tabItems} />
+		</div>
+		<!-- <div class="flex w-full items-center justify-end gap-x-5 pt-8">
 		<div class="h-[38px] w-[300px]">
 			<SearchBar />
 		</div>
@@ -67,19 +69,15 @@
 		<div class="h-[38px] w-[38px]">
 			<GridDropdown showContent={showGrid} />
 		</div>
-	</div>
-	<div class="mt-8 flex w-full flex-grow flex-wrap justify-start gap-x-12 gap-y-8 overflow-y-auto">
-		<ListingCard address="10044 W Springdale Ct" status="Active" />
-		<ListingCard address="10044 W Springdale Ct" status="Active" />
-		<ListingCard address="10044 W Springdale Ct" status="Active" />
-		<ListingCard address="10044 W Springdale Ct" status="Active" />
-		<ListingCard address="10044 W Springdale Ct" status="Active" />
-		<ListingCard address="10044 W Springdale Ct" status="Active" />
-		<ListingCard address="10044 W Springdale Ct" status="Active" />
-		<ListingCard address="10044 W Springdale Ct" status="Active" />
-		<ListingCard address="10044 W Springdale Ct" status="Active" />
-		<ListingCard address="10044 W Springdale Ct" status="Active" />
-		<ListingCard address="10044 W Springdale Ct" status="Active" />
-		<ListingCard address="10044 W Springdale Ct" status="Active" />
-	</div>
+	</div> -->
+		<div
+			class="mt-8 flex w-full flex-grow flex-wrap justify-start gap-x-12 gap-y-8 overflow-y-auto"
+		>
+			<ListingCard address="10044 W Springdale Ct" status="Active" />
+		</div>
+	{:else}
+		<div class="mt-12 flex h-[50vh] w-full items-center justify-center">
+			<p class="text-4xl font-semibold">No Listings</p>
+		</div>
+	{/if}
 </div>

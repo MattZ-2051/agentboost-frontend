@@ -2,6 +2,9 @@
 	import AddIcon from '$lib/assets/svg/AddIcon/AddIcon.svelte';
 	import Account from './Account.svelte';
 	import Box from '$lib/components/Box/Box.svelte';
+	import { $user as user } from '$store/user';
+
+	const accounts = [$user?.instagram, $user?.facebook, $user?.x];
 </script>
 
 <Box bgColor="bg-[#151719]" width="!w-[150%]" height="h-[340px]" classes="p-6">
@@ -16,9 +19,15 @@
 			<p class="whitespace-nowrap text-[15px] font-semibold">Connect new Account</p>
 		</div>
 	</div>
-	<div class="mt-8 flex w-full justify-between gap-x-6">
-		<Account socialType="facebook" />
-		<Account socialType="instagram" />
-		<Account socialType="x" />
-	</div>
+	{#if accounts.some((account) => !!account)}
+		<div class="mt-8 flex h-full w-full justify-between gap-x-6">
+			{#if $user?.facebook}
+				<Account socialType="facebook" />
+			{:else if $user?.instagram}
+				<Account socialType="instagram" />
+			{:else if $user?.x}
+				<Account socialType="x" />
+			{/if}
+		</div>
+	{/if}
 </Box>

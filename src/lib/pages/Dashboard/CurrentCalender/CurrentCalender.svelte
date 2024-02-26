@@ -1,17 +1,11 @@
 <script lang="ts">
 	import { dndzone, type DndEvent } from 'svelte-dnd-action';
 	import { onMount } from 'svelte';
-	import ArrowLeft from '$lib/assets/svg/Arrow/ArrowLeft.svelte';
-	import ArrowRight from '$lib/assets/svg/Arrow/ArrowRight.svelte';
 	import PostChip from '$lib/pages/Marketing/Calender/PostChip.svelte';
+	import Button from '$lib/components/Button/Button.svelte';
+	import { goto } from '$app/navigation';
 
 	const date = new Date();
-
-	const today = {
-		dayNumber: date.getDate(),
-		month: date.getMonth(),
-		year: date.getFullYear()
-	};
 
 	const monthNames = [
 		'January',
@@ -135,26 +129,16 @@
 
 <div class="flex h-full w-full justify-center rounded-[20px] bg-[#151719] px-8 py-6">
 	<div class="h-[367px] w-full">
-		<div class="flex justify-between">
+		<div class="flex items-center justify-between">
 			<p class="text-2xl font-semibold text-white">Current week marketing calender</p>
 			<div class="flex items-center gap-x-4">
-				<h1 class="text-xl">{month} {year}</h1>
-				<div class="flex items-center gap-x-6">
-					<div
-						class="hover:scale-110 hover:cursor-pointer"
-						on:click={goToPrevWeek}
-						on:keydown={goToPrevWeek}
-					>
-						<ArrowLeft />
-					</div>
-					<div
-						class="hover:scale-110 hover:cursor-pointer"
-						on:click={goToNextWeek}
-						on:keydown={goToNextWeek}
-					>
-						<ArrowRight />
-					</div>
-				</div>
+				<Button
+					label="See Full Calender"
+					bg="bg-[#151719]"
+					variant="variant-app-primary"
+					classes="!w-40 !h-10"
+					onClick={() => goto('/marketing')}
+				/>
 			</div>
 		</div>
 		<div class="mt-12" />

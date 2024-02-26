@@ -16,6 +16,7 @@
 	import NewBuyersDrawer from '$lib/pages/Buyers/Drawers/NewBuyersDrawer.svelte';
 	import { onMount } from 'svelte';
 	import { $user as user } from '$store/user';
+	import NewCampaignModal from '$lib/components/Modals/NewCampaignModal.svelte';
 
 	storePopup.set({ computePosition, autoUpdate, offset, shift, flip, arrow });
 
@@ -24,7 +25,8 @@
 	const modalRegistry: any = {
 		// Set a unique modal ID, then pass the component reference
 		modalForm: { ref: ModalForm },
-		modalConfirm: { ref: ModalConfirm }
+		modalConfirm: { ref: ModalConfirm },
+		newCampaign: { ref: NewCampaignModal }
 		// ...
 	};
 
@@ -51,8 +53,8 @@
 	console.log('user', $user);
 </script>
 
-<div class="dark bg-surface-500" data-theme="agentboost-theme">
-	<Toast position="t" />
+<div class="dark" data-theme="agentboost-theme">
+	<Toast position="t" zIndex="z-[9999]" />
 	<Modal background="bg-[#1A1A1A]" padding="p-6" components={modalRegistry} />
 	<Drawer position="right" width="w-[380px]">
 		{#if $drawerStore.id === 'nav-link'}

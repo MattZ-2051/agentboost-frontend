@@ -24,7 +24,7 @@
 	}
 
 	.slider::-webkit-scrollbar-thumb {
-		color: #22272a !important;
+		color: #48e8ed !important;
 		background-color: #48e8ed !important;
 	}
 </style>

@@ -1,4 +1,4 @@
-import { login, logout, signup } from '$api/auth';
+import { login, logout, resetPassword, signup } from '$api/auth';
 import { getUserProfile, restoreUserSession, updateUserProfile } from '$api/user';
 import { createEffect, createEvent, createStore } from 'effector';
 import { decodeJwtToken, handleUserTokenData } from '$utils';
@@ -18,6 +18,7 @@ export const restoreUserSessionFx = createEffect<typeof restoreUserSession, ApiE
 export const loginFx = createEffect<typeof login, ApiError>(login);
 export const signUpFx = createEffect<typeof signup, ApiError>(signup);
 export const logoutFx = createEffect<typeof logout, ApiError>(logout);
+export const resetPasswordFx = createEffect<typeof resetPassword, ApiError>(resetPassword);
 
 restoreUserSessionFx.doneData.watch((result) => {
 	updateUser(result);
@@ -101,11 +102,6 @@ loginFx.doneData.watch(async (result) => {
 	};
 	updateUser(newUserData);
 	await goto('/dashboard');
-	// const toast: ToastSettings = {
-	// 	message: `Successfully Logged In! Welcome back ${jwtData.email}`,
-	// 	background: 'variant-filled-success'
-	// };
-	// toastStore.trigger(toast);
 });
 
 loginFx.failData.watch((error) => {
@@ -118,22 +114,15 @@ logoutFx.doneData.watch(async () => {
 	await goto('/');
 });
 
-logoutFx.failData.watch(() => {
-	// const toastStore = getToastStore();
-	// const message = error.response?.data?.message;
-	// const toast: ToastSettings = {
-	// 	message: message ? message : 'Logout failed',
-	// 	background: 'variant-filled-error'
-	// };
-	// toastStore.trigger(toast);
-});
+logoutFx.failData.watch(() => {});
 
 updateUserProfileFx.doneData.watch((response) => {
-	console.log('profile updated', response);
+	updateUser(response);
 });
 
 updateUserProfileFx.failData.watch((error) => {
 	console.log('error in profile update', error);
+	return error;
 });
 
 export const $user = createStore<User | null>(null).on(updateUser, (prevState, payload) => {

@@ -43,3 +43,20 @@ export const refreshTokens = async ({ refreshToken }: { refreshToken: string }) 
 	});
 	return response.data;
 };
+
+export const resetPassword = async ({
+	currentPassword,
+	newPassword
+}: {
+	currentPassword: string;
+	newPassword: string;
+}) => {
+	const response = await post<{
+		data: void;
+	}>('/auth/resetpassword', {
+		currentPassword,
+		newPassword
+	});
+
+	return response.data;
+};

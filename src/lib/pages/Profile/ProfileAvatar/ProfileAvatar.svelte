@@ -2,6 +2,7 @@
 	import Avatar from '$lib/components/Avatar/Avatar.svelte';
 	import { $user as user } from '$store/user';
 
+	export let src: string = '';
 	const initials =
 		$user?.fullName &&
 		$user.fullName
@@ -13,5 +14,5 @@
 </script>
 
 {#if $user}
-	<Avatar src={$user.profileImg} {width} {initials} />
+	<Avatar src={src.length > 0 ? src : $user.profileImg} {width} {initials} />
 {/if}

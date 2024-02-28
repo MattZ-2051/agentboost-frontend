@@ -10,8 +10,6 @@
 	$: iconHover = false;
 	export let showPopup: boolean = false;
 
-	const username = 'jacobjones';
-
 	const handleLogout = async () => {
 		if ($user) {
 			await logoutFx({ userId: $user.id });
@@ -19,10 +17,12 @@
 	};
 	const handleClick = async () => {
 		showPopup = true;
-		try {
-			await goto(`/profile/${username}`);
-			showPopup = false;
-		} catch {}
+
+		if ($user)
+			try {
+				await goto(`/profile/${$user.email}`);
+				showPopup = false;
+			} catch {}
 	};
 
 	const handleClickOutside = () => {

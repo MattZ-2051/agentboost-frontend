@@ -1,5 +1,8 @@
 export type UpdateUserData = {
-	email: string;
+	id: string;
 	brandDescription?: string;
-	areaOfExpertise?: string;
+	profileImg?: string;
+	businessLogo?: string;
+	fullName?: string;
+	brokerage?: string;
 };

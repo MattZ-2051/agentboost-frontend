@@ -14,5 +14,5 @@
 </script>
 
 {#if $user}
-	<Avatar src={src.length > 0 ? src : $user.profileImg} {width} {initials} />
+	<Avatar {src} {width} {initials} />
 {/if}

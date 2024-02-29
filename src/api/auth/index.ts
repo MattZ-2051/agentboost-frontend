@@ -1,4 +1,4 @@
-import { post } from '..';
+import { patch, post } from '..';
 import type { AuthTokens } from '$types/api';
 import type { AuthData } from './types';
 
@@ -45,15 +45,18 @@ export const refreshTokens = async ({ refreshToken }: { refreshToken: string }) 
 };
 
 export const resetPassword = async ({
+	email,
 	currentPassword,
 	newPassword
 }: {
+	email: string;
 	currentPassword: string;
 	newPassword: string;
 }) => {
-	const response = await post<{
+	const response = await patch<{
 		data: void;
-	}>('/auth/resetpassword', {
+	}>('/auth/password/reset', {
+		email,
 		currentPassword,
 		newPassword
 	});

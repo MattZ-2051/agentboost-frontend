@@ -1,6 +1,6 @@
 import type { ToastSettings } from '@skeletonlabs/skeleton';
 
-export const errorMessages: Record<string, ToastSettings> = {
+export const errorMessages: Record<'terms' | 'support', ToastSettings> = {
 	terms: {
 		message: 'Please read and accept the terms of service.',
 		background: 'variant-filled-error'

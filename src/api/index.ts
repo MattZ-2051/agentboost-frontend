@@ -21,6 +21,15 @@ const getHeaders = () => {
 		: {};
 };
 
+const getFormHeaders = () => {
+	return $user.getState()?.authTokens
+		? {
+				headers: {
+					Authorization: 'Bearer ' + $user.getState()?.authTokens?.access?.toString()
+				}
+			}
+		: {};
+};
 export const getWithoutHeader = async <T>(path: string, headers: any): Promise<T> => {
 	return await axiosInstance.get(path, {
 		headers
@@ -31,6 +40,14 @@ export const get = async <T>(path: string, params?: Record<string, string>): Pro
 	return await axiosInstance.get(path, { params, ...getHeaders() });
 };
 
+export const postForm = async (path: string, data: any): Promise<{ data: string }> => {
+	const response = await fetch(`${baseURL}${path}`, {
+		method: 'POST',
+		body: data,
+		...getFormHeaders()
+	});
+	return await response.json();
+};
 export const post = async <T>(path: string, data: any): Promise<T> => {
 	return await axiosInstance.post(path, data, { ...getHeaders() });
 };

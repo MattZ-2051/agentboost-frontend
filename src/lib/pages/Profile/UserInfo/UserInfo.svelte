@@ -4,17 +4,19 @@
 	import Input from '$lib/components/Input/Input.svelte';
 	import type { User } from '$types/models';
 	import { getModalStore, getToastStore } from '@skeletonlabs/skeleton';
-	import ProfileAvatar from '../ProfileAvatar/ProfileAvatar.svelte';
+	import ProfileAvatar from '../Avatars/ProfileAvatar.svelte';
 	import { type ModalSettings } from '@skeletonlabs/skeleton';
 	import { resetPasswordFx, updateUserProfileFx } from '$store/user';
 	import type { UpdateUserData } from '$api/user/types';
 	import { errorMessages } from '$lib/constants/toastMessages';
 	import { uploadFileToBucket } from '$api/storage';
+	import BusinessLogo from '../Avatars/BusinessLogo.svelte';
 
 	export let user: User;
 
 	let profileFile: any;
 	let profilePreview: string = user.profileImg;
+	let businessLogoPreview: string = user.businessLogo;
 	let businessLogo: any;
 	let fullName: string = user.fullName;
 	let email: string = user.email;
@@ -29,7 +31,6 @@
 	const handleProfileFileOnChange = (e: any) => {
 		let image = e.target.files[0];
 		let reader = new FileReader();
-		console.log('on change', image, typeof image);
 		profileFile = image;
 
 		reader.readAsDataURL(image);
@@ -41,9 +42,10 @@
 	const handleBusinessLogoOnChange = (e: any) => {
 		let image = e.target.files[0];
 		let reader = new FileReader();
+		businessLogo = image;
 		reader.readAsDataURL(image);
 		reader.onload = (e) => {
-			businessLogo = e?.target?.result;
+			businessLogoPreview = e?.target?.result as string;
 		};
 	};
 
@@ -70,23 +72,32 @@
 							: false;
 
 	const handleResetPassword = async () => {
-		if (currentPassword !== newPassword) {
+		if (
+			!currentPassword ||
+			!newPassword ||
+			currentPassword?.length === 0 ||
+			newPassword?.length === 0
+		) {
 			toastStore.trigger({
-				message: 'Passwords do not match',
+				message: 'Please provide current and new password.',
 				background: 'variant-filled-error'
 			});
 			return;
 		} else {
 			try {
-				await resetPasswordFx({ currentPassword, newPassword });
+				await resetPasswordFx({ email: user.email, currentPassword, newPassword });
 				toastStore.trigger({
 					message: 'Password Reset',
 					background: 'variant-filled-success'
 				});
-			} catch {
+			} catch (e: any) {
+				console.log('error', e);
 				toastStore.trigger({
-					message: 'Password reset failed',
-					background: 'variant-filled-danger'
+					message:
+						e?.response?.status === 400
+							? e?.response?.data?.message
+							: errorMessages.support.message,
+					background: 'variant-filled-error'
 				});
 			}
 		}
@@ -98,13 +109,24 @@
 				updateMap.profileImg = profileFile;
 				const file = profileFile;
 				const filePath = `profilePhotos/${user.id}`;
-				console.log('image', file);
+				const data = new FormData();
+				console.log('there', file);
 
-				await uploadFileToBucket({ file, filePath });
-				return;
+				data.append('file', file);
+				data.append('filePath', filePath);
+				const res = await uploadFileToBucket(data);
+				updateMap.profileImg = res;
 			}
 			if (updateMap.businessLogo) {
 				updateMap.businessLogo = businessLogo;
+				const file = businessLogo;
+				const filePath = `businessLogos/${user.id}`;
+				console.log('file', file);
+				const data = new FormData();
+				data.append('file', file);
+				data.append('filePath', filePath);
+				const res = await uploadFileToBucket(data);
+				updateMap.businessLogo = res;
 			}
 			updateUserProfileFx({
 				...updateMap
@@ -115,6 +137,7 @@
 			});
 			return;
 		} catch (err) {
+			console.log('error', err);
 			toastStore.trigger({
 				message: errorMessages.support.message,
 				background: 'variant-filled-error'
@@ -142,16 +165,17 @@
 			updateMap.profileImg = profileFile;
 		}
 
-		if (businessLogo?.length > 0 || businessLogo) {
+		if (businessLogo?.length > 0 && businessLogo) {
 			updatedInfo += ' business logo';
 			updateMap.businessLogo = businessLogo;
 		}
 
-		if (brandDescription?.length > 0 || brandDescription !== user.brandDescription) {
+		if (brandDescription?.length > 0 && brandDescription !== user.brandDescription) {
 			updatedInfo += ' brand description';
 			updateMap.brandDescription = brandDescription;
 		}
-		if (brokerage?.length > 0 || brokerage !== user.brokerage) {
+
+		if (brokerage?.length > 0 && brokerage !== user.brokerage) {
 			updatedInfo += ' brokerage';
 			updateMap.brokerage = brokerage;
 		}
@@ -203,7 +227,7 @@
 		</div>
 	</div>
 	<div class="flex items-center gap-x-2">
-		<ProfileAvatar width="w-20" src={businessLogo} />
+		<BusinessLogo width="w-20" src={businessLogoPreview} />
 		<div>
 			<p class="mb-[6px] text-[15px] font-normal text-[#707281]">Business Logo</p>
 			<div class="imgBtn" on:click={handleBusinessLogoFileInput}>
@@ -272,35 +296,38 @@
 		</div>
 	</div>
 </div>
-<h1 class="mt-12 text-[18px] font-semibold text-white">Password Reset</h1>
-<div class="grid w-[90%] grid-cols-2 gap-x-[26px]">
-	<div class="mt-5">
-		<Input
-			label="Current Password"
-			bind:value={currentPassword}
-			variant="variant-app-primary"
-			type="password"
-			placeholder="Current Password"
-		/>
-	</div>
-	<div class="mt-5">
-		<Input
-			label="New password"
-			bind:value={newPassword}
-			variant="variant-app-primary"
-			type="password"
-			placeholder="New Password"
-		/>
-		<div class="mt-6 flex w-full justify-end">
-			<Button
-				label="Reset Password"
+{#if !user.email.includes('@gmail')}
+	<h1 class="mt-12 text-[18px] font-semibold text-white">Password Reset</h1>
+	<div class="grid w-[90%] grid-cols-2 gap-x-[26px]">
+		<div class="mt-5">
+			<Input
+				label="Current Password"
+				bind:value={currentPassword}
 				variant="variant-app-primary"
-				bg="!bg-[#171A1C]"
-				classes="!w-[187px] !h-12"
+				type="password"
+				placeholder="Current Password"
 			/>
 		</div>
+		<div class="mt-5">
+			<Input
+				label="New password"
+				bind:value={newPassword}
+				variant="variant-app-primary"
+				type="password"
+				placeholder="New Password"
+			/>
+			<div class="mt-6 flex w-full justify-end">
+				<Button
+					label="Reset Password"
+					variant="variant-app-primary"
+					bg="!bg-[#171A1C]"
+					classes="!w-[187px] !h-12"
+					onClick={handleResetPassword}
+				/>
+			</div>
+		</div>
 	</div>
-</div>
+{/if}
 
 <style lang="postcss">
 	.imgBtn {

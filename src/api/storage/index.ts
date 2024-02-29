@@ -1,15 +1,6 @@
-import { post } from '$api';
+import { postForm } from '$api';
 
-export const uploadFileToBucket = async ({
-	file,
-	filePath
-}: {
-	file: File;
-	filePath: string;
-}): Promise<any> => {
-	const response = await post<{ data: any }>('/google/bucket/upload', {
-		file,
-		filePath
-	});
+export const uploadFileToBucket = async (data: FormData): Promise<string> => {
+	const response = await postForm('/google/bucket/upload', data);
 	return response.data;
 };

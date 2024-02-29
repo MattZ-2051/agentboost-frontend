@@ -16,6 +16,13 @@
 	let terms: boolean = false;
 
 	const handleSignup = async () => {
+		if (email.includes('@gmail')) {
+			toastStore.trigger({
+				message: 'If using gmail please continue with the google button.',
+				background: 'variant-filled-warning'
+			});
+			return;
+		}
 		if (
 			!email ||
 			email.length === 0 ||

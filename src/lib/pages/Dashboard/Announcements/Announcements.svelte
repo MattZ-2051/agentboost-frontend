@@ -16,9 +16,6 @@
 </Box>
 
 <style lang="postcss">
-	.announcementCard {
-	}
-
 	.scrollbarStyle::-webkit-scrollbar-track {
 		background: #151719 !important;
 		width: 1px !important;

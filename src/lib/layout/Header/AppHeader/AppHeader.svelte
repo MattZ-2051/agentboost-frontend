@@ -32,9 +32,9 @@
 
 	$: currentPage = {
 		dashboard: $page.url.pathname.includes('dashboard') ? true : false,
-		buyers: false,
-		listings: false,
-		marketing: false
+		buyers: $page.url.pathname.includes('buyers') ? true : false,
+		listings: $page.url.pathname.includes('listings') ? true : false,
+		marketing: $page.url.pathname.includes('marketing') ? true : false
 	} as Record<string, boolean>;
 
 	const handleRoute = async (route: string) => {

@@ -29,7 +29,6 @@
 			targetAudiences.push(val);
 			targetAudiences = targetAudiences;
 			currentTargetAudienceVal = '';
-			console.log('targets');
 		}
 
 		if (action === 'remove') {

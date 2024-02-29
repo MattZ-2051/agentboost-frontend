@@ -91,7 +91,6 @@
 					background: 'variant-filled-success'
 				});
 			} catch (e: any) {
-				console.log('error', e);
 				toastStore.trigger({
 					message:
 						e?.response?.status === 400
@@ -110,7 +109,6 @@
 				const file = profileFile;
 				const filePath = `profilePhotos/${user.id}`;
 				const data = new FormData();
-				console.log('there', file);
 
 				data.append('file', file);
 				data.append('filePath', filePath);
@@ -121,7 +119,6 @@
 				updateMap.businessLogo = businessLogo;
 				const file = businessLogo;
 				const filePath = `businessLogos/${user.id}`;
-				console.log('file', file);
 				const data = new FormData();
 				data.append('file', file);
 				data.append('filePath', filePath);
@@ -137,7 +134,6 @@
 			});
 			return;
 		} catch (err) {
-			console.log('error', err);
 			toastStore.trigger({
 				message: errorMessages.support.message,
 				background: 'variant-filled-error'

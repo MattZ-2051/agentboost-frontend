@@ -8,8 +8,27 @@
 	import SuggestedCampaigns from '$lib/pages/Marketing/SuggestedCampaigns/SuggestedCampaigns.svelte';
 	import MyCampaigns from '$lib/pages/Marketing/MyCampaigns/MyCampaigns.svelte';
 	import { $user as user } from '$store/user';
+	import { getModalStore } from '@skeletonlabs/skeleton';
+	import { onMount } from 'svelte';
 
 	$: accounts = [$user?.instagram, $user?.facebook, $user?.x];
+	const modalStore = getModalStore();
+
+	const handleSocialAccountAdd = async () => {
+		modalStore.trigger({
+			type: 'component',
+			component: 'socialAccounts',
+			response: (r: boolean) => r
+		});
+	};
+
+	onMount(() => {
+		modalStore.trigger({
+			type: 'component',
+			component: 'socialAccounts',
+			response: (r: boolean) => r
+		});
+	});
 </script>
 
 {#if $user}
@@ -26,7 +45,7 @@
 						<div
 							class="flex h-[44px] w-[221px] items-center justify-center gap-x-2 rounded-[10px] bg-[#1D3335] px-4 py-2"
 						>
-							<div>
+							<div on:click={handleSocialAccountAdd}>
 								<AddIcon />
 							</div>
 							<p class="whitespace-nowrap text-[15px] font-semibold">Connect new Account</p>

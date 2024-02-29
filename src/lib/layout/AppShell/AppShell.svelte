@@ -7,9 +7,7 @@
 	import AuthHeader from '../Header/AuthHeader/AuthHeader.svelte';
 	import { page } from '$app/stores';
 
-	function scrollHandler(event: ComponentEvents<AppShell>['scroll']) {
-		// console.log(event.currentTarget.scrollTop);
-	}
+	function scrollHandler(event: ComponentEvents<AppShell>['scroll']) {}
 
 	$: isLanding = $page.url.pathname.length === 1;
 	$: isAuth = $page.url.pathname.includes('signup') || $page.url.pathname.includes('login');

@@ -76,7 +76,6 @@ signUpFx.doneData.watch(async (result) => {
 });
 
 signUpFx.failData.watch((error) => {
-	console.log('here');
 	return error;
 });
 

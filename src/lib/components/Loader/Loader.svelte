@@ -1,5 +1,13 @@
 <script lang="ts">
-	import './Loader.css';
+	import { ProgressRadial } from '@skeletonlabs/skeleton';
+	export let width: string;
 </script>
 
-<div class="loader" />
+<ProgressRadial
+	value={undefined}
+	stroke={60}
+	{width}
+	meter={'stroke-primary-500'}
+	font={0}
+	track="stroke-[#272B30]"
+/>

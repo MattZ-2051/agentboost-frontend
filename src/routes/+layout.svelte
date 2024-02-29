@@ -17,6 +17,7 @@
 	import { onMount } from 'svelte';
 	import { $user as user } from '$store/user';
 	import NewCampaignModal from '$lib/components/Modals/NewCampaignModal.svelte';
+	import SocialAccountModal from '$lib/components/Modals/SocialAccountModal.svelte';
 
 	storePopup.set({ computePosition, autoUpdate, offset, shift, flip, arrow });
 
@@ -26,7 +27,8 @@
 		// Set a unique modal ID, then pass the component reference
 		modalForm: { ref: ModalForm },
 		modalConfirm: { ref: ModalConfirm },
-		newCampaign: { ref: NewCampaignModal }
+		newCampaign: { ref: NewCampaignModal },
+		socialAccounts: { ref: SocialAccountModal }
 		// ...
 	};
 

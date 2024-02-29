@@ -10,10 +10,15 @@
 	export let name: string | undefined = undefined;
 	export let classes: string | undefined = undefined;
 	export let variant: InputVariant | '' = '';
+	export let required: boolean = false;
 </script>
 
 <div>
-	<p class="mb-[6px] text-[15px] font-semibold text-[#CFD0D5]">{label}</p>
+	<p class="mb-[6px] text-[15px] font-semibold text-[#CFD0D5]">
+		{label}
+		{#if required}
+			*{/if}
+	</p>
 	{#if type === 'text'}
 		<input
 			class={`${classes} ${variant} input w-full`}

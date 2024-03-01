@@ -9,7 +9,6 @@
 	import MyCampaigns from '$lib/pages/Marketing/MyCampaigns/MyCampaigns.svelte';
 	import { $user as user } from '$store/user';
 	import { getModalStore } from '@skeletonlabs/skeleton';
-	import { onMount } from 'svelte';
 
 	$: accounts = [$user?.instagram, $user?.facebook, $user?.x];
 	const modalStore = getModalStore();
@@ -21,14 +20,6 @@
 			response: (r: boolean) => r
 		});
 	};
-
-	onMount(() => {
-		modalStore.trigger({
-			type: 'component',
-			component: 'socialAccounts',
-			response: (r: boolean) => r
-		});
-	});
 </script>
 
 {#if $user}

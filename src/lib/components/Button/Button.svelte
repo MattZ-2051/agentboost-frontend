@@ -1,6 +1,6 @@
 <script lang="ts">
 	import './Button.css';
-	import type { ButtonVariant } from '$types/components';
+	import type { ButtonVariant } from './types';
 
 	export let label: string;
 	export let classes: string | undefined = undefined;

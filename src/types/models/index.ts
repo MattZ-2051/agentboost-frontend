@@ -82,12 +82,15 @@ export type GMC = {
 export type Listing = {
 	id?: number;
 	address: string;
+	price: number;
+	zpid: number;
 	propertyDescription: string;
 	propertyInsight?: string;
 	city: string;
+	latitude: number;
+	longitude: number;
 	state: string;
 	zipCode: string;
-	formattedAddress: string;
 	bedrooms: number;
 	county: string | null;
 	neighberhood: string | null;
@@ -101,6 +104,7 @@ export type Listing = {
 
 export type Buyer = {
 	id?: number;
+	zpid: number;
 	address: string;
 	propertyDescription: string;
 	propertyInsight?: string;
@@ -134,7 +138,13 @@ export type ZillowPropertyInfo = {
 	description: string;
 	price: number;
 	bedrooms: number;
+	latitude: number;
+	longitude: number;
 	bathrooms: number;
+	resoFacts: {
+		lotSize: string;
+		livingArea: string;
+	};
 };
 
 export type NewListing = {

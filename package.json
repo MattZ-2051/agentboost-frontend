@@ -51,6 +51,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@dotlottie/dotlottie-js": "^0.7.1",
 		"@floating-ui/dom": "1.6.3",
 		"@googlemaps/js-api-loader": "^1.16.6",
 		"@sveltejs/adapter-vercel": "^5.1.0",

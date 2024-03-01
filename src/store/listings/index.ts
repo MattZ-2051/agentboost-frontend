@@ -57,7 +57,7 @@ getListingFx.doneData.watch((result) => {
 	if (result.gmcs?.length === 0) {
 		createListingGmcFx({
 			listingId: result.id?.toString() || '0',
-			address: result.formattedAddress,
+			address: result.address,
 			bed: result.bedrooms,
 			bath: result.bathrooms,
 			squareFt: result.bathrooms,
@@ -82,11 +82,10 @@ createListingFx.doneData.watch((result) => {
 createListingFx.failData.watch(() => {});
 
 createListingDescriptionFx.doneData.watch((result) => {
-	console.log('result', result);
-	// updateNewListingData({
-	// 	propertyDescription: result?.choices[0]?.content,
-	// 	zillowInfo: result.zillowInfo
-	// });
+	updateNewListingData({
+		propertyDescription: result.text,
+		zillowInfo: result.zillowInfo
+	});
 });
 
 createListingDescriptionFx.failData.watch(() => {});

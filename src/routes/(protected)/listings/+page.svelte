@@ -1,16 +1,16 @@
 <script lang="ts">
 	import Button from '$lib/components/Button/Button.svelte';
-	import SearchBar from '$lib/components/SearchBar/SearchBar.svelte';
+	import Box from '$lib/components/Box/Box.svelte';
 	import Tabs from '$lib/components/Tabs/Tabs.svelte';
 	import ListingCard from '$lib/pages/Listings/Cards/ListingCard.svelte';
-	import StatusDropdown from '$lib/pages/Listings/Dropdowns/StatusDropdown.svelte';
-	import GridDropdown from '$lib/pages/Listings/Dropdowns/GridDropdown.svelte';
-	import TypeDropdown from '$lib/pages/Listings/Dropdowns/TypeDropdown.svelte';
-	import StatesDropdown from '$lib/pages/Listings/Dropdowns/StatesDropdown.svelte';
-	import MoreDropdown from '$lib/pages/Listings/Dropdowns/MoreDropdown.svelte';
-	import { getDrawerStore } from '@skeletonlabs/skeleton';
+	import { getDrawerStore, getToastStore } from '@skeletonlabs/skeleton';
 	import type { DrawerSettings } from '@skeletonlabs/skeleton';
 	import { $user as user } from '$store/user';
+	import { createListingFx, $newListing as newListing } from '$store/listings';
+	import PropertyInfoChips from '$lib/pages/Shared/PropertyInfoChips/PropertyInfoChips.svelte';
+	import Input from '$lib/components/Input/Input.svelte';
+	import type { Listing } from '$types/models';
+	import { errorMessages } from '$lib/constants/toastMessages';
 
 	$: showStatus = false;
 	$: showTypes = false;
@@ -19,20 +19,58 @@
 	$: showGrid = false;
 
 	const drawerStore = getDrawerStore();
+	const toastStore = getToastStore();
+
 	const drawerSettings: DrawerSettings = {
 		id: 'new-listing',
 		bgDrawer: 'bg-[#171A1C]'
 	};
-	const createNewListing = () => {
-		drawerStore.open(drawerSettings);
 
-		// drawerStore.update((store) => {
-		// 	store.open = !store.open;
-		// 	store.meta = drawerSettings.meta;
-		// 	return store;
-		// });
+	const createListing = async () => {
+		if ($newListing && $user) {
+			const { zillowInfo, propertyDescription } = $newListing;
+
+			console.log('zillow info', zillowInfo);
+			const listingToCreate: Listing = {
+				latitude: zillowInfo.latitude,
+				longitude: zillowInfo.longitude,
+				bathrooms: zillowInfo.bathrooms,
+				bedrooms: zillowInfo.bedrooms,
+				address: zillowInfo.address.streetAddress,
+				propertyDescription,
+				city: zillowInfo.address.city,
+				state: zillowInfo.address.state,
+				county: zillowInfo.county,
+				neighberhood: zillowInfo.address.neighberhood,
+				lotSize: zillowInfo.resoFacts.lotSize,
+				livingArea: zillowInfo.resoFacts.livingArea,
+				zipCode: zillowInfo.address.zipcode,
+				zpid: zillowInfo.zpid,
+				price: zillowInfo.price,
+				userId: $user.id
+			};
+			try {
+				await createListingFx({
+					...listingToCreate
+				});
+				toastStore.trigger({ message: 'Listing Created', background: 'variant-filled-error' });
+			} catch {
+				toastStore.trigger(errorMessages.support);
+			}
+		}
 	};
 	const tabItems = [{ label: 'Active' }, { label: 'Inactive' }, { label: 'Incoming' }];
+
+	$: chipInfo = $newListing
+		? {
+				bedrooms: $newListing.zillowInfo.bedrooms,
+				bathrooms: $newListing.zillowInfo.bathrooms,
+				lotSize: '1400 sq ft',
+				yearBuilt: '1969'
+			}
+		: undefined;
+
+	$: newPropertyDescription = $newListing ? $newListing.propertyDescription : '';
 </script>
 
 <div class="relative h-full w-full pb-12">
@@ -41,7 +79,7 @@
 		<Button
 			label="Create New Listing"
 			variant="variant-app-primary"
-			onClick={createNewListing}
+			onClick={() => drawerStore.open(drawerSettings)}
 			classes="!w-[179px] !h-[48px]"
 			bg={'bg-[#010101]'}
 		/>
@@ -75,6 +113,42 @@
 		>
 			<ListingCard address="10044 W Springdale Ct" status="Active" />
 		</div>
+	{:else if $newListing && chipInfo}
+		<Box width="w-full" height="h-full" bgColor="bg-[#151719]" classes="p-6">
+			<div class="flex w-full justify-center text-center text-2xl text-[#EFEFEF]">
+				<p>Something Looks Wrong? Edit your property info here before creating your listing</p>
+			</div>
+			<div class="flex w-full flex-col gap-y-8">
+				<div>
+					<p class="text-2xl text-[#EFEFEF]">Property Description</p>
+					<p class="mt-4 leading-relaxed">
+						<Input
+							label=""
+							placeholder=""
+							type="textarea"
+							bind:value={newPropertyDescription}
+							variant="variant-app-primary"
+							rows={20}
+						/>
+					</p>
+				</div>
+				<div class="w-full">
+					<p class="text-2xl text-[#EFEFEF]">Property Info</p>
+					<div class="mt-4 flex gap-x-4">
+						<PropertyInfoChips propertyInfo={chipInfo} />
+					</div>
+					<div class="mt-16 flex w-full justify-center">
+						<Button
+							label="Create Listing"
+							variant="variant-app-primary"
+							onClick={createListing}
+							classes="!w-1/2 !h-[48px]"
+							bg={'bg-[#151719]'}
+						/>
+					</div>
+				</div>
+			</div>
+		</Box>
 	{:else}
 		<div class="mt-12 flex h-[50vh] w-full items-center justify-center">
 			<p class="text-4xl font-semibold">No Listings</p>

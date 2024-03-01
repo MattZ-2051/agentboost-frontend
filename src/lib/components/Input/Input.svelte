@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { InputVariant } from '$types/components';
+	import type { InputVariant } from './types';
 
 	export let label: string;
 	export let value: string | number | Date;
@@ -64,7 +64,7 @@
 			class={`${classes} ${variant} input w-full`}
 			{rows}
 			{placeholder}
-			bind:value
+			{value}
 			{disabled}
 			{name}
 		/>

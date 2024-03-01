@@ -37,7 +37,7 @@
 			createListingLoading = true;
 			try {
 				await createListingDescriptionFx({ address: propertyAddress, keyInfo });
-				toastStore.trigger({ message: 'Listing Created', background: 'variant-filled-success' });
+				drawerStore.close();
 			} catch (e) {
 				toastStore.trigger(errorMessages.support);
 			} finally {

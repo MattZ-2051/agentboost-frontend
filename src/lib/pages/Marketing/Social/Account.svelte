@@ -3,7 +3,7 @@
 	import instagramIcon from '$lib/assets/images/Social/instagram-icon.png';
 	import xIcon from '$lib/assets/images/Social/x-icon.png';
 	import Box from '$lib/components/Box/Box.svelte';
-	import type { SocialTypes } from '$types/components';
+	import type { SocialTypes } from './types';
 
 	export let socialType: SocialTypes;
 

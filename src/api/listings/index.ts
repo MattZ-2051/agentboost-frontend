@@ -8,11 +8,11 @@ export const createListingDescription = async ({
 	address: string;
 	keyInfo: string;
 }): Promise<{
-	choices: { content: string }[];
+	text: string;
 	zillowInfo: ZillowPropertyInfo;
 }> => {
 	const response = await post<{
-		data: { choices: { content: string }[]; zillowInfo: ZillowPropertyInfo };
+		data: { text: string; zillowInfo: ZillowPropertyInfo };
 	}>('/listings/create/property-description', {
 		address,
 		keyInfo

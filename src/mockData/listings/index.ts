@@ -1,4 +1,4 @@
-import type { SliderItems } from '$types/components';
+import type { SliderItems } from '$lib/components/Slider/types';
 
 export const sliderItems: SliderItems = [
 	[

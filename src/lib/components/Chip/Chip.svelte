@@ -1,6 +1,5 @@
 <script lang="ts">
-	``;
-	import type { ChipVariant } from '$types/components';
+	import type { ChipVariant } from './types';
 	export let variant: ChipVariant;
 	export let classes: string = '';
 	export let onClick: (() => void) | undefined = undefined;

@@ -1,4 +1,4 @@
-import { get, post } from '..';
+import { del, get, post } from '..';
 import type { Listing, ZillowPropertyInfo } from '$types/models';
 
 export const createListingDescription = async ({
@@ -49,4 +49,8 @@ export const createListingCma = async ({
 export const getListing = async (id: string): Promise<Listing> => {
 	const response = await get<{ data: Listing }>(`/listings/${id}`);
 	return response.data;
+};
+
+export const deleteListing = async (id: number): Promise<void> => {
+	return await del(`/listings/delete/${id}`);
 };

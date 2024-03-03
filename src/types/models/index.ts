@@ -1,7 +1,7 @@
 import type { AuthTokens } from '$types/api';
 
 export type User = {
-	id: string;
+	id: number;
 	email: string;
 	authTokens: AuthTokens;
 	brandDescription: string;
@@ -19,7 +19,7 @@ export type User = {
 };
 
 export type Campaign = {
-	id: string;
+	id: number;
 	title: string;
 	messages: string;
 	targetAudience: string[];
@@ -86,7 +86,7 @@ export type Listing = {
 	longitude: number;
 	imgSrc: string;
 	price: number;
-	squareFt: string;
+	squareFt: number;
 	city: string;
 	state: string;
 	zipCode: string;
@@ -103,7 +103,7 @@ export type Listing = {
 	county?: string;
 	subdivision?: string;
 	neighberhood?: string | null;
-	userId: string;
+	userId: number;
 	cma?: JSON;
 	gmcs?: GMC[];
 };
@@ -147,9 +147,9 @@ export type ZillowPropertyInfo = {
 	latitude: number;
 	longitude: number;
 	bathrooms: number;
+	squareFt: number;
 	resoFacts: {
 		lotSize: string;
-		livingArea: string;
 	};
 	yearBuilt: number;
 };

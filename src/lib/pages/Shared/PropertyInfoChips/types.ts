@@ -1,6 +1,7 @@
 export type PropertyInfo = {
-	yearBuilt: string;
+	yearBuilt: number;
 	bedrooms: number;
 	bathrooms: number;
 	lotSize: string;
+	price: number;
 };

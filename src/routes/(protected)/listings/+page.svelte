@@ -9,8 +9,9 @@
 	import { createListingFx, $newListing as newListing } from '$store/listings';
 	import PropertyInfoChips from '$lib/pages/Shared/PropertyInfoChips/PropertyInfoChips.svelte';
 	import Input from '$lib/components/Input/Input.svelte';
-	import type { Listing } from '$types/models';
+	import type { Listing, NewListing } from '$types/models';
 	import { errorMessages } from '$lib/constants/toastMessages';
+	import Loader from '$lib/components/Loader/Loader.svelte';
 
 	$: showStatus = false;
 	$: showTypes = false;
@@ -27,10 +28,9 @@
 	};
 
 	const createListing = async () => {
-		if ($newListing && $user) {
-			const { zillowInfo, propertyDescription } = $newListing;
+		if ($newListing && $newListing !== 'pending' && $user) {
+			const { zillowInfo, propertyDescription } = $newListing as NewListing;
 
-			console.log('zillow info', zillowInfo);
 			const listingToCreate: Listing = {
 				latitude: zillowInfo.latitude,
 				longitude: zillowInfo.longitude,
@@ -48,14 +48,14 @@
 				userId: $user.id,
 				imgSrc: zillowInfo.imgSrc,
 				zillowDescription: zillowInfo.description,
-				squareFt: zillowInfo.resoFacts.livingArea,
+				squareFt: zillowInfo.squareFt,
 				yearBuilt: zillowInfo.yearBuilt
 			};
 			try {
 				await createListingFx({
 					...listingToCreate
 				});
-				toastStore.trigger({ message: 'Listing Created', background: 'variant-filled-error' });
+				toastStore.trigger({ message: 'Listing Created', background: 'variant-filled-success' });
 			} catch {
 				toastStore.trigger(errorMessages.support);
 			}
@@ -63,16 +63,18 @@
 	};
 	const tabItems = [{ label: 'Active' }, { label: 'Inactive' }, { label: 'Incoming' }];
 
-	$: chipInfo = $newListing
-		? {
-				bedrooms: $newListing.zillowInfo.bedrooms,
-				bathrooms: $newListing.zillowInfo.bathrooms,
-				lotSize: '1400 sq ft',
-				yearBuilt: '1969'
-			}
-		: undefined;
+	$: chipInfo =
+		$newListing && $newListing !== 'pending'
+			? {
+					bedrooms: $newListing.zillowInfo.bedrooms,
+					bathrooms: $newListing.zillowInfo.bathrooms,
+					lotSize: '1400 sq ft',
+					yearBuilt: '1969'
+				}
+			: undefined;
 
-	$: newPropertyDescription = $newListing ? $newListing.propertyDescription : '';
+	$: newPropertyDescription =
+		$newListing && $newListing !== 'pending' ? $newListing.propertyDescription : '';
 </script>
 
 <div class="relative h-full w-full pb-12">
@@ -86,10 +88,12 @@
 			bg={'bg-[#010101]'}
 		/>
 	</div>
-	{#if $user && $user.listings && $user?.listings.length > 0}
+	{#if !$newListing && $newListing !== 'pending'}
 		<div class="">
 			<Tabs items={tabItems} />
 		</div>
+	{/if}
+	{#if $user && $user.listings && $user?.listings.length > 0 && $newListing !== 'pending' && !$newListing}
 		<!-- <div class="flex w-full items-center justify-end gap-x-5 pt-8">
 		<div class="h-[38px] w-[300px]">
 			<SearchBar />
@@ -111,11 +115,12 @@
 		</div>
 	</div> -->
 		<div class="mt-8 flex h-full w-full flex-grow flex-wrap justify-start gap-x-12 gap-y-8">
-			<ListingCard address="10044 W Springdale Ct" status="Active" />
-			<ListingCard address="10044 W Springdale Ct" status="Active" />
-			<ListingCard address="10044 W Springdale Ct" status="Active" />
-			<ListingCard address="10044 W Springdale Ct" status="Active" />
+			{#each $user.listings as listing}
+				<ListingCard {listing} status="Active" />
+			{/each}
 		</div>
+	{:else if $newListing === 'pending'}
+		<Loader size={600} />
 	{:else if $newListing && chipInfo}
 		<Box width="w-full" height="h-full" bgColor="bg-[#151719]" classes="p-6">
 			<div class="flex w-full justify-center text-center text-2xl text-[#EFEFEF]">
@@ -138,7 +143,7 @@
 				<div class="w-full">
 					<p class="text-2xl text-[#EFEFEF]">Property Info</p>
 					<div class="mt-4 flex gap-x-4">
-						<PropertyInfoChips propertyInfo={chipInfo} />
+						<!-- <PropertyInfoChips propertyInfo={chipInfo} /> -->
 					</div>
 					<div class="mt-16 flex w-full justify-center">
 						<Button

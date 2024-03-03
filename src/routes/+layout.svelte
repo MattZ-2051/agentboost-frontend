@@ -18,6 +18,7 @@
 	import { $user as user } from '$store/user';
 	import NewCampaignModal from '$lib/components/Modals/NewCampaignModal.svelte';
 	import SocialAccountModal from '$lib/components/Modals/SocialAccountModal.svelte';
+	import DeleteListingModal from '$lib/pages/Listings/Modals/DeleteListingModal.svelte';
 
 	storePopup.set({ computePosition, autoUpdate, offset, shift, flip, arrow });
 
@@ -28,7 +29,8 @@
 		modalForm: { ref: ModalForm },
 		modalConfirm: { ref: ModalConfirm },
 		newCampaign: { ref: NewCampaignModal },
-		socialAccounts: { ref: SocialAccountModal }
+		socialAccounts: { ref: SocialAccountModal },
+		deleteListing: { ref: DeleteListingModal }
 		// ...
 	};
 
@@ -52,7 +54,7 @@
 		})();
 	});
 
-	console.log('user', $user);
+	console.log('user', $user, typeof $user?.id);
 </script>
 
 <AppShell>

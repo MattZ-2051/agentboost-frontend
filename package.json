@@ -52,8 +52,10 @@
 	"type": "module",
 	"dependencies": {
 		"@dotlottie/dotlottie-js": "^0.7.1",
+		"@dotlottie/player-component": "^2.7.10",
 		"@floating-ui/dom": "1.6.3",
 		"@googlemaps/js-api-loader": "^1.16.6",
+		"@lottiefiles/svelte-lottie-player": "^0.3.1",
 		"@sveltejs/adapter-vercel": "^5.1.0",
 		"@types/facebook-js-sdk": "^3.3.10",
 		"@vercel/blob": "^0.22.1",

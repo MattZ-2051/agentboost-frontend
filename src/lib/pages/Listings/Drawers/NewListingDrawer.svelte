@@ -5,7 +5,7 @@
 	import Input from '$lib/components/Input/Input.svelte';
 	import Loader from '$lib/components/Loader/Loader.svelte';
 	import { errorMessages } from '$lib/constants/toastMessages';
-	import { createListingDescriptionFx } from '$store/listings';
+	import { createListingDescriptionFx, updateNewListingData } from '$store/listings';
 	import { getDrawerStore, getToastStore } from '@skeletonlabs/skeleton';
 
 	const drawerStore = getDrawerStore();
@@ -14,10 +14,11 @@
 	let propertyAddress: string;
 	let city: string;
 	let state: string;
-	let keyInfo: string;
+	let keyInfo: string = '';
 	let createListingLoading: boolean = false;
 
 	const handleCreateListing = async () => {
+		await updateNewListingData('pending');
 		if (!propertyAddress || propertyAddress.length === 0) {
 			toastStore.trigger({
 				message: 'Please provide a valid property address'
@@ -100,7 +101,7 @@
 		/>
 		{#if createListingLoading}
 			<div class="mt-8 flex h-full w-full justify-center">
-				<Loader width={'w-12'} />
+				<Loader />
 			</div>
 		{:else}
 			<Button

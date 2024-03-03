@@ -18,6 +18,10 @@ export const checkStorage = (): StorageTokenData | null => {
 	}
 };
 
+export const numberWithCommas = (x: number): string => {
+	return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+};
+
 export const handleUserTokenData = (token: AuthTokens) => {
 	const tokenData = decodeJwtToken(token.access);
 

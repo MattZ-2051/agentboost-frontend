@@ -59,7 +59,7 @@
 			{disabled}
 		/>
 	{/if}
-	{#if type === 'textarea'}
+	{#if type === 'textarea' && typeof value === 'string'}
 		<textarea
 			class={`${classes} ${variant} input w-full`}
 			{rows}

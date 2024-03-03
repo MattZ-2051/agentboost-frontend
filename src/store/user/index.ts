@@ -36,6 +36,7 @@ restoreUserSessionFx.failData.watch((error) => {
 	}
 });
 getUserProfileFx.doneData.watch((result) => {
+	console.log('here', result);
 	updateUser(result);
 });
 
@@ -55,7 +56,7 @@ signUpFx.doneData.watch(async (result) => {
 	handleUserTokenData(result);
 	const jwtData = decodeJwtToken(result.access);
 	const newUserData: User = {
-		id: jwtData.sub,
+		id: parseInt(jwtData.sub, 10),
 		email: jwtData.email,
 		fullName: jwtData.fullName,
 		profileImg: '',
@@ -83,7 +84,7 @@ loginFx.doneData.watch(async (result) => {
 	handleUserTokenData(result);
 	const jwtData = decodeJwtToken(result.access);
 	const newUserData: User = {
-		id: jwtData.sub,
+		id: parseInt(jwtData.sub, 10),
 		email: jwtData.email,
 		fullName: jwtData.fullName,
 		profileImg: '',

@@ -6,6 +6,8 @@
 	import type { PropertyInfo } from './types';
 	import EngineerIcon from '$lib/assets/svg/EngineerIcon.svelte';
 	import LotSizeIcon from '$lib/assets/svg/LotSizeIcon.svelte';
+	import PriceTagIcon from '$lib/assets/svg/PriceTagIcon.svelte';
+	import DollarIcon from '$lib/assets/svg/DollarIcon.svelte';
 
 	export let propertyInfo: PropertyInfo;
 
@@ -22,6 +24,10 @@
 		{
 			value: `${propertyInfo.lotSize}`,
 			icon: 'lotSize'
+		},
+		{
+			value: `${propertyInfo.price}`,
+			icon: 'price'
 		}
 	];
 </script>
@@ -37,6 +43,8 @@
 				<BathTubIcon />
 			{:else if item.icon === 'lotSize'}
 				<LotSizeIcon />
+			{:else if item.icon === 'price'}
+				<DollarIcon />
 			{/if}
 			<p>{item.value}</p>
 		</div>

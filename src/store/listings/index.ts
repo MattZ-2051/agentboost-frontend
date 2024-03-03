@@ -3,15 +3,16 @@ import {
 	createListingDescription,
 	createListing,
 	getListing,
-	createListingCma
+	createListingCma,
+	deleteListing
 } from '$api/listings';
 import { createListingGmc } from '$api/gmc';
 import type { ApiError } from '$types/api';
 import type { Listing, NewListing } from '$types/models';
-import { goto } from '$app/navigation';
 import { getUserProfileFx } from '$store/user';
+import { goto } from '$app/navigation';
 
-const updateNewListingData = createEvent<NewListing>();
+export const updateNewListingData = createEvent<NewListing | 'pending'>();
 const updateListingGmcs = createEvent<Listing['gmcs']>();
 const updateListingCmas = createEvent<Listing>();
 
@@ -28,6 +29,11 @@ export const createListingGmcFx = createEffect<typeof createListingGmc, ApiError
 
 export const createListingCmaFx = createEffect<typeof createListingCma, ApiError>(createListingCma);
 
+export const deleteListingFx = createEffect<typeof deleteListing, ApiError>(deleteListing);
+
+deleteListingFx.doneData.watch(async () => {
+	await getUserProfileFx();
+});
 createListingGmcFx.doneData.watch((result) => {
 	updateListingGmcs(result.gmcs);
 });
@@ -48,36 +54,35 @@ getListingFx.doneData.watch((result) => {
 	if (result.cma) {
 		createListingCmaFx({
 			listingId: result.id?.toString() || '0',
-			address: result.streedAddress,
+			address: result.streetAddress,
 			radius: 2,
 			status: 'Active'
 		});
 	}
 
 	if (result.gmcs?.length === 0) {
-		createListingGmcFx({
-			listingId: result.id?.toString() || '0',
-			address: result.streedAddress,
-			bed: result.bedrooms,
-			bath: result.bathrooms,
-			squareFt: result.bathrooms,
-			propertyDescription: result.propertyDescription,
-			location: 'location'
-		});
+		// createListingGmcFx({
+		// 	listingId: result.id?.toString() || '0',
+		// 	address: result.streetAddress,
+		// 	bed: result.bedrooms,
+		// 	bath: result.bathrooms,
+		// 	squareFt: result.bathrooms,
+		// 	propertyDescription: result.propertyDescription,
+		// 	location: 'location'
+		// });
 	}
 
 	updateListingData(result);
 });
 
 getListingFx.failData.watch(() => {
-	goto('/home');
+	// goto('/home');
 });
 
-createListingFx.doneData.watch((result) => {
+createListingFx.doneData.watch(async (result) => {
 	updateListingData(result);
 	getUserProfileFx();
-	console.log('listing', result);
-	// goto(`/listings/${result.id}`);
+	await goto(`/listings/${result.id}`);
 });
 
 createListingFx.failData.watch(() => {});
@@ -91,7 +96,7 @@ createListingDescriptionFx.doneData.watch((result) => {
 
 createListingDescriptionFx.failData.watch(() => {});
 
-export const $newListing = createStore<NewListing | null>(null).on(
+export const $newListing = createStore<NewListing | null | 'pending'>(null).on(
 	updateNewListingData,
 	(prevState, payload) => payload
 );

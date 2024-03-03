@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { TabItems } from '$types/components';
+	import type { TabItems } from './types';
 	import { goto } from '$app/navigation';
 
 	export let items: TabItems;

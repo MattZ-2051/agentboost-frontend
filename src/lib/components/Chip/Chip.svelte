@@ -6,7 +6,11 @@
 	export let hover: boolean = false;
 </script>
 
-<span on:click={onClick} class={`${hover ? 'chip' : ''} ${variant} ${classes}`} on:click={onClick}>
+<span
+	on:click={onClick}
+	class={`${hover ? 'chip' : ''} ${variant} ${classes} whitespace-nowrap`}
+	on:click={onClick}
+>
 	<slot />
 </span>
 

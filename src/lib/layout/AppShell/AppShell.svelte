@@ -20,7 +20,10 @@
 {:else}
 	<AppHeader />
 {/if}
-<div class={`!h-full ${isLanding ? `` : `min-w-screen max-w-screen-desktop px-12`}`}>
+<div
+	class={`${isLanding ? `` : `min-w-screen max-w-screen-desktop px-12`} dark`}
+	data-theme="agentboost-theme"
+>
 	<slot />
 </div>
 {#if isLanding}

@@ -45,10 +45,10 @@ createListingCmaFx.failData.watch((error) => {
 });
 
 getListingFx.doneData.watch((result) => {
-	if (result.cma?.length === 0) {
+	if (result.cma) {
 		createListingCmaFx({
 			listingId: result.id?.toString() || '0',
-			address: result.address,
+			address: result.streedAddress,
 			radius: 2,
 			status: 'Active'
 		});
@@ -57,7 +57,7 @@ getListingFx.doneData.watch((result) => {
 	if (result.gmcs?.length === 0) {
 		createListingGmcFx({
 			listingId: result.id?.toString() || '0',
-			address: result.address,
+			address: result.streedAddress,
 			bed: result.bedrooms,
 			bath: result.bathrooms,
 			squareFt: result.bathrooms,
@@ -76,7 +76,8 @@ getListingFx.failData.watch(() => {
 createListingFx.doneData.watch((result) => {
 	updateListingData(result);
 	getUserProfileFx();
-	goto(`/listings/${result.id}`);
+	console.log('listing', result);
+	// goto(`/listings/${result.id}`);
 });
 
 createListingFx.failData.watch(() => {});

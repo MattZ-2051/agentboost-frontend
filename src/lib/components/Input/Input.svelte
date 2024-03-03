@@ -64,7 +64,7 @@
 			class={`${classes} ${variant} input w-full`}
 			{rows}
 			{placeholder}
-			{value}
+			bind:value
 			{disabled}
 			{name}
 		/>

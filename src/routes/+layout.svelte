@@ -55,7 +55,7 @@
 	console.log('user', $user);
 </script>
 
-<div class="dark" data-theme="agentboost-theme">
+<AppShell>
 	<Toast position="t" zIndex="z-[9999]" />
 	<Modal background="bg-[#1A1A1A]" padding="p-6" components={modalRegistry} />
 	<Drawer position="right" width="w-[380px]">
@@ -67,7 +67,5 @@
 			<NewBuyersDrawer />
 		{/if}
 	</Drawer>
-	<AppShell>
-		<slot />
-	</AppShell>
-</div>
+	<slot />
+</AppShell>

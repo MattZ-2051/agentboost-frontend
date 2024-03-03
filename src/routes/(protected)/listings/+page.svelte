@@ -36,18 +36,20 @@
 				longitude: zillowInfo.longitude,
 				bathrooms: zillowInfo.bathrooms,
 				bedrooms: zillowInfo.bedrooms,
-				address: zillowInfo.address.streetAddress,
+				streetAddress: zillowInfo.address.streetAddress,
 				propertyDescription,
 				city: zillowInfo.address.city,
 				state: zillowInfo.address.state,
-				county: zillowInfo.county,
 				neighberhood: zillowInfo.address.neighberhood,
 				lotSize: zillowInfo.resoFacts.lotSize,
-				livingArea: zillowInfo.resoFacts.livingArea,
 				zipCode: zillowInfo.address.zipcode,
 				zpid: zillowInfo.zpid,
 				price: zillowInfo.price,
-				userId: $user.id
+				userId: $user.id,
+				imgSrc: zillowInfo.imgSrc,
+				zillowDescription: zillowInfo.description,
+				squareFt: zillowInfo.resoFacts.livingArea,
+				yearBuilt: zillowInfo.yearBuilt
 			};
 			try {
 				await createListingFx({
@@ -108,9 +110,10 @@
 			<GridDropdown showContent={showGrid} />
 		</div>
 	</div> -->
-		<div
-			class="mt-8 flex w-full flex-grow flex-wrap justify-start gap-x-12 gap-y-8 overflow-y-auto"
-		>
+		<div class="mt-8 flex h-full w-full flex-grow flex-wrap justify-start gap-x-12 gap-y-8">
+			<ListingCard address="10044 W Springdale Ct" status="Active" />
+			<ListingCard address="10044 W Springdale Ct" status="Active" />
+			<ListingCard address="10044 W Springdale Ct" status="Active" />
 			<ListingCard address="10044 W Springdale Ct" status="Active" />
 		</div>
 	{:else if $newListing && chipInfo}

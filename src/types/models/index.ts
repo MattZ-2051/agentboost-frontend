@@ -81,25 +81,31 @@ export type GMC = {
 
 export type Listing = {
 	id?: number;
-	address: string;
-	price: number;
 	zpid: number;
-	propertyDescription: string;
-	propertyInsight?: string;
-	city: string;
 	latitude: number;
 	longitude: number;
+	imgSrc: string;
+	price: number;
+	squareFt: string;
+	city: string;
 	state: string;
 	zipCode: string;
-	bedrooms: number;
-	county: string | null;
-	neighberhood: string | null;
-	bathrooms: number;
+	streetAddress: string;
+	zillowDescription: string;
+	propertyDescription: string;
+	nearbyPoi?: JSON;
+	propertyInsightAvgFt?: number;
+	propertyInsightAvgPrice?: number;
 	lotSize: string;
-	livingArea: string;
-	cma?: CMA[];
-	gmcs?: GMC[];
+	bedrooms: number;
+	bathrooms: number;
+	yearBuilt: number;
+	county?: string;
+	subdivision?: string;
+	neighberhood?: string | null;
 	userId: string;
+	cma?: JSON;
+	gmcs?: GMC[];
 };
 
 export type Buyer = {
@@ -145,6 +151,7 @@ export type ZillowPropertyInfo = {
 		lotSize: string;
 		livingArea: string;
 	};
+	yearBuilt: number;
 };
 
 export type NewListing = {

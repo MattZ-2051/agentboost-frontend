@@ -36,7 +36,6 @@ restoreUserSessionFx.failData.watch((error) => {
 	}
 });
 getUserProfileFx.doneData.watch((result) => {
-	console.log('here', result);
 	updateUser(result);
 });
 

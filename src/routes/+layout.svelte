@@ -54,7 +54,7 @@
 		})();
 	});
 
-	console.log('user', $user, typeof $user?.id);
+	console.log('user', $user);
 </script>
 
 <AppShell>

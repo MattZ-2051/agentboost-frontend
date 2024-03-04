@@ -61,7 +61,7 @@
 			</div>
 		</Box>
 	</div>
-	<div class="h-full w-full">
+	<div class="h-full w-full" id="poi">
 		<div class="mt-20 flex items-center gap-x-2 text-[24px] font-semibold text-[#fff]">
 			<RoutingIcon />
 			<p>Nearby Points of Interest</p>

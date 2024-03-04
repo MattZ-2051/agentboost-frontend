@@ -32,9 +32,9 @@
 			response: (r: boolean) => r && handleDeleteListing()
 		});
 	};
-	const handleDeleteListing = () => {
+	const handleDeleteListing = async () => {
 		try {
-			listing.id && deleteListingFx(listing.id);
+			listing.id && (await deleteListingFx(listing.id));
 			toastStore.trigger({
 				message: 'Listing Successfully deleted',
 				background: 'variant-filled-success'

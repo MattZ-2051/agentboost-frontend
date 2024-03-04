@@ -1,5 +1,5 @@
 export type UpdateUserData = {
-	id: string;
+	id: number;
 	brandDescription?: string;
 	profileImg?: string;
 	businessLogo?: string;

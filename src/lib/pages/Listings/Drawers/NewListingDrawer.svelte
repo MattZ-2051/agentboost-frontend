@@ -38,10 +38,10 @@
 			createListingLoading = true;
 			try {
 				await createListingDescriptionFx({ address: propertyAddress, keyInfo });
+				createListingLoading = false;
 				drawerStore.close();
 			} catch (e) {
 				toastStore.trigger(errorMessages.support);
-			} finally {
 				createListingLoading = false;
 			}
 		}

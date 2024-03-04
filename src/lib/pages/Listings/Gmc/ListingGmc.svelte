@@ -2,7 +2,9 @@
 	import GmcIcon from '$lib/assets/svg/GmcIcon.svelte';
 	import Button from '$lib/components/Button/Button.svelte';
 	import Gmc from '$lib/pages/Shared/Gmc/Gmc.svelte';
-	import { $user as user } from '$store/user';
+	import type { GMC } from '$types/models';
+
+	export let gmcs: GMC[] | undefined;
 </script>
 
 <div
@@ -21,6 +23,8 @@
 		/>
 	</div>
 	<div class="mt-[22px]">
-		<Gmc gmcs={[]} />
+		{#if gmcs}
+			<Gmc {gmcs} />
+		{/if}
 	</div>
 </div>

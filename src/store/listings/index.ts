@@ -9,10 +9,10 @@ import {
 import { createListingGmc } from '$api/gmc';
 import type { ApiError } from '$types/api';
 import type { Listing, NewListing } from '$types/models';
-import { getUserProfileFx } from '$store/user';
+import { $user, getUserProfileFx } from '$store/user';
 import { goto } from '$app/navigation';
 
-export const updateNewListingData = createEvent<NewListing | 'pending'>();
+export const updateNewListingData = createEvent<NewListing | 'pending' | null>();
 const updateListingGmcs = createEvent<Listing['gmcs']>();
 const updateListingCmas = createEvent<Listing>();
 
@@ -51,6 +51,8 @@ createListingCmaFx.failData.watch((error) => {
 });
 
 getListingFx.doneData.watch((result) => {
+	const user = $user.getState();
+
 	if (result.cma) {
 		createListingCmaFx({
 			listingId: result.id?.toString() || '0',
@@ -60,16 +62,20 @@ getListingFx.doneData.watch((result) => {
 		});
 	}
 
-	if (result.gmcs?.length === 0) {
-		// createListingGmcFx({
-		// 	listingId: result.id?.toString() || '0',
-		// 	address: result.streetAddress,
-		// 	bed: result.bedrooms,
-		// 	bath: result.bathrooms,
-		// 	squareFt: result.bathrooms,
-		// 	propertyDescription: result.propertyDescription,
-		// 	location: 'location'
-		// });
+	if (result.gmcs?.length === 0 && user) {
+		createListingGmcFx({
+			listingId: result.id?.toString() || '0',
+			address: result.streetAddress,
+			bed: result.bedrooms,
+			bath: result.bathrooms,
+			squareFt: result.squareFt,
+			propertyDescription: result.propertyDescription,
+			location: 'location',
+			email: user.email,
+			phoneNumber: user.phoneNumber,
+			brandDescription: user.brandDescription,
+			fullName: user.fullName
+		});
 	}
 
 	updateListingData(result);
@@ -80,8 +86,8 @@ getListingFx.failData.watch(() => {
 });
 
 createListingFx.doneData.watch(async (result) => {
-	updateListingData(result);
-	getUserProfileFx();
+	await updateListingData(result);
+	await getUserProfileFx();
 	await goto(`/listings/${result.id}`);
 });
 

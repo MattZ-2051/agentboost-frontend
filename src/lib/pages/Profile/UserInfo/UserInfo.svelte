@@ -22,6 +22,7 @@
 	let email: string = user.email;
 	let brokerage: string = user.brokerage;
 	let brandDescription: string = user.brandDescription;
+	let phoneNumber: string = user.phoneNumber;
 	let currentPassword: string;
 	let newPassword: string;
 
@@ -262,7 +263,15 @@
 			placeholder="Email"
 		/>
 	</div>
-	<div class="mt-5"></div>
+	<div class="mt-5">
+		<Input
+			label="Phone Number"
+			bind:value={phoneNumber}
+			variant="variant-app-primary"
+			type="text"
+			placeholder="Phone Number"
+		/>
+	</div>
 	<div class="mt-5">
 		<Input
 			label="Brokerage"

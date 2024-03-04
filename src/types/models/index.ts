@@ -6,6 +6,7 @@ export type User = {
 	authTokens: AuthTokens;
 	brandDescription: string;
 	profileImg: string;
+	phoneNumber: string;
 	businessLogo: string;
 	areaOfExpertise: string;
 	fullName: string;

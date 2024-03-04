@@ -6,18 +6,16 @@
 	import { getDrawerStore, getToastStore } from '@skeletonlabs/skeleton';
 	import type { DrawerSettings } from '@skeletonlabs/skeleton';
 	import { $user as user } from '$store/user';
-	import { createListingFx, $newListing as newListing } from '$store/listings';
+	import {
+		createListingFx,
+		$newListing as newListing,
+		updateNewListingData
+	} from '$store/listings';
 	import PropertyInfoChips from '$lib/pages/Shared/PropertyInfoChips/PropertyInfoChips.svelte';
 	import Input from '$lib/components/Input/Input.svelte';
 	import type { Listing, NewListing } from '$types/models';
 	import { errorMessages } from '$lib/constants/toastMessages';
 	import Loader from '$lib/components/Loader/Loader.svelte';
-
-	$: showStatus = false;
-	$: showTypes = false;
-	$: showStates = false;
-	$: showMore = false;
-	$: showGrid = false;
 
 	const drawerStore = getDrawerStore();
 	const toastStore = getToastStore();
@@ -27,8 +25,33 @@
 		bgDrawer: 'bg-[#171A1C]'
 	};
 
+	let listingFile: any;
+
+	$: showStatus = false;
+	$: showTypes = false;
+	$: showStates = false;
+	$: showMore = false;
+	$: showGrid = false;
+	$: creatingListing = false;
+	$: listingFilePreview =
+		$newListing && $newListing !== 'pending' && $newListing.zillowInfo.imgSrc
+			? $newListing.zillowInfo.imgSrc
+			: '';
+
+	const handleProfileFileOnChange = (e: any) => {
+		let image = e.target.files[0];
+		let reader = new FileReader();
+		listingFile = image;
+
+		reader.readAsDataURL(image);
+		reader.onload = (e) => {
+			listingFilePreview = e?.target?.result as string;
+		};
+	};
+
 	const createListing = async () => {
 		if ($newListing && $newListing !== 'pending' && $user) {
+			creatingListing = true;
 			const { zillowInfo, propertyDescription } = $newListing as NewListing;
 
 			const listingToCreate: Listing = {
@@ -55,7 +78,9 @@
 				await createListingFx({
 					...listingToCreate
 				});
+				creatingListing = false;
 				toastStore.trigger({ message: 'Listing Created', background: 'variant-filled-success' });
+				await updateNewListingData(null);
 			} catch {
 				toastStore.trigger(errorMessages.support);
 			}
@@ -68,8 +93,9 @@
 			? {
 					bedrooms: $newListing.zillowInfo.bedrooms,
 					bathrooms: $newListing.zillowInfo.bathrooms,
-					lotSize: '1400 sq ft',
-					yearBuilt: '1969'
+					lotSize: $newListing.zillowInfo.resoFacts.lotSize,
+					yearBuilt: $newListing.zillowInfo.yearBuilt,
+					price: $newListing.zillowInfo.price
 				}
 			: undefined;
 
@@ -93,7 +119,7 @@
 			<Tabs items={tabItems} />
 		</div>
 	{/if}
-	{#if $user && $user.listings && $user?.listings.length > 0 && $newListing !== 'pending' && !$newListing}
+	{#if $user && $user.listings && $user?.listings.length > 0 && $newListing !== 'pending' && !$newListing && !creatingListing}
 		<!-- <div class="flex w-full items-center justify-end gap-x-5 pt-8">
 		<div class="h-[38px] w-[300px]">
 			<SearchBar />
@@ -120,11 +146,15 @@
 			{/each}
 		</div>
 	{:else if $newListing === 'pending'}
-		<Loader size={600} />
+		<div />
+	{:else if creatingListing}
+		<div class="flex h-full w-full items-center justify-center">
+			<Loader size={600} />
+		</div>
 	{:else if $newListing && chipInfo}
 		<Box width="w-full" height="h-full" bgColor="bg-[#151719]" classes="p-6">
-			<div class="flex w-full justify-center text-center text-2xl text-[#EFEFEF]">
-				<p>Something Looks Wrong? Edit your property info here before creating your listing</p>
+			<div class="my-8 flex w-full justify-center text-center text-2xl text-[#EFEFEF]">
+				<p>Something Looks Wrong? Edit your property info here before creating your Listing</p>
 			</div>
 			<div class="flex w-full flex-col gap-y-8">
 				<div>
@@ -134,7 +164,7 @@
 							label=""
 							placeholder=""
 							type="textarea"
-							bind:value={newPropertyDescription}
+							value={newPropertyDescription}
 							variant="variant-app-primary"
 							rows={20}
 						/>
@@ -143,7 +173,27 @@
 				<div class="w-full">
 					<p class="text-2xl text-[#EFEFEF]">Property Info</p>
 					<div class="mt-4 flex gap-x-4">
-						<!-- <PropertyInfoChips propertyInfo={chipInfo} /> -->
+						<PropertyInfoChips propertyInfo={chipInfo} />
+					</div>
+					{#if listingFilePreview.length > 0}
+						<div class="mt-4">
+							<img
+								src={listingFilePreview}
+								alt=""
+								class="h-[400px] w-[500px] rounded-[10px] object-cover"
+							/>
+						</div>
+					{/if}
+					<div class="mt-4">
+						<input
+							type="file"
+							class=""
+							id="listingFile"
+							name="listingImg"
+							accept="image/png, image/jpeg, image/jpg"
+							bind:files={listingFile}
+							on:change={handleProfileFileOnChange}
+						/>
 					</div>
 					<div class="mt-16 flex w-full justify-center">
 						<Button

@@ -33,7 +33,7 @@
 </script>
 
 {#each chipMap as item}
-	<Chip variant="variant-app-primary" classes="!min-w-[105px] !bg-[#22272A]">
+	<Chip variant="variant-app-primary" classes="!min-w-[105px] !bg-[#22272A]" hover={true}>
 		<div class="flex w-full items-center justify-center gap-x-2">
 			{#if item.icon === 'bedIcon'}
 				<BedIcon />

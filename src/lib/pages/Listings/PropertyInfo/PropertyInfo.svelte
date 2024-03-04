@@ -1,11 +1,5 @@
 <script lang="ts">
-	import AreaIcon from '$lib/assets/svg/AreaIcon.svelte';
-	import BathTubIcon from '$lib/assets/svg/BathTubIcon.svelte';
-	import BedIcon from '$lib/assets/svg/BedIcon.svelte';
 	import ChevronLeft from '$lib/assets/svg/Chevron/ChevronLeft.svelte';
-	import Chip from '$lib/components/Chip/Chip.svelte';
-	import TaxIcon from '$lib/assets/svg/TaxIcon.svelte';
-	import dummyImg from '$lib/assets/images/dummy-buyer-img.png';
 	import Box from '$lib/components/Box/Box.svelte';
 	import CopyIcon from '$lib/assets/svg/CopyIcon.svelte';
 	import { getToastStore } from '@skeletonlabs/skeleton';
@@ -13,6 +7,8 @@
 	import PropertyInfoChips from '$lib/pages/Shared/PropertyInfoChips/PropertyInfoChips.svelte';
 	import type { PropertyInfo } from '$lib/pages/Shared/PropertyInfoChips/types';
 	import { numberWithCommas } from '$utils';
+	import { goto } from '$app/navigation';
+	import PageHeader from '../Header/PageHeader.svelte';
 
 	const copyTextToClipboard = async (text: string) => {
 		try {
@@ -38,13 +34,41 @@
 		lotSize,
 		price
 	};
+
+	const headerMap: Record<string, { selected: boolean; href: string }> = {
+		details: {
+			href: '#details',
+			selected: true
+		},
+		comp: {
+			href: '#comp',
+			selected: false
+		},
+		insights: {
+			href: '#insights',
+			selected: false
+		},
+		poi: {
+			href: '#poi',
+			selected: false
+		},
+		marketing: {
+			href: '#marketing',
+			selected: false
+		}
+	};
 </script>
 
+<div class="my-8">
+	<PageHeader selected={headerMap} />
+</div>
 <div class="flex h-full w-full flex-col rounded-[20px] bg-[#151719] p-8">
 	<div class="flex h-full w-full justify-between">
 		<div class="flex w-2/5 flex-col">
 			<div class="flex items-center gap-x-6">
-				<ChevronLeft />
+				<div on:click={async () => await goto('/listings')}>
+					<ChevronLeft />
+				</div>
 				<p class="text-2xl font-semibold leading-[normal] text-white">10044 W Springdale Ct</p>
 			</div>
 			<div class="mt-[30px] flex flex-col items-start gap-x-6">
@@ -62,7 +86,7 @@
 				>
 					<div class="flex h-full w-full flex-col items-end justify-center">
 						<p class="mb-1 text-[26px] text-[#EFEFEF]">$ {numberWithCommas(price)}</p>
-						<p class="w-full text-end text-sm font-light text-[#CFD0D5]">$ 1,540 / sq ft</p>
+						<!-- <p class="w-full text-end text-sm font-light text-[#CFD0D5]">$ 1,540 / sq ft</p> -->
 					</div>
 				</div>
 			</div>

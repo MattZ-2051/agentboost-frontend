@@ -1,5 +1,6 @@
 import { patch, post } from '..';
 import type { Listing } from '$types/models';
+import type { CreateListingGmc } from './types';
 
 export const createListingGmc = async ({
 	address,
@@ -8,16 +9,12 @@ export const createListingGmc = async ({
 	squareFt,
 	propertyDescription,
 	location,
-	listingId
-}: {
-	address: string;
-	bed: number;
-	bath: number;
-	squareFt: number;
-	propertyDescription: string;
-	location: string;
-	listingId: string;
-}) => {
+	listingId,
+	fullName,
+	email,
+	phoneNumber,
+	brandDescription
+}: CreateListingGmc) => {
 	const response = await post<{ data: Listing }>(`/gmc/create`, {
 		address,
 		bed,
@@ -25,7 +22,11 @@ export const createListingGmc = async ({
 		squareFt,
 		propertyDescription,
 		location,
-		listingId
+		listingId,
+		fullName,
+		email,
+		phoneNumber,
+		brandDescription
 	});
 	return response.data;
 };

@@ -4,7 +4,7 @@
 	import EmailView from './EmailView/EmailView.svelte';
 	import SocialCard from './SocialCard/SocialCard.svelte';
 	import ReelsScript from './ReelsScript/ReelsScript.svelte';
-	import type { TabItems } from '$types/components';
+	import type { TabItems } from '$lib/components/Tabs/types';
 	import type { GMC } from '$types/models';
 
 	export let gmcs: GMC[];
@@ -33,9 +33,15 @@
 		<div slot="content" class="">
 			{#if selectedItem === 'Social Media'}
 				<div class="flex w-[88vw] justify-start">
-					<Slider length={8} classes="">
-						<SocialCard />
-					</Slider>
+					<div
+						class={`slider flex snap-x snap-mandatory scroll-px-4 gap-4 overflow-x-auto scroll-smooth pb-10 pt-6`}
+					>
+						{#each gmcs as gmc, i}
+							<div class="shrink-0 snap-center">
+								<SocialCard cardData={{ caption: gmc.caption, imgSrc: gmc.img || '' }} />
+							</div>
+						{/each}
+					</div>
 				</div>
 			{:else if selectedItem === 'Email'}
 				<div>
@@ -51,3 +57,19 @@
 		</div>
 	</Tabs>
 {/if}
+
+<style lang="postcss">
+	.slider::-webkit-scrollbar {
+		width: 0.25rem !important;
+		height: 0.25rem !important;
+	}
+
+	.slider::-webkit-scrollbar-track {
+		background: #22272a !important;
+	}
+
+	.slider::-webkit-scrollbar-thumb {
+		color: #48e8ed !important;
+		background-color: #48e8ed !important;
+	}
+</style>

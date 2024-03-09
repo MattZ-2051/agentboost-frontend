@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { goto } from '$app/navigation';
 	import LogoWhite from '$lib/assets/svg/Logo/LogoWhite.svelte';
 	import Button from '$lib/components/Button/Button.svelte';
 	import { AppBar, getDrawerStore } from '@skeletonlabs/skeleton';
@@ -52,7 +53,7 @@
 			</button>
 		</div>
 		<div class="hidden lg:block">
-			<Button label="Join Free Beta" variant="landing" />
+			<Button label="Join Free Beta" variant="landing" onClick={() => goto('/signup')} />
 		</div>
 	</svelte:fragment>
 </AppBar>

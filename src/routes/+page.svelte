@@ -10,6 +10,7 @@
 	import BackgroundGradient from '$lib/pages/Landing/BackgroundGradient.svelte';
 	import LandingSeperator from '$lib/assets/svg/LandingSeperator.svelte';
 	import FeatureTabs from '$lib/pages/Landing/FeatureTabs/FeatureTabs.svelte';
+	import { goto } from '$app/navigation';
 	// const handleShare = () => {
 	//   FB.ui(
 	//     {
@@ -155,7 +156,12 @@
 			arrived.
 		</p>
 
-		<Button label="Join Free Beta" variant="landing-dark" classes="!z-[38]" />
+		<Button
+			label="Join Free Beta"
+			variant="landing-dark"
+			classes="!z-[38]"
+			onClick={() => goto('/signup')}
+		/>
 		<div class="relative w-full">
 			<div class="flex justify-center">
 				<div class="mask absolute -left-[8rem] z-10 h-full w-[40rem] -rotate-90" />
@@ -386,7 +392,12 @@
 									embrace a future of efficiency and expertise. Join Agent Boost AI
 									<br class="hidden xl:inline-block" /> now and experience a revolution in realtor tools!
 								</p>
-								<Button variant="landing" label="Get started" classes="text-white mt-8 xl:mt-12" />
+								<Button
+									variant="landing"
+									label="Get started"
+									classes="text-white mt-8 xl:mt-12"
+									onClick={() => goto('/signup')}
+								/>
 							</div>
 							<div class="hidden xl:inline-block">
 								<LogoIconBlue />

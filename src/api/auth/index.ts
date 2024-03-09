@@ -32,9 +32,11 @@ export const logout = async ({ userId }: { userId: string }) => {
 	return response.data;
 };
 
+const baseURL = import.meta.env?.VITE_API_URL;
+
 export const googleSignin = async () => {
 	//TODO: Replace with api url env variable
-	window.open('http://localhost:5001/auth/google-login', '_self');
+	window.open(`${baseURL}/auth/google-login`, '_self');
 };
 
 export const refreshTokens = async ({ refreshToken }: { refreshToken: string }) => {

@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { goto } from '$app/navigation';
 	import Plus from '$lib/assets/svg/Plus.svelte';
 	import Button from '$lib/components/Button/Button.svelte';
 	import Card from '$lib/components/Card/Card.svelte';
@@ -8,13 +9,13 @@
 		document.getElementById('fileInput')?.click();
 	};
 
-	export let cardData: { caption: string; imgSrc: string };
+	export let cardData: { caption: string; imgSrc: string; calenderDate: string | null };
 
-	const { caption, imgSrc } = cardData;
+	const { caption, imgSrc, calenderDate } = cardData;
 
 	const modalStore = getModalStore();
 
-	let gmcFilePreview: string;
+	let gmcFilePreview: string = '';
 	let gmcFile: any;
 
 	const handleFileOnChange = (e: any) => {
@@ -38,12 +39,14 @@
 		};
 		modalStore.trigger(modal);
 	};
+
+	console.log('calender date', calenderDate);
 </script>
 
 <Card width="w-[284px]" height="h-[600px]" classes="flex flex-col">
 	<div class="flex h-full w-full flex-col overflow-hidden">
 		<div>
-			{#if (!gmcFile || gmcFilePreview?.length === 0) && (!imgSrc || imgSrc?.length === 0)}
+			{#if gmcFilePreview?.length === 0 && imgSrc?.length === 0}
 				<div
 					class="relative flex !h-[251px] w-full flex-col items-center justify-center rounded-[10px] border border-dashed border-[#2E2F37] bg-[#1E2225]"
 				>
@@ -74,11 +77,21 @@
 			</p>
 		</div>
 	</div>
-	<Button
-		label="Add to Calender"
-		variant="variant-app-primary"
-		bg="bg-[#171A1C]"
-		classes="!w-full !h-12 !mt-8"
-		onClick={() => handleListingAdd()}
-	/>
+	{#if !calenderDate}
+		<Button
+			label="Add to Calender"
+			variant="variant-app-primary"
+			bg="bg-[#171A1C]"
+			classes="!w-full !h-12 !mt-8"
+			onClick={() => handleListingAdd()}
+		/>
+	{:else if calenderDate}
+		<Button
+			label="View Calender"
+			variant="variant-app-primary"
+			bg="bg-[#171A1C]"
+			classes="!w-full !h-12 !mt-8"
+			onClick={async () => await goto('/marketing')}
+		/>
+	{/if}
 </Card>

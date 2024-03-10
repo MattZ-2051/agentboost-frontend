@@ -3,10 +3,14 @@ import type { Listing, ZillowPropertyInfo } from '$types/models';
 
 export const createListingDescription = async ({
 	address,
-	keyInfo
+	keyInfo,
+	city,
+	state
 }: {
 	address: string;
 	keyInfo: string;
+	city: string;
+	state: string;
 }): Promise<{
 	text: string;
 	zillowInfo: ZillowPropertyInfo;
@@ -15,7 +19,9 @@ export const createListingDescription = async ({
 		data: { text: string; zillowInfo: ZillowPropertyInfo };
 	}>('/listings/create/property-description', {
 		address,
-		keyInfo
+		keyInfo,
+		city,
+		state
 	});
 	return response.data;
 };

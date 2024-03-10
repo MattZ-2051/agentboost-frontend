@@ -9,6 +9,9 @@
 	import EditIcon from '$lib/assets/svg/EditIcon.svelte';
 	import AddIcon from '$lib/assets/svg/AddIcon/AddIcon.svelte';
 	import Button from '../Button/Button.svelte';
+	import { createCampaignFx } from '$store/campaigns';
+	import { errorMessages } from '$lib/constants/toastMessages';
+	import { $user as user } from '$store/user';
 
 	/** Exposes parent props to this component. */
 	export let parent: SvelteComponent;
@@ -36,22 +39,39 @@
 		}
 	};
 
-	const handleNewCampaign = () => {
-		if (campaignTitle.length === 0 || targetAudiences.length === 0 || messages.length === 0) {
-			toastStore.trigger({
-				message: 'Missing Required Fields.',
+	const handleNewCampaign = async () => {
+		if ($user) {
+			if (campaignTitle.length === 0 || targetAudiences.length === 0 || messages.length === 0) {
+				toastStore.trigger({
+					message: 'Missing Required Fields.',
 
-				background: 'variant-filled-error'
-			});
-			return;
+					background: 'variant-filled-error'
+				});
+				modalStore.close();
+				return;
+			}
+
+			try {
+				await createCampaignFx(
+					{
+						messages,
+						title: campaignTitle,
+						targetAudience: targetAudiences,
+						active: campaignActive
+					},
+					$user.id
+				);
+				toastStore.trigger({
+					message: 'Campaign Added',
+					background: 'variant-filled-success'
+				});
+				modalStore.close();
+				return;
+			} catch {
+				toastStore.trigger(errorMessages.support);
+				return;
+			}
 		}
-		modalStore.close();
-
-		toastStore.trigger({
-			message: 'Campaign Added',
-			background: 'variant-filled-success'
-		});
-		return;
 	};
 </script>
 

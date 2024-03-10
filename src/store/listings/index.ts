@@ -63,19 +63,19 @@ getListingFx.doneData.watch((result) => {
 	}
 
 	if (result.gmcs?.length === 0 && user) {
-		createListingGmcFx({
-			listingId: result.id?.toString() || '0',
-			address: result.streetAddress,
-			bed: result.bedrooms,
-			bath: result.bathrooms,
-			squareFt: result.squareFt,
-			propertyDescription: result.propertyDescription,
-			location: 'location',
-			email: user.email,
-			phoneNumber: user.phoneNumber,
-			brandDescription: user.brandDescription,
-			fullName: user.fullName
-		});
+		// createListingGmcFx({
+		// 	listingId: result.id?.toString() || '0',
+		// 	address: result.streetAddress,
+		// 	bed: result.bedrooms,
+		// 	bath: result.bathrooms,
+		// 	squareFt: result.squareFt,
+		// 	propertyDescription: result.propertyDescription,
+		// 	location: 'location',
+		// 	email: user.email,
+		// 	phoneNumber: user.phoneNumber,
+		// 	brandDescription: user.brandDescription,
+		// 	fullName: user.fullName
+		// });
 	}
 
 	updateListingData(result);

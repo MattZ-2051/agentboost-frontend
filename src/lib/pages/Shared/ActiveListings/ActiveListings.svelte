@@ -3,8 +3,8 @@
 	import Box from '$lib/components/Box/Box.svelte';
 	import Button from '$lib/components/Button/Button.svelte';
 	import Slider from '$lib/components/Slider/Slider.svelte';
+	import ListingCard from '$lib/pages/Listings/Cards/ListingCard.svelte';
 	import type { Listing } from '$types/models';
-	import ActiveListingCard from '../ActiveListingCard/ActiveListingCard.svelte';
 
 	export let listings: Listing[] | null | undefined;
 </script>
@@ -15,9 +15,17 @@
 	</div>
 	<div class="flex justify-start">
 		{#if listings && listings?.length > 0}
-			<Slider length={listings.length}>
-				<ActiveListingCard />
-			</Slider>
+			<div class="flex w-[88vw] justify-start">
+				<div
+					class={`slider flex snap-x snap-mandatory scroll-px-4 gap-4 overflow-x-auto scroll-smooth pb-10 pt-6`}
+				>
+					{#each listings as listing, i}
+						<div class="shrink-0 snap-center">
+							<ListingCard {listing} status="Active" />
+						</div>
+					{/each}
+				</div>
+			</div>
 		{:else}
 			<div class="flex h-[544px] w-full flex-col items-center justify-center">
 				<p class="pb-12 text-3xl font-semibold">No Active Listings</p>

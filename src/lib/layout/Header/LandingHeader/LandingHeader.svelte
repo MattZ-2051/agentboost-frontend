@@ -29,9 +29,9 @@
 	<div
 		class="textLink hidden items-center justify-center gap-x-14 font-extralight hover:cursor-pointer hover:text-white lg:flex"
 	>
-		<p>Features</p>
-		<p>Platform</p>
-		<p>About</p>
+		<a href="#features">Features</a>
+		<a href="#platform">Platform</a>
+		<a href="#about">About</a>
 	</div>
 	<svelte:fragment slot="trail">
 		<div class="flex items-center">

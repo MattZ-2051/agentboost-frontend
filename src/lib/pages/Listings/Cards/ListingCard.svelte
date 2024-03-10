@@ -11,11 +11,10 @@
 	import { deleteListingFx } from '$store/listings';
 
 	export let listing: Listing;
-	export let status: string;
 
 	const modalStore = getModalStore();
 	const toastStore = getToastStore();
-	const items = ['Active', 'Inactive', 'Upcoming'];
+	const items = ['Active', 'Inactive', 'Upcoming'].filter((item) => item !== listing.status);
 	const { imgSrc, streetAddress } = listing;
 
 	$: showContent = false;

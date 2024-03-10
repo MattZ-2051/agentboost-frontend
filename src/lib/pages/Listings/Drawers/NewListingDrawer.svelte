@@ -37,7 +37,7 @@
 		} else {
 			createListingLoading = true;
 			try {
-				await createListingDescriptionFx({ address: propertyAddress, keyInfo });
+				await createListingDescriptionFx({ address: propertyAddress, keyInfo, city, state });
 				createListingLoading = false;
 				drawerStore.close();
 			} catch (e) {

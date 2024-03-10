@@ -38,7 +38,13 @@
 					>
 						{#each gmcs as gmc, i}
 							<div class="shrink-0 snap-center">
-								<SocialCard cardData={{ caption: gmc.caption, imgSrc: gmc.img || '' }} />
+								<SocialCard
+									cardData={{
+										caption: gmc.caption,
+										imgSrc: gmc.img || '',
+										calenderDate: gmc.calenderDate
+									}}
+								/>
 							</div>
 						{/each}
 					</div>

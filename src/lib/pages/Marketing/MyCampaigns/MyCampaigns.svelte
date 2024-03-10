@@ -12,8 +12,6 @@
 
 	let customCampaignTabs = campaigns.map((item) => ({ label: item.title }));
 
-	customCampaignTabs.push({ label: 'asdf' });
-
 	const modalStore = getModalStore();
 	const handleCreateNewCampaign = () => {
 		const modal: ModalSettings = {
@@ -47,8 +45,11 @@
 	</div>
 	<div>
 		{#if customCampaignTabs.length > 0 && campaigns.length > 0}
-			<Tabs items={customCampaignTabs} classes="text-lg" />
-			<CampaignInfo campaign={campaigns[0]} />
+			<Tabs items={customCampaignTabs} classes="text-lg">
+				<div slot="content">
+					<CampaignInfo campaign={campaigns[0]} />
+				</div>
+			</Tabs>
 		{/if}
 		<div class="flex h-[400px] w-full items-center justify-center">
 			<p class="text-2xl font-semibold">Create New Campaigns to see Activity</p>

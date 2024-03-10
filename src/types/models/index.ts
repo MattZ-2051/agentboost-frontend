@@ -20,9 +20,10 @@ export type User = {
 };
 
 export type Campaign = {
-	id: number;
+	id?: number;
 	title: string;
 	messages: string;
+	active: boolean;
 	targetAudience: string[];
 };
 
@@ -77,6 +78,7 @@ export type GMC = {
 	id: number;
 	caption: string;
 	img?: string;
+	calenderDate: string | null;
 	listing: Listing;
 };
 
@@ -84,6 +86,7 @@ export type Listing = {
 	id?: number;
 	zpid: number;
 	latitude: number;
+	status: string;
 	longitude: number;
 	imgSrc: string;
 	price: number;

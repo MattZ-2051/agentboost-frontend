@@ -180,7 +180,7 @@
 			</div>
 		</div>
 	</section>
-	<section class="relative mt-40 flex w-full flex-col items-center justify-center">
+	<section class="relative mt-40 flex w-full flex-col items-center justify-center" id="features">
 		<BackgroundGradient />
 		<p class="text-center text-[30px] leading-tight text-white xl:text-6xl">
 			The <span class="textGradient2">Power of AI </span> in <br class="inline-block xl:hidden" /> real
@@ -234,7 +234,7 @@
 			</div>
 		</div>
 	</section>
-	<section class="relative z-50 mt-20 bg-transparent text-white xl:mt-40">
+	<section class="relative z-50 mt-20 bg-transparent text-white xl:mt-40" id="platform">
 		<p class="whitespace-nowrap text-center text-[30px] leading-normal xl:text-6xl">
 			Effortless <span class="textGradient5">
 				<br class="inline-block xl:hidden" /> expertise & exposure</span
@@ -263,7 +263,7 @@
 		</div>
 		<FeatureTabs {selectedTab} />
 	</section>
-	<section class="relative mt-20 text-white xl:mt-40">
+	<section class="relative mt-20 text-white xl:mt-40" id="about">
 		<div class="flex w-full flex-col items-center justify-center">
 			<p
 				class="text-center text-[30px] leading-normal text-neutral-100 xl:text-6xl xl:leading-[75px]"

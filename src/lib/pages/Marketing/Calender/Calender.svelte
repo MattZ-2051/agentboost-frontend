@@ -96,24 +96,24 @@
 	};
 
 	let items: ListingItem[] = [
-		// {
-		// 	id: 1,
-		// 	label: 'listing 1',
-		// 	day: '11',
-		// 	month: 'December'
-		// },
-		// {
-		// 	id: 2,
-		// 	label: 'listing 2',
-		// 	day: '10',
-		// 	month: 'December'
-		// },
-		// {
-		// 	id: 3,
-		// 	label: 'listing 3',
-		// 	day: '9',
-		// 	month: 'December'
-		// }
+		{
+			id: 1,
+			label: 'listing 1',
+			day: '11',
+			month: 'March'
+		},
+		{
+			id: 2,
+			label: 'listing 2',
+			day: '10',
+			month: 'March'
+		},
+		{
+			id: 3,
+			label: 'listing 3',
+			day: '9',
+			month: 'March'
+		}
 	];
 
 	const handleItemConsider = (id: number, e: CustomEvent<DndEvent<ListingItem>>) => {
@@ -197,7 +197,7 @@
 							class="flex w-full items-start justify-between !text-neutral-400 !text-opacity-70"
 						>
 							{i - firstDayIndex + 1}
-							<!-- <Add /> -->
+							<Add />
 						</span>
 						<div
 							use:dndzone={{

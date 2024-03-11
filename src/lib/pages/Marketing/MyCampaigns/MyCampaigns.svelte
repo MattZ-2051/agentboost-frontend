@@ -10,6 +10,7 @@
 
 	export let campaigns: Campaign[];
 
+	let selectedItem: string = campaigns[0].title;
 	let customCampaignTabs = campaigns.map((item) => ({ label: item.title }));
 
 	const modalStore = getModalStore();
@@ -45,7 +46,7 @@
 	</div>
 	<div>
 		{#if customCampaignTabs.length > 0 && campaigns.length > 0}
-			<Tabs items={customCampaignTabs} classes="text-lg">
+			<Tabs items={customCampaignTabs} classes="text-lg" {selectedItem}>
 				<div slot="content">
 					<CampaignInfo campaign={campaigns[0]} />
 				</div>

@@ -11,6 +11,8 @@
 	import LandingSeperator from '$lib/assets/svg/LandingSeperator.svelte';
 	import FeatureTabs from '$lib/pages/Landing/FeatureTabs/FeatureTabs.svelte';
 	import { goto } from '$app/navigation';
+	import LogoWhite from '$lib/assets/svg/Logo/LogoWhite.svelte';
+	import LogoSoloWhite from '$lib/assets/svg/LogoSoloWhite.svelte';
 	// const handleShare = () => {
 	//   FB.ui(
 	//     {
@@ -152,8 +154,8 @@
 		<p
 			class="z-20 mb-12 mt-6 whitespace-nowrap text-center text-[18px] font-light leading-normal text-[#C0C4DA] xl:text-[22px]"
 		>
-			The ultimate tech suite for real estate <br class="inline-block md:hidden" /> professionals has
-			arrived.
+			Elevate your expertise. Build your brand. <br class="inline-block md:hidden" />Own your
+			market.
 		</p>
 
 		<Button
@@ -162,7 +164,7 @@
 			classes="!z-[38]"
 			onClick={() => goto('/signup')}
 		/>
-		<div class="relative w-full">
+		<div class="relative -mt-28 w-full">
 			<div class="flex justify-center">
 				<div class="mask absolute -left-[8rem] z-10 h-full w-[40rem] -rotate-90" />
 				<div class="mask absolute -right-[12rem] z-10 h-full w-[40rem] rotate-90" />
@@ -172,11 +174,11 @@
 					alt=""
 					class="z-20 -mt-32 h-[40rem] w-full object-cover xl:z-0 xl:mt-0 xl:inline-block xl:h-[42rem] xl:w-[80rem]"
 				/>
-				<p
+				<!-- <p
 					class="absolute bottom-[10rem] z-[38] w-full text-center text-lg font-light text-white opacity-40 xl:bottom-[13rem]"
 				>
 					BACKED BY THE BEST
-				</p>
+				</p> -->
 			</div>
 		</div>
 	</section>
@@ -198,7 +200,12 @@
 			<div
 				class="h-[225px] w-full rounded-[19px] border border-white border-opacity-40 bg-white bg-opacity-0 shadow sm:w-[600px] md:h-[400px] md:w-[600px] lg:w-[800px] xl:h-[643px] xl:w-[1188px]"
 			>
-				<video controls width="100%" class="h-full w-full rounded-[19px]">
+				<video
+					controls
+					width="100%"
+					class="h-full w-full rounded-[19px]"
+					src="https://storage.googleapis.com/agentboost-assets/agentboost.mov"
+				>
 					<track kind="captions" />
 				</video>
 			</div>
@@ -209,8 +216,8 @@
 				class="grid h-[225px] w-full grid-cols-2 items-center justify-center gap-x-8 gap-y-8 rounded-[20px] border border-white border-opacity-10 bg-black bg-opacity-0 p-8 text-center text-lg shadow backdrop-blur-[14.35px] sm:w-[600px] md:h-[400px] md:w-[600px] lg:w-[800px]"
 			>
 				<p class="whitespace-nowrap">140 million+ <br /> property records</p>
-				<p class="whitespace-nowrap">AI driven <br /> Property insights</p>
-				<p class="whitespace-nowrap">Automated <br /> Social Media</p>
+				<p class="whitespace-nowrap">AI driven <br /> property insights</p>
+				<p class="whitespace-nowrap">Automated <br /> social media</p>
 				<p class="">Marketing <br />Analytics</p>
 			</div>
 		</div>
@@ -222,19 +229,19 @@
 					<LandingSeperator />
 				</div>
 
-				<p class="whitespace-nowrap">AI driven <br /> Property insights</p>
+				<p class="whitespace-nowrap">AI driven <br /> property insights</p>
 				<div class="mx-10 hidden xl:inline-block">
 					<LandingSeperator />
 				</div>
-				<p class="whitespace-nowrap">Automated <br /> Social Media</p>
+				<p class="whitespace-nowrap">Automated <br /> social media</p>
 				<div class="mx-10 hidden xl:inline-block">
 					<LandingSeperator />
 				</div>
-				<p class="">Marketing <br />Analytics</p>
+				<p class="">Marketing <br />analytics</p>
 			</div>
 		</div>
 	</section>
-	<section class="relative z-50 mt-20 bg-transparent text-white xl:mt-40" id="platform">
+	<section class="relative z-50 mt-20 bg-transparent text-white xl:mt-40">
 		<p class="whitespace-nowrap text-center text-[30px] leading-normal xl:text-6xl">
 			Effortless <span class="textGradient5">
 				<br class="inline-block xl:hidden" /> expertise & exposure</span
@@ -268,7 +275,8 @@
 			<p
 				class="text-center text-[30px] leading-normal text-neutral-100 xl:text-6xl xl:leading-[75px]"
 			>
-				Message from <br /> <span class="textGradient2">the founders</span>
+				Message from <br class="inline-block lg:hidden" />
+				<span class="textGradient2">the founders</span>
 			</p>
 			<div
 				class="mt-12 rounded-[20px] border border-white border-opacity-5 bg-zinc-950 bg-opacity-0 p-1"
@@ -346,10 +354,7 @@
 									Tech Lead
 								</p>
 							</div>
-							<div class="mr-8 hidden w-full justify-end gap-x-4 xl:flex">
-								<Instagram />
-								<Twitter />
-							</div>
+							<div class="mr-8 hidden w-full justify-end gap-x-4 xl:flex"></div>
 							<!-- Mobile Styles for founder section -->
 							<div class="ml-6 flex h-full w-full flex-col xl:hidden">
 								<div class="whitespace-nowrap">
@@ -359,10 +364,7 @@
 									</p>
 								</div>
 								<div class="flex h-full w-full flex-col justify-end">
-									<div class="flex gap-x-2">
-										<Instagram />
-										<Twitter />
-									</div>
+									<div class="flex gap-x-2"></div>
 								</div>
 							</div>
 							<!-- --------------->
@@ -400,7 +402,7 @@
 								/>
 							</div>
 							<div class="hidden xl:inline-block">
-								<LogoIconBlue />
+								<LogoSoloWhite size={300} />
 							</div>
 						</div>
 					</div>

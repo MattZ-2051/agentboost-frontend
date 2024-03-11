@@ -30,7 +30,6 @@
 		class="textLink hidden items-center justify-center gap-x-14 font-extralight hover:cursor-pointer hover:text-white lg:flex"
 	>
 		<a href="#features">Features</a>
-		<a href="#platform">Platform</a>
 		<a href="#about">About</a>
 	</div>
 	<svelte:fragment slot="trail">

@@ -14,7 +14,7 @@
 		<p class="text-2xl font-semibold text-white">
 			Welcome <span class="textGradient">{$user.fullName}</span>
 		</p>
-		<div class="mt-12 w-full">
+		<!-- <div class="mt-12 w-full">
 			<p class="text-xl text-[#EFEFEF]">Local market statistics</p>
 			<div class="mt-6 flex h-full w-full items-center justify-start gap-x-6">
 				<Box
@@ -62,7 +62,7 @@
 					</span>
 				</Box>
 			</div>
-		</div>
+		</div> -->
 		<div class="mt-6">
 			<SocialMediaActivity user={$user} />
 		</div>

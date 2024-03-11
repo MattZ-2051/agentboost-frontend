@@ -7,20 +7,30 @@
 	import RadioDropdown from '$lib/components/Dropdown/RadioDropdown.svelte';
 	import ProgressRadial from '$lib/components/ProgressRadial/ProgressRadial.svelte';
 	import type { User } from '$types/models';
+	import { getModalStore } from '@skeletonlabs/skeleton';
 	import Chart from '../Chart/Chart.svelte';
-
-	$: showRadioContent = false;
-	$: showSocialContent = false;
-	$: showDateContent = false;
 
 	export let user: User;
 
+	const modalStore = getModalStore();
 	const items = [
 		'10165 W Burntwood Ct',
 		'10165 W Burntwood Ct',
 		'10165 W Burntwood Ct',
 		'10165 W Burntwood Ct'
 	];
+
+	const handleSocialAccountAdd = () => {
+		modalStore.trigger({
+			type: 'component',
+			component: 'socialAccounts',
+			response: (r: boolean) => r
+		});
+	};
+
+	$: showRadioContent = false;
+	$: showSocialContent = false;
+	$: showDateContent = false;
 
 	$: socialDropdownLabel = user.facebook
 		? 'facebook'
@@ -41,7 +51,7 @@
 					bg="bg-[#151719]"
 					variant="variant-app-primary"
 					classes="!w-1/3 !h-16 !text-[18px]"
-					onClick={() => goto('/marketing')}
+					onClick={handleSocialAccountAdd}
 				/>
 			</div>
 		</Box>

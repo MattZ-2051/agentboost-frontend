@@ -5,8 +5,6 @@
 	import { getModalStore } from '@skeletonlabs/skeleton';
 	import Button from '../Button/Button.svelte';
 	import RadioButton from '../RadioButton/RadioButton.svelte';
-	import XDarkIcon from '$lib/assets/svg/Social/XDarkIcon.svelte';
-	import InstagramDarkIcon from '$lib/assets/svg/Social/InstagramDarkIcon.svelte';
 	import xIcon from '$lib/assets/images/Social/x-icon.png';
 	import instagramIcon from '$lib/assets/images/Social/instagram-icon.png';
 	import facebookIcon from '$lib/assets/images/Social/facebook-icon.png';
@@ -26,7 +24,7 @@
 		modalStore.close();
 	}
 
-	const selectionMap = [
+	$: selectionMap = [
 		{
 			label: 'X',
 			selected: false,
@@ -50,7 +48,12 @@
 		<div class="flex w-full flex-col items-start justify-center gap-y-4">
 			<p class="text-xl font-semibold">Connect An Account</p>
 			{#each selectionMap as item, _}
-				<RadioButton label={item.label} selected={item.selected} classes="!w-full">
+				<RadioButton
+					label={item.label}
+					selected={item.selected}
+					classes="!w-full"
+					optionSelected={selectionMap.some((item) => item.selected)}
+				>
 					<img src={item.icon} class="w-8 rounded-full" slot="icon" alt="" />
 				</RadioButton>
 			{/each}

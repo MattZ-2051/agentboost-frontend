@@ -3,6 +3,8 @@
 	export let label: string;
 	export let classes: string = '';
 	export let optionSelected: boolean = false;
+
+	console.log('option selected', optionSelected, selected);
 </script>
 
 <div
@@ -13,7 +15,7 @@
 	} `}
 >
 	<div
-		class={`flex h-full w-full items-center justify-center gap-x-4 rounded-[10px] bg-[#171A1C] px-4 py-3 ${optionSelected && `opacity-30`}`}
+		class={`flex h-full w-full items-center justify-center gap-x-4 rounded-[10px] bg-[#171A1C] px-4 py-3 ${optionSelected && !selected && `opacity-30`}`}
 	>
 		<div class="flex w-[150px] items-center justify-start gap-x-4">
 			<div class="relative h-[22px] w-[22px] hover:cursor-pointer">

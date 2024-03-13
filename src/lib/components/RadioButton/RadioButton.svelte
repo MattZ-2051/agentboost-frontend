@@ -1,10 +1,8 @@
 <script lang="ts">
-	export let selected: boolean;
+	export let selected: boolean = false;
 	export let label: string;
 	export let classes: string = '';
 	export let optionSelected: boolean = false;
-
-	console.log('option selected', optionSelected, selected);
 </script>
 
 <div

@@ -24,6 +24,13 @@
 		modalStore.close();
 	}
 
+	const handleAccountAdd = () => {
+		for (const item of selectionMap) {
+			if (item.selected && item.label === 'facebook') {
+				return;
+			}
+		}
+	};
 	$: selectionMap = [
 		{
 			label: 'X',
@@ -41,6 +48,8 @@
 			icon: facebookIcon
 		}
 	];
+
+	$: optionSelected = selectionMap.some((item) => item.selected);
 </script>
 
 {#if $modalStore[0]}
@@ -50,9 +59,9 @@
 			{#each selectionMap as item, _}
 				<RadioButton
 					label={item.label}
-					selected={item.selected}
+					bind:selected={item.selected}
 					classes="!w-full"
-					optionSelected={selectionMap.some((item) => item.selected)}
+					bind:optionSelected
 				>
 					<img src={item.icon} class="w-8 rounded-full" slot="icon" alt="" />
 				</RadioButton>

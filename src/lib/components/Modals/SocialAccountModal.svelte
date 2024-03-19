@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { SvelteComponent } from 'svelte';
+	import { onMount, type SvelteComponent } from 'svelte';
 
 	// Stores
 	import { getModalStore } from '@skeletonlabs/skeleton';
@@ -31,6 +31,38 @@
 			}
 		}
 	};
+
+	onMount(() => {
+		(function (d, s, id) {
+			var js: any,
+				fjs: any = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) {
+				return;
+			}
+			js = d.createElement(s);
+			js.id = id;
+			js.src = 'https://connect.facebook.net/en_US/sdk.js';
+			fjs.parentNode.insertBefore(js, fjs);
+		})(document, 'script', 'facebook-jssdk');
+
+		window.fbAsyncInit = function () {
+			FB.login(function (response) {
+				if (response.authResponse) {
+					console.log('Welcome!  Fetching your information.... ');
+					FB.api('/me', { fields: 'name, email' }, function (response: any) {
+						document.getElementById('profile').innerHTML =
+							'Good to see you, ' +
+							response.name +
+							'. i see your email address is ' +
+							response.email;
+					});
+				} else {
+					console.log('User cancelled login or did not fully authorize.');
+				}
+			});
+		};
+	});
+
 	$: selectionMap = [
 		{
 			label: 'X',

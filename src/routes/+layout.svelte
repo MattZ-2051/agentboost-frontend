@@ -36,24 +36,6 @@
 
 	const drawerStore = getDrawerStore();
 
-	const fbId = import.meta.env?.VITE_FB_APP_ID;
-
-	onMount(() => {
-		window.fbAsyncInit = function () {
-			FB.init({
-				appId: fbId,
-				xfbml: true,
-				version: 'v18.0'
-			});
-		};
-		(function () {
-			var e = document.createElement('script');
-			e.src = document.location.protocol + '//connect.facebook.net/en_US/sdk.js';
-			e.async = true;
-			// document.getElementById('fb-root').appendChild(e);
-		})();
-	});
-
 	console.log('user', $user);
 </script>
 

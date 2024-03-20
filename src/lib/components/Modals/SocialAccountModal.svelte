@@ -13,25 +13,46 @@
 	/** Exposes parent props to this component. */
 	export let parent: SvelteComponent;
 
+	const fbId = import.meta.env?.VITE_FB_APP_ID;
+
 	const modalStore = getModalStore();
 
 	const formData = {
 		date: new Date()
 	};
 
-	function onFormSubmit(): void {
-		if ($modalStore[0].response) $modalStore[0].response(formData);
-		modalStore.close();
-	}
-
-	const handleAccountAdd = () => {
+	const handleAccountAdd = async () => {
+		console.log('map', selectionMap);
 		for (const item of selectionMap) {
-			if (item.selected && item.label === 'facebook') {
+			if (item.selected && item.label === 'Facebook') {
+				console.log('here');
+				await handleFacebookLogin();
 				return;
 			}
 		}
 	};
 
+	onMount(() => {
+		window.fbAsyncInit = function () {
+			FB.init({
+				appId: fbId,
+				xfbml: true,
+				version: 'v19.0'
+			});
+		};
+	});
+	const handleFacebookLogin = async () => {
+		FB.login(function (response) {
+			if (response.authResponse) {
+				console.log('Welcome!  Fetching your information.... ');
+				FB.api('/me', { fields: 'name, email' }, function (response) {
+					console.log('response', response);
+				});
+			} else {
+				console.log('User cancelled login or did not fully authorize.');
+			}
+		});
+	};
 	onMount(() => {
 		(function (d, s, id) {
 			var js: any,
@@ -44,23 +65,6 @@
 			js.src = 'https://connect.facebook.net/en_US/sdk.js';
 			fjs.parentNode.insertBefore(js, fjs);
 		})(document, 'script', 'facebook-jssdk');
-
-		window.fbAsyncInit = function () {
-			FB.login(function (response) {
-				if (response.authResponse) {
-					console.log('Welcome!  Fetching your information.... ');
-					FB.api('/me', { fields: 'name, email' }, function (response: any) {
-						document.getElementById('profile').innerHTML =
-							'Good to see you, ' +
-							response.name +
-							'. i see your email address is ' +
-							response.email;
-					});
-				} else {
-					console.log('User cancelled login or did not fully authorize.');
-				}
-			});
-		};
 	});
 
 	$: selectionMap = [
@@ -112,7 +116,7 @@
 				classes=""
 				label="Add"
 				bg="bg-[#1A1A1A]"
-				onClick={onFormSubmit}
+				onClick={handleAccountAdd}
 			/>
 		</div>
 	</div>

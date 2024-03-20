@@ -11,9 +11,9 @@ export type User = {
 	areaOfExpertise: string;
 	fullName: string;
 	brokerage: string;
-	x: boolean;
-	instagram: boolean;
-	facebook: boolean;
+	xId: string;
+	instagramId: string;
+	facebookId: string;
 	listings: Listing[];
 	buyers: Buyer[];
 	campaigns: Campaign[];

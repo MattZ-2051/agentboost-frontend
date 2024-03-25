@@ -345,7 +345,7 @@
 						<div class="absolute flex h-full w-full items-center justify-center p-4">
 							<img
 								class="h-full w-[133px] rounded-[17px] object-cover xl:h-[155px]"
-								src={matt}
+								src={"https://via.placeholder.com/133x155"}
 								alt=""
 							/>
 							<div class="ml-6 hidden whitespace-nowrap xl:inline-block">

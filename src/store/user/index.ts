@@ -1,5 +1,10 @@
 import { login, logout, resetPassword, signup } from '$api/auth';
-import { getUserProfile, restoreUserSession, updateUserProfile } from '$api/user';
+import {
+	getUserProfile,
+	restoreUserSession,
+	updateUserProfile,
+	updateUserSocialAccount
+} from '$api/user';
 import { createEffect, createEvent, createStore } from 'effector';
 import { decodeJwtToken, handleUserTokenData } from '$utils';
 import type { User } from '$types/models';
@@ -11,6 +16,9 @@ export const updateUser = createEvent<User | null>();
 export const getUserProfileFx = createEffect<typeof getUserProfile, ApiError>(getUserProfile);
 export const updateUserProfileFx = createEffect<typeof updateUserProfile, ApiError>(
 	updateUserProfile
+);
+export const updateUserSocialAccountFx = createEffect<typeof updateUserSocialAccount, ApiError>(
+	updateUserSocialAccount
 );
 export const restoreUserSessionFx = createEffect<typeof restoreUserSession, ApiError>(
 	restoreUserSession
@@ -62,11 +70,12 @@ signUpFx.doneData.watch(async (result) => {
 		businessLogo: '',
 		authTokens: result,
 		brokerage: '',
+		xId: '',
+		facebookId: '',
+		instagramId: '',
+		phoneNumber: '',
 		brandDescription: '',
 		areaOfExpertise: '',
-		x: false,
-		instagram: false,
-		facebook: false,
 		campaigns: [],
 		listings: [],
 		buyers: []
@@ -92,9 +101,10 @@ loginFx.doneData.watch(async (result) => {
 		brandDescription: '',
 		brokerage: '',
 		areaOfExpertise: '',
-		x: false,
-		instagram: false,
-		facebook: false,
+		xId: '',
+		facebookId: '',
+		instagramId: '',
+		phoneNumber: '',
 		campaigns: [],
 		listings: [],
 		buyers: []
@@ -122,6 +132,10 @@ updateUserProfileFx.doneData.watch((response) => {
 updateUserProfileFx.failData.watch((error) => {
 	console.log('error in profile update', error);
 	return error;
+});
+
+updateUserSocialAccountFx.doneData.watch(() => {
+	getUserProfileFx();
 });
 
 export const $user = createStore<User | null>(null).on(updateUser, (prevState, payload) => {

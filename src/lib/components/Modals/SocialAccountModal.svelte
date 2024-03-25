@@ -2,12 +2,15 @@
 	import { onMount, type SvelteComponent } from 'svelte';
 
 	// Stores
-	import { getModalStore } from '@skeletonlabs/skeleton';
+	import { getModalStore, getToastStore } from '@skeletonlabs/skeleton';
 	import Button from '../Button/Button.svelte';
 	import RadioButton from '../RadioButton/RadioButton.svelte';
 	import xIcon from '$lib/assets/images/Social/x-icon.png';
 	import instagramIcon from '$lib/assets/images/Social/instagram-icon.png';
 	import facebookIcon from '$lib/assets/images/Social/facebook-icon.png';
+	import { updateUserSocialAccountFx, $user as user } from '$store/user';
+	import { errorMessages } from '$lib/constants/toastMessages';
+	import { twitterLogin } from '$api/social';
 
 	// Props
 	/** Exposes parent props to this component. */
@@ -16,17 +19,20 @@
 	const fbId = import.meta.env?.VITE_FB_APP_ID;
 
 	const modalStore = getModalStore();
-
+	const toastStore = getToastStore();
 	const formData = {
 		date: new Date()
 	};
 
 	const handleAccountAdd = async () => {
-		console.log('map', selectionMap);
 		for (const item of selectionMap) {
 			if (item.selected && item.label === 'Facebook') {
-				console.log('here');
 				await handleFacebookLogin();
+				return;
+			}
+
+			if (item.selected && item.label === 'X') {
+				await handleTwitterLogin();
 				return;
 			}
 		}
@@ -41,12 +47,33 @@
 			});
 		};
 	});
+
+	const handleTwitterLogin = async () => {
+		try {
+			await twitterLogin();
+		} catch {}
+	};
 	const handleFacebookLogin = async () => {
 		FB.login(function (response) {
 			if (response.authResponse) {
 				console.log('Welcome!  Fetching your information.... ');
 				FB.api('/me', { fields: 'name, email' }, function (response) {
-					console.log('response', response);
+					const { id } = response as any;
+					if ($user) {
+						try {
+							updateUserSocialAccountFx({
+								id: $user.id,
+								social: 'facebook',
+								socialId: id
+							});
+							toastStore.trigger({
+								message: 'Facebook Account Added',
+								background: 'variant-filled-success'
+							});
+						} catch {
+							toastStore.trigger(errorMessages.support);
+						}
+					}
 				});
 			} else {
 				console.log('User cancelled login or did not fully authorize.');

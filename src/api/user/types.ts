@@ -6,3 +6,9 @@ export type UpdateUserData = {
 	fullName?: string;
 	brokerage?: string;
 };
+
+export type UpdateUserSocial = {
+	id: number;
+	socialId: string;
+	social: 'facebook' | 'x' | 'instagram';
+};

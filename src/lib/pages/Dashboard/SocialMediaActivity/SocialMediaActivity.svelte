@@ -32,13 +32,14 @@
 	$: showSocialContent = false;
 	$: showDateContent = false;
 
-	$: socialDropdownLabel = user.facebook
-		? 'facebook'
-		: user.instagram
-			? 'instagram'
-			: user.x
-				? 'x'
-				: 'No Accounts';
+	$: socialDropdownLabel =
+		user.facebookId.length !== 0
+			? 'facebook'
+			: user.instagramId.length !== 0
+				? 'instagram'
+				: user.xId.length !== 0
+					? 'x'
+					: 'No Accounts';
 </script>
 
 {#if socialDropdownLabel === 'No Accounts'}
@@ -76,13 +77,13 @@
 					>
 						<div slot="content">
 							{#if socialDropdownLabel !== 'No Accounts'}
-								{#if user.instagram}
+								{#if user.instagramId.length !== 0}
 									<p>Instagram</p>
 								{/if}
-								{#if user.x}
+								{#if user.xId.length !== 0}
 									<p>X</p>
 								{/if}
-								{#if user.facebook}
+								{#if user.facebookId.length !== 0}
 									<p>Facebook</p>
 								{/if}
 							{/if}
